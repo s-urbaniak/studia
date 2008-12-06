@@ -1,0 +1,8 @@
+MIDlet-1: Blue Pong,,net.java.dev.marge.bluepong.BluePongMIDlet
+MIDlet-Jar-Size: 27634
+MIDlet-Jar-URL: bluepong-v0.3.4.jar
+MIDlet-Name: Blue Pong
+MIDlet-Vendor: Powered by Marge
+MIDlet-Version: 1.0.0
+MicroEdition-Configuration: CLDC-1.0
+MicroEdition-Profile: MIDP-2.0
