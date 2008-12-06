@@ -31,7 +31,7 @@ public class MainMenu extends Form {
         this.addComponent(button);
         elementWidth = Math.max(button.getPreferredW(), elementWidth);
     }
-    
+
     private void addComponents() {
         try {
             resources = Resources.open("/resources.res");
