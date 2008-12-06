@@ -1,0 +1,9 @@
+MIDlet-Jar-URL: bctest.jar
+MIDlet-Jar-Size: 93635
+MIDlet-Name: bluecove-tester
+MIDlet-Vendor: BlueCove Team
+MIDlet-Version: 2.0.0
+MIDlet-1: BlueCove, , net.sf.bluecove.BlueCoveTestMIDlet
+MIDlet-Permissions: javax.microedition.io.Connector.bluetooth.client,javax.microedition.io.Connector.bluetooth.server
+MicroEdition-Configuration: CLDC-1.0
+MicroEdition-Profile: MIDP-2.0
