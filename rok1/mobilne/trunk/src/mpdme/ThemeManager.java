@@ -1,4 +1,4 @@
-package mdpme;
+package mpdme;
 
 import com.sun.lwuit.plaf.UIManager;
 import com.sun.lwuit.util.Resources;

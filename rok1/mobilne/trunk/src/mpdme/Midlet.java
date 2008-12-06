@@ -1,4 +1,4 @@
-package mdpme;
+package mpdme;
 
 import javax.microedition.midlet.*;
 
