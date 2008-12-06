@@ -11,7 +11,6 @@ public class Midlet extends MIDlet implements ActionListener {
     public void startApp() {
         Display.init(this);
 
-        Image image = null;
         try {
             ThemeManager manager = new ThemeManager();
             manager.loadTheme();
