@@ -8,6 +8,6 @@ package protocol.argsvalidator;
  *
  * @author sur
  */
-public interface ArgValidator {
-    public void validate(String arg);
+public interface ArgValidator<T> {
+    public T validate(String[] args);
 }
