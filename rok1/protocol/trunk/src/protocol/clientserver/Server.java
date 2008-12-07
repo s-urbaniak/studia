@@ -25,7 +25,7 @@ public class Server implements ClientServer {
             socket = new ServerSocket(props.getPort());
             clientSocket = socket.accept();
 
-            String inputLine, outputLine;
+            String inputLine;
             SocketReader reader = new SocketReader(clientSocket);
             SocketWriter writer = new SocketWriter(clientSocket);
 
