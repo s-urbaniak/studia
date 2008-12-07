@@ -4,10 +4,7 @@
  */
 package protocol.clientserver;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import protocol.properties.BiezProtProperties;
@@ -29,18 +26,17 @@ public class Server implements ClientServer {
             clientSocket = socket.accept();
 
             String inputLine, outputLine;
-            BufferedReader socketIn = new BufferedReader(
-                    new InputStreamReader(
-                    clientSocket.getInputStream()));
-            PrintWriter socketOut = new PrintWriter(clientSocket.getOutputStream(), true);
+            SocketReader reader = new SocketReader(clientSocket);
+            SocketWriter writer = new SocketWriter(clientSocket);
 
-            while ((inputLine = socketIn.readLine()) != null) {
+            while ((inputLine = reader.readLine()) != null) {
                 System.out.println(inputLine);
-                socketOut.println("OK");
+                writer.println("OK");
             }
 
-            socketOut.close();
-            socketIn.close();
+            writer.close();
+            reader.close();
+
             clientSocket.close();
             socket.close();
         } catch (IOException ex) {

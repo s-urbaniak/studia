@@ -4,10 +4,7 @@
  */
 package protocol.clientserver;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.Socket;
 import protocol.properties.BiezProtProperties;
 
@@ -24,17 +21,17 @@ public class Client implements ClientServer {
     public void start() {
         try {
             socket = new Socket(props.getServerHostname(), props.getPort());
-            BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));
-            BufferedReader socketIn = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            PrintWriter socketOut = new PrintWriter(socket.getOutputStream(), true);
+            SocketReader reader = new SocketReader(socket);
+            SocketWriter writer = new SocketWriter(socket);
+            SystemReader sysReader = new SystemReader();
 
             String fromServer, fromUser;
 
             boolean quit = false;
             while (!quit) {
-                fromUser = stdIn.readLine();
-                socketOut.println(fromUser);
-                fromServer = socketIn.readLine();
+                fromUser = sysReader.readLine();
+                writer.println(fromUser);
+                fromServer = reader.readLine();
 
                 if (fromServer == null) {
                     throw new IOException("No response from server.");
@@ -47,9 +44,9 @@ public class Client implements ClientServer {
                 }
             }
             
-            socketOut.close();
-            socketIn.close();
-            stdIn.close();
+            writer.close();
+            reader.close();
+            sysReader.close();
             socket.close();
         } catch (Exception ex) {
             throw new RuntimeException(ex);
