@@ -15,12 +15,12 @@ public class Midlet extends MIDlet implements ActionListener {
             ThemeManager manager = new ThemeManager();
             manager.loadTheme();
 
-            MainMenu f = new MainMenu("mpd Mobile Edition");
-            f.show();
+            MainMenu mainForm = new MainMenu();
+            mainForm.show();
 
             Command exitCommand = new Command("Exit");
-            f.addCommand(exitCommand);
-            f.setCommandListener(this);
+            mainForm.addCommand(exitCommand);
+            mainForm.setCommandListener(this);
         } catch (Exception ex) {
             ex.printStackTrace();
             Dialog.show("Error", "Sorry, some error occured: " + ex.getMessage(), "OK", null);

@@ -3,36 +3,43 @@ package mpdme.forms;
 import com.sun.lwuit.Display;
 import com.sun.lwuit.Form;
 import com.sun.lwuit.Image;
+import com.sun.lwuit.events.ActionEvent;
+import com.sun.lwuit.events.ActionListener;
 import com.sun.lwuit.layouts.GridLayout;
 import com.sun.lwuit.util.Resources;
 import mpdme.components.MenuButton;
 import java.io.IOException;
+import mpdme.listener.MenuButtonListener;
 
 /**
  *
  * @author sur
  */
-public class MainMenu extends Form {
+public class MainMenu extends MpdForm {
     private Resources resources;
+
     private int elementWidth = 0;
 
+    private class ShowPlayerListener extends MenuButtonListener
+    {
+        public void actionPerformed(ActionEvent evt) {
+            Form playerForm = new PlayerForm(this.getParentForm());
+            playerForm.show();
+        }
+    }
+    
     public MainMenu() {
-        super();
-        addComponents();
+        super(null);
     }
-
-    public MainMenu(String title) {
-        super(title);
-        addComponents();
-    }
-
-    private void addMenuButton(String title, Image unselected, Image selected) {
+    
+    private MenuButton addMenuButton(String title, Image unselected, Image selected) {
         MenuButton button = new MenuButton(title, unselected, selected);
         this.addComponent(button);
         elementWidth = Math.max(button.getPreferredW(), elementWidth);
+        return button;
     }
 
-    private void addComponents() {
+    public void initialize() {
         try {
             resources = Resources.open("/resources.res");
         } catch (IOException ex) {
@@ -41,7 +48,14 @@ public class MainMenu extends Form {
 
         int width = Display.getInstance().getDisplayWidth();
 
-        addMenuButton("Play", resources.getImage("play"), resources.getImage("play_sel"));
+        MenuButton button;
+        MenuButtonListener listener;
+
+        button = addMenuButton("Play", resources.getImage("play"), resources.getImage("play_sel"));
+        listener = new ShowPlayerListener();
+        listener.setParentForm(this);
+        button.addActionListener(listener);
+
         addMenuButton("Playlist", resources.getImage("playlist"), resources.getImage("playlist_sel"));
         addMenuButton("Search Artist", resources.getImage("search"), resources.getImage("search_sel"));
         addMenuButton("Search Album", resources.getImage("search"), resources.getImage("search_sel"));
@@ -49,6 +63,7 @@ public class MainMenu extends Form {
 
         int cols = width / this.elementWidth;
         int rows = 5 / cols;
+        this.setTitle("mpd Mobile Edition");
         this.setLayout(new GridLayout(rows, cols));
     }
 }
