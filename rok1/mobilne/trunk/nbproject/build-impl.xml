@@ -331,6 +331,9 @@
         <ant target="jar" inheritall="false" antfile="${project.LWUIT}/build.xml">
             <property name="config.active" value=""/>
         </ant>
+        <ant target="jar" inheritall="false" antfile="${project.marge-core}/build.xml">
+            <property name="config.active" value=""/>
+        </ant>
     </target>
     <!--preprocess-->
     <target name="pre-preprocess"/>
