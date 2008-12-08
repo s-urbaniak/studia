@@ -16,8 +16,6 @@ import mpdme.listener.MenuButtonListener;
  * @author sur
  */
 public class MainMenu extends MpdForm {
-    private Resources resources;
-
     private int elementWidth = 0;
 
     private class ShowPlayerListener extends MenuButtonListener
@@ -40,6 +38,8 @@ public class MainMenu extends MpdForm {
     }
 
     public void initialize() {
+        Resources resources;
+
         try {
             resources = Resources.open("/resources.res");
         } catch (IOException ex) {
