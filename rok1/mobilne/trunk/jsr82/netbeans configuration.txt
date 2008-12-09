@@ -1,0 +1,10 @@
+In order to run microemulator with the bluecove library locally, you need to specify the following settings in the "Java Platform Manager" for the "Microemulator platform"
+
+You need to copy the bluecove jars to the microemulator/libs folder.
+
+Preverify command:
+java -jar /home/sur/.netbeans/6.1/modules/ext/proguard.jar -injars {srcdir} -outjars {destdir}/ -libraryjars {platformhome}/lib/microemu-jsr-82.jar -libraryjars {platformhome}/lib/midpapi20.jar  -libraryjars {platformhome}/lib/cldcapi11.jar -dontshrink -dontoptimize -dontobfuscate  -microedition
+
+Execution command:
+java -Dbluecove.stack=emulator -cp {platformhome}/lib/bluecove-2.0.3.jar:{platformhome}/lib/bluecove-emu-2.0.3.jar:{platformhome}/microemulator.jar org.microemu.app.Main {jadfile}
+
