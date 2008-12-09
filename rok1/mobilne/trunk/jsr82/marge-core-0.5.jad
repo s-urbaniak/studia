@@ -1,0 +1,7 @@
+MIDlet-Jar-Size: 35946
+MIDlet-Jar-URL: marge-core-0.5.jar
+MIDlet-Name: marge-core
+MIDlet-Vendor: Vendor
+MIDlet-Version: 1.0
+MicroEdition-Configuration: CLDC-1.0
+MicroEdition-Profile: MIDP-1.0
