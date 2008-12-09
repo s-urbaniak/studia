@@ -1,0 +1,157 @@
+#LyX 1.5.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 276
+\begin_document
+\begin_header
+\textclass amsart
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Równania różniczkowe
+\end_layout
+
+\begin_layout Standard
+Załozenia początkowe:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $y'=\varphi(x,y)$
+\end_inset
+
+ , 
+\begin_inset Formula $y(x_{0})=y_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $\Delta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Obliczenie:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $y_{m+1}=y_{m}+\Phi_{m}\Delta$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+gdzie 
+\begin_inset Formula $\Phi_{m}$
+\end_inset
+
+jest modifikatorem.
+\end_layout
+
+\begin_layout Standard
+Euler:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Phi_{m,e}=\varphi(x_{m},\, y_{m})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Euler udoskonalony:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Phi_{m,eu}=\frac{1}{2}(\varphi(x_{m},\, y_{m})+\varphi(x_{m}+\Delta,\,\, y_{m}+\varphi(x_{m},y_{m})\Delta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Euler zmodifikowany:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Phi_{m,em}=\varphi(x_{m}+\frac{\Delta}{2},\,\, y_{m}+\varphi(x_{m},\, y_{m})\frac{\Delta}{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Metoda Rungego-Kutty:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\Phi_{m,RK}=\frac{1}{6}(k_{1}+2k_{2}+2k_{3}+k_{4})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k_{1}=\varphi(x_{m},\, y_{m})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k_{2}=\varphi(x_{m}+\frac{\Delta}{2},\, y_{m}+k_{1}\frac{\Delta}{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k_{3}=\varphi(x_{m}+\frac{\Delta}{2},\, y_{m}+k_{2}\frac{\Delta}{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k_{4}=\varphi(x_{m}+\Delta,\, y_{m}+k_{3}\Delta)$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
