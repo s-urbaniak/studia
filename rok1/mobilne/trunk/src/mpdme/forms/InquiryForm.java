@@ -2,6 +2,7 @@ package mpdme.forms;
 
 import com.sun.lwuit.Button;
 import com.sun.lwuit.Container;
+import com.sun.lwuit.Dialog;
 import com.sun.lwuit.Image;
 import com.sun.lwuit.Label;
 import com.sun.lwuit.List;
@@ -10,7 +11,6 @@ import com.sun.lwuit.events.ActionListener;
 import com.sun.lwuit.layouts.BorderLayout;
 import com.sun.lwuit.list.DefaultListModel;
 import com.sun.lwuit.util.Resources;
-import java.io.IOException;
 import java.util.Vector;
 import javax.bluetooth.BluetoothStateException;
 import javax.bluetooth.DeviceClass;
@@ -18,6 +18,7 @@ import javax.bluetooth.RemoteDevice;
 import javax.bluetooth.ServiceRecord;
 import javax.bluetooth.UUID;
 import mpdme.BtServer;
+import mpdme.MpdException;
 import net.java.dev.marge.inquiry.DeviceDiscoverer;
 import net.java.dev.marge.inquiry.InquiryListener;
 import net.java.dev.marge.inquiry.ServiceDiscoverer;
@@ -52,9 +53,9 @@ public class InquiryForm extends MpdForm implements InquiryListener, ServiceSear
         try {
             DeviceDiscoverer.getInstance().cancelInquiry();
             UUID[] uuid = new UUID[]{UUIDGenerator.generate(BtServer.SERVER_NAME)};
-            ServiceDiscoverer.getInstance().startSearch(uuid, BtServer.getInstance().getDevice(), this);
+            ServiceDiscoverer.getInstance().startSearch(BtServer.getInstance().getDevice(), this);
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(e.getMessage());
         }
     }
 
@@ -114,12 +115,15 @@ public class InquiryForm extends MpdForm implements InquiryListener, ServiceSear
     }
 
     public void inquiryError() {
-        throw new RuntimeException("An error occured while inquiring");
+        throw new MpdException("An error occured while inquiring");
     }
 
     public void serviceSearchCompleted(RemoteDevice remoteDevice, ServiceRecord[] services) {
-        if ((services == null) || (services.length < 1))
-            throw new RuntimeException("No mpd service available for this device.");
+        if ((services == null) || (services.length < 1)) {
+            throw new MpdException("No mpd services found.");
+        }
+
+        this.status.setText("services: " + services.length);
 
         BtServer.getInstance().setService(services[0]);
 
@@ -128,10 +132,10 @@ public class InquiryForm extends MpdForm implements InquiryListener, ServiceSear
     }
 
     public void deviceNotReachable() {
-        throw new RuntimeException("The device is not reachable.");
+        throw new MpdException("The device is not reachable.");
     }
 
     public void serviceSearchError() {
-        throw new RuntimeException("An service search error occured.");
+        throw new MpdException("An service search error occured.");
     }
 }

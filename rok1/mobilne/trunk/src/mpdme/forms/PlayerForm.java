@@ -12,12 +12,14 @@ import com.sun.lwuit.layouts.GridLayout;
 import com.sun.lwuit.util.Resources;
 import java.io.IOException;
 import mpdme.BtServer;
+import mpdme.MpdException;
 import mpdme.components.MenuButton;
 import net.java.dev.marge.communication.CommunicationListener;
 import net.java.dev.marge.entity.ClientDevice;
 import net.java.dev.marge.entity.config.ClientConfiguration;
 import net.java.dev.marge.factory.CommunicationFactory;
 import net.java.dev.marge.factory.L2CAPCommunicationFactory;
+import net.java.dev.marge.factory.RFCOMMCommunicationFactory;
 
 public class PlayerForm extends MpdForm implements CommunicationListener {
     private ClientDevice device;
@@ -58,12 +60,12 @@ public class PlayerForm extends MpdForm implements CommunicationListener {
         this.addComponent(BorderLayout.SOUTH, buttonContainer);
 
         ClientConfiguration clientConfig = new ClientConfiguration(BtServer.getInstance().getService(), this);
-        CommunicationFactory factory = new L2CAPCommunicationFactory();
+        CommunicationFactory factory = new RFCOMMCommunicationFactory();
 
         try {
             this.device = factory.connectToServer(clientConfig);
         } catch (IOException ex) {
-            throw new RuntimeException(ex.getMessage());
+            throw new MpdException(ex);
         }
     }
 
@@ -72,10 +74,10 @@ public class PlayerForm extends MpdForm implements CommunicationListener {
     }
 
     public void errorOnReceiving(IOException e) {
-        throw new RuntimeException(e.getMessage());
+        throw new MpdException(e);
     }
 
     public void errorOnSending(IOException e) {
-        throw new RuntimeException(e.getMessage());
+        throw new MpdException(e);
     }
 }

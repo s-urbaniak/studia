@@ -7,7 +7,6 @@ import com.sun.lwuit.events.ActionEvent;
 import com.sun.lwuit.layouts.GridLayout;
 import com.sun.lwuit.util.Resources;
 import mpdme.components.MenuButton;
-import java.io.IOException;
 import mpdme.listener.MenuButtonListener;
 
 /**

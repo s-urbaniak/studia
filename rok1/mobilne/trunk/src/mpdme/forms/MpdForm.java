@@ -6,6 +6,7 @@ import com.sun.lwuit.events.ActionEvent;
 import com.sun.lwuit.events.ActionListener;
 import com.sun.lwuit.util.Resources;
 import java.io.IOException;
+import mpdme.MpdException;
 
 public abstract class MpdForm extends Form implements ActionListener {
 
@@ -18,7 +19,7 @@ public abstract class MpdForm extends Form implements ActionListener {
             try {
                 resources = Resources.open("/resources.res");
             } catch (IOException ex) {
-                throw new RuntimeException(ex.getMessage());
+                throw new MpdException(ex);
             }
         }
 
