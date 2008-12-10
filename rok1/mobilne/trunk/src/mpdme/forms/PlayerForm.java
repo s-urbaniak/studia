@@ -11,25 +11,26 @@ import com.sun.lwuit.layouts.BorderLayout;
 import com.sun.lwuit.layouts.GridLayout;
 import com.sun.lwuit.util.Resources;
 import java.io.IOException;
+import mpdme.BtServer;
 import mpdme.components.MenuButton;
-import net.java.dev.marge.autocon.AutoConnect;
 import net.java.dev.marge.communication.CommunicationListener;
 import net.java.dev.marge.entity.ClientDevice;
+import net.java.dev.marge.entity.config.ClientConfiguration;
+import net.java.dev.marge.factory.CommunicationFactory;
+import net.java.dev.marge.factory.L2CAPCommunicationFactory;
 
 public class PlayerForm extends MpdForm implements CommunicationListener {
-    private final static String SERVER_NAME = "mpdme Server";
-
-    private ClientDevice dev;
+    private ClientDevice device;
 
     private class PlayButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent evt) {
-            dev.send(new String("play").getBytes());
+            device.send(new String("play").getBytes());
         }
     }
 
     private class StopButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent evt) {
-            dev.send(new String("stop").getBytes());
+            device.send(new String("stop").getBytes());
         }
     }
 
@@ -38,13 +39,7 @@ public class PlayerForm extends MpdForm implements CommunicationListener {
     }
 
     public void initialize() {
-        Resources resources;
-
-        try {
-            resources = Resources.open("/resources.res");
-        } catch (IOException ex) {
-            throw new RuntimeException(ex.getMessage());
-        }
+        Resources resources = this.getResources();
 
         this.setTitle("mpd Player Control");
         this.setLayout(new BorderLayout());
@@ -62,9 +57,11 @@ public class PlayerForm extends MpdForm implements CommunicationListener {
 
         this.addComponent(BorderLayout.SOUTH, buttonContainer);
 
+        ClientConfiguration clientConfig = new ClientConfiguration(BtServer.getInstance().getService(), this);
+        CommunicationFactory factory = new L2CAPCommunicationFactory();
+
         try {
-            this.dev = AutoConnect.connectToServer(SERVER_NAME, this);
-            this.dev.startListening();
+            this.device = factory.connectToServer(clientConfig);
         } catch (IOException ex) {
             throw new RuntimeException(ex.getMessage());
         }

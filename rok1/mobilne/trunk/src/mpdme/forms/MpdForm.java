@@ -4,11 +4,26 @@ import com.sun.lwuit.Command;
 import com.sun.lwuit.Form;
 import com.sun.lwuit.events.ActionEvent;
 import com.sun.lwuit.events.ActionListener;
+import com.sun.lwuit.util.Resources;
+import java.io.IOException;
 
 public abstract class MpdForm extends Form implements ActionListener {
-    private static final int BACK_COMMAND = 50;
 
+    private static final int BACK_COMMAND = 50;
     protected MpdForm parentForm;
+    private Resources resources;
+
+    protected Resources getResources() {
+        if (this.resources == null) {
+            try {
+                resources = Resources.open("/resources.res");
+            } catch (IOException ex) {
+                throw new RuntimeException(ex.getMessage());
+            }
+        }
+
+        return this.resources;
+    }
 
     public MpdForm getParentForm() {
         return parentForm;
@@ -34,14 +49,14 @@ public abstract class MpdForm extends Form implements ActionListener {
     }
 
     private void addBackCommand() {
-        if (this.parentForm == null)
+        if (this.parentForm == null) {
             return;
-
+        }
         this.setCommandListener(this);
         Command backCommand = new Command("Back", BACK_COMMAND);
         this.setBackCommand(backCommand);
         this.addCommand(backCommand);
     }
-    
+
     public abstract void initialize();
 }

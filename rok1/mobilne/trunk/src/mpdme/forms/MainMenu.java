@@ -28,7 +28,7 @@ public class MainMenu extends MpdForm {
     public MainMenu() {
         super(null);
     }
-    
+
     private MenuButton addMenuButton(String title, Image unselected, Image selected) {
         MenuButton button = new MenuButton(title, unselected, selected);
         this.addComponent(button);
@@ -37,13 +37,7 @@ public class MainMenu extends MpdForm {
     }
 
     public void initialize() {
-        Resources resources;
-
-        try {
-            resources = Resources.open("/resources.res");
-        } catch (IOException ex) {
-            throw new RuntimeException(ex.getMessage());
-        }
+        Resources resources = this.getResources();
 
         int width = Display.getInstance().getDisplayWidth();
 

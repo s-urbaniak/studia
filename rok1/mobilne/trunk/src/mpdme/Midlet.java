@@ -4,6 +4,7 @@ import javax.microedition.midlet.*;
 
 import com.sun.lwuit.*;
 import com.sun.lwuit.events.*;
+import mpdme.forms.InquiryForm;
 import mpdme.forms.MainMenu;
 
 public class Midlet extends MIDlet implements ActionListener {
@@ -15,7 +16,7 @@ public class Midlet extends MIDlet implements ActionListener {
             ThemeManager manager = new ThemeManager();
             manager.loadTheme();
 
-            MainMenu mainForm = new MainMenu();
+            InquiryForm mainForm = new InquiryForm();
             mainForm.show();
 
             Command exitCommand = new Command("Exit");
