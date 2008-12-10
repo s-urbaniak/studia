@@ -10,7 +10,10 @@ import net.java.dev.marge.autocon.AutoConnect;
 import net.java.dev.marge.communication.CommunicationListener;
 import net.java.dev.marge.communication.ConnectionListener;
 import net.java.dev.marge.entity.ServerDevice;
-import sun.rmi.transport.tcp.TCPConnection;
+import net.java.dev.marge.entity.config.ServerConfiguration;
+import net.java.dev.marge.factory.CommunicationFactory;
+import net.java.dev.marge.factory.L2CAPCommunicationFactory;
+import net.java.dev.marge.util.UUIDGenerator;
 
 /**
  *
@@ -24,7 +27,13 @@ public class Main implements ConnectionListener, CommunicationListener {
 
     public void runServer() {
         System.out.println("Waiting for clients ...");
-        AutoConnect.createServer(SERVER_NAME, this, this);
+        CommunicationFactory factory = new L2CAPCommunicationFactory();
+        ServerConfiguration serverConfig = new ServerConfiguration(this);
+        serverConfig.setMaxNumberOfConnections(8);
+        // If the server name and UUID are not specified it uses a standard one.
+        serverConfig.setServerName(SERVER_NAME);
+        serverConfig.setUuid(UUIDGenerator.generate(SERVER_NAME));
+        factory.waitClients(serverConfig, this);
     }
 
     public static void main(String[] args) {
