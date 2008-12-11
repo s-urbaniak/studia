@@ -27,9 +27,10 @@ public class Main implements ConnectionListener, CommunicationListener {
     public void runServer() {
         System.out.println("Waiting for clients ...");
         CommunicationFactory factory = new RFCOMMCommunicationFactory();
+
         ServerConfiguration serverConfig = new ServerConfiguration(this);
-        serverConfig.setMaxNumberOfConnections(8);
-        // If the server name and UUID are not specified it uses a standard one.
+        serverConfig.setUuid(UUIDGenerator.generate(SERVER_NAME));
+
         factory.waitClients(serverConfig, this);
     }
 
