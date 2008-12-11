@@ -1,5 +1,6 @@
 package mpdme;
 
+import java.io.IOException;
 import javax.microedition.midlet.*;
 
 import com.sun.lwuit.*;
@@ -13,19 +14,19 @@ public class Midlet extends MIDlet implements ActionListener {
 
         Display.init(this);
 
+        ThemeManager manager = new ThemeManager();
         try {
-            ThemeManager manager = new ThemeManager();
             manager.loadTheme();
-
-            InquiryForm mainForm = new InquiryForm();
-            mainForm.show();
-
-            Command exitCommand = new Command("Exit");
-            mainForm.addCommand(exitCommand);
-            mainForm.setCommandListener(this);
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             throw new MpdException(ex);
         }
+
+        InquiryForm mainForm = new InquiryForm();
+        mainForm.show();
+
+        Command exitCommand = new Command("Exit");
+        mainForm.addCommand(exitCommand);
+        mainForm.setCommandListener(this);
     }
 
     public void pauseApp() {

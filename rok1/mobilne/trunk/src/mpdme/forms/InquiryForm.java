@@ -11,6 +11,7 @@ import com.sun.lwuit.events.ActionListener;
 import com.sun.lwuit.layouts.BorderLayout;
 import com.sun.lwuit.list.DefaultListModel;
 import com.sun.lwuit.util.Resources;
+import java.io.IOException;
 import java.util.Vector;
 import javax.bluetooth.BluetoothStateException;
 import javax.bluetooth.DeviceClass;
@@ -26,6 +27,7 @@ import net.java.dev.marge.inquiry.ServiceSearchListener;
 import net.java.dev.marge.util.UUIDGenerator;
 
 public class InquiryForm extends MpdForm implements InquiryListener, ServiceSearchListener {
+
     private Label status;
     private List deviceList;
     private Vector btDevices;
@@ -38,6 +40,7 @@ public class InquiryForm extends MpdForm implements InquiryListener, ServiceSear
     }
 
     private class DevicelistSelectionListener implements ActionListener {
+
         public void actionPerformed(ActionEvent evt) {
             if (!canConnect) {
                 return;
@@ -52,10 +55,13 @@ public class InquiryForm extends MpdForm implements InquiryListener, ServiceSear
     private void discoverService() {
         try {
             DeviceDiscoverer.getInstance().cancelInquiry();
+            this.loader.setIcon(this.okImage);
+
             UUID[] uuid = new UUID[]{UUIDGenerator.generate(BtServer.SERVER_NAME)};
-            ServiceDiscoverer.getInstance().startSearch(BtServer.getInstance().getDevice(), this);
-        } catch (Exception e) {
-            throw new RuntimeException(e.getMessage());
+
+            ServiceDiscoverer.getInstance().startSearch(uuid, BtServer.getInstance().getDevice(), this);
+        } catch (IOException e) {
+            throw new MpdException(e.getMessage());
         }
     }
 
@@ -119,11 +125,11 @@ public class InquiryForm extends MpdForm implements InquiryListener, ServiceSear
     }
 
     public void serviceSearchCompleted(RemoteDevice remoteDevice, ServiceRecord[] services) {
+        this.status.setText("services: " + services.length);
+
         if ((services == null) || (services.length < 1)) {
             throw new MpdException("No mpd services found.");
         }
-
-        this.status.setText("services: " + services.length);
 
         BtServer.getInstance().setService(services[0]);
 
