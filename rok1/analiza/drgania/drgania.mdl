@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.100"
+    ComputedModelVersion    "1.117"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -45,9 +45,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "surbaniak"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Nov 29 12:01:58 2008"
+  LastModifiedDate	  "Sun Dec 14 14:02:25 2008"
   RTWModifiedTimeStamp	  0
-  ModelVersionFormat	  "1.%<AutoIncrement:100>"
+  ModelVersionFormat	  "1.%<AutoIncrement:117>"
   ConfigurationManager	  "None"
   SimulationMode	  "normal"
   LinearizationMsg	  "none"
@@ -529,6 +529,26 @@ Model {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
       BlockType		      Integrator
       ExternalReset	      "none"
       InitialConditionSource  "internal"
@@ -647,7 +667,7 @@ Model {
   }
   System {
     Name		    "drgania"
-    Location		    [128, 81, 989, 693]
+    Location		    [35, 163, 896, 653]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -669,7 +689,7 @@ Model {
       Orientation	      "left"
       NamePlacement	      "alternate"
       Floating		      off
-      Location		      [163, 158, 968, 673]
+      Location		      [119, 177, 924, 668]
       Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
@@ -677,13 +697,47 @@ Model {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
       }
+      YMin		      "-0.1"
+      YMax		      "0.1"
       DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope1"
+      Ports		      [1]
+      Position		      [465, 399, 495, 431]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      Floating		      off
+      Location		      [120, 190, 925, 633]
+      Open		      on
+      NumInputPorts	      "1"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      YMin		      "0"
+      YMax		      "0.2"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Step
+      Name		      "Step (cm)"
+      Position		      [605, 270, 635, 300]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      Time		      "10"
+      After		      "0.1"
       SampleTime	      "0"
     }
     Block {
       BlockType		      SubSystem
       Name		      "Subsystem"
-      Ports		      [0, 1]
+      Ports		      [1, 1]
       Position		      [465, 255, 505, 315]
       Orientation	      "left"
       MinAlgLoopOccurrences   off
@@ -706,11 +760,11 @@ Model {
       MaskIconOpaque	      on
       MaskIconRotate	      "none"
       MaskIconUnits	      "autoscale"
-      MaskValueString	      "80000|500000|320|2500|350|15020"
+      MaskValueString	      "80000|500000|320|3500|350|15020"
       MaskTabNameString	      ",,,,,"
       System {
 	Name			"Subsystem"
-	Location		[170, 94, 893, 713]
+	Location		[170, 94, 888, 713]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -723,6 +777,22 @@ Model {
 	TiledPageScale		1
 	ShowPageBoundaries	off
 	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [550, 498, 580, 512]
+	  Orientation		  "left"
+	  NamePlacement		  "alternate"
+	  IconDisplay		  "Port number"
+	  OutDataType		  "sfix(16)"
+	  OutScaling		  "2^0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "w"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
 	Block {
 	  BlockType		  Sum
 	  Name			  "Add"
@@ -918,21 +988,6 @@ Model {
 	  Port {
 	    PortNumber		    1
 	    Name		    "x2"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Step
-	  Name			  "Step"
-	  Position		  [520, 490, 550, 520]
-	  Orientation		  "left"
-	  NamePlacement		  "alternate"
-	  After			  "0.01"
-	  SampleTime		  "0"
-	  Port {
-	    PortNumber		    1
-	    Name		    "w"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -1206,9 +1261,9 @@ Model {
 	Line {
 	  Name			  "w"
 	  Labels		  [0, 0]
-	  SrcBlock		  "Step"
+	  SrcBlock		  "In1"
 	  SrcPort		  1
-	  Points		  [-15, 0]
+	  Points		  [-45, 0]
 	  Branch {
 	    DstBlock		    "Derivative"
 	    DstPort		    1
@@ -1292,6 +1347,20 @@ Model {
       SrcPort		      1
       DstBlock		      "Scope"
       DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Step (cm)"
+      SrcPort		      1
+      Points		      [-15, 0]
+      Branch {
+	DstBlock		"Subsystem"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 130]
+	DstBlock		"Scope1"
+	DstPort			1
+      }
     }
   }
 }
