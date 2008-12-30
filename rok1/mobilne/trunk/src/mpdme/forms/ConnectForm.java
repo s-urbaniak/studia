@@ -7,7 +7,7 @@ import com.sun.lwuit.layouts.BorderLayout;
 import com.sun.lwuit.util.Resources;
 import java.io.IOException;
 import javax.bluetooth.RemoteDevice;
-import mpdme.BtServer;
+import mpdme.bluetooth.BtServer;
 import net.java.dev.marge.communication.ConnectionListener;
 import net.java.dev.marge.entity.ServerDevice;
 import net.java.dev.marge.entity.config.ClientConfiguration;

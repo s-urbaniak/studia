@@ -16,6 +16,9 @@ import mpdme.listener.MenuButtonListener;
 public class MainMenu extends MpdForm {
     private int elementWidth = 0;
 
+    public void quit() {
+    }
+
     private class ShowPlayerListener extends MenuButtonListener
     {
         public void actionPerformed(ActionEvent evt) {

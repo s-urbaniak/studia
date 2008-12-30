@@ -2,7 +2,6 @@ package mpdme.forms;
 
 import com.sun.lwuit.Button;
 import com.sun.lwuit.Container;
-import com.sun.lwuit.Dialog;
 import com.sun.lwuit.Image;
 import com.sun.lwuit.Label;
 import com.sun.lwuit.List;
@@ -18,7 +17,7 @@ import javax.bluetooth.DeviceClass;
 import javax.bluetooth.RemoteDevice;
 import javax.bluetooth.ServiceRecord;
 import javax.bluetooth.UUID;
-import mpdme.BtServer;
+import mpdme.bluetooth.BtServer;
 import mpdme.MpdException;
 import net.java.dev.marge.inquiry.DeviceDiscoverer;
 import net.java.dev.marge.inquiry.InquiryListener;
@@ -39,8 +38,10 @@ public class InquiryForm extends MpdForm implements InquiryListener, ServiceSear
         super(null);
     }
 
-    private class DevicelistSelectionListener implements ActionListener {
+    public void quit() {
+    }
 
+    private class DevicelistSelectionListener implements ActionListener {
         public void actionPerformed(ActionEvent evt) {
             if (!canConnect) {
                 return;
@@ -132,6 +133,7 @@ public class InquiryForm extends MpdForm implements InquiryListener, ServiceSear
         }
 
         BtServer.getInstance().setService(services[0]);
+        BtServer.getInstance().connect();
 
         MainMenu menu = new MainMenu();
         menu.show();
