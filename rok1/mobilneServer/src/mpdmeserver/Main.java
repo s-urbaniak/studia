@@ -1,37 +1,35 @@
 package mpdmeserver;
 
-import java.io.BufferedReader;
+import mpdmeserver.mpd.MpdConnector;
+import mpdmeserver.bluetooth.BtHandler;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.Socket;
-import javax.bluetooth.RemoteDevice;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import net.java.dev.marge.communication.CommunicationListener;
-import net.java.dev.marge.communication.ConnectionListener;
-import net.java.dev.marge.entity.ServerDevice;
-import net.java.dev.marge.entity.config.ServerConfiguration;
-import net.java.dev.marge.factory.CommunicationFactory;
-import net.java.dev.marge.factory.RFCOMMCommunicationFactory;
-import net.java.dev.marge.util.UUIDGenerator;
 
 /**
  *
  * @author sur
  */
-public class Main implements ConnectionListener, CommunicationListener {
+public class Main implements CommunicationListener {
 
-    private ServerDevice serverDevice;
-    private RemoteDevice remoteDevice;
-    private final static String SERVER_NAME = "mpdme Server";
+    private MpdConnector mpd = null;
+    private BtHandler bt = null;
 
     public void runServer() {
-        System.out.println("Waiting for clients ...");
-        CommunicationFactory factory = new RFCOMMCommunicationFactory();
+        Logger.getLogger(this.getClass().getName()).log(
+                Level.INFO,
+                "Connecting to mpd");
 
-        ServerConfiguration serverConfig = new ServerConfiguration(this);
-        serverConfig.setUuid(UUIDGenerator.generate(SERVER_NAME));
+        this.mpd = new MpdConnector();
+        this.mpd.connect();
 
-        factory.waitClients(serverConfig, this);
+        Logger.getLogger(this.getClass().getName()).log(
+                Level.INFO,
+                "Starting bluetooth server");
+
+        this.bt = new BtHandler();
+        this.bt.startServer(this);
     }
 
     public static void main(String[] args) {
@@ -41,48 +39,49 @@ public class Main implements ConnectionListener, CommunicationListener {
 
     public void receiveMessage(byte[] message) {
         String receivedString = new String(message);
-        System.out.println(receivedString);
-        try {
-            Socket mpdSocket = new Socket("localhost", 6600);
-            PrintWriter toMpd = new PrintWriter(mpdSocket.getOutputStream(), true);
-            BufferedReader fromMpd = new BufferedReader(new InputStreamReader(mpdSocket.getInputStream()));
 
+        Logger.getLogger(this.getClass().getName()).log(
+                Level.INFO,
+                "Command received: " + receivedString);
+
+        try {
             if ("play".equals(receivedString)) {
-                toMpd.println("play");
+                this.mpd.play();
+            }
+
+            if ("pause".equals(receivedString)) {
+                this.mpd.pause();
             }
 
             if ("stop".equals(receivedString)) {
-                toMpd.println("stop");
+                this.mpd.stop();
             }
 
-            String answer = fromMpd.readLine();
-            System.out.println("mpd responded: " + answer);
+            if ("next".equals(receivedString)) {
+                this.mpd.next();
+            }
 
-            toMpd.close();
-            fromMpd.close();
-            mpdSocket.close();
+            if ("prev".equals(receivedString)) {
+                this.mpd.prev();
+            }
+
+            if ("status".equals(receivedString)) {
+                this.bt.send(this.mpd.status());
+            }
+
+            if ("quit".equals(receivedString)) {
+                this.bt.quitServer();
+            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
     public void errorOnReceiving(IOException e) {
-        e.printStackTrace();
+        throw new RuntimeException(e);
     }
 
     public void errorOnSending(IOException e) {
-        e.printStackTrace();
-    }
-
-    public void connectionEstablished(ServerDevice serverDevice, RemoteDevice remoteDevice) {
-        System.out.println("Connection has been established.");
-        this.serverDevice = serverDevice;
-        this.remoteDevice = remoteDevice;
-
-        this.serverDevice.startListening();
-    }
-
-    public void errorOnConnection(IOException e) {
-        e.printStackTrace();
+        throw new RuntimeException(e);
     }
 }
