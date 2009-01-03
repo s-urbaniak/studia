@@ -1,5 +1,6 @@
 package mpdme.bluetooth;
 
+import java.io.DataInputStream;
 import java.io.IOException;
 import mpdme.MpdException;
 
@@ -69,19 +70,17 @@ public class MpdStatus extends RemoteData {
         this.title = title;
     }
 
-    public void decode() {
+    public void decode(DataInputStream dataStream) {
         try {
-            this.setAlbum(this.dataStream.readUTF());
-            this.setArtist(this.dataStream.readUTF());
-            this.setName(this.dataStream.readUTF());
-            this.setTitle(this.dataStream.readUTF());
-            this.setState(this.dataStream.readUTF());
-            this.setLength(this.dataStream.readInt());
-            this.setTime(this.dataStream.readInt());
+            this.setAlbum(dataStream.readUTF());
+            this.setArtist(dataStream.readUTF());
+            this.setName(dataStream.readUTF());
+            this.setTitle(dataStream.readUTF());
+            this.setState(dataStream.readUTF());
+            this.setLength(dataStream.readInt());
+            this.setTime(dataStream.readInt());
         } catch (IOException ex) {
             throw new MpdException(ex);
         }
-        
-        this.decodeFinished();
     }
 }

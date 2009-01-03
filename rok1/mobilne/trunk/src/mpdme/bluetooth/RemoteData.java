@@ -16,17 +16,18 @@ import mpdme.MpdException;
 public abstract class RemoteData {
 
     private ByteArrayInputStream byteStream = null;
-    protected DataInputStream dataStream = null;
+    private DataInputStream dataStream = null;
 
     public void decode(byte[] message) {
         this.byteStream = new ByteArrayInputStream(message);
         this.dataStream = new DataInputStream(this.byteStream);
-        this.decode();
+        this.decode(dataStream);
+        this.decodeFinished();
     }
 
-    public abstract void decode();
+    public abstract void decode(DataInputStream dataStream);
 
-    public void decodeFinished() {
+    private void decodeFinished() {
         try {
             this.dataStream.close();
         } catch (IOException ex) {
