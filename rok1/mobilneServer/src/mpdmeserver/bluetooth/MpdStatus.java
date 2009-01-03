@@ -1,5 +1,6 @@
 package mpdmeserver.bluetooth;
 
+import java.io.DataOutputStream;
 import java.io.IOException;
 
 public class MpdStatus extends RemoteData {
@@ -69,15 +70,13 @@ public class MpdStatus extends RemoteData {
     }
 
     @Override
-    protected void encodeImpl() throws IOException {
-        this.dataStream.writeUTF(this.getAlbum());
-        this.dataStream.writeUTF(this.getArtist());
-        this.dataStream.writeUTF(this.getName());
-        this.dataStream.writeUTF(this.getTitle());
-        this.dataStream.writeUTF(this.getState());
-        this.dataStream.writeInt(this.getLength());
-        this.dataStream.writeInt(this.getTime());
-
-        this.encodeFinished();
+    protected void encodeImpl(DataOutputStream dataStream) throws IOException {
+        dataStream.writeUTF(this.getAlbum());
+        dataStream.writeUTF(this.getArtist());
+        dataStream.writeUTF(this.getName());
+        dataStream.writeUTF(this.getTitle());
+        dataStream.writeUTF(this.getState());
+        dataStream.writeInt(this.getLength());
+        dataStream.writeInt(this.getTime());
     }
 }
