@@ -1,7 +1,10 @@
+clear;
+
 expo = 2;
+total_bits = 7;
+total_errors = 2;
 
 function out = generate_random_vector(expo)
-    expo
     % generate random binary vector
     out_len = 2^expo;
 
@@ -78,14 +81,70 @@ function out = calculate_parities (in, expo)
     endfor
 endfunction
 
-in = generate_random_vector (expo)
-in = insert_empty_parities(in, expo);
-in = calculate_parities(in, expo)
-parity_matrix = build_parity_matrix(expo)
+function pos = detect_error (in, expo)
+    % calculate regular hamming parities of in vector
+    out = calculate_parities(in, expo);
+    parity_pos = parity_bit_positions (expo);
 
-% falsify one bit
-false_index = 5
-in_false = in;
-in_false(false_index) = not(in(false_index))
-out = calculate_parities(in_false, expo)
+    % get the differences of the parities
+    diff = xor(in, out);
+    diff = diff(parity_pos);
+
+    % calculate the position of the error
+    i = 0;
+    pos = 0;
+    for bit = diff
+        if (bit==1)
+            pos = pos + 2^i;
+        endif
+
+        i = i+1;
+    endfor
+endfunction
+
+function out = repair (in, expo)
+    error_pos = detect_error(in, expo);
+    out = in;
+    if (error_pos > 0)
+        out(error_pos) = not(out(error_pos));
+    endif
+endfunction
+
+function out = hamming_random_vector (expo)
+    out = generate_random_vector(expo);
+    out = insert_empty_parities(out, expo);
+    out = calculate_parities(out, expo);
+endfunction
+
+% generate long vector with different random hamming vectors
+vector_length = 2^expo+expo+1;
+
+
+% generate error positions
+errors=randperm(floor(total_bits / vector_length));
+errors=errors(1:total_errors)
+
+hvec = [];
+for vectors = 1:(total_bits / vector_length)
+    hvec = [hvec hamming_random_vector(expo)];
+endfor
+
+decoding_errors = 0;
+for i = 1:vectors
+    % get error vector
+    h_err = hvec_err(((i-1)*vector_length)+1:i*vector_length);
+
+    % get correct vector
+    h = hvec(((i-1)*vector_length)+1:i*vector_length);
+
+    % try to repair the error vector
+    repaired = repair(h_err, expo);
+    repaired = calculate_parities(repaired, expo);
+
+    % compare repaired vector with the original one
+    if (sum(xor(repaired, h)) > 0)
+        decoding_errors = decoding_errors + 1;
+    endif
+    decoding_errors;
+endfor
 
