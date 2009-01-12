@@ -1,8 +1,8 @@
 clear;
 
 expo = 2;
-total_bits = 7;
-total_errors = 2;
+vectors = 2;
+errors = 2;
 
 function out = generate_random_vector(expo)
     % generate random binary vector
@@ -116,35 +116,28 @@ function out = hamming_random_vector (expo)
     out = calculate_parities(out, expo);
 endfunction
 
-% generate long vector with different random hamming vectors
-vector_length = 2^expo+expo+1;
+function out = hamming_vector_length (expo)
+    out = 2^expo+expo+1;
+endfunction
 
+% generate long vector with different random hamming vectors
+all_vectors_length = hamming_vector_length(expo) * vectors;
+
+printf("amount of hamming vectors: %d (= %d bits)\n", vectors, all_vectors_length)
+printf("amount of errors: %d\n", errors)
 
 % generate error positions
-errors=randperm(floor(total_bits / vector_length));
-errors=errors(1:total_errors)
+error_pos=randperm(all_vectors_length);
+error_pos=error_pos(1:errors);
+printf("error positions:\n")
+error_pos
 
-hvec = [];
-for vectors = 1:(total_bits / vector_length)
-    hvec = [hvec hamming_random_vector(expo)];
-endfor
-
-decoding_errors = 0;
 for i = 1:vectors
-    % get error vector
-    h_err = hvec_err(((i-1)*vector_length)+1:i*vector_length);
+    current_vector = hamming_random_vector(expo);
 
-    % get correct vector
-    h = hvec(((i-1)*vector_length)+1:i*vector_length);
+    -error_pos
+    (i*hamming_vector_length(expo))
 
-    % try to repair the error vector
-    repaired = repair(h_err, expo);
-    repaired = calculate_parities(repaired, expo);
-
-    % compare repaired vector with the original one
-    if (sum(xor(repaired, h)) > 0)
-        decoding_errors = decoding_errors + 1;
-    endif
-    decoding_errors;
+    detect_error(current_vector, expo)
 endfor
 
