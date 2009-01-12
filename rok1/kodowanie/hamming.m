@@ -1,8 +1,8 @@
 clear;
 
 expo = 2;
-vectors = 2;
-errors = 2;
+vectors = 100;
+errors = 50;
 
 function out = generate_random_vector(expo)
     % generate random binary vector
@@ -121,23 +121,53 @@ function out = hamming_vector_length (expo)
 endfunction
 
 % generate long vector with different random hamming vectors
-all_vectors_length = hamming_vector_length(expo) * vectors;
+vector_length = hamming_vector_length(expo);
+all_vectors_length = vector_length * vectors;
 
-printf("amount of hamming vectors: %d (= %d bits)\n", vectors, all_vectors_length)
-printf("amount of errors: %d\n", errors)
+printf("length of one hamming vector: %d bits\n", vector_length);
+printf("amount of hamming vectors: %d (= %d bits)\n", vectors, all_vectors_length);
+printf("amount of error bits: %d\n", errors);
 
 % generate error positions
 error_pos=randperm(all_vectors_length);
 error_pos=error_pos(1:errors);
-printf("error positions:\n")
-error_pos
 
+false_error_detections = 0;
 for i = 1:vectors
     current_vector = hamming_random_vector(expo);
 
-    -error_pos
-    (i*hamming_vector_length(expo))
+    vstart = ((i-1)*vector_length)+1;
+    vend = (i*vector_length);
+    errors_vstart = error_pos >= vstart;
+    errors_vend = error_pos <= vend;
+    error_indices = errors_vstart & errors_vend;
+    error_indices = find(error_indices);
 
-    detect_error(current_vector, expo)
+    % calculate current positions of errors
+    current_error_pos = error_pos(error_indices) .- (vstart - 1);
+
+    % falsify bits at error positions
+    false_vector = current_vector;
+    false_vector(current_error_pos) = !false_vector(current_error_pos);
+
+    % detect error position
+    error_detected = detect_error(false_vector, expo);
+
+    % correct current vector with found position
+    corrected_vector = false_vector;
+    if ((error_detected > 0) && (error_detected <= vector_length))
+        corrected_vector(error_detected) = !false_vector(error_detected);
+    endif
+
+    % if the corrected vector is not equal to our current input vector,
+    % then the error detection didn't work out properly :(
+    if (find(current_vector != corrected_vector))
+        false_error_detections++;
+    endif
 endfor
+
+percent = (false_error_detections / vectors)*100;
+printf("Wrong error detection ratio: %f%%\n", percent);
+percent = (errors / all_vectors_length)*100;
+printf("Error bits ratio: %f%%\n", percent);
 
