@@ -55,6 +55,18 @@ function words = get_coding_words (in)
     words(word_index) = [];
 endfunction
 
+function ret = binvec2dec (binvec)
+    bs = size(binvec)(2);
+    
+    # reverse binvec
+    for i = 1:bs
+        temp(i) = binvec(bs+1 - i);
+    endfor
+    
+    # build number based on binary vector
+    ret = sum(2.^[0:bs-1].*temp);
+endfunction
+
 function ret = dec2binvec (number, len)
 	% number must be nonegative
 	if( number > 2^len )
@@ -84,9 +96,9 @@ function out = get_binary_code (in, k)
     out = dec2binvec(v, k);
 endfunction
 
-function [out, k] = encode (in)
+function [out, k, coding_words] = encode (in)
     k = calc_k(in);
-    coding_words = get_coding_words(in)
+    coding_words = get_coding_words(in);
     out = [];
     for word = coding_words
         unary = get_unary_code(word, k);
@@ -95,14 +107,28 @@ function [out, k] = encode (in)
     endfor
 endfunction
 
-function out = decode (in, k)
-    finished = false;
+function out = decode(in, k)
+    u = find(in)(1);
+    binary_code = in(u+1:u+k);
+    v = binvec2dec(binary_code);
+    u -= 1;
+    n = u*(2^k)+v;
+    decoded_word = [zeros(1,n) 1];
+
+    in = in(u+k+2:length(in));
+
+    out = [];
+    if (length(in) > 1)
+        out = [decoded_word decode(in, k)];
+    else
+        out = decoded_word;
+    endif
 endfunction
 
 in = open_data(in_file)
-[out, k] = encode(in)
+[out, k, coding_words] = encode(in)
 printf("input length = %d\n", length(in));
 printf("output length = %d\n", length(out));
 printf("ratio = %f%%\n", length(out)/length(in)*100);
-decode(out, k)
+decoded = decode(out, k)
 
