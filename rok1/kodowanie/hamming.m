@@ -1,8 +1,8 @@
 clear;
 
-expo = 2;
-vectors = 100;
-errors = 50;
+expo = 4;
+vectors = 500;
+errors_prob = 1/10;
 
 function out = generate_random_vector(expo)
     % generate random binary vector
@@ -123,6 +123,8 @@ endfunction
 % generate long vector with different random hamming vectors
 vector_length = hamming_vector_length(expo);
 all_vectors_length = vector_length * vectors;
+
+errors = all_vectors_length * errors_prob;
 
 printf("length of one hamming vector: %d bits\n", vector_length);
 printf("amount of hamming vectors: %d (= %d bits)\n", vectors, all_vectors_length);
