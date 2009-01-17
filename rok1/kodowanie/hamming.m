@@ -1,7 +1,7 @@
 clear;
 
 expo = 4;
-vectors = 10000;
+vectors = 100;
 errors_prob = 1/100;
 
 function out = generate_random_vector(expo)
@@ -127,6 +127,7 @@ all_vectors_length = vector_length * vectors;
 errors = all_vectors_length * errors_prob;
 
 printf("length of one hamming vector: %d bits\n", vector_length);
+printf("length of one normal vector: %d bits\n", 2^expo);
 printf("amount of hamming vectors: %d (= %d bits)\n", vectors, all_vectors_length);
 printf("amount of error bits: %d\n", errors);
 
@@ -135,6 +136,8 @@ error_pos=randperm(all_vectors_length);
 error_pos=error_pos(1:errors);
 
 false_error_detections = 0;
+
+parity_pos = parity_bit_positions(expo);
 for i = 1:vectors
     current_vector = hamming_random_vector(expo);
 
@@ -163,11 +166,15 @@ for i = 1:vectors
 
     % if the corrected vector is not equal to our current input vector,
     % then the error detection didn't work out properly :(
+
+    current_vector(parity_pos) = 0;
+    corrected_vector(parity_pos) = 0;
+
     false_bits_vector = xor(current_vector, corrected_vector);
     false_error_detections += sum(false_bits_vector);
 endfor
 
 printf("False bits: %d\n", false_error_detections);
-percent = (false_error_detections / errors)*100;
+percent = (false_error_detections / (2^expo*vectors))*100;
 printf("Wrong error detection ratio: %f%%\n", percent);
 
