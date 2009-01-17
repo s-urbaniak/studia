@@ -1,8 +1,8 @@
 clear;
 
 expo = 4;
-vectors = 500;
-errors_prob = 1/10;
+vectors = 10000;
+errors_prob = 1/100;
 
 function out = generate_random_vector(expo)
     % generate random binary vector
@@ -163,13 +163,11 @@ for i = 1:vectors
 
     % if the corrected vector is not equal to our current input vector,
     % then the error detection didn't work out properly :(
-    if (find(current_vector != corrected_vector))
-        false_error_detections++;
-    endif
+    false_bits_vector = xor(current_vector, corrected_vector);
+    false_error_detections += sum(false_bits_vector);
 endfor
 
-percent = (false_error_detections / vectors)*100;
+printf("False bits: %d\n", false_error_detections);
+percent = (false_error_detections / errors)*100;
 printf("Wrong error detection ratio: %f%%\n", percent);
-percent = (errors / all_vectors_length)*100;
-printf("Error bits ratio: %f%%\n", percent);
 
