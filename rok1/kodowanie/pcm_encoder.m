@@ -51,10 +51,13 @@ for x = in
 end
 
 %plot(out_reverse(:,1),out_reverse(:,2))
-plot(in, out);
+%plot(in, out);
 
 in_dec=out;
 in_dec = in_dec .+ 1;
 out_dec = out_reverse(in_dec,2);
-%plot(in_dec, out_dec);
+
+plot(in_dec, out_dec);
+xlabel('WE');
+ylabel('WY');
 

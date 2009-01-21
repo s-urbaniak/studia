@@ -175,6 +175,6 @@ for i = 1:vectors
 endfor
 
 printf("False bits: %d\n", false_error_detections);
-percent = (false_error_detections / (2^expo*vectors))*100;
+percent = (false_error_detections / ((2^expo)*vectors))*100;
 printf("Wrong error detection ratio: %f%%\n", percent);
 
