@@ -4,6 +4,8 @@
  */
 package protocol.clientserver;
 
+import protocol.socket.SocketReader;
+import protocol.socket.SocketWriter;
 import java.io.IOException;
 import java.net.Socket;
 import protocol.properties.BiezProtProperties;
