@@ -1,57 +1,98 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package protocol.clientserver;
 
+import java.io.IOException;
+import protocol.ProtocolException;
 import protocol.socket.SocketReader;
 import protocol.socket.SocketWriter;
-import java.io.IOException;
-import java.net.Socket;
-import protocol.properties.BiezProtProperties;
+import protocol.ProtocolLayer;
+import protocol.commands.Command;
+import protocol.commands.Request;
+import protocol.commands.Response;
 
-public class Client implements ClientServer {
+public class Client extends ProtocolLayer implements ClientServer {
 
-    private BiezProtProperties props = null;
-    private Socket socket = null;
-
-    public Client(BiezProtProperties props) {
-        this.props = props;
-    }
+    private SystemReader consoleReader = null;
+    private SocketReader reader = null;
+    private SocketWriter writer = null;
 
     @Override
     public void start() {
         try {
-            socket = new Socket(props.getServerHostname(), props.getPort());
-            SocketReader reader = new SocketReader(socket);
-            SocketWriter writer = new SocketWriter(socket);
-            SystemReader sysReader = new SystemReader();
-
-            String fromServer, fromUser;
-
             boolean quit = false;
-            while (!quit) {
-                fromUser = sysReader.readLine();
-                writer.println(fromUser);
-                fromServer = reader.readLine();
 
-                if (fromServer == null) {
-                    throw new IOException("No response from server.");
+            // connect to server
+            while (!quit) {
+                System.out.println("Please enter data to be transmitted or enter 'q' to quit:");
+                String data = consoleReader.readLine();
+
+                char[] chars = data.toCharArray();
+
+                StringBuffer output = new StringBuffer();
+                for (int i = 0; i < chars.length; i++) {
+                    output.append(Integer.toHexString((int) chars[i]));
                 }
 
-                System.out.println(fromServer);
+                this.setBuffer(output.toString().toUpperCase());
 
-                if ("quit".equals(fromUser)) {
+                if ("q".equals(data)) {
                     quit = true;
                 }
+
+                if (!quit) {
+                    // connect to server
+                    if (this.getState() == State.DISCONNECTED) {
+                        Response res = this.connect();
+                        repeatUntilOk(res);
+                    }
+
+                    // send data
+                    Response res = this.sendBuffer();
+                    while (res.getType() != Command.Type.END) {
+                        res = repeatUntilOk(res);
+                    }
+
+                    // send END packet
+                    repeatUntilOk(res);
+                }
             }
-            
+
             writer.close();
             reader.close();
-            sysReader.close();
-            socket.close();
+            consoleReader.close();
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
+    }
+
+    private Response repeatUntilOk(Response res) throws IOException, ProtocolException {
+        boolean ok = false;
+
+        while (!ok) {
+            writer.println(res.getResponse());
+            String fromServerString = reader.readLine();
+            System.out.println("Server: " + fromServerString);
+            Request fromServer = new Request(fromServerString);
+            res = this.answer(fromServer);
+            if ((res == null) || (fromServer.getType() != Command.Type.REP)) {
+                ok = true;
+            }
+        }
+
+        return res;
+    }
+
+    @Override
+    public void setConsoleReader(SystemReader reader) {
+        this.consoleReader = reader;
+    }
+
+    @Override
+    public void setSocketWriter(SocketWriter writer) {
+        this.writer = writer;
+    }
+
+    @Override
+    public void setSocketReader(SocketReader reader) {
+        this.reader = reader;
     }
 }

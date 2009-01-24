@@ -7,7 +7,7 @@ import protocol.commands.Request;
 public class ProtocolLayer {
 
     private Integer packageSize = null;
-    private int fragmentIndex;
+    private int fragmentIndex = 0;
     private String buffer = null;
     private Response lastResponse = null;
     private State state = null;
@@ -35,20 +35,13 @@ public class ProtocolLayer {
         return buffer;
     }
 
-    public void setData(String data) {
-        byte[] bytes = data.getBytes();
-
-        StringBuilder builder = new StringBuilder();
-
-        for (int i = 0; i < bytes.length; i++) {
-            builder.append(Long.toHexString(bytes[i]));
-        }
-
+    public void setBuffer(String data) {
         this.buffer = data;
+        this.fragmentIndex = 0;
     }
 
     public Response answer(Request request) throws ProtocolException {
-        if (!request.check()) {
+        if (!(request.decomposeRequest() && request.check())) {
             return repeat();
         }
 
@@ -94,10 +87,11 @@ public class ProtocolLayer {
             this.lastResponse = new Response();
             this.lastResponse.setType(Type.END);
             this.lastResponse.setData("");
+            this.fragmentIndex = 0;
 
             return this.lastResponse;
         } else {
-            return this.sendData();
+            return this.sendBuffer();
         }
     }
 
@@ -115,7 +109,19 @@ public class ProtocolLayer {
         return this.lastResponse;
     }
 
-    public Response connectionRequest() throws ProtocolException {
+    public Response disconnect() throws ProtocolException {
+        if (this.state != State.CONNECTED) {
+            throw new ProtocolException("Wrong state: " + this.state.name());
+        }
+
+        this.lastResponse = new Response();
+        this.lastResponse.setType(Type.DIS);
+        this.lastResponse.setData("");
+
+        return this.lastResponse;
+    }
+
+    public Response connect() throws ProtocolException {
         if (this.state != State.DISCONNECTED) {
             throw new ProtocolException("Wrong state: " + this.state.name());
         }
@@ -128,7 +134,7 @@ public class ProtocolLayer {
         return this.lastResponse;
     }
 
-    public Response sendData() throws ProtocolException {
+    public Response sendBuffer() throws ProtocolException {
         if (this.state != State.CONNECTED) {
             throw new ProtocolException("Wrong state: " + this.state.name());
         }

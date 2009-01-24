@@ -39,23 +39,24 @@ public class ProtocolTest extends TestCase {
         req.setData("");
         Checksum crc = new Checksum();
         req.setCrc(crc.calcChecksum(req.getCommand() + req.getData()));
+        req.setRequest(req.getCommand() + req.getCrc());
 
         protocol.setState(ProtocolLayer.State.DISCONNECTED);
-        protocol.connectionRequest();
+        protocol.connect();
 
         Response res = protocol.answer(req);
         assertEquals(Command.Type.CRQ, res.getType());
     }
 
     public void testGenerateData() {
-        protocol.setData("ä");
+        protocol.setBuffer("ä");
         System.out.println(protocol.getBuffer());
     }
 
     public void testProtocolShort() throws ProtocolException {
         // client
         ProtocolLayer client = new ProtocolLayer();
-        Response res = client.connectionRequest();
+        Response res = client.connect();
 
         assertEquals(State.CRQ_SENT, client.getState());
         assertEquals(Type.CRQ, res.getType());
@@ -96,8 +97,8 @@ public class ProtocolTest extends TestCase {
         assertEquals(State.CONNECTED, client.getState());
 
         // client sending data
-        client.setData("abcd");
-        res = client.sendData();
+        client.setBuffer("abcd");
+        res = client.sendBuffer();
 
         System.out.println("client data = " + res.getResponse());
         assertEquals("abcdZZZ", res.getData());
@@ -127,7 +128,7 @@ public class ProtocolTest extends TestCase {
     public void testProtocolLong() throws ProtocolException {
         // client
         ProtocolLayer client = new ProtocolLayer();
-        Response res = client.connectionRequest();
+        Response res = client.connect();
 
         assertEquals(State.CRQ_SENT, client.getState());
         assertEquals(Type.CRQ, res.getType());
@@ -168,8 +169,8 @@ public class ProtocolTest extends TestCase {
         assertEquals(State.CONNECTED, client.getState());
 
         // client sending data
-        client.setData("abcdefhijklm");
-        res = client.sendData();
+        client.setBuffer("abcdefhijklm");
+        res = client.sendBuffer();
 
         System.out.println("client data = " + res.getResponse());
         assertEquals("abcdefh", res.getData());
@@ -205,7 +206,7 @@ public class ProtocolTest extends TestCase {
         assertEquals(Type.DTA, res.getType());
 
         // server
-        req.decomposeRequest(res.getResponse());
+        req.setRequest(res.getResponse());
         res = server.answer(req);
         assertEquals(Type.ACK, res.getType());
 
@@ -234,14 +235,14 @@ public class ProtocolTest extends TestCase {
 
     public void testConnectionRequest() throws ProtocolException {
         protocol.setState(ProtocolLayer.State.DISCONNECTED);
-        Response res = protocol.connectionRequest();
+        Response res = protocol.connect();
         assertEquals(Command.Type.CRQ, res.getType());
         assertEquals("", res.getData());
 
         protocol.setState(ProtocolLayer.State.CRQ_SENT);
         ProtocolException ex = null;
         try {
-            res = protocol.connectionRequest();
+            res = protocol.connect();
         } catch (ProtocolException e) {
             ex = e;
         }
