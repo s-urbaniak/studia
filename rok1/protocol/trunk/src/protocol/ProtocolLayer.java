@@ -1,5 +1,6 @@
 package protocol;
 
+import java.util.HashMap;
 import protocol.commands.Response;
 import protocol.commands.Command.Type;
 import protocol.commands.Request;
@@ -11,16 +12,20 @@ public class ProtocolLayer {
     private String buffer = null;
     private Response lastResponse = null;
     private State state = null;
+    private HashMap<String, String> received = null;
 
     public enum State {
 
         DISCONNECTED,
         CRQ_SENT,
-        CONNECTED
+        CONNECTED,
+        CONNECTION_ACCEPTED,
+        DTA_SENT
     };
 
     public ProtocolLayer() {
         this.state = State.DISCONNECTED;
+        this.received = new HashMap<String, String>();
     }
 
     public State getState() {
@@ -58,15 +63,34 @@ public class ProtocolLayer {
                 return handleAcknowledge();
             case END:
                 return handleEnd();
+            case DIS:
+                return handleDisconnect();
         }
 
         return repeat();
     }
 
+    public Response handleDisconnect() throws ProtocolException {
+        if (wrongState(new State[]{State.CONNECTION_ACCEPTED})) {
+            return repeat();
+        }
+
+        this.lastResponse = new Response();
+        this.lastResponse.setType(Type.ACK);
+        this.lastResponse.setData("");
+
+        return this.lastResponse;
+    }
+
     public Response handleEnd() throws ProtocolException {
+        if (wrongState(new State[]{State.CONNECTION_ACCEPTED})) {
+            return repeat();
+        }
+
         this.buffer = this.buffer.replaceAll("Z", "");
         this.dataTransmitted(this.buffer);
         this.buffer = new String();
+        this.received.clear();
 
         this.lastResponse = new Response();
         this.lastResponse.setType(Type.ACK);
@@ -79,8 +103,8 @@ public class ProtocolLayer {
     }
 
     public Response handleAcknowledge() throws ProtocolException {
-        if (this.state != State.CONNECTED) {
-            throw new ProtocolException("Wrong state: " + this.state.name());
+        if (wrongState(new State[]{State.CONNECTED, State.DTA_SENT})) {
+            return repeat();
         }
 
         if (this.fragmentIndex >= this.buffer.length()) {
@@ -95,11 +119,26 @@ public class ProtocolLayer {
         }
     }
 
-    public Response handleData(Request request) throws ProtocolException {
-        if (this.state != State.CONNECTED) {
-            throw new ProtocolException("Wrong state: " + this.state.name());
+    private boolean wrongState(State[] states) {
+        boolean check = false;
+
+        for (int i = 0; i < states.length; i++) {
+            check |= this.state == states[i];
         }
 
+        return !check;
+    }
+
+    public Response handleData(Request request) throws ProtocolException {
+        if (wrongState(new State[]{State.CONNECTION_ACCEPTED})) {
+            return repeat();
+        }
+
+        if (received.get(request.getRequest()) != null) {
+            return repeat();
+        }
+
+        received.put(request.getRequest(), "");
         this.buffer = this.buffer.concat(request.getData());
 
         this.lastResponse = new Response();
@@ -110,8 +149,8 @@ public class ProtocolLayer {
     }
 
     public Response disconnect() throws ProtocolException {
-        if (this.state != State.CONNECTED) {
-            throw new ProtocolException("Wrong state: " + this.state.name());
+        if (wrongState(new State[]{State.CONNECTED, State.DTA_SENT})) {
+            return repeat();
         }
 
         this.lastResponse = new Response();
@@ -122,8 +161,8 @@ public class ProtocolLayer {
     }
 
     public Response connect() throws ProtocolException {
-        if (this.state != State.DISCONNECTED) {
-            throw new ProtocolException("Wrong state: " + this.state.name());
+        if (wrongState(new State[]{State.DISCONNECTED})) {
+            return repeat();
         }
 
         this.lastResponse = new Response();
@@ -135,8 +174,8 @@ public class ProtocolLayer {
     }
 
     public Response sendBuffer() throws ProtocolException {
-        if (this.state != State.CONNECTED) {
-            throw new ProtocolException("Wrong state: " + this.state.name());
+        if (wrongState(new State[]{State.CONNECTED, State.DTA_SENT})) {
+            return repeat();
         }
 
         if (this.packageSize == null) {
@@ -171,12 +210,13 @@ public class ProtocolLayer {
 
         this.lastResponse.setData(fragment);
 
+        this.state = State.DTA_SENT;
         return this.lastResponse;
     }
 
     private Response handleConnectionConfirmation(Request request) throws ProtocolException {
-        if (this.state != State.CRQ_SENT) {
-            throw new ProtocolException("Wrong state: " + this.state.name());
+        if (wrongState(new State[]{State.CRQ_SENT})) {
+            return repeat();
         }
 
         this.packageSize = Integer.parseInt(request.getData());
@@ -193,8 +233,8 @@ public class ProtocolLayer {
     }
 
     private Response handleConnectionRequest() throws ProtocolException {
-        if (this.state != State.DISCONNECTED) {
-            throw new ProtocolException("Wrong state: " + this.state.name());
+        if (wrongState(new State[]{State.DISCONNECTED})) {
+            return repeat();
         }
 
         long packetSize = Math.round(Math.random() * 7) + 3;
@@ -204,7 +244,7 @@ public class ProtocolLayer {
 
         this.buffer = new String();
 
-        this.state = State.CONNECTED;
+        this.state = State.CONNECTION_ACCEPTED;
         return this.lastResponse;
     }
 }

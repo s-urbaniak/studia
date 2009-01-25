@@ -21,6 +21,9 @@ public class Client extends ProtocolLayer implements ClientServer {
             boolean quit = false;
 
             // connect to server
+            Response res = this.connect();
+            repeatUntilOk(res);
+
             while (!quit) {
                 System.out.println("Please enter data to be transmitted or enter 'q' to quit:");
                 String data = consoleReader.readLine();
@@ -36,17 +39,11 @@ public class Client extends ProtocolLayer implements ClientServer {
 
                 if ("q".equals(data)) {
                     quit = true;
-                }
-
-                if (!quit) {
-                    // connect to server
-                    if (this.getState() == State.DISCONNECTED) {
-                        Response res = this.connect();
-                        repeatUntilOk(res);
-                    }
-
+                    res = this.disconnect();
+                    repeatUntilOk(res);
+                } else {
                     // send data
-                    Response res = this.sendBuffer();
+                    res = this.sendBuffer();
                     while (res.getType() != Command.Type.END) {
                         res = repeatUntilOk(res);
                     }
@@ -70,7 +67,7 @@ public class Client extends ProtocolLayer implements ClientServer {
         while (!ok) {
             writer.println(res.getResponse());
             String fromServerString = reader.readLine();
-            System.out.println("Server: " + fromServerString);
+            System.out.println("\nServer: " + fromServerString);
             Request fromServer = new Request(fromServerString);
             res = this.answer(fromServer);
             if ((res == null) || (fromServer.getType() != Command.Type.REP)) {
