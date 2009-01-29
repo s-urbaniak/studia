@@ -1,6 +1,6 @@
 clear;
 
-in_file = ("rice1.txt")
+in_file = ("915")
 
 function vector = open_data (fname)
     vector = [];
@@ -35,6 +35,12 @@ function k = calc_k (in)
 
     k = log2(z/n);
     k = ceil(k);
+endfunction
+
+function Lr = calc_Lr (in)
+    p = calc_prob_0(in);
+    k = calc_k(in);
+    Lr = (1-p)*(k + (1/(p^(2^k))));
 endfunction
 
 function words = get_coding_words (in)
@@ -125,10 +131,14 @@ function out = decode(in, k)
     endif
 endfunction
 
-in = open_data(in_file)
-[out, k, coding_words] = encode(in)
+in = open_data(in_file);
+[out, k, coding_words] = encode(in);
+[Lr] = calc_Lr(in);
 printf("input length = %d\n", length(in));
 printf("output length = %d\n", length(out));
+printf("k = %d\n", k);
+printf("p = %f%%\n", calc_prob_0(in) * 100);
 printf("ratio = %f%%\n", length(out)/length(in)*100);
-decoded = decode(out, k)
+printf("Lr = %f%%\n", Lr*100);
+#decoded = decode(out, k);
 
