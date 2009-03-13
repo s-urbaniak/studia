@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<project>
+    <groupId>com.urbaniak.studia.sem2.integracja
+    </groupId>
+    <version>0.1</version>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>webservice-project
+    </artifactId>
+    <packaging>jar</packaging>
+    <name>web services study project</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8
+        </project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate</artifactId>
+            <version>3.2.3.ga</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-annotations
+            </artifactId>
+            <version>3.2.1.ga</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring</artifactId>
+            <version>2.5.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>1.8.0.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <defaultGoal>install</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins
+                </groupId>
+                <artifactId>maven-compiler-plugin
+                </artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins
+                </groupId>
+                <artifactId>maven-site-plugin
+                </artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins
+                </groupId>
+                <artifactId>maven-jar-plugin
+                </artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                    <archive>
+                        <addMavenDescriptor>false
+                        </addMavenDescriptor>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
