@@ -2,6 +2,7 @@ package org.urbaniak.studia.sem2.integracja.dao;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.urbaniak.studia.sem2.integracja.entity.Artist;
@@ -16,13 +17,17 @@ import org.urbaniak.studia.sem2.integracja.entity.Track;
  */
 public class MusicDAOHibernateImpl extends HibernateDaoSupport implements
         MusicDAO {
-    public Collection<Artist> getArtists() {
+
+    private static Logger logger = Logger.getLogger(MusicDAOHibernateImpl.class
+            .getName());
+
+    public List<Artist> getArtists() {
         return getHibernateTemplate().loadAll(Artist.class);
     }
 
     public Artist getArtistById(Integer id) {
         Artist artist = (Artist) getHibernateTemplate().load(Artist.class, id);
-        System.out.println("Got artist: " + artist);
+        logger.fine("Got artist: " + artist);
         return artist;
     }
 
@@ -33,7 +38,7 @@ public class MusicDAOHibernateImpl extends HibernateDaoSupport implements
 
     public Record getRecordById(Integer id) {
         Record record = (Record) getHibernateTemplate().load(Record.class, id);
-        System.out.println("Got record: " + record);
+        logger.fine("Got record: " + record);
         return record;
     }
 
@@ -44,7 +49,7 @@ public class MusicDAOHibernateImpl extends HibernateDaoSupport implements
 
     public Track getTrackById(Integer id) {
         Track track = (Track) getHibernateTemplate().load(Track.class, id);
-        System.out.println("Got track: " + track);
+        logger.fine("Got track: " + track);
         return track;
     }
 

@@ -1,6 +1,5 @@
 package org.urbaniak.studia.sem2.integracja.dao;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.urbaniak.studia.sem2.integracja.entity.Artist;
@@ -8,7 +7,10 @@ import org.urbaniak.studia.sem2.integracja.entity.Record;
 import org.urbaniak.studia.sem2.integracja.entity.Track;
 
 public interface MusicDAO {
-    public Collection<Artist> getArtists();
+    /**
+     * @return a list of all artists
+     */
+    public List<Artist> getArtists();
 
     /**
      * Get a Artist Object given the id

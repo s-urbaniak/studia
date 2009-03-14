@@ -1,25 +1,27 @@
 package org.urbaniak.studia.sem2.integracja.entity;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
+import java.util.logging.Logger;
 
 import junit.framework.TestCase;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.urbaniak.studia.sem2.integracja.dao.MusicDAO;
-import org.urbaniak.studia.sem2.integracja.entity.Artist;
-import org.urbaniak.studia.sem2.integracja.entity.Record;
-import org.urbaniak.studia.sem2.integracja.entity.Track;
 
 public class MusicDAOHibernateImplTest extends TestCase {
     private MusicDAO musicDAO;
 
+    private static Logger logger = Logger
+            .getLogger(MusicDAOHibernateImplTest.class.getName());
+
     public void setUp() throws Exception {
         super.setUp();
+
         ApplicationContext context = new ClassPathXmlApplicationContext(
-                "/spring-hibernate-jpa-config.xml");
+                new String[] { "/spring-orm-test.xml" });
+
         musicDAO = (MusicDAO) context.getBean("musicDAO");
     }
 
@@ -41,10 +43,10 @@ public class MusicDAOHibernateImplTest extends TestCase {
         musicDAO.saveArtist(artist2);
 
         // Test "loadAll"
-        Collection<Artist> loadedArtists = musicDAO.getArtists();
+        List<Artist> loadedArtists = musicDAO.getArtists();
         assertEquals(2, loadedArtists.size());
         for (Artist a : loadedArtists) {
-            System.out.println(a);
+            logger.info(a.toString());
         }
 
         // Create some records
@@ -93,7 +95,7 @@ public class MusicDAOHibernateImplTest extends TestCase {
         assertEquals(1, recordsSearch1.size());
 
         List<Record> recordsSearch2 = musicDAO.searchRecordsByTitle("e");
-        System.out.println("Searched records: " + recordsSearch2);
+        logger.info("Searched records: " + recordsSearch2);
         assertEquals(2, recordsSearch2.size());
     }
 
@@ -109,6 +111,7 @@ public class MusicDAOHibernateImplTest extends TestCase {
             track.setRecord(record);
             tracks1.add(track);
         }
+
         record.setTracks(tracks1);
         musicDAO.saveRecord(record);
         assertNotNull(record.getId());
