@@ -1,34 +1,42 @@
 package org.urbaniak.studia.sem2.integracja.entity;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import junit.framework.TestCase;
+import javax.annotation.Resource;
+import javax.xml.ws.Endpoint;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.urbaniak.studia.sem2.integracja.dao.MusicDAO;
+import org.urbaniak.studia.sem2.integracja.service.MusicService;
 
-public class MusicDAOHibernateImplTest extends TestCase {
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {
+        "/org/urbaniak/studia/sem2/integracja/service/service-context.xml",
+        "/org/urbaniak/studia/sem2/integracja/dao/dao-context.xml",
+        "/test-context.xml" })
+public class MusicDAOHibernateImplTest {
+    @Resource
     private MusicDAO musicDAO;
+
+    @Resource
+    private MusicService musicService;
 
     private static Logger logger = Logger
             .getLogger(MusicDAOHibernateImplTest.class.getName());
 
-    public void setUp() throws Exception {
-        super.setUp();
-
-        ApplicationContext context = new ClassPathXmlApplicationContext(
-                new String[] { "/spring-orm-test.xml" });
-
-        musicDAO = (MusicDAO) context.getBean("musicDAO");
-    }
-
     /**
-     * Simple tests excersing the various methods of MusicDAO
+     * Simple tests excersize the various methods of MusicDAO
      */
-    public void test() {
+    @Test
+    public void testInserts() {
         String artistName = "Tenacious D";
         Artist artist = new Artist();
         artist.setName(artistName);
@@ -97,6 +105,17 @@ public class MusicDAOHibernateImplTest extends TestCase {
         List<Record> recordsSearch2 = musicDAO.searchRecordsByTitle("e");
         logger.info("Searched records: " + recordsSearch2);
         assertEquals(2, recordsSearch2.size());
+    }
+
+    @Test
+    public void testMusicService() {
+        List<Artist> artists = musicService.getArtists();
+        assertNotNull(artists);
+    }
+
+    public void testWebService() {
+        Endpoint endpoint = Endpoint.create(musicService);
+        endpoint.publish("http://localhost:8080/MusicService");
     }
 
     private Record createRecord(Artist artist, String title, String[] tracks) {

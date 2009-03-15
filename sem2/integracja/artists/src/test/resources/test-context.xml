@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="mappings"
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+
+        <!-- typed as a java.util.Properties -->
+        <property name="properties">
+            <value>
+                hibernate.show_sql=true
+
+                hibernate.dialect=org.hibernate.dialect.HSQLDialect
+                hibernate.connection.driver_class=org.hsqldb.jdbcDriver
+                hibernate.connection.username=sa
+                hibernate.connection.password=
+                hibernate.connection.url=jdbc:hsqldb:mem:testDB
+            </value>
+        </property>
+    </bean>
+</beans>

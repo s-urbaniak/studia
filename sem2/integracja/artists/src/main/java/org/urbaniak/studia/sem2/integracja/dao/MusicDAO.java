@@ -6,6 +6,11 @@ import org.urbaniak.studia.sem2.integracja.entity.Artist;
 import org.urbaniak.studia.sem2.integracja.entity.Record;
 import org.urbaniak.studia.sem2.integracja.entity.Track;
 
+/**
+ * DAO for Artist/Record/Track CRUD operations
+ * 
+ * @author sur
+ */
 public interface MusicDAO {
     /**
      * @return a list of all artists
