@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
-    <bean id="mappings"
-        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-
-        <!-- typed as a java.util.Properties -->
-        <property name="properties">
-            <value>
-                hibernate.show_sql=true
-
-                hibernate.dialect=org.hibernate.dialect.HSQLDialect
-                hibernate.connection.driver_class=org.hsqldb.jdbcDriver
-                hibernate.connection.username=sa
-                hibernate.connection.password=
-                hibernate.connection.url=jdbc:hsqldb:mem:testDB
-            </value>
+    <bean id="dataBase" class="org.springmodules.db.hsqldb.ServerBean"
+        singleton="true" lazy-init="false">
+        <property name="dataSource">
+            <ref local="dataSource" />
         </property>
+        <property name="serverProperties">
+            <props>
+                <prop key="server.port">9101</prop>
+                <prop key="server.database.0">mem:.</prop>
+                <prop key="server.dbname.0">musicdb</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+        destroy-method="close">
+        <property name="driverClassName" value="org.hsqldb.jdbcDriver" />
+        <property name="url" value="jdbc:hsqldb:hsql://localhost:9101/musicdb" />
+        <property name="username" value="sa" />
+        <property name="password" value="" />
     </bean>
 </beans>

@@ -19,9 +19,9 @@ import org.urbaniak.studia.sem2.integracja.service.MusicService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
-        "/org/urbaniak/studia/sem2/integracja/service/service-context.xml",
-        "/org/urbaniak/studia/sem2/integracja/dao/dao-context.xml",
-        "/test-context.xml" })
+        "classpath:/org/urbaniak/studia/sem2/integracja/service/service-context.xml",
+        "classpath:/org/urbaniak/studia/sem2/integracja/dao/dao-context.xml",
+        "classpath:/test-context.xml" })
 public class MusicDAOHibernateImplTest {
     @Resource
     private MusicDAO musicDAO;
@@ -113,9 +113,10 @@ public class MusicDAOHibernateImplTest {
         assertNotNull(artists);
     }
 
+    @Test
     public void testWebService() {
         Endpoint endpoint = Endpoint.create(musicService);
-        endpoint.publish("http://localhost:8080/MusicService");
+        endpoint.publish("http://localhost:8888/MusicService");
     }
 
     private Record createRecord(Artist artist, String title, String[] tracks) {

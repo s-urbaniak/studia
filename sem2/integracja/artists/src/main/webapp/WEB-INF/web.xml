@@ -21,4 +21,16 @@
             classpath:/org/urbaniak/studia/sem2/integracja/dao/dao-context.xml
         </param-value>
     </context-param>
+
+    <servlet>
+        <servlet-name>jaxws-servlet</servlet-name>
+        <servlet-class>
+            com.sun.xml.ws.transport.http.servlet.WSSpringServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>jaxws-servlet</servlet-name>
+        <url-pattern>/musicService</url-pattern>
+    </servlet-mapping>
 </web-app>
