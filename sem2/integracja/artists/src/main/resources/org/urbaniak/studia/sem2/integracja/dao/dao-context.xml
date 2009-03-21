@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
-<beans>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
     <bean id="sessionFactory"
         class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
         <property name="annotatedClasses">
             <list>
-                <value>org.urbaniak.studia.sem2.integracja.entity.Track</value>
-                <value>org.urbaniak.studia.sem2.integracja.entity.Record</value>
-                <value>org.urbaniak.studia.sem2.integracja.entity.Artist</value>
+                <value>org.urbaniak.studia.sem2.integracja.entity.Track
+                </value>
+                <value>
+                    org.urbaniak.studia.sem2.integracja.entity.Record
+                </value>
+                <value>
+                    org.urbaniak.studia.sem2.integracja.entity.Artist
+                </value>
             </list>
         </property>
 
@@ -19,7 +27,8 @@
                 <prop key="hibernate.hbm2ddl.auto">create</prop>
                 <prop key="hibernate.connection.pool_size">1</prop>
                 <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect
+                </prop>
                 <prop key="hibernate.connection.autocommit">true</prop>
             </props>
         </property>
@@ -27,15 +36,16 @@
 
     <bean id="hibernateInterceptor"
         class="org.springframework.orm.hibernate3.HibernateInterceptor"
-        autowire="byName" /><!--sessionFactory will get autowired-->
+        autowire="byName" />
 
     <bean id="musicDaoTarget"
         class="org.urbaniak.studia.sem2.integracja.dao.MusicDAOHibernateImpl"
-        autowire="byName" /><!--sessionFactory will get autowired-->
+        autowire="byName" />
 
     <bean id="musicDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="proxyInterfaces">
-            <value>org.urbaniak.studia.sem2.integracja.dao.MusicDAO</value>
+            <value>org.urbaniak.studia.sem2.integracja.dao.MusicDAO
+            </value>
         </property>
         <property name="interceptorNames">
             <list>
