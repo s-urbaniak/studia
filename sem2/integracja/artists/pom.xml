@@ -13,8 +13,8 @@
     <name>web services study project</name>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8
-        </project.build.sourceEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <gwtVersion>1.5.3</gwtVersion>
     </properties>
 
     <dependencies>
@@ -34,24 +34,29 @@
         </dependency>
 
         <dependency>
+            <!-- Should be a runtime dependency only! -->
             <groupId>com.sun.xml.ws</groupId>
             <artifactId>jaxws-rt</artifactId>
             <version>2.1.3</version>
-            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp
+                        </artifactId>
+            <version>1.2.2</version>
         </dependency>
 
         <dependency>
             <groupId>javax.transaction</groupId>
             <artifactId>jta</artifactId>
             <version>1.1</version>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate</artifactId>
             <version>3.2.3.ga</version>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -68,17 +73,31 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springmodules</groupId>
-            <artifactId>spring-modules-sandbox
-            </artifactId>
-            <version>0.8</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>2.5.6</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>2.5.6</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>2.5.6</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springmodules</groupId>
+            <artifactId>spring-modules-sandbox
+            </artifactId>
+            <version>0.8</version>
         </dependency>
 
         <dependency>
@@ -97,7 +116,6 @@
             <groupId>hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
             <version>1.7.3.3</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -107,11 +125,66 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-servlet</artifactId>
+            <version>${gwtVersion}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+            <version>${gwtVersion}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-dev</artifactId>
+            <version>${gwtVersion}</version>
+            <classifier>${platform}-libs</classifier>
+            <type>zip</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-dev</artifactId>
+            <version>${gwtVersion}</version>
+            <classifier>${platform}</classifier>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
         <defaultGoal>install</defaultGoal>
         <plugins>
+
+            <plugin>
+                <groupId>com.totsp.gwt</groupId>
+                <artifactId>maven-googlewebtoolkit2-plugin</artifactId>
+                <version>2.0-beta26</version>
+                <configuration>
+                    <compileTargets>
+                        <value>org.urbaniak.studia.sem2.integracja.Application</value>
+                    </compileTargets>
+                    <runTarget>org.urbaniak.studia.sem2.integracja.Application/Application.html</runTarget>
+                    <logLevel>INFO</logLevel>
+                    <style>DETAILED</style>
+                    <noServer>false</noServer>
+                    <extraJvmArgs>-Xmx512m</extraJvmArgs>
+                    <gwtVersion>${gwtVersion}</gwtVersion>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>mergewebxml</goal>
+                            <!--<goal>i18n</goal>-->
+                            <goal>compile</goal>
+                            <!-- <goal>test</goal>-->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>maven-jetty-plugin
@@ -123,16 +196,9 @@
 
                 <dependencies>
                     <dependency>
-                        <groupId>hsqldb</groupId>
-                        <artifactId>hsqldb</artifactId>
-                        <version>1.7.3.0</version>
-                    </dependency>
-
-                    <dependency>
-                        <groupId>commons-dbcp</groupId>
-                        <artifactId>commons-dbcp
-                        </artifactId>
-                        <version>1.2.2</version>
+                        <groupId>org.mortbay.jetty</groupId>
+                        <artifactId>jetty-gwt</artifactId>
+                        <version>6.1.14</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -213,6 +279,33 @@
                     </archive>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>com.google.gwt</groupId>
+                                    <artifactId>gwt-dev</artifactId>
+                                    <version>${gwtVersion}</version>
+                                    <classifier>${platform}-libs</classifier>
+                                    <type>zip</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${settings.localRepository}/com/google/gwt/gwt-dev/${gwtVersion}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
 
         <testResources>
@@ -226,8 +319,14 @@
         </testResources>
     </build>
 
-    <repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>gwt-maven</id>
+            <url>http://gwt-maven.googlecode.com/svn/trunk/mavenrepo</url>
+        </pluginRepository>
+    </pluginRepositories>
 
+    <repositories>
         <repository>
             <id>jboss</id>
             <url>http://repository.jboss.com/maven2</url>
@@ -250,22 +349,62 @@
             </snapshots>
         </repository>
 
+        <repository>
+            <id>gwt-maven</id>
+            <url>http://gwt-maven.googlecode.com/svn/trunk/mavenrepo/</url>
+        </repository>
     </repositories>
+
     <profiles>
         <profile>
-            <id>default</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
+            <id>test.mem</id>
             <properties>
                 <test.jdbc.url>jdbc:hsqldb:mem:.</test.jdbc.url>
             </properties>
         </profile>
+
         <profile>
             <id>test.remote</id>
             <properties>
                 <test.jdbc.url>jdbc:hsqldb:hsql://localhost:9101/musicdb</test.jdbc.url>
             </properties>
         </profile>
+
+        <profile>
+            <id>gwt-dev-windows</id>
+            <properties>
+                <platform>windows</platform>
+            </properties>
+            <activation>
+                <os>
+                    <family>windows</family>
+                </os>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>gwt-dev-mac</id>
+            <properties>
+                <platform>mac</platform>
+            </properties>
+            <activation>
+                <os>
+                    <family>mac</family>
+                </os>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>gwt-dev-linux</id>
+            <properties>
+                <platform>linux</platform>
+            </properties>
+            <activation>
+                <os>
+                    <name>linux</name>
+                </os>
+            </activation>
+        </profile>
+
     </profiles>
 </project>
