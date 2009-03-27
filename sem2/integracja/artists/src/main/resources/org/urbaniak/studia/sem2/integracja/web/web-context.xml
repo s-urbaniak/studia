@@ -5,26 +5,16 @@
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-    <bean id="dataBase" class="org.springmodules.db.hsqldb.ServerBean"
-        scope="singleton" lazy-init="false">
-        <property name="dataSource">
-            <ref local="dataSource" />
-        </property>
-        <property name="serverProperties">
-            <props>
-                <prop key="server.port">9101</prop>
-                <prop key="server.database.0">mem:.</prop>
-                <prop key="server.dbname.0">musicdb</prop>
-            </props>
-        </property>
+    <bean id="musicServiceController" class="org.gwtwidgets.server.spring.GWTRPCServiceExporter">
+        <property name="service" ref="musicService" />
     </bean>
 
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-        destroy-method="close">
-        <property name="driverClassName" value="org.hsqldb.jdbcDriver" />
-        <property name="url"
-            value="jdbc:hsqldb:hsql://localhost:9101/musicdb" />
-        <property name="username" value="sa" />
-        <property name="password" value="" />
+    <bean
+        class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <map>
+                <entry key="/music.rpc" value-ref="musicServiceController" />
+            </map>
+        </property>
     </bean>
 </beans>

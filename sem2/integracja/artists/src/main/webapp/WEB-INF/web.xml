@@ -18,9 +18,9 @@
         <param-name>contextConfigLocation
         </param-name>
         <param-value>
-            classpath:/org/urbaniak/studia/sem2/integracja/web/web-context.xml
-            classpath:/org/urbaniak/studia/sem2/integracja/service/service-context.xml
+            classpath:/org/urbaniak/studia/sem2/integracja/dao/db-context.xml
             classpath:/org/urbaniak/studia/sem2/integracja/dao/dao-context.xml
+            classpath:/org/urbaniak/studia/sem2/integracja/service/service-context.xml
         </param-value>
     </context-param>
 
@@ -31,8 +31,29 @@
         </servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <init-param>
+            <param-name>
+                contextConfigLocation
+            </param-name>
+            <param-value>
+                classpath:/org/urbaniak/studia/sem2/integracja/web/web-context.xml
+            </param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/dispatcher/*</url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>jaxws-servlet</servlet-name>
-        <url-pattern>/musicService</url-pattern>
+        <url-pattern>/music.ws</url-pattern>
     </servlet-mapping>
 </web-app>

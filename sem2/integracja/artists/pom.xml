@@ -15,6 +15,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <gwtVersion>1.5.3</gwtVersion>
+        <springVersion>2.5.6</springVersion>
     </properties>
 
     <dependencies>
@@ -69,28 +70,38 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring</artifactId>
-            <version>2.5.6</version>
+            <version>${springVersion}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>2.5.6</version>
+            <version>${springVersion}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>2.5.6</version>
-            <scope>runtime</scope>
+            <version>${springVersion}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>2.5.6</version>
-            <scope>runtime</scope>
+            <version>${springVersion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${springVersion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${springVersion}</version>
         </dependency>
 
         <dependency>
@@ -121,10 +132,32 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.5</version>
+            <version>4.4</version>
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.sun.xml.stream.buffer</groupId>
+            <artifactId>streambuffer</artifactId>
+            <version>0.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jvnet.staxex</groupId>
+            <artifactId>stax-ex</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.gwt-widget</groupId>
+            <artifactId>gwt-sl</artifactId>
+            <version>0.1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.gwt-widget</groupId>
+            <artifactId>gwt-widgets</artifactId>
+            <version>0.1.5</version>
+        </dependency>
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-servlet</artifactId>
@@ -178,7 +211,7 @@
                         <goals>
                             <goal>mergewebxml</goal>
                             <!--<goal>i18n</goal>-->
-                            <goal>compile</goal>
+<!--                            <goal>compile</goal>-->
                             <!-- <goal>test</goal>-->
                         </goals>
                     </execution>
@@ -214,7 +247,7 @@
                         </goals>
                         <configuration>
                             <sei>
-                                org.urbaniak.studia.sem2.integracja.service.MusicService
+                                org.urbaniak.studia.sem2.integracja.service.MusicServiceImpl
                             </sei>
                             <genWsdl>false</genWsdl>
                             <keep>false</keep>

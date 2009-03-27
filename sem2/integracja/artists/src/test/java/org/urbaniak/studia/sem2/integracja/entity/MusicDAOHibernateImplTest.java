@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.urbaniak.studia.sem2.integracja.dao.MusicDAO;
-import org.urbaniak.studia.sem2.integracja.service.MusicService;
+import org.urbaniak.studia.sem2.integracja.service.MusicServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
@@ -27,7 +27,7 @@ public class MusicDAOHibernateImplTest {
     private MusicDAO musicDAO;
 
     @Resource
-    private MusicService musicService;
+    private MusicServiceImpl musicService;
 
     private static Logger logger = Logger
             .getLogger(MusicDAOHibernateImplTest.class.getName());
@@ -116,7 +116,7 @@ public class MusicDAOHibernateImplTest {
     @Test
     public void testWebService() {
         Endpoint endpoint = Endpoint.create(musicService);
-        endpoint.publish("http://localhost:8888/MusicService");
+        endpoint.publish("http://localhost:9999/MusicService");
     }
 
     private Record createRecord(Artist artist, String title, String[] tracks) {

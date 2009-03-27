@@ -10,12 +10,12 @@
         http://jax-ws.dev.java.net/spring/servlet
         https://jax-ws.dev.java.net/spring/servlet.xsd">
 
-    <wss:binding url="/musicService">
+    <wss:binding url="/music.ws">
         <wss:service>
             <ws:service bean="#musicService" />
         </wss:service>
     </wss:binding>
 
     <bean id="musicService"
-        class="org.urbaniak.studia.sem2.integracja.service.MusicService" />
+        class="org.urbaniak.studia.sem2.integracja.service.MusicServiceImpl" />
 </beans>

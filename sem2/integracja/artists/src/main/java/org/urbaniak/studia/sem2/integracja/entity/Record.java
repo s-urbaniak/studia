@@ -14,10 +14,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-import org.apache.commons.lang.builder.ToStringBuilder;
-
 @Entity
 @NamedQuery(name = "record.titleLike", query = "select r from Record r where r.title like ?")
 public class Record implements Serializable {
@@ -79,17 +75,5 @@ public class Record implements Serializable {
 
     public void setTracks(List<Track> tracks) {
         this.tracks = tracks;
-    }
-
-    public boolean equals(Object obj) {
-        return EqualsBuilder.reflectionEquals(this, obj);
-    }
-
-    public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
-    }
-
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this);
     }
 }
