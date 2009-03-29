@@ -22,6 +22,10 @@ public class MusicServiceImpl implements MusicService {
     @Resource
     private MusicDAO musicDAO;
 
+    public void setMusicDAO(MusicDAO musicDAO) {
+        this.musicDAO = musicDAO;
+    }
+
     /**
      * @see MusicDAO#getArtists()
      */

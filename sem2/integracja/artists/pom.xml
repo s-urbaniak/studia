@@ -153,23 +153,39 @@
             <artifactId>gwt-sl</artifactId>
             <version>0.1.5</version>
         </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.14</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.smartgwt</groupId>
+            <artifactId>smartgwt</artifactId>
+            <version>1.0b2-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>net.sf.gwt-widget</groupId>
             <artifactId>gwt-widgets</artifactId>
             <version>0.1.5</version>
         </dependency>
+
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-servlet</artifactId>
             <version>${gwtVersion}</version>
             <scope>runtime</scope>
         </dependency>
+
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-user</artifactId>
             <version>${gwtVersion}</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-dev</artifactId>
@@ -178,6 +194,7 @@
             <type>zip</type>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-dev</artifactId>
@@ -189,8 +206,8 @@
 
     <build>
         <defaultGoal>install</defaultGoal>
-        <plugins>
 
+        <plugins>
             <plugin>
                 <groupId>com.totsp.gwt</groupId>
                 <artifactId>maven-googlewebtoolkit2-plugin</artifactId>
@@ -205,13 +222,18 @@
                     <noServer>false</noServer>
                     <extraJvmArgs>-Xmx512m</extraJvmArgs>
                     <gwtVersion>${gwtVersion}</gwtVersion>
+                    <!--
+                        Comment this when deploying on other web apps
+                        (i.e. expanded jetty)
+                    -->
+                    <output>${project.build.directory}/tomcat/webapps/ROOT</output>
                 </configuration>
                 <executions>
                     <execution>
                         <goals>
                             <goal>mergewebxml</goal>
                             <!--<goal>i18n</goal>-->
-<!--                            <goal>compile</goal>-->
+                            <goal>compile</goal>
                             <!-- <goal>test</goal>-->
                         </goals>
                     </execution>
@@ -385,6 +407,11 @@
         <repository>
             <id>gwt-maven</id>
             <url>http://gwt-maven.googlecode.com/svn/trunk/mavenrepo/</url>
+        </repository>
+
+        <repository>
+            <id>smartclient</id>
+            <url>http://www.smartclient.com/smartgwt/maven2</url>
         </repository>
     </repositories>
 

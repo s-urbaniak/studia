@@ -1,8 +1,14 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 276
+#LyX 1.6.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass scrreprt
+\begin_preamble
+% use tikz library
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\end_preamble
+\use_default_options false
 \language polish
 \inputencoding utf8
 \font_roman default
@@ -13,9 +19,11 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \paperfontsize default
 \spacing single
+\use_hyperref false
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -44,8 +52,124 @@ Wzory
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+sqbullet}{
+\backslash
+vrule height .9ex width .8ex depth -.1ex }
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+hcat}{
+\backslash
+, 
+\backslash
+sqbullet 
+\backslash
+vert 
+\backslash
+sqbullet 
+\backslash
+,}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+vcat}{
+\backslash
+, 
+\backslash
+frac{
+\backslash
+sqbullet}{
+\backslash
+sqbullet} 
+\backslash
+,}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula \begin{eqnarray*}
-\mathbf{Y}_{M\times1} & = & \mathbf{A}_{M\times2M}\left[\mathbf{A}_{2M\times1}+\mathbf{P}_{2M\times\left(M+1\right)}\:\mathbf{A}_{\left(M+1\right)\times\frac{N(M-1)}{2}}\:\mathbf{B}_{\frac{N(M+1)}{2}\times N(M+1)}\circ\left(\mathbf{A}_{N(M+1)\times1}+\mathbf{P}_{N(M+1)\times N}\:\mathbf{X}_{N\times1}\right)\right]\end{eqnarray*}
+\mathbf{Y}_{M\times1} & = & \mathbf{A}_{M\times2M}\\
+ &  & \left[\mathbf{A}_{2M\times1}+\mathbf{P}_{2M\times\left(M+1\right)}\:\mathbf{A}_{\left(M+1\right)\times\frac{N(M-1)}{2}}\:\mathbf{B}_{\frac{N(M+1)}{2}\times N(M+1)}\circ\right.\\
+ &  & \left.\left(\mathbf{A}_{N(M+1)\times1}+\mathbf{P}_{N(M+1)\times N}\:\mathbf{X}_{N\times1}\right)\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\mathbf{A\vcat B}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\mathbf{A\hcat B}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{tikz/strassen.tikz}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Strassen
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 

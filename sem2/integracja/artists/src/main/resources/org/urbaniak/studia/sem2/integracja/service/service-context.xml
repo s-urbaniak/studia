@@ -17,5 +17,7 @@
     </wss:binding>
 
     <bean id="musicService"
-        class="org.urbaniak.studia.sem2.integracja.service.MusicServiceImpl" />
+        class="org.urbaniak.studia.sem2.integracja.service.MusicServiceImpl">
+        <property name="musicDAO" ref="musicDAO" />
+    </bean>
 </beans>

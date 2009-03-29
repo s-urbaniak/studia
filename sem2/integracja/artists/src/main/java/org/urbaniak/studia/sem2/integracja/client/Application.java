@@ -8,23 +8,19 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.rpc.ServiceDefTarget;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.RootPanel;
+import com.smartgwt.client.util.SC;
 
 public class Application implements EntryPoint {
 
     public void onModuleLoad() {
         MusicServiceAsync musicService = GWT.create(MusicService.class);
+
         ServiceDefTarget endpoint = (ServiceDefTarget) musicService;
-
-        System.out.println(GWT.getModuleBaseURL());
-
         endpoint.setServiceEntryPoint(GWT.getModuleBaseURL()
                 + "../dispatcher/music.rpc");
 
         AsyncCallback<List<Artist>> callback = new AsyncCallback<List<Artist>>() {
             public void onSuccess(List<Artist> result) {
-                System.out.println(result);
             }
 
             public void onFailure(Throwable ex) {
@@ -33,10 +29,7 @@ public class Application implements EntryPoint {
         };
 
         musicService.getArtists(callback);
-
-        RootPanel root = RootPanel.get();
-        Label newLabel = new Label("Changed label ...");
-        root.add(newLabel);
+        SC.say("Hello SmartGWT");
     }
 
 }

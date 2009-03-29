@@ -1,0 +1,981 @@
+#LyX 1.6.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrreprt
+\begin_preamble
+% verschieden Symbole, Zeichen wie (c), €
+\usepackage{textcomp}
+
+\usepackage{ %a4wide,
+            ellipsis, fixltx2e, mparhack,   %Fehlerkorrektur für Marginalien
+            booktabs, longtable             %schönere Tabellen
+}  
+
+\usepackage[automark]{scrpage2}
+%\automark[chapter]{chapter}
+\clearscrheadfoot
+\ohead{\\\headmark}
+\ihead{\includegraphics[scale=0.2]{img/zut2.jpg}}%\pagemark}
+\ofoot[\pagemark]{\pagemark}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+%Kurzfassung und Abstract (englisch) auf eine Seite
+\renewenvironment{abstract}{
+    \@beginparpenalty\@lowpenalty
+      \begin{center}
+        \normalfont\sectfont\nobreak\abstractname
+        \@endparpenalty\@M
+      \end{center}
+}{
+    \par
+}
+
+
+
+% schönerer Blocksatz!!
+\usepackage{microtype}
+
+\usepackage{ifpdf} % part of the hyperref bundle
+\ifpdf % if pdflatex is used
+
+%set fonts for nicer pdf view
+ \IfFileExists{lmodern.sty}{\usepackage{lmodern}}
+  {\usepackage[scaled=0.92]{helvet}
+    \usepackage{mathptmx}
+    \usepackage{courier} }
+\fi
+
+ % the pages of the TOC are numbered roman
+ % and a pdf-bookmark for the TOC is added
+ \pagenumbering{roman}
+ \let\myTOC\tableofcontents
+ \renewcommand\tableofcontents{
+   %\pdfbookmark[1]{Contents}{}
+   \myTOC
+   \clearpage
+   \pagenumbering{arabic}}
+
+% Alle Querverweise und URLs als Link darstellen
+% In der PDF-Ausgabe
+ \usepackage[colorlinks=true, bookmarks, bookmarksnumbered, bookmarksopen, bookmarksopenlevel=1,
+  linkcolor=black, citecolor=black, urlcolor=blue, filecolor=blue,
+  pdfpagelayout=OneColumn, pdfnewwindow=true,
+  pdfstartview=XYZ, plainpages=false, pdfpagelabels,
+  pdfauthor={LyX Team}, pdftex,
+  pdftitle={LyX's Figure, Table, Floats, Notes, and Boxes manual},
+  pdfsubject={LyX-documentation about figures, tables, floats, notes, and boxes},
+  pdfkeywords={LyX, Tables, Figures, Floats, Boxes, Notes}]{hyperref}
+
+%mehr Platz zwischen Überschrift und Tabelle
+\newcommand{\@ldtable}{}
+\let\@ldtable\table
+\renewcommand{\table}{ %
+                 \setlength{\@tempdima}{\abovecaptionskip} %
+                 \setlength{\abovecaptionskip}{\belowcaptionskip} %
+                 \setlength{\belowcaptionskip}{\@tempdima} %
+                 \@ldtable}
+\end_preamble
+\options pointlessnumbers, abstracton, headsepline
+\use_default_options false
+\language polish
+\inputencoding utf8
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+titlepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/zut.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\series bold
+\size largest
+Wydział Informatyki
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset VSpace 1.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\size largest
+Sprawozdanie
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\size larger
+Warum die Welt eine Scheibe ist
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\size huge
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features>
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vorgelegt von: 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ Sergiusz Urbaniak
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+urodzony w:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+18.
+ Lutego 1977 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+w 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Szczecinie
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+do osiągnięcia akademickiego stopnia
+\family sans
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\series bold
+\size huge
+Magister Informatyk
+\size largest
+
+\begin_inset Newline newline
+\end_inset
+
+
+\size default
+(Mag.-Inf.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Betreuer: Maciek Maciewicz
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+leere Seite nach dem Titelblatt
+\end_layout
+
+\begin_layout Plain Layout
+dann Aufgabenstellung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{scrheadings}    %Kopfzeile ein
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textsf{
+\backslash
+textbf{
+\backslash
+large Selbständigkeitserklärung}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Hiermit erkläre ich, dass ich die von mir am heutigen Tage dem Prüfungsauschuss
+ der Fakultät Elektrotechnik eingereichte Diplomarbeit zum Thema
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+Warum die Welt eine Scheibe ist
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+vollkommen selbstständig verfasst und keine anderen als die angegebenen
+ Quellen und Hilfsmittel benutzt sowie Zitate kenntlich gemacht habe.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Dresden, den 10.11.2007 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1.7cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Unterschrift 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textsf{
+\backslash
+textbf{
+\backslash
+large Danksagung}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die vorliegende Arbeit entstand im Rahmen meiner Diplomarbeit am Institut
+ für ....
+ 
+\end_layout
+
+\begin_layout Standard
+Für die Fortführung des Projekts wünsche ich dem gesamten Team viel Erfolg.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Immer schon haben sich Menschen ein Bild von der Erde und vom Weltall gemacht.
+ Ägyptische Idee: die Scheibenform.
+ Ganz früher, vor Tausenden von Jahren, stellten sich die Ägypter zum Beispiel
+ die Erde als Scheibe vor.
+ Dieses Bild von der Welt hatten sie, weil sie mit ihren eigenen Augen die
+ Kugelform der Erde nicht sehen konnten.(...)
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Abstract
+
+\lang english
+This is a second abstract in english.
+\end_layout
+
+\begin_layout Abstract
+
+\lang english
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{scrheadings}    %Kopfzeile ein
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Einleitung
+\end_layout
+
+\begin_layout Section
+Motivation
+\end_layout
+
+\begin_layout Standard
+Ganz früher, vor Tausenden von Jahren, stellten sich die Ägypter zum Beispiel
+ die Erde als Scheibe vor.
+ Dieses Bild von der Welt hatten sie, weil sie mit ihren eigenen Augen die
+ Kugelform der Erde nicht sehen konnten.
+ Diese Scheibe stellten sie sich in drei Stockwerke aufgeteilt vor: in eine
+ Unterwelt, in der lagen die Toten, in ein mittleres Stockwerk, in dem wohnten
+ die Menschen und schließlich in ein oberes Stockwerk als Ort für die Götter
+ – das war der Himmel.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement o
+overhang 0col%
+width "50col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../../template/pics/lohner-porsche.jpg
+	lyxscale 10
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Ein-umflossenes-Bild"
+
+\end_inset
+
+Ein umflossenes Bild
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Ganz früher, vor Tausenden von Jahren, stellten sich die Ägypter zum Beispiel
+ die Erde als Scheibe vor.
+ Dieses Bild von der Welt hatten sie, weil sie mit ihren eigenen Augen die
+ Kugelform der Erde nicht sehen konnten.
+ Diese Scheibe stellten sie sich in drei Stockwerke aufgeteilt vor: in eine
+ Unterwelt, in der lagen die Toten, in ein mittleres Stockwerk, in dem wohnten
+ die Menschen und schließlich in ein oberes Stockwerk als Ort für die Götter
+ – das war der Himmel.Ganz früher, vor Tausenden von Jahren, stellten sich
+ die Ägypter zum Beispiel die Erde als Scheibe vor.
+ Dieses Bild von der Welt hatten sie, weil sie mit ihren eigenen Augen die
+ Kugelform der Erde nicht sehen konnten.
+ Diese Scheibe stellten sie sich in drei Stockwerke aufgeteilt vor: in eine
+ Unterwelt, in der lagen die Toten, in ein mittleres Stockwerk, in dem wohnten
+ die Menschen und schließlich in ein oberes Stockwerk als Ort für die Götter
+ – das war der Himmel.
+\end_layout
+
+\begin_layout Section
+Beitrag dieser Arbeit
+\end_layout
+
+\begin_layout Standard
+In Abb.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Ein-umflossenes-Bild"
+
+\end_inset
+
+ ist ein schönes Auto zu sehen.
+ Ganz früher, vor Tausenden von Jahren, stellten sich die Ägypter zum Beispiel
+ die Erde als Scheibe vor.
+ Dieses Bild von der Welt hatten sie, weil sie mit ihren eigenen Augen die
+ Kugelform der Erde nicht sehen konnten.
+ Diese Scheibe stellten sie sich in drei Stockwerke aufgeteilt vor: in eine
+ Unterwelt, in der lagen die Toten, in ein mittleres Stockwerk, in dem wohnten
+ die Menschen und schließlich in ein oberes Stockwerk als Ort für die Götter
+ – das war der Himmel.Ganz früher, vor Tausenden von Jahren, stellten sich
+ die Ägypter zum Beispiel die Erde als Scheibe vor.
+ Dieses Bild von der Welt hatten sie, weil sie mit ihren eigenen Augen die
+ Kugelform der Erde nicht sehen konnten.
+ Diese Scheibe stellten sie sich in drei Stockwerke aufgeteilt vor: in eine
+ Unterwelt, in der lagen die Toten, in ein mittleres Stockwerk, in dem wohnten
+ die Menschen und schließlich in ein oberes Stockwerk als Ort für die Götter
+ – das war der Himmel.
+\end_layout
+
+\begin_layout Section
+Gliederung
+\end_layout
+
+\begin_layout Standard
+Der Kapitelname steht in der rechten oberen Ecke.
+ Die Seitennummer ist rechts unten zu sehen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "1.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Chapter
+Theorie zur Form der Erde
+\end_layout
+
+\begin_layout Standard
+Eigener Entwurf ...
+ mit einer Tabelle:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Überschrift - Die Beschreibung für Tabellen befindet sich oberhalb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+toprule 
+\end_layout
+
+\end_inset
+
+Planet
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Form
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+midrule 
+\end_layout
+
+\end_inset
+
+Erde
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Scheibe
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row endhead="true">
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mond
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Brocken 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabularnewline
+\backslash
+bottomrule %
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Steuerzeichen in der Tabelle sorgen für etwas mehr Platz zwischen den
+ Zeilen und sollten nur in größter Not wieder gelöscht werden.
+\end_layout
+
+\begin_layout Chapter
+Noch ein Kapitel
+\end_layout
+
+\begin_layout Chapter
+Zusammenfassung
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+appendix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Anhang
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section
+Ein Kapitel des Anhangs
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "bibtex/lit_verz"
+options "bibtotoc,alpha"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

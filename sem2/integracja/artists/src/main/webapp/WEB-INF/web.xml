@@ -8,9 +8,15 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>classpath:log4j.xml
+        </param-value>
+    </context-param>
+
     <listener>
         <listener-class>
-            org.springframework.web.context.ContextLoaderListener
+            org.springframework.web.util.Log4jConfigListener
         </listener-class>
     </listener>
 
@@ -24,11 +30,18 @@
         </param-value>
     </context-param>
 
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+
     <servlet>
         <servlet-name>jaxws-servlet</servlet-name>
         <servlet-class>
             com.sun.xml.ws.transport.http.servlet.WSSpringServlet
         </servlet-class>
+        <load-on-startup>2</load-on-startup>
     </servlet>
 
     <servlet>

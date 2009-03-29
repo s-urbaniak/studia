@@ -8,6 +8,8 @@
     <!--  inherit css based theme -->
     <inherits name='com.google.gwt.user.theme.standard.Standard' />
 
+    <inherits name='com.smartgwt.SmartGwt' />
+
     <!-- Specify the app entry point class.                         -->
     <entry-point
         class='org.urbaniak.studia.sem2.integracja.client.Application' />

@@ -1,6 +1,5 @@
 package org.urbaniak.studia.sem2.integracja.dao;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.logging.Logger;
 

@@ -1,0 +1,61 @@
+% Define two helper counters
+\begin{tikzpicture}[yscale=0.5, xscale=1.2, node distance=0.3cm, auto]
+    \tikzstyle{n} = [circle, fill, minimum size=2pt, inner sep=0pt, outer sep=0pt]
+    \tikzstyle{mul} = [circle, draw, inner sep=0pt]
+
+    % line styles
+    \tikzstyle{add} = [-]
+    \tikzstyle{subtract} = [densely dotted]
+
+    \newcounter{col}
+
+    % Draw inputs
+    \newcounter{xi}
+    \foreach \xa in {0,...,1}
+        \foreach \xb in {0,...,1}
+        {
+            \stepcounter{xi}
+            \node (x\xa\xb)
+                [n, pin={[pin edge={latex'-, black}] left : $x_{\xa\xb}$}]
+                at (0,-\arabic{xi})
+                {};
+        }
+
+    % new column
+    \stepcounter{col}
+
+    % yi
+    \newcounter{yi}
+    \foreach \ya / \yb in {0/1, 0/0, 1/0, 1/1}
+    {
+        \stepcounter{yi}
+        \node (yi\ya\yb) 
+            [n, label={above : \tiny $y_{\ya\yb}$}]
+            at (\arabic{col},-\arabic{yi})
+            {};
+    }
+
+    % new column
+    \stepcounter{col}
+
+    % Draw outputs
+    \setcounter{yi}{0}
+    \foreach \ya in {0,...,1}
+        \foreach \yb in {0,...,1}
+        {
+            \stepcounter{yi}
+            \node (y\ya\yb) 
+                [n, pin={[pin edge={-latex', black}] right : $y_{\ya\yb}$}]
+                at (\arabic{col},-\arabic{yi})
+                {};
+        }
+
+    \path (x00) edge[add] (yi00);
+    \path (x00) edge[subtract] (yi01);
+
+    \foreach \ya in {0,...,1}
+        \foreach \yb in {0,...,1}
+        {
+            \path (yi\ya\yb) edge[add] (y\ya\yb);
+        }
+\end{tikzpicture}
