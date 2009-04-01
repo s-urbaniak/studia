@@ -7,6 +7,9 @@
 % use tikz library
 \usepackage{tikz}
 \usetikzlibrary{arrows}
+\newcommand{\sqbullet}{\vrule height .9ex width .8ex depth -.1ex }
+\newcommand{\hcat}{\, \sqbullet \vert \sqbullet \,}
+\newcommand{\vcat}{\, \frac{\:\sqbullet\:}{\:\sqbullet\:} \,}
 \end_preamble
 \use_default_options false
 \language polish
@@ -52,58 +55,34 @@ Wzory
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-newcommand{
-\backslash
-sqbullet}{
-\backslash
-vrule height .9ex width .8ex depth -.1ex }
+Przy danych wejscowych:
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{X\mathrm{_{N\times1}=\left[x_{0},\, x_{1},\cdots,\, x_{N}\right]^{T}}}\]
+
+\end_inset
 
 
-\backslash
-newcommand{
-\backslash
-hcat}{
-\backslash
-, 
-\backslash
-sqbullet 
-\backslash
-vert 
-\backslash
-sqbullet 
-\backslash
-,}
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{C\mathrm{_{M\times N}=\left[\begin{array}{cccc}
+c_{00} & c_{01} & \cdots & c_{0(N-1)}\\
+c_{10} & \ddots\\
+\vdots &  & \ddots\\
+c_{(M-1)0} &  &  & c_{(M-1)(N-1)}\end{array}\right]}}\]
+
+\end_inset
 
 
-\backslash
-newcommand{
-\backslash
-vcat}{
-\backslash
-, 
-\backslash
-frac{
-\backslash
-sqbullet}{
-\backslash
-sqbullet} 
-\backslash
-,}
 \end_layout
 
+\begin_layout Standard
+Wylicza sie iloczyn skalarany 
+\begin_inset Formula $Y=(C,X)\overset{def}{=}C^{T}X$
 \end_inset
 
 
@@ -121,55 +100,97 @@ sqbullet}
 \end_layout
 
 \begin_layout Standard
-\align center
-\begin_inset Formula $\mathbf{A\vcat B}$
+gdzie
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{P_{\mathrm{N(M+1)\times N}}\mathrm{=1_{(M+1)\times1}\otimes I_{N}}}\]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\align center
-\begin_inset Formula $\mathbf{A\hcat B}$
+\begin_inset Formula \[
+\mathbf{\mathbf{A}_{\mathrm{N(M+1)\times1}}\mathrm{=\left(I_{\frac{N(M+1)}{2}}\otimes\left[\begin{array}{cc}
+0 & 1\\
+1 & 0\end{array}\right]\right)\left(\mathbf{C}_{NM\times1}\vcat\mathbf{\mathrm{0}}_{N\times1}\right)}}\]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-input{tikz/strassen.tikz}
-\end_layout
+\begin_inset Formula \[
+B_{\frac{N(M+1)}{2}\times N(M+1)}=I_{\frac{N(M+1)}{2}}\otimes1_{1\times2}\]
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Strassen
-\end_layout
+\begin_layout Standard
+\begin_inset Formula \[
+A_{(M+1)\times\frac{N(M+1)}{2}}=I_{M+1}\otimes1_{1\times\frac{N}{2}}\]
 
 \end_inset
 
 
 \end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+P_{2M\times(M+1)}=I_{M}\oplus1_{M\times1}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+A_{2M\times1}=0_{M\times1}\vcat B_{M\times1}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+A_{M\times2M}=I_{m}\hcat\left(-I_{M}\right)\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+przy
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+C_{NM\times1} & = & \left[\left(c_{00},\, c_{01},\cdots,\, c_{0(N-1)}\right),\right.\\
+ &  & \,\left(c_{10},\, c_{11},\cdots,\, c_{1(N-1)}\right),\\
+ &  & \cdots,\\
+ &  & \left.\left(c_{(M-1)0},\, c_{(M-1)1},\cdots,\, c_{(M-1)(N-1)}\right)\right]^{T}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+B_{M\times1} & = & \left[b_{0},\, b_{1},\cdots,b_{M-1}\right]\\
+b_{0} & = & c_{00}\, c_{01}\,\cdots\, c_{0\left(\frac{N}{2}-1\right)}+c_{0\left(\frac{N}{2}\right)}\, c_{0\left(\frac{N}{2}+1\right)}\,\cdots\, c_{0\left(N-1\right)}\\
+b_{1} & = & c_{10}\, c_{11}\,\cdots\, c_{1\left(\frac{N}{2}-1\right)}+c_{1\left(\frac{N}{2}\right)}\, c_{1\left(\frac{N}{2}+1\right)}\,\cdots\, c_{1\left(N-1\right)}\\
+ & \vdots\\
+b_{M-1} & = & c_{(M-1)0}\, c_{(M-1)1}\,\cdots\, c_{(M-1)\left(\frac{N}{2}-1\right)}+c_{(M-1)\left(\frac{N}{2}\right)}\, c_{(M-1)\left(\frac{N}{2}+1\right)}\,\cdots\, c_{(M-1)\left(N-1\right)}\end{eqnarray*}
 
 \end_inset
 

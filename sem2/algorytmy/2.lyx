@@ -1,0 +1,325 @@
+#LyX 1.6.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrreprt
+\begin_preamble
+% use tikz library
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\newcommand{\sqbullet}{\vrule height .9ex width .8ex depth -.1ex }
+\newcommand{\hcat}{\, \sqbullet \vert \sqbullet \,}
+\newcommand{\vcat}{\, \frac{\:\sqbullet\:}{\:\sqbullet\:} \,}
+\end_preamble
+\use_default_options false
+\language polish
+\inputencoding utf8
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Zadanie
+\end_layout
+
+\begin_layout Standard
+Przy danych wejscowych:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+M=4,\; N=6\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{X\mathrm{_{6\times1}=\left[\begin{array}{c}
+x_{0}\\
+x_{1}\\
+x_{2}\\
+x_{3}\\
+x_{4}\\
+x_{5}\end{array}\right]}}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{C\mathrm{_{4\times6}=\left[\begin{array}{cccccc}
+c_{00} & c_{01} & c_{02} & c_{03} & c_{04} & c_{05}\\
+c_{10} & c_{11} & c_{12} & c_{13} & c_{14} & c_{15}\\
+c_{20} & c_{21} & c_{22} & c_{23} & c_{24} & c_{25}\\
+c_{30} & c_{31} & c_{32} & c_{33} & c_{34} & c_{35}\end{array}\right]}}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{Y}_{4\times1} & = & \mathbf{A}_{4\times8}\\
+ &  & \left[\mathbf{A}_{8\times1}+\mathbf{P}_{8\times9}\:\mathbf{A}_{5\times9}\:\mathbf{B}_{15\times30}\circ\right.\\
+ &  & \left.\left(\mathbf{A}_{30\times1}+\mathbf{P}_{30\times6}\:\mathbf{X}_{6\times1}\right)\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{P_{\mathrm{30\times6}}} & \mathrm{=} & 1_{5\times1}\otimes I_{6}\\
+ & = & \left[\begin{array}{c}
+1\\
+1\\
+1\\
+1\\
+1\end{array}\right]\otimes\left[\begin{array}{cccccc}
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  &  & 1\end{array}\right]\\
+ & = & \left[\begin{array}{cccccc}
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  &  & 1\\
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  &  & 1\\
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  &  & 1\\
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  &  & 1\\
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  &  & 1\\
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  &  & 1\end{array}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{P}_{30\times6}\:\mathbf{X}_{6\times1} & = & \left[\begin{array}{cccccc}
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  &  & 1\\
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  &  & 1\\
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  &  & 1\\
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  &  & 1\\
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  &  & 1\\
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  &  & 1\end{array}\right]\left[\begin{array}{c}
+x_{0}\\
+x_{1}\\
+x_{2}\\
+x_{3}\\
+x_{4}\\
+x_{5}\end{array}\right]\\
+\mathbf{P}_{30\times6}\:\mathbf{X}_{6\times1} & = & \left[\begin{array}{c}
+x_{0}\\
+x_{1}\\
+x_{2}\\
+x_{3}\\
+x_{4}\\
+x_{5}\\
+x_{0}\\
+x_{1}\\
+x_{2}\\
+x_{3}\\
+x_{4}\\
+x_{5}\\
+x_{0}\\
+x_{1}\\
+x_{2}\\
+x_{3}\\
+x_{4}\\
+x_{5}\\
+x_{0}\\
+x_{1}\\
+x_{2}\\
+x_{3}\\
+x_{4}\\
+x_{5}\\
+x_{0}\\
+x_{1}\\
+x_{2}\\
+x_{3}\\
+x_{4}\\
+x_{5}\\
+x_{0}\\
+x_{1}\\
+x_{2}\\
+x_{3}\\
+x_{4}\\
+x_{5}\end{array}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+\begin_inset Formula \[
+\mathbf{A}_{30\times1}=\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{tikz/strassen.tikz}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Strassen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -76,6 +76,10 @@
                  \setlength{\abovecaptionskip}{\belowcaptionskip} %
                  \setlength{\belowcaptionskip}{\@tempdima} %
                  \@ldtable}
+
+\newcommand{\sqbullet}{\vrule height .9ex width .8ex depth -.1ex }
+\newcommand{\hcat}{\, \sqbullet \vert \sqbullet \,}
+\newcommand{\vcat}{\, \frac{\:\sqbullet\:}{\:\sqbullet\:} \,}
 \end_preamble
 \options pointlessnumbers, abstracton, headsepline
 \use_default_options false
@@ -317,6 +321,16 @@ pagestyle{scrheadings}    %Kopfzeile ein
 \begin_inset CommandInset include
 LatexCommand include
 filename "1.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "2.lyx"
 
 \end_inset
 
