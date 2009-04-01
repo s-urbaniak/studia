@@ -161,7 +161,7 @@ A_{2M\times1}=0_{M\times1}\vcat B_{M\times1}\]
 
 \begin_layout Standard
 \begin_inset Formula \[
-A_{M\times2M}=I_{m}\hcat\left(-I_{M}\right)\]
+A_{M\times2M}=I_{M}\hcat\left(-I_{M}\right)\]
 
 \end_inset
 

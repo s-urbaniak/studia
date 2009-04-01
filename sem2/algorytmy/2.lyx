@@ -98,7 +98,7 @@ c_{30} & c_{31} & c_{32} & c_{33} & c_{34} & c_{35}\end{array}\right]}}\]
 \begin_layout Standard
 \begin_inset Formula \begin{eqnarray*}
 \mathbf{Y}_{4\times1} & = & \mathbf{A}_{4\times8}\\
- &  & \left[\mathbf{A}_{8\times1}+\mathbf{P}_{8\times9}\:\mathbf{A}_{5\times9}\:\mathbf{B}_{15\times30}\circ\right.\\
+ &  & \left[\mathbf{A}_{8\times1}+\mathbf{P}_{8\times5}\:\mathbf{A}_{5\times15}\:\mathbf{B}_{15\times30}\circ\right.\\
  &  & \left.\left(\mathbf{A}_{30\times1}+\mathbf{P}_{30\times6}\:\mathbf{X}_{6\times1}\right)\right]\end{eqnarray*}
 
 \end_inset
@@ -151,12 +151,6 @@ c_{30} & c_{31} & c_{32} & c_{33} & c_{34} & c_{35}\end{array}\right]}}\]
  &  & 1\\
  &  &  & 1\\
  &  &  &  & 1\\
- &  &  &  &  & 1\\
-1\\
- & 1\\
- &  & 1\\
- &  &  & 1\\
- &  &  &  & 1\\
  &  &  &  &  & 1\end{array}\right]\end{eqnarray*}
 
 \end_inset
@@ -174,88 +168,50 @@ c_{30} & c_{31} & c_{32} & c_{33} & c_{34} & c_{35}\end{array}\right]}}\]
 \bar no
 \noun off
 \color none
-\lang english
 \begin_inset Formula \begin{eqnarray*}
-\mathbf{P}_{30\times6}\:\mathbf{X}_{6\times1} & = & \left[\begin{array}{cccccc}
+M^{(1)}=\mathbf{P}_{30\times6}\:\mathbf{X}_{6\times1} & = & \left[\begin{array}{cccccc}
 1\\
  & 1\\
  &  & 1\\
  &  &  & 1\\
  &  &  &  & 1\\
  &  &  &  &  & 1\\
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
 1\\
  & 1\\
  &  & 1\\
  &  &  & 1\\
  &  &  &  & 1\\
- &  &  &  &  & 1\\
-1\\
- & 1\\
- &  & 1\\
- &  &  & 1\\
- &  &  &  & 1\\
- &  &  &  &  & 1\\
-1\\
- & 1\\
- &  & 1\\
- &  &  & 1\\
- &  &  &  & 1\\
- &  &  &  &  & 1\\
-1\\
- & 1\\
- &  & 1\\
- &  &  & 1\\
- &  &  &  & 1\\
- &  &  &  &  & 1\\
-1\\
- & 1\\
- &  & 1\\
- &  &  & 1\\
- &  &  &  & 1\\
- &  &  &  &  & 1\end{array}\right]\left[\begin{array}{c}
+ &  &  &  &  & 1\end{array}\right]_{30\times6}\otimes\left[\begin{array}{c}
 x_{0}\\
 x_{1}\\
 x_{2}\\
 x_{3}\\
 x_{4}\\
-x_{5}\end{array}\right]\\
-\mathbf{P}_{30\times6}\:\mathbf{X}_{6\times1} & = & \left[\begin{array}{c}
+x_{5}\end{array}\right]=\left[\begin{array}{c}
 x_{0}\\
-x_{1}\\
-x_{2}\\
-x_{3}\\
-x_{4}\\
+\vdots\\
 x_{5}\\
+\begin{array}{c}
 x_{0}\\
-x_{1}\\
-x_{2}\\
-x_{3}\\
-x_{4}\\
-x_{5}\\
+\vdots\\
+x_{5}\end{array}\\
+\begin{array}{c}
 x_{0}\\
-x_{1}\\
-x_{2}\\
-x_{3}\\
-x_{4}\\
-x_{5}\\
+\vdots\\
+x_{5}\end{array}\\
+\begin{array}{c}
 x_{0}\\
-x_{1}\\
-x_{2}\\
-x_{3}\\
-x_{4}\\
-x_{5}\\
+\vdots\\
+x_{5}\end{array}\\
+\begin{array}{c}
 x_{0}\\
-x_{1}\\
-x_{2}\\
-x_{3}\\
-x_{4}\\
-x_{5}\\
+\vdots\\
+x_{5}\end{array}\\
+\begin{array}{c}
 x_{0}\\
-x_{1}\\
-x_{2}\\
-x_{3}\\
-x_{4}\\
-x_{5}\end{array}\right]\end{eqnarray*}
+\vdots\\
+x_{5}\end{array}\end{array}\right]_{30\times1}\end{eqnarray*}
 
 \end_inset
 
@@ -272,9 +228,275 @@ x_{5}\end{array}\right]\end{eqnarray*}
 \bar no
 \noun off
 \color none
-\lang english
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{A}_{30\times1} & = & \left(I_{15}\otimes\left[\begin{array}{cc}
+0 & 1\\
+1 & 0\end{array}\right]\right)\left(\mathbf{C}_{24\times1}\vcat\mathbf{\mathrm{0}}_{6\times1}\right)\\
+ & = & \left[\begin{array}{ccccc}
+0 & 1\\
+1 & 0\\
+ &  & \ddots\\
+ &  &  & 0 & 1\\
+ &  &  & 1 & 0\end{array}\right]_{30\times30}\left(\left[\begin{array}{c}
+c_{00}\\
+\vdots\\
+c_{05}\\
+c_{10}\\
+\vdots\\
+c_{15}\\
+c_{20}\\
+\vdots\\
+c_{25}\\
+c_{31}\\
+\vdots\\
+c_{35}\end{array}\right]_{24\times1}\vcat\left[\begin{array}{c}
+0\\
+0\\
+0\\
+0\\
+0\\
+0\end{array}\right]\right)\\
+ & = & \left[\begin{array}{ccccc}
+0 & 1\\
+1 & 0\\
+ &  & \ddots\\
+ &  &  & 0 & 1\\
+ &  &  & 1 & 0\end{array}\right]\left[\begin{array}{c}
+c_{00}\\
+\vdots\\
+c_{05}\\
+c_{10}\\
+\vdots\\
+c_{15}\\
+c_{20}\\
+\vdots\\
+c_{25}\\
+c_{31}\\
+\vdots\\
+c_{35}\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\end{array}\right]=\left[\begin{array}{c}
+c_{01}\\
+c_{00}\\
+c_{03}\\
+c_{02}\\
+c_{05}\\
+c_{04}\\
+\vdots\\
+c_{31}\\
+c_{30}\\
+c_{33}\\
+c_{32}\\
+c_{35}\\
+c_{34}\\
+0\\
+0\\
+0\\
+0\\
+0\\
+0\end{array}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula \[
-\mathbf{A}_{30\times1}=\]
+M^{(2)}=\mathbf{A}_{30\times1}+M^{(1)}=\left[\begin{array}{c}
+c_{01}+x_{0}\\
+c_{00}+x_{1}\\
+c_{03}+x_{2}\\
+c_{02}+x_{3}\\
+c_{05}+x_{4}\\
+c_{04}+x_{5}\\
+\vdots\\
+c_{31}+x_{0}\\
+c_{30}+x_{1}\\
+c_{33}+x_{2}\\
+c_{32}+x_{3}\\
+c_{35}+x_{4}\\
+c_{34}+x_{5}\\
+x_{0}\\
+\vdots\\
+x_{5}\end{array}\right]_{30\times1}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{B}_{15\times30}=I_{15}\otimes1_{1\times2}=\left[\begin{array}{ccc}
+1\\
+ & \ddots\\
+ &  & 1\end{array}\right]_{15\times15}\otimes\left[\begin{array}{cc}
+1 & 1\end{array}\right]=\left[\begin{array}{ccccc}
+1 & 1\\
+ &  & \ddots\\
+ &  &  & 1 & 1\end{array}\right]_{15\times30}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+M^{(3)}=\mathbf{B}_{15\times30}\circ M^{(2)}=\left[\begin{array}{c}
+(c_{01}+x_{0})(c_{00}+x_{1})\\
+(c_{03}+x_{2})(c_{02}+x_{3})\\
+(c_{05}+x_{4})(c_{04}+x_{5})\\
+\vdots\\
+(c_{31}+x_{0})(c_{30}+x_{1})\\
+(c_{33}+x_{2})(c_{32}+x_{3})\\
+(c_{35}+x_{4})(c_{34}+x_{5})\\
+x_{0}x_{1}\\
+x_{2}x_{3}\\
+x_{4}x_{5}\end{array}\right]_{15\times1}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{A}_{5\times15}=I_{5}\otimes1_{1\times3}=\left[\begin{array}{ccccc}
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\end{array}\right]\otimes\left[\begin{array}{ccc}
+1 & 1 & 1\end{array}\right]=\left[\begin{array}{ccccccc}
+1 & 1 & 1\\
+ &  &  & \ddots\\
+ &  &  &  & 1 & 1 & 1\end{array}\right]_{5\times15}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+M^{(4)}=\mathbf{A}_{5\times15}M^{(3)}=\left[\begin{array}{c}
+(c_{01}+x_{0})(c_{00}+x_{1})+(c_{03}+x_{2})(c_{02}+x_{3})+(c_{05}+x_{4})(c_{04}+x_{5})\\
+(c_{11}+x_{0})(c_{10}+x_{1})+(c_{13}+x_{2})(c_{12}+x_{3})+(c_{15}+x_{4})(c_{14}+x_{5})\\
+(c_{21}+x_{0})(c_{20}+x_{1})+(c_{23}+x_{2})(c_{22}+x_{3})+(c_{25}+x_{4})(c_{24}+x_{5})\\
+(c_{31}+x_{0})(c_{30}+x_{1})+(c_{33}+x_{2})(c_{32}+x_{3})+(c_{35}+x_{4})(c_{34}+x_{5})\\
+x_{0}x_{1}+x_{2}x_{3}+x_{4}x_{5}\end{array}\right]_{5\times1}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{P}_{8\times5}=I_{4}\oplus1_{4\times1}=\left[\begin{array}{ccccc}
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  & 1\end{array}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+M^{(5)}=P_{8\times5}M^{(4)}=\left[\begin{array}{c}
+(c_{01}+x_{0})(c_{00}+x_{1})+(c_{03}+x_{2})(c_{02}+x_{3})+(c_{05}+x_{4})(c_{04}+x_{5})\\
+\vdots\\
+(c_{31}+x_{0})(c_{30}+x_{1})+(c_{33}+x_{2})(c_{32}+x_{3})+(c_{35}+x_{4})(c_{34}+x_{5})\\
+x_{0}x_{1}+x_{2}x_{3}+x_{4}x_{5}\\
+\vdots\\
+x_{0}x_{1}+x_{2}x_{3}+x_{4}x_{5}\end{array}\right]_{8\times1}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+A_{8\times1}=0_{4\times1}\vcat B_{4\times1}=\left[\begin{array}{c}
+0\\
+0\\
+0\\
+0\end{array}\right]\vcat\left[\begin{array}{c}
+b_{0}\\
+b_{1}\\
+b_{2}\\
+b_{3}\end{array}\right]=\left[\begin{array}{c}
+0\\
+\vdots\\
+0\\
+b_{0}\\
+\vdots\\
+b_{3}\end{array}\right]_{8\times1}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+M^{(6)}=A_{8\times1}+M^{(5)}=\left[\begin{array}{c}
+(c_{01}+x_{0})(c_{00}+x_{1})+(c_{03}+x_{2})(c_{02}+x_{3})+(c_{05}+x_{4})(c_{04}+x_{5})\\
+\vdots\\
+(c_{31}+x_{0})(c_{30}+x_{1})+(c_{33}+x_{2})(c_{32}+x_{3})+(c_{35}+x_{4})(c_{34}+x_{5})\\
+b_{0}+x_{0}x_{1}+x_{2}x_{3}+x_{4}x_{5}\\
+\vdots\\
+b_{3}+x_{0}x_{1}+x_{2}x_{3}+x_{4}x_{5}\end{array}\right]_{8\times1}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{A}_{4\times8}=I_{4}\hcat\left(-I_{4}\right)=\left[\begin{array}{cccccccc}
+1 &  &  &  & -1\\
+ & 1 &  &  &  & -1\\
+ &  & 1 &  &  &  & -1\\
+ &  &  & 1 &  &  &  & -1\end{array}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+Y_{4\times1} & = & A_{4\times8}M^{(6)}\\
+ & =\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\left[\begin{array}{c}
+(c_{01}+x_{0})(c_{00}+x_{1})+(c_{03}+x_{2})(c_{02}+x_{3})+(c_{05}+x_{4})(c_{04}+x_{5})-b_{0}+x_{0}x_{1}+x_{2}x_{3}+x_{4}x_{5}\\
+(c_{11}+x_{0})(c_{10}+x_{1})+(c_{13}+x_{2})(c_{12}+x_{3})+(c_{15}+x_{4})(c_{14}+x_{5})-b_{1}+x_{0}x_{1}+x_{2}x_{3}+x_{4}x_{5}\\
+(c_{21}+x_{0})(c_{20}+x_{1})+(c_{23}+x_{2})(c_{22}+x_{3})+(c_{25}+x_{4})(c_{24}+x_{5})-b_{2}+x_{0}x_{1}+x_{2}x_{3}+x_{4}x_{5}\\
+(c_{31}+x_{0})(c_{30}+x_{1})+(c_{33}+x_{2})(c_{32}+x_{3})+(c_{35}+x_{4})(c_{34}+x_{5})-b_{3}+x_{0}x_{1}+x_{2}x_{3}+x_{4}x_{5}\end{array}\right]\]
 
 \end_inset
 
@@ -285,7 +507,7 @@ x_{5}\end{array}\right]\end{eqnarray*}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
