@@ -70,12 +70,14 @@ if texdocViewCommand:
 	viewCommand = texdocViewCommand.rstrip("&").replace("%s", "%r")
 
 if os.path.exists(templateFilename):
+	sys.stdout.write("Using template %r.\n" % templateFilename)
 	template = file(templateFilename).read()
 else:
+	sys.stdout.write("Generating template.\n")
 	template = r"""\documentclass{article}
 
 \usepackage{tikz,nicefrac,amsmath,pifont}
-\usetikzlibrary{arrows,snakes,backgrounds,patterns,matrix,shapes,fit,calc,shadows,plotmarks}
+\usetikzlibrary{arrows,snakes,backgrounds,patterns,matrix,shapes,plotmarks}
 
 \usepackage[graphics,tightpage,active]{preview}
 \PreviewEnvironment{tikzpicture}

@@ -8,76 +8,188 @@
     \tikzstyle{add} = [-]
     \tikzstyle{subtract} = [densely dotted]
 
-    \newcounter{col}
-
     % Draw inputs
+    \newcounter{col}
     \foreach \x in {0,...,5}
     {
         \node (x\x)
             [n, pin={[pin edge={latex'-, black}] left : $x_{\x}$}]
-            at (\arabic{col},-\x)
+            at (\arabic{col},-\x-12)
             {};
     }
 
-    \stepcounter{col}
 
-    \newcounter{cidx}
     % Constants c00..c35
-    \foreach \crow in {0,...,3}
-        \foreach \ccol in {0,...,5}
+    \stepcounter{col}
+    \stepcounter{col}
+    \stepcounter{col}
+    \newcounter{i}
+    \foreach \crow / \ccol in {
+        0/1, 0/0, 0/3, 0/2, 0/5, 0/4,
+        1/1, 1/0, 1/3, 1/2, 1/5, 1/4,
+        2/1, 2/0, 2/3, 2/2, 2/5, 2/4,
+        3/1, 3/0, 3/3, 3/2, 3/5, 3/4}
+    {
+        \node (c_text\crow\ccol)
+            [addconstant]
+            at (\arabic{col},-\arabic{i})
+            {$c_{\crow\ccol}$};
+
+        \node (c\crow\ccol_east)
+            [n, left of=c_text\crow\ccol, node distance=0.6cm]
+            {};
+
+        \path (c\crow\ccol_east.east) edge[add] (c_text\crow\ccol.west);
+
+        \node (c\crow\ccol_west)
+            [n, right of=c_text\crow\ccol, node distance=0.6cm]
+            {};
+
+        \path (c\crow\ccol_west.east) edge[add] (c_text\crow\ccol.east);
+
+        \stepcounter{i}
+    }
+
+    % x passthroughs
+    \foreach \x in {0,...,5}
+    {
+        \node (x_pa\x)
+            [n]
+            at (\arabic{col}-0.5,-\arabic{i}-\x)
+            {};
+
+        \node (x_pb\x)
+            [n]
+            at (\arabic{col}+0.5,-\arabic{i}-\x)
+            {};
+
+        \path (x_pa\x) edge[add] (x_pb\x);
+        \path (x\x) edge[add] (x_pa\x);
+    }
+
+    % c_{i}{c} + x_{x}
+    \foreach \c / \x in {1/0, 0/1, 3/2, 2/3, 5/4, 4/5}
+        \foreach \i in {0,...,3}
         {
-            \node (c\crow\ccol)
-                [addconstant]
-                at (\arabic{col},-\arabic{cidx})
-                {$c_{\crow\ccol}$};
-            \stepcounter{cidx}
+            \path (x\x) edge[add] (c\i\c_east.west);
         }
 
-    \path (x0) edge[add] (c01);
-    \path (x0) edge[add] (c11);
-    \path (x0) edge[add] (c21);
-    \path (x0) edge[add] (c31);
-
-    \path (x1) edge[add] (c00);
-    \path (x1) edge[add] (c10);
-    \path (x1) edge[add] (c20);
-    \path (x1) edge[add] (c30);
-
-    \path (x2) edge[add] (c03);
-    \path (x2) edge[add] (c13);
-    \path (x2) edge[add] (c23);
-    \path (x2) edge[add] (c33);
-
-    \path (x3) edge[add] (c02);
-    \path (x3) edge[add] (c12);
-    \path (x3) edge[add] (c22);
-    \path (x3) edge[add] (c32);
-
+    % multiplications
     \stepcounter{col}
+    \setcounter{i}{0}
+    \foreach \ca / \cb in {
+        01/00, 03/02, 05/04,
+        11/10, 13/12, 15/14,
+        21/20, 23/22, 25/24,
+        31/30, 33/32, 35/34}
+    {
+        \node (mul\ca\cb)
+            [mul]
+            at (\arabic{col},-\arabic{i}*2-0.5)
+            {${\times}$};
 
-    % yi
-    % \newcounter{yi}
-    % \foreach \ya / \yb in {0/1, 0/0, 1/0, 1/1}
-    % {
-    %     \stepcounter{yi}
-    %     \node (yi\ya\yb) 
-    %         [n, label={above : \tiny $y_{\ya\yb}$}]
-    %         at (\arabic{col},-\arabic{yi})
-    %         {};
-    % }
+        \path (c\ca_west) edge[add] (mul\ca\cb);
+        \path (c\cb_west) edge[add] (mul\ca\cb);
 
-    % new column
-    % \stepcounter{col}
+        \stepcounter{i}
+    }
+
+    % x passthrough multiplications
+    \foreach \xa / \xb in {0/1, 2/3, 4/5}
+    {
+        \node (mulx\xa\xb)
+            [mul]
+            at (\arabic{col},-\arabic{i}*2-0.5)
+            {${\times}$};
+
+        \path (x_pb\xa) edge[add] (mulx\xa\xb);
+        \path (x_pb\xb) edge[add] (mulx\xa\xb);
+
+        \stepcounter{i}
+    }
+
+    % addition
+    \stepcounter{col}
+    \node (add_mulxa)
+        [n]
+        at (\arabic{col}-0.5, -26.5)
+        {};
+
+    \node (add_mulxb)
+        [n]
+        at (\arabic{col}, -26.5)
+        {};
+
+    \path (add_mulxa) edge[add] (add_mulxb);
+    \foreach \xa / \xb in {0/1, 2/3, 4/5}
+    {
+        \path (mulx\xa\xb) edge[add] (add_mulxa);
+    }
+
+    % b0..b3
+    \stepcounter{col}
+    \setcounter{i}{25}
+    \foreach \x in {0,...,3}
+    {
+        \node (b_text\x)
+            [addconstant]
+            at (\arabic{col},-\arabic{i})
+            {$b_{\x}$};
+
+        \node (b\x_left)
+            [n, left of=b_text\x, node distance=0.6cm]
+            {};
+        \path (b\x_left) edge[add] (b_text\x.west);
+
+        \node (b\x_right)
+            [n, right of=b_text\x, node distance=0.6cm]
+            {};
+        \path (b\x_right) edge[add] (b_text\x.east);
+
+        \path (b\x_left) edge[add] (add_mulxb);
+
+        \stepcounter{i}
+    }
+
+    % final addition
+    \setcounter{col}{\arabic{col}-1}
+    \setcounter{i}{1}
+    \foreach \ca / \cb / \cc in {
+        0100/0302/0504,
+        1110/1312/1514,
+        2120/2322/2524,
+        3130/3332/3534}
+    {
+        \node (finaladd_left\ca\cb\cc)
+            [n]
+            at (\arabic{col}-0.5,-\arabic{i}*6+3.5)
+            {};
+
+        \path (mul\ca) edge[add] (finaladd_left\ca\cb\cc);
+        \path (mul\cb) edge[add] (finaladd_left\ca\cb\cc);
+        \path (mul\cc) edge[add] (finaladd_left\ca\cb\cc);
+
+        \stepcounter{i}
+    }
 
     % Draw outputs
+    \setcounter{col}{\arabic{col}+3}
     \foreach \y in {0,...,3}
     {
         \node (y\y) 
             [n, pin={[pin edge={-latex', black}] right : $y_{\y}$}]
-            at (\arabic{col},-\y)
+            at (\arabic{col},-\y-13)
             {};
     }
 
-    % \path (x0) edge[add] (y2);
-    % \path (x0) edge[subtract] (y3);
+    \path (y0) edge[add] (finaladd_left010003020504);
+    \path (y1) edge[add] (finaladd_left111013121514);
+    \path (y2) edge[add] (finaladd_left212023222524);
+    \path (y3) edge[add] (finaladd_left313033323534);
+
+    \path (y0) edge[subtract] (b0_right);
+    \path (y1) edge[subtract] (b1_right);
+    \path (y2) edge[subtract] (b2_right);
+    \path (y3) edge[subtract] (b3_right);
+
 \end{tikzpicture}

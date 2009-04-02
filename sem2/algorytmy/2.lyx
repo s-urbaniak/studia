@@ -507,7 +507,7 @@ Y_{4\times1} & = & A_{4\times8}M^{(6)}\\
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -530,7 +530,7 @@ input{tikz/strassen.tikz}
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Strassen
+Graf strukturalny
 \end_layout
 
 \end_inset
