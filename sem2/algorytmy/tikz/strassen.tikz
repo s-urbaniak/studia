@@ -2,6 +2,7 @@
 \begin{tikzpicture}[yscale=0.5, xscale=1.2, node distance=0.3cm, auto]
     \tikzstyle{n} = [circle, fill, minimum size=2pt, inner sep=0pt, outer sep=0pt]
     \tikzstyle{mul} = [circle, draw, inner sep=0pt]
+    \tikzstyle{addconstant} = [rectangle, draw]
 
     % line styles
     \tikzstyle{add} = [-]
@@ -10,52 +11,73 @@
     \newcounter{col}
 
     % Draw inputs
-    \newcounter{xi}
-    \foreach \xa in {0,...,1}
-        \foreach \xb in {0,...,1}
-        {
-            \stepcounter{xi}
-            \node (x\xa\xb)
-                [n, pin={[pin edge={latex'-, black}] left : $x_{\xa\xb}$}]
-                at (0,-\arabic{xi})
-                {};
-        }
-
-    % new column
-    \stepcounter{col}
-
-    % yi
-    \newcounter{yi}
-    \foreach \ya / \yb in {0/1, 0/0, 1/0, 1/1}
+    \foreach \x in {0,...,5}
     {
-        \stepcounter{yi}
-        \node (yi\ya\yb) 
-            [n, label={above : \tiny $y_{\ya\yb}$}]
-            at (\arabic{col},-\arabic{yi})
+        \node (x\x)
+            [n, pin={[pin edge={latex'-, black}] left : $x_{\x}$}]
+            at (\arabic{col},-\x)
             {};
     }
 
-    % new column
     \stepcounter{col}
 
+    \newcounter{cidx}
+    % Constants c00..c35
+    \foreach \crow in {0,...,3}
+        \foreach \ccol in {0,...,5}
+        {
+            \node (c\crow\ccol)
+                [addconstant]
+                at (\arabic{col},-\arabic{cidx})
+                {$c_{\crow\ccol}$};
+            \stepcounter{cidx}
+        }
+
+    \path (x0) edge[add] (c01);
+    \path (x0) edge[add] (c11);
+    \path (x0) edge[add] (c21);
+    \path (x0) edge[add] (c31);
+
+    \path (x1) edge[add] (c00);
+    \path (x1) edge[add] (c10);
+    \path (x1) edge[add] (c20);
+    \path (x1) edge[add] (c30);
+
+    \path (x2) edge[add] (c03);
+    \path (x2) edge[add] (c13);
+    \path (x2) edge[add] (c23);
+    \path (x2) edge[add] (c33);
+
+    \path (x3) edge[add] (c02);
+    \path (x3) edge[add] (c12);
+    \path (x3) edge[add] (c22);
+    \path (x3) edge[add] (c32);
+
+    \stepcounter{col}
+
+    % yi
+    % \newcounter{yi}
+    % \foreach \ya / \yb in {0/1, 0/0, 1/0, 1/1}
+    % {
+    %     \stepcounter{yi}
+    %     \node (yi\ya\yb) 
+    %         [n, label={above : \tiny $y_{\ya\yb}$}]
+    %         at (\arabic{col},-\arabic{yi})
+    %         {};
+    % }
+
+    % new column
+    % \stepcounter{col}
+
     % Draw outputs
-    \setcounter{yi}{0}
-    \foreach \ya in {0,...,1}
-        \foreach \yb in {0,...,1}
-        {
-            \stepcounter{yi}
-            \node (y\ya\yb) 
-                [n, pin={[pin edge={-latex', black}] right : $y_{\ya\yb}$}]
-                at (\arabic{col},-\arabic{yi})
-                {};
-        }
+    \foreach \y in {0,...,3}
+    {
+        \node (y\y) 
+            [n, pin={[pin edge={-latex', black}] right : $y_{\y}$}]
+            at (\arabic{col},-\y)
+            {};
+    }
 
-    \path (x00) edge[add] (yi00);
-    \path (x00) edge[subtract] (yi01);
-
-    \foreach \ya in {0,...,1}
-        \foreach \yb in {0,...,1}
-        {
-            \path (yi\ya\yb) edge[add] (y\ya\yb);
-        }
+    % \path (x0) edge[add] (y2);
+    % \path (x0) edge[subtract] (y3);
 \end{tikzpicture}
