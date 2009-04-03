@@ -1,4 +1,4 @@
-#LyX 1.6.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -120,38 +120,20 @@ c_{30} & c_{31} & c_{32} & c_{33} & c_{34} & c_{35}\end{array}\right]}}\]
  &  & 1\\
  &  &  & 1\\
  &  &  &  & 1\\
- &  &  &  &  & 1\end{array}\right]\\
- & = & \left[\begin{array}{cccccc}
+ &  &  &  &  & 1\end{array}\right]=\left[\begin{array}{cccccc}
 1\\
  & 1\\
  &  & 1\\
  &  &  & 1\\
  &  &  &  & 1\\
  &  &  &  &  & 1\\
+ & \vdots &  &  & \vdots\\
 1\\
  & 1\\
  &  & 1\\
  &  &  & 1\\
  &  &  &  & 1\\
- &  &  &  &  & 1\\
-1\\
- & 1\\
- &  & 1\\
- &  &  & 1\\
- &  &  &  & 1\\
- &  &  &  &  & 1\\
-1\\
- & 1\\
- &  & 1\\
- &  &  & 1\\
- &  &  &  & 1\\
- &  &  &  &  & 1\\
-1\\
- & 1\\
- &  & 1\\
- &  &  & 1\\
- &  &  &  & 1\\
- &  &  &  &  & 1\end{array}\right]\end{eqnarray*}
+ &  &  &  &  & 1\end{array}\right]_{30\times6}\end{eqnarray*}
 
 \end_inset
 
@@ -176,7 +158,7 @@ M^{(1)}=\mathbf{P}_{30\times6}\:\mathbf{X}_{6\times1} & = & \left[\begin{array}{
  &  &  & 1\\
  &  &  &  & 1\\
  &  &  &  &  & 1\\
-\vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
+ & \vdots &  &  & \vdots\\
 1\\
  & 1\\
  &  & 1\\
@@ -271,7 +253,7 @@ c_{15}\\
 c_{20}\\
 \vdots\\
 c_{25}\\
-c_{31}\\
+c_{30}\\
 \vdots\\
 c_{35}\\
 0\\
@@ -416,7 +398,7 @@ x_{0}x_{1}+x_{2}x_{3}+x_{4}x_{5}\end{array}\right]_{5\times1}\]
 
 \begin_layout Standard
 \begin_inset Formula \[
-M^{(5)}=P_{8\times5}M^{(4)}=\left[\begin{array}{c}
+M^{(5)}=\mathbf{P}_{8\times5}M^{(4)}=\left[\begin{array}{c}
 (c_{01}+x_{0})(c_{00}+x_{1})+(c_{03}+x_{2})(c_{02}+x_{3})+(c_{05}+x_{4})(c_{04}+x_{5})\\
 \vdots\\
 (c_{31}+x_{0})(c_{30}+x_{1})+(c_{33}+x_{2})(c_{32}+x_{3})+(c_{35}+x_{4})(c_{34}+x_{5})\\
@@ -431,7 +413,7 @@ x_{0}x_{1}+x_{2}x_{3}+x_{4}x_{5}\end{array}\right]_{8\times1}\]
 
 \begin_layout Standard
 \begin_inset Formula \[
-A_{8\times1}=0_{4\times1}\vcat B_{4\times1}=\left[\begin{array}{c}
+\mathbf{A}_{8\times1}=0_{4\times1}\vcat B_{4\times1}=\left[\begin{array}{c}
 0\\
 0\\
 0\\
@@ -454,7 +436,7 @@ b_{3}\end{array}\right]_{8\times1}\]
 
 \begin_layout Standard
 \begin_inset Formula \[
-M^{(6)}=A_{8\times1}+M^{(5)}=\left[\begin{array}{c}
+M^{(6)}=\mathbf{A}_{8\times1}+M^{(5)}=\left[\begin{array}{c}
 (c_{01}+x_{0})(c_{00}+x_{1})+(c_{03}+x_{2})(c_{02}+x_{3})+(c_{05}+x_{4})(c_{04}+x_{5})\\
 \vdots\\
 (c_{31}+x_{0})(c_{30}+x_{1})+(c_{33}+x_{2})(c_{32}+x_{3})+(c_{35}+x_{4})(c_{34}+x_{5})\\
