@@ -130,7 +130,7 @@ status collapsed
 
 
 \backslash
-titlepage
+begin{titlepage}
 \end_layout
 
 \end_inset
@@ -173,7 +173,17 @@ Wydział Informatyki
 \align center
 
 \family sans
-\size largest
+\size larger
+Zaawansowone algorytmy przetwarzania danych
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\series bold
+\size larger
 Sprawozdanie
 \end_layout
 
@@ -182,8 +192,9 @@ Sprawozdanie
 \align center
 
 \family sans
-\size larger
-Algorytm Winograda
+\size large
+Strategja redukcji operacji arytmetycznych przy wyznaczaniu iloczynu macierzowo-
+wektorowego
 \end_layout
 
 \begin_layout Standard
@@ -283,24 +294,21 @@ today
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{titlepage}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -311,8 +319,15 @@ pagestyle{scrheadings}
 
 \begin_layout Plain Layout
 
+
+\backslash
+pagenumbering{arabic}
 \end_layout
 
+\end_inset
+
+
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -322,16 +337,6 @@ pagestyle{scrheadings}
 \begin_inset CommandInset include
 LatexCommand include
 filename "1.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "2.lyx"
 
 \end_inset
 
