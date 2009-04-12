@@ -5,7 +5,7 @@
 \textclass scrreprt
 \use_default_options true
 \language polish
-\inputencoding auto
+\inputencoding utf8
 \font_roman default
 \font_sans default
 \font_typewriter default
@@ -42,6 +42,10 @@
 
 \begin_body
 
+\begin_layout Chapter
+Wzory
+\end_layout
+
 \begin_layout Standard
 \begin_inset Formula \[
 \mathbf{A}{}_{8}=\left[\begin{array}{cccc|cccc}
@@ -66,6 +70,14 @@ n & m & l & k & f & e & b & a\end{array}\right]\]
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Widać, że macierz 
+\begin_inset Formula $\mathbf{A}{}_{8}$
+\end_inset
+
+ jest blokową macierzą o następującym kształcie:
 \end_layout
 
 \begin_layout Standard
@@ -98,6 +110,25 @@ n & m & l & k\end{array}\right]\]
 \end_layout
 
 \begin_layout Standard
+Ogólny wzór dla rozwiązania tej macierzy blokowej jest:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{Y}_{N\times1}=\left[\begin{array}{cc}
+\mathbf{I}_{\frac{N}{2}} & \mathbf{I}_{\frac{N}{2}}\\
+\mathbf{I}_{\frac{N}{2}} & -\mathbf{I}_{\frac{N}{2}}\end{array}\right]\frac{1}{2}diag\left(\begin{array}{c}
+\mathbf{A}_{\frac{N}{2}}+\mathbf{B}_{\frac{N}{2}}\\
+\mathbf{A}_{\frac{N}{2}}-\mathbf{B}_{\frac{N}{2}}\end{array}\right)\left[\begin{array}{cc}
+\mathbf{I}_{\frac{N}{2}} & \mathbf{I}_{\frac{N}{2}}\\
+\mathbf{I}_{\frac{N}{2}} & -\mathbf{I}_{\frac{N}{2}}\end{array}\right]\mathbf{X}_{N\times1}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Krok (1)
 \end_layout
 
@@ -112,30 +143,9 @@ Krok (1)
 
 \begin_layout Standard
 \begin_inset Formula \[
-\mathbf{D}_{8}^{(1)}=\frac{1}{2}\left(\mathbf{A}_{4}+\mathbf{B}_{4}\right)\oplus\frac{1}{2}\left(\mathbf{A}_{4}-\mathbf{B}_{4}\right)\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula \[
-\mathbf{E}_{2}\otimes\mathbf{I}_{2}=\left[\begin{array}{cc}
-1 & 1\\
-1 & -1\end{array}\right]\left[\begin{array}{cccc}
-1\\
- & 1\\
- &  & 1\\
- &  &  & 1\end{array}\right]=\left[\begin{array}{cccc|cccc}
-1 &  &  &  & 1\\
- & 1 &  &  &  & 1\\
- &  & 1 &  &  &  & 1\\
- &  &  & 1 &  &  &  & 1\\
-\hline 1 &  &  &  & -1\\
- & 1 &  &  &  & -1\\
- &  & 1 &  &  &  & -1\\
- &  &  & 1 &  &  &  & -1\end{array}\right]\]
+\mathbf{D}_{8}^{(1)}=\frac{1}{2}diag\left(\begin{array}{c}
+\mathbf{A}_{4}+\mathbf{B}_{4}\\
+\mathbf{A}_{4}-\mathbf{B}_{4}\end{array}\right)\]
 
 \end_inset
 
@@ -162,6 +172,576 @@ a-k & b-l & c-i & d-p\\
 b-l & a-k & d-p & c-i\\
 \hline e-m & f-n & a-k & b-l\\
 f-n & e-m & b-l & a-k\end{array}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Widać, że podmacierze 
+\begin_inset Formula $\mathbf{A}_{4}+\mathbf{B}_{4}$
+\end_inset
+
+ i 
+\begin_inset Formula $\mathbf{A}_{4}-\mathbf{B}_{4}$
+\end_inset
+
+ są macierzami blokowymi o następującym kształcie: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{A}_{4}+\mathbf{B}_{4}=\left[\begin{array}{c|c}
+\mathbf{A}_{2} & \mathbf{B}_{2}\\
+\hline \mathbf{C}_{2} & \mathbf{A}_{2}\end{array}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{A}_{4}-\mathbf{B}_{4}=\left[\begin{array}{c|c}
+\mathbf{D}_{2} & \mathbf{E}_{2}\\
+\hline \mathbf{F}_{2} & \mathbf{D}_{2}\end{array}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+gdzie
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{A}_{2}=\left[\begin{array}{c|c}
+a+k & b+l\\
+\hline b+l & a+k\end{array}\right],\,\mathbf{B}_{2}=\left[\begin{array}{c|c}
+c+i & d+p\\
+\hline d+p & c+i\end{array}\right],\,\mathbf{C}_{2}=\left[\begin{array}{c|c}
+e+m & f+n\\
+\hline f+n & e+m\end{array}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{D}_{2}=\left[\begin{array}{c|c}
+a-k & b-l\\
+\hline b-l & a-k\end{array}\right],\,\mathbf{E}_{2}=\left[\begin{array}{c|c}
+c-i & d-p\\
+\hline d-p & c-i\end{array}\right],\,\mathbf{F}_{2}=\left[\begin{array}{c|c}
+e-m & f-n\\
+\hline f-n & e-m\end{array}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ogólny wzór dla racjonalizacji takich macierzy blokowych jest:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{Y}_{N\times1} & = & \left[\begin{array}{c|c}
+\mathbf{A}_{\frac{N}{2}} & \mathbf{B}_{\frac{N}{2}}\\
+\hline \mathbf{C}_{\frac{N}{2}} & \mathbf{A}_{\frac{N}{2}}\end{array}\right]\mathbf{X}_{N\times1}\\
+ & = & \left[\begin{array}{ccc}
+\mathbf{0}_{\frac{N}{2}} & \mathbf{I}_{\frac{N}{2}} & \mathbf{I}_{\frac{N}{2}}\\
+\mathbf{I}_{\frac{N}{2}} & \mathbf{0}_{\frac{N}{2}} & \mathbf{I}_{\frac{N}{2}}\end{array}\right]diag\left(\begin{array}{c}
+\mathbf{C}_{\frac{N}{2}}-\mathbf{A}_{\frac{N}{2}}\\
+\mathbf{B}_{\frac{N}{2}}-\mathbf{A}_{\frac{N}{2}}\\
+\mathbf{A}_{\frac{N}{2}}\end{array}\right)\left[\begin{array}{cc}
+\mathbf{I}_{\frac{N}{2}} & \mathbf{0}_{\frac{N}{2}}\\
+\mathbf{0}_{\frac{N}{2}} & \mathbf{I}_{\frac{N}{2}}\\
+\mathbf{I}_{\frac{N}{2}} & \mathbf{I}_{\frac{N}{2}}\end{array}\right]\mathbf{X}_{N\times1}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Krok (2)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{Y}_{4}^{(1)} & = & \left[\begin{array}{ccc}
+\mathbf{0}_{2} & \mathbf{I}_{2} & \mathbf{I}_{2}\\
+\mathbf{I}_{2} & \mathbf{0}_{2} & \mathbf{I}_{2}\end{array}\right]diag\left(\begin{array}{c}
+\mathbf{C}_{2}-\mathbf{A}_{2}\\
+\mathbf{B}_{2}-\mathbf{A}_{2}\\
+\mathbf{A}_{2}\end{array}\right)\left[\begin{array}{cc}
+\mathbf{I}_{2} & \mathbf{0}_{2}\\
+\mathbf{0}_{2} & \mathbf{I}_{2}\\
+\mathbf{I}_{2} & \mathbf{I}_{2}\end{array}\right]\mathbf{X}_{4}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{Y}_{4}^{(2)}=\left[\begin{array}{ccc}
+\mathbf{0}_{2} & \mathbf{I}_{2} & \mathbf{I}_{2}\\
+\mathbf{I}_{2} & \mathbf{0}_{2} & \mathbf{I}_{2}\end{array}\right]diag\left(\begin{array}{c}
+\mathbf{F}_{2}-\mathbf{D}_{2}\\
+\mathbf{E}_{2}-\mathbf{D}_{2}\\
+\mathbf{D}_{2}\end{array}\right)\left[\begin{array}{cc}
+\mathbf{I}_{2} & \mathbf{0}_{2}\\
+\mathbf{0}_{2} & \mathbf{I}_{2}\\
+\mathbf{I}_{2} & \mathbf{I}_{2}\end{array}\right]\mathbf{X}_{4}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{T}_{4\times6}=\left[\begin{array}{ccc}
+\mathbf{0}_{2} & \mathbf{I}_{2} & \mathbf{I}_{2}\\
+\mathbf{I}_{2} & \mathbf{0}_{2} & \mathbf{I}_{2}\end{array}\right]=\left[\begin{array}{cccccc}
+0 & 0 & 1 & 1 & 1 & 1\\
+0 & 0 & 1 & 1 & 1 & 1\\
+1 & 1 & 0 & 0 & 1 & 1\\
+1 & 1 & 0 & 0 & 1 & 1\end{array}\right],\,\overset{\sim}{\mathbf{T}}_{6\times4}=\left[\begin{array}{cc}
+\mathbf{I}_{2} & \mathbf{0}_{2}\\
+\mathbf{0}_{2} & \mathbf{I}_{2}\\
+\mathbf{I}_{2} & \mathbf{I}_{2}\end{array}\right]=\left[\begin{array}{cccc}
+1 & 1 & 0 & 0\\
+1 & 1 & 0 & 0\\
+0 & 0 & 1 & 1\\
+0 & 0 & 1 & 1\\
+1 & 1 & 1 & 1\\
+1 & 1 & 1 & 1\end{array}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{D}_{8}^{(2)} & = & \mathbf{T}_{4\times6}\,\frac{1}{2}diag\left(\begin{array}{c}
+\mathbf{C}_{2}-\mathbf{A}_{2}\\
+\mathbf{B}_{2}-\mathbf{A}_{2}\\
+\mathbf{A}_{2}\end{array}\right)\overset{\sim}{\mathbf{T}}_{6\times4}\oplus\mathbf{T}_{4\times6\,}\frac{1}{2}diag\left(\begin{array}{c}
+\mathbf{F}_{2}-\mathbf{D}_{2}\\
+\mathbf{E}_{2}-\mathbf{D}_{2}\\
+\mathbf{D}_{2}\end{array}\right)\overset{\sim}{\mathbf{T}}_{6\times4}\\
+ & = & \left(\mathbf{I}_{2}\otimes\mathbf{T}_{4\times6}\right)\left(\frac{1}{2}diag\left(\begin{array}{c}
+\mathbf{C}_{2}-\mathbf{A}_{2}\\
+\mathbf{B}_{2}-\mathbf{A}_{2}\\
+\mathbf{A}_{2}\end{array}\right)\oplus\frac{1}{2}diag\left(\begin{array}{c}
+\mathbf{F}_{2}-\mathbf{D}_{2}\\
+\mathbf{E}_{2}-\mathbf{D}_{2}\\
+\mathbf{D}_{2}\end{array}\right)\right)\left(\mathbf{I}_{2}\otimes\overset{\sim}{\mathbf{T}}_{6\times4}\right)\\
+ & = & \left(\mathbf{I}_{2}\otimes\mathbf{T}_{4\times6}\right)\frac{1}{2}diag\left(\begin{array}{c}
+\mathbf{C}_{2}-\mathbf{A}_{2}\\
+\mathbf{B}_{2}-\mathbf{A}_{2}\\
+\mathbf{A}_{2}\\
+\mathbf{F}_{2}-\mathbf{D}_{2}\\
+\mathbf{E}_{2}-\mathbf{D}_{2}\\
+\mathbf{D}_{2}\end{array}\right)\left(\mathbf{I}_{2}\otimes\overset{\sim}{\mathbf{T}}_{6\times4}\right)\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Krok (3)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{C}_{2}-\mathbf{A}_{2} & = & \left[\begin{array}{c|c}
+e+m & f+n\\
+\hline f+n & e+m\end{array}\right]-\left[\begin{array}{c|c}
+a+k & b+l\\
+\hline b+l & a+k\end{array}\right]\\
+ & = & \left[\begin{array}{c|c}
+e+m-a-k & f+n-b-l\\
+\hline f+n-b-l & e+m-a-k\end{array}\right]=\left[\begin{array}{c|c}
+\mathbf{A}_{1}^{(1)} & \mathbf{B}_{1}^{(1)}\\
+\hline \mathbf{B}_{1}^{(1)} & \mathbf{A}_{1}^{(1)}\end{array}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{Y}_{2\times1}^{(1)} & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+\mathbf{A}_{1}^{(1)}+\mathbf{B}_{1}^{(1)}\\
+\mathbf{A}_{1}^{(1)}-\mathbf{B}_{1}^{(1)}\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\\
+ & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+e+m-a-k+f+n-b-l\\
+e+m-a-k-f-n+b+l\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\\
+ & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+s_{0}\\
+s_{1}\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{B}_{2}-\mathbf{A}_{2} & = & \left[\begin{array}{c|c}
+c+i & d+p\\
+\hline d+p & c+i\end{array}\right]-\left[\begin{array}{c|c}
+a+k & b+l\\
+\hline b+l & a+k\end{array}\right]\\
+ & = & \left[\begin{array}{c|c}
+c+i-a-k & d+p-b-l\\
+\hline d+p-b-l & c+i-a-k\end{array}\right]=\left[\begin{array}{c|c}
+\mathbf{A}_{1}^{(2)} & \mathbf{B}_{1}^{(2)}\\
+\hline \mathbf{B}_{1}^{(2)} & \mathbf{A}_{1}^{(2)}\end{array}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{Y}_{2\times1}^{(2)} & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+\mathbf{A}_{1}^{(2)}+\mathbf{B}_{1}^{(2)}\\
+\mathbf{A}_{1}^{(2)}-\mathbf{B}_{1}^{(2)}\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\\
+ & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+c+i-a-k+d+p-b-l\\
+c+i-a-k-d-p+b+l\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\\
+ & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+s_{2}\\
+s_{3}\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+\begin_inset Formula \[
+\mathbf{A}_{2}=\left[\begin{array}{c|c}
+a+k & b+l\\
+\hline b+l & a+k\end{array}\right]=\left[\begin{array}{c|c}
+\mathbf{A}_{1}^{(3)} & \mathbf{B}_{1}^{(3)}\\
+\hline \mathbf{B}_{1}^{(3)} & \mathbf{A}_{1}^{(3)}\end{array}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{Y}_{2\times1} & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+\mathbf{A}_{1}^{(3)}+\mathbf{B}_{1}^{(3)}\\
+\mathbf{A}_{1}^{(3)}-\mathbf{B}_{1}^{(3)}\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\\
+ & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+a+k+b+l\\
+a+k-b-l\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\\
+ & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+s_{4}\\
+s_{5}\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{F}_{2}-\mathbf{D}_{2} & = & \left[\begin{array}{c|c}
+e-m & f-n\\
+\hline f-n & e-m\end{array}\right]-\left[\begin{array}{c|c}
+a-k & b-l\\
+\hline b-l & a-k\end{array}\right]\\
+ & = & \left[\begin{array}{c|c}
+e-m-a+k & f-n-b+l\\
+\hline f-n-b+l & e-m-a+k\end{array}\right]=\left[\begin{array}{c|c}
+\mathbf{A}_{1}^{(4)} & \mathbf{B}_{1}^{(4)}\\
+\hline \mathbf{B}_{1}^{(4)} & \mathbf{A}_{1}^{(4)}\end{array}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{Y}_{2\times1}^{(3)} & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+\mathbf{A}_{1}^{(4)}+\mathbf{B}_{1}^{(4)}\\
+\mathbf{A}_{1}^{(4)}-\mathbf{B}_{1}^{(4)}\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\\
+ & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+e-m-a+k+f-n-b+l\\
+e-m-a+k-f+n+b-l\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\\
+ & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+s_{6}\\
+s_{7}\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}_{2}-\mathbf{D}_{2} & = & \left[\begin{array}{c|c}
+c-i & d-p\\
+\hline d-p & c-i\end{array}\right]-\left[\begin{array}{c|c}
+a-k & b-l\\
+\hline b-l & a-k\end{array}\right]\\
+ & = & \left[\begin{array}{c|c}
+c-i-a+k & d-p-b+l\\
+\hline d-p-b+l & c-i-a+k\end{array}\right]=\left[\begin{array}{c|c}
+\mathbf{A}_{1}^{(5)} & \mathbf{B}_{1}^{(5)}\\
+\hline \mathbf{B}_{1}^{(5)} & \mathbf{A}_{1}^{(5)}\end{array}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{Y}_{2\times1}^{(4)} & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+\mathbf{A}_{1}^{(5)}+\mathbf{B}_{1}^{(5)}\\
+\mathbf{A}_{1}^{(5)}-\mathbf{B}_{1}^{(5)}\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\\
+ & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+c-i-a+k+d-p-b+l\\
+c-i-a+k-d+p+b-l\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\\
+ & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+s_{8}\\
+s_{9}\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula \[
+\mathbf{D}_{2}=\left[\begin{array}{c|c}
+a-k & b-l\\
+\hline b-l & a-k\end{array}\right]=\left[\begin{array}{c|c}
+\mathbf{A}_{1}^{(6)} & \mathbf{B}_{1}^{(6)}\\
+\hline \mathbf{B}_{1}^{(6)} & \mathbf{A}_{1}^{(6)}\end{array}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{Y}_{2\times1}^{(5)} & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+\mathbf{A}_{1}^{(6)}+\mathbf{B}_{1}^{(6)}\\
+\mathbf{A}_{1}^{(6)}-\mathbf{B}_{1}^{(6)}\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\\
+ & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+a-k+b-l\\
+a-k-b+l\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\\
+ & = & \mathbf{E}_{2}diag\left(\begin{array}{c}
+s_{10}\\
+s_{11}\end{array}\right)\mathbf{E}_{2}\mathbf{X}_{2\times1}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{D}_{8\times1}^{(3)}=\left(\mathbf{I}_{6}\otimes\mathbf{E}_{2}\right)diag\left(\begin{array}{c}
+s_{0}\\
+s_{1}\\
+\vdots\\
+s_{11}\end{array}\right)\left(\mathbf{I}_{6}\otimes\mathbf{E}_{2}\right)\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Rozwiązanie
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{Y}_{8\times1}=\left(\mathbf{E}_{2}\otimes\mathbf{I}_{4}\right)\left(\mathbf{I}_{2}\otimes\mathbf{T}_{4\times6}\right)\left(\mathbf{I}_{6}\otimes\mathbf{E}_{2}\right)diag\left(\begin{array}{c}
+s_{0}\\
+s_{1}\\
+\vdots\\
+s_{11}\end{array}\right)\left(\mathbf{I}_{6}\otimes\mathbf{E}_{2}\right)\left(\mathbf{I}_{2}\otimes\overset{\sim}{\mathbf{T}}_{6\times4}\right)\left(\mathbf{E}_{2}\otimes\mathbf{I}_{4}\right)\mathbf{X}_{8\times1}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Graf strukturalny
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}_{2}\otimes\mathbf{I}_{4} & =\left[\begin{array}{cc}
+\mathbf{I}_{4} & \mathbf{I}_{4}\\
+\mathbf{I}_{4} & -\mathbf{I}_{4}\end{array}\right]= & \left[\begin{array}{cc}
+1 & 1\\
+1 & -1\end{array}\right]\otimes\left[\begin{array}{cccc}
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\end{array}\right]\\
+ & = & \left[\begin{array}{cccc|cccc}
+1 &  &  &  & 1\\
+ & 1 &  &  &  & 1\\
+ &  & 1 &  &  &  & 1\\
+ &  &  & 1 &  &  &  & 1\\
+\hline 1 &  &  &  & -1\\
+ & 1 &  &  &  & -1\\
+ &  & 1 &  &  &  & -1\\
+ &  &  & 1 &  &  &  & -1\end{array}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{M}_{8\times1}^{(1)}=(\mathbf{E}_{2}\otimes\mathbf{I}_{4})\mathbf{X}_{8\times1}=\left[\begin{array}{c}
+x_{0}+x_{4}\\
+x_{1}+x_{5}\\
+x_{2}+x_{6}\\
+x_{3}+x_{7}\\
+x_{0}-x_{4}\\
+x_{1}-x_{5}\\
+x_{2}-x_{6}\\
+x_{3}-x_{7}\end{array}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{I}_{2}\otimes\overset{\sim}{\mathbf{T}}_{6\times4}=\left[\begin{array}{cc}
+1 & 0\\
+0 & 1\end{array}\right]\otimes\left[\begin{array}{cccc}
+1 & 1 & 0 & 0\\
+1 & 1 & 0 & 0\\
+0 & 0 & 1 & 1\\
+0 & 0 & 1 & 1\\
+1 & 1 & 1 & 1\\
+1 & 1 & 1 & 1\end{array}\right]=\left[\begin{array}{cccccccc}
+1 & 1 & 0 & 0\\
+1 & 1 & 0 & 0\\
+0 & 0 & 1 & 1\\
+0 & 0 & 1 & 1\\
+1 & 1 & 1 & 1\\
+1 & 1 & 1 & 1\\
+ &  &  &  & 1 & 1 & 0 & 0\\
+ &  &  &  & 1 & 1 & 0 & 0\\
+ &  &  &  & 0 & 0 & 1 & 1\\
+ &  &  &  & 0 & 0 & 1 & 1\\
+ &  &  &  & 1 & 1 & 1 & 1\\
+ &  &  &  & 1 & 1 & 1 & 1\end{array}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{M}_{8\times1}^{(2)}=\left(\mathbf{I}_{2}\otimes\overset{\sim}{\mathbf{T}}_{6\times4}\right)\mathbf{M}_{8\times1}^{(1)}=\left[\begin{array}{c}
+\left(x_{0}+x_{4}\right)+\left(x_{1}+x_{5}\right)\\
+\left(x_{0}+x_{4}\right)+\left(x_{1}+x_{5}\right)\\
+\left(x_{2}+x_{6}\right)+\left(x_{3}+x_{7}\right)\\
+\left(x_{2}+x_{6}\right)+\left(x_{3}+x_{7}\right)\\
+\left(x_{0}+x_{4}\right)+\left(x_{1}+x_{5}\right)+\left(x_{2}+x_{6}\right)+\left(x_{3}+x_{7}\right)\\
+\left(x_{0}+x_{4}\right)+\left(x_{1}+x_{5}\right)+\left(x_{2}+x_{6}\right)+\left(x_{3}+x_{7}\right)\\
+\left(x_{0}-x_{4}\right)+\left(x_{1}-x_{5}\right)\\
+\left(x_{0}-x_{4}\right)+\left(x_{1}-x_{5}\right)\\
+\left(x_{2}-x_{6}\right)+\left(x_{3}-x_{7}\right)\\
+\left(x_{2}-x_{6}\right)+\left(x_{3}-x_{7}\right)\\
+\left(x_{0}-x_{4}\right)+\left(x_{1}-x_{5}\right)+\left(x_{2}-x_{6}\right)+\left(x_{3}-x_{7}\right)\\
+\left(x_{0}-x_{4}\right)+\left(x_{1}-x_{5}\right)+\left(x_{2}-x_{6}\right)+\left(x_{3}-x_{7}\right)\end{array}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{M}_{12\times12}^{(3)}=\mathbf{I}_{6}\otimes\mathbf{E}_{2}=\left[\begin{array}{cccccc}
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  &  & 1\end{array}\right]\left[\begin{array}{cc}
+1 & 1\\
+1 & -1\end{array}\right]=\left[\begin{array}{cccccc}
+1 & 1\\
+1 & -1\\
+ &  & \ddots\\
+ &  &  &  & 1 & 1\\
+ &  &  &  & 1 & -1\end{array}\right]_{12\times12}\]
 
 \end_inset
 
