@@ -7,15 +7,17 @@
     </groupId>
     <version>0.1</version>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>webservice-project
-    </artifactId>
+    <artifactId>webservice-project</artifactId>
     <packaging>war</packaging>
-    <name>web services study project</name>
+    <name>webservice-project</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <gwtVersion>1.5.3</gwtVersion>
         <springVersion>2.5.6</springVersion>
+
+        <test.jdbc.url>jdbc:hsqldb:mem:.</test.jdbc.url>
+        <gwt.output>${project.build.directory}/${project.name}-${project.version}</gwt.output>
     </properties>
 
     <dependencies>
@@ -208,6 +210,7 @@
         <defaultGoal>install</defaultGoal>
 
         <plugins>
+
             <plugin>
                 <groupId>com.totsp.gwt</groupId>
                 <artifactId>maven-googlewebtoolkit2-plugin</artifactId>
@@ -222,11 +225,7 @@
                     <noServer>false</noServer>
                     <extraJvmArgs>-Xmx512m</extraJvmArgs>
                     <gwtVersion>${gwtVersion}</gwtVersion>
-                    <!--
-                        Comment this when deploying on other web apps
-                        (i.e. expanded jetty)
-                    -->
-<!--                    <output>${project.build.directory}/tomcat/webapps/ROOT</output>-->
+                    <output>${gwt.output}</output>
                 </configuration>
                 <executions>
                     <execution>
@@ -418,16 +417,16 @@
 
     <profiles>
         <profile>
-            <id>test.mem</id>
+            <id>jdbc.remote</id>
             <properties>
-                <test.jdbc.url>jdbc:hsqldb:mem:.</test.jdbc.url>
+                <test.jdbc.url>jdbc:hsqldb:hsql://localhost:9101/musicdb</test.jdbc.url>
             </properties>
         </profile>
 
         <profile>
-            <id>test.remote</id>
+            <id>gwt</id>
             <properties>
-                <test.jdbc.url>jdbc:hsqldb:hsql://localhost:9101/musicdb</test.jdbc.url>
+                <gwt.output>${project.build.directory}/tomcat/webapps/ROOT</gwt.output>
             </properties>
         </profile>
 
