@@ -16,8 +16,9 @@
 
     % styles
     \tikzstyle{n} = [circle, fill=black, minimum size=2pt, inner sep=0pt, outer sep=0pt]
-    \tikzstyle{mul} = [circle, draw, inner sep=0pt]
+    \tikzstyle{mul} = [shape=circle, draw, inner sep=0pt]
     \tikzstyle{addconstant} = [rectangle, draw]
+    \tikzstyle{mulconstant} = [circle, fill=white, draw, inner sep=0pt, minimum size=0.45cm]
     \tikzstyle{butterfly} = [shape=rectangle, minimum width=0.3cm, fill=white, draw]
 
     % line styles
@@ -41,30 +42,22 @@
     \setcounter{row}{2}
     \foreach \x in {0,...,3}
     {
-        \draw (\arabic{col}+\x/3, 0.2-\x-\arabic{row})
-            rectangle +(1,-4.5) [fill=white]
-            (\arabic{col}+\x/3, -\x-\arabic{row}) node (eUpIn\x) [n] {}
-            (\arabic{col}+\x/3, -\x-\arabic{row}-4) node (eDownIn\x) [n] {}
-            (\arabic{col}+1+\x/3, -\x-\arabic{row}) node [n] (eUpOut\x) {}
-            (\arabic{col}+1+\x/3, -\x-\arabic{row}-4) node [n] (eDownOut\x) {};
+        \pgfmathsetmacro{\col}{\arabic{col}}
+        \pgfmathsetmacro{\row}{\arabic{row}}
+
+        \draw
+            (\col+\x/3, 0.2-\x-\row) rectangle +(1,-4.5) [butterfly]
+            (\col+\x/3, -\x-\row) node (eUpIn\x) [n] {}
+            (\col+\x/3, -\x-\row-4) node (eDownIn\x) [n] {}
+            (\col+1+\x/3, -\x-\row) node [n] {} --
+            (\col+3, -\x-\row) node [n] (eUpOut\x) {}
+            (\col+1+\x/3, -\x-\row-4) node [n] {} --
+            (\col+3, -\x-\row-4) node [n] (eUpDown\x) {};
 
         \path (x\x) edge[add] (eUpIn\x);
 
-        \node (m1Up\x)
-            [n]
-            at (\arabic{col}+3, -\x-\arabic{row})
-            {};
-
-        \path (eUpOut\x) edge[add] (m1Up\x);
-
         \pgfmathparse{\x+4}
         \path (x\pgfmathresult) edge[add] (eDownIn\x);
-
-        \node (m1Down\x)
-            [n]
-            at (\arabic{col}+3, -\pgfmathresult-\arabic{row})
-            {};
-        \path (eDownOut\x) edge[add] (m1Down\x);
     }
     \draw (\arabic{col}+1.5, -5-\arabic{row}) node [] {\tiny ${\mathbf{E}_2}$};
 
@@ -90,90 +83,68 @@
             {};
     }
 
-    \path (m1Up0) edge[add] (m20);
-    \path (m1Up1) edge[add] (m20);
-    \path (m1Up2) edge[add] (m21);
-    \path (m1Up3) edge[add] (m21);
+    \path
+        (eUpOut0) edge[add] (m20)
+        (eUpOut1) edge[add] (m20)
+        (eUpOut2) edge[add] (m21)
+        (eUpOut3) edge[add] (m21)
 
-    \path (m1Up0) edge[add] (m22);
-    \path (m1Up1) edge[add] (m22);
-    \path (m1Up2) edge[add] (m22);
-    \path (m1Up3) edge[add] (m22);
+        (eUpOut0) edge[add] (m22)
+        (eUpOut1) edge[add] (m22)
+        (eUpOut2) edge[add] (m22)
+        (eUpOut3) edge[add] (m22)
 
-    \path (m1Down0) edge[add] (m23);
-    \path (m1Down1) edge[add] (m23);
-    \path (m1Down2) edge[add] (m24);
-    \path (m1Down3) edge[add] (m24);
+        (eUpDown0) edge[add] (m23)
+        (eUpDown1) edge[add] (m23)
+        (eUpDown2) edge[add] (m24)
+        (eUpDown3) edge[add] (m24)
 
-    \path (m1Down0) edge[add] (m25);
-    \path (m1Down1) edge[add] (m25);
-    \path (m1Down2) edge[add] (m25);
-    \path (m1Down3) edge[add] (m25);
-
-    \pgfmathparse{\arabic{col}+2}
-    \setcounter{col}{\pgfmathresult}
-    \setcounter{row}{0}
-    \foreach \x in {0,...,11}
-    {
-        \node (m2d\x)
-            [n]
-            at (\arabic{col}, -\x-\arabic{row})
-            {};
-    }
-    \path (m20) edge[add] (m2d0);
-    \path (m20) edge[add] (m2d1);
-    \path (m21) edge[add] (m2d2);
-    \path (m21) edge[add] (m2d3);
-    \path (m22) edge[add] (m2d4);
-    \path (m22) edge[add] (m2d5);
-    \path (m23) edge[add] (m2d6);
-    \path (m23) edge[add] (m2d7);
-    \path (m24) edge[add] (m2d8);
-    \path (m24) edge[add] (m2d9);
-    \path (m25) edge[add] (m2d10);
-    \path (m25) edge[add] (m2d11);
+        (eUpDown0) edge[add] (m25)
+        (eUpDown1) edge[add] (m25)
+        (eUpDown2) edge[add] (m25)
+        (eUpDown3) edge[add] (m25);
 
     % last butterflies
-    \stepcounter{col}
+    \setcounter{col}{8}
     \setcounter{row}{0}
+    \newcounter{s}
     \foreach \x in {0,...,5}
     {
         \pgfmathparse{\x*2}
         \pgfmathsetmacro{\row}{\pgfmathresult}
+        \pgfmathsetmacro{\col}{\arabic{col}}
 
-        \draw (\arabic{col}, 0.2-\row)
-            rectangle +(1,-1.5) [fill=white]
-            (\arabic{col}, -\row) node (eUpIn\x) [n] {}
-            (\arabic{col}+1, -\row) node (eUpOut\x) [n] {}
-            (\arabic{col}, -\row-1) node (eDownIn\x) [n] {}
-            (\arabic{col}+1, -\row-1) node (eDownOut\x) [n] {};
+        \draw
+            (\col+0.5, 0.2-\row) rectangle +(1,-1.5) [fill=white]
 
-        \draw (\arabic{col}+0.5, -\row-0.5) node [] {\tiny ${\mathbf{E}_2}$};
+            (\col,     -\row) node (eUpIn\x) [n] {} --
+            (\col+0.5, -\row) node           [n] {}
+            (\col+1.5, -\row) node           [n] {} --
+            (\col+2,   -\row) node (eUpOut\x) [n] {}
+
+            (\col,     -\row-1) node (eDownIn\x)  [n] {} --
+            (\col+0.5, -\row-1) node              [n] {}
+            (\col+1.5, -\row-1) node              [n] {} --
+            (\col+2,   -\row -1)node (eDownOut\x) [n] {}
+
+            (\col+1, -\row-0.5) node [] {\tiny ${\mathbf{E}_2}$};
+
+        \path
+            (m2\x) edge [add] (eUpIn\x)
+            (m2\x) edge [add] (eDownIn\x);
     }
 
-    \path (m2d0) edge[add] (eUpIn0);
-    \path (m2d1) edge[add] (eDownIn0);
-    \path (m2d2) edge[add] (eUpIn1);
-    \path (m2d3) edge[add] (eDownIn1);
-    \path (m2d4) edge[add] (eUpIn2);
-    \path (m2d5) edge[add] (eDownIn2);
-    \path (m2d6) edge[add] (eUpIn3);
-    \path (m2d7) edge[add] (eDownIn3);
-    \path (m2d8) edge[add] (eUpIn4);
-    \path (m2d9) edge[add] (eDownIn4);
-    \path (m2d10) edge[add] (eUpIn5);
-    \path (m2d11) edge[add] (eDownIn5);
-
-    \stepcounter{col}
-    \stepcounter{col}
+    \setcounter{col}{10}
     \setcounter{row}{0}
     \foreach \x in {0,...,11}
     {
         \pgfmathparse{\x+\arabic{row}}
         \pgfmathsetmacro{\row}{\pgfmathresult}
-        \node (s\x)
-            [mul]
-            at (\arabic{col}, -\row)
-            {\small $s_{\x}$};
+
+        \draw
+            (\arabic{col}, -\row) node (sIn\x) [n] {} --
+            (\arabic{col}+1, -\row) node [mulconstant] {\small $s_{\x}$} --
+            (\arabic{col}+2, -\row) node (sOut\x) [n] {};
     }
+
 \end{tikzpicture}
