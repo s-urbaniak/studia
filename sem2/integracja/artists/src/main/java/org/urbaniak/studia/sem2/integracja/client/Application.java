@@ -1,35 +1,36 @@
 package org.urbaniak.studia.sem2.integracja.client;
 
-import java.util.List;
-
-import org.urbaniak.studia.sem2.integracja.entity.Artist;
+import org.urbaniak.studia.sem2.integracja.client.datasource.ArtistDataSource;
 
 import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.rpc.ServiceDefTarget;
-import com.smartgwt.client.util.SC;
+import com.smartgwt.client.data.DataSource;
+import com.smartgwt.client.types.ListGridFieldType;
+import com.smartgwt.client.widgets.grid.ListGrid;
+import com.smartgwt.client.widgets.grid.ListGridField;
 
 public class Application implements EntryPoint {
 
     public void onModuleLoad() {
-        MusicServiceAsync musicService = GWT.create(MusicService.class);
+        final ListGrid listGrid = new ListGrid();
 
-        ServiceDefTarget endpoint = (ServiceDefTarget) musicService;
-        endpoint.setServiceEntryPoint(GWT.getModuleBaseURL()
-                + "../dispatcher/music.rpc");
+        ListGridField id = new ListGridField("id", 100);
+        id.setType(ListGridFieldType.INTEGER);
 
-        AsyncCallback<List<Artist>> callback = new AsyncCallback<List<Artist>>() {
-            public void onSuccess(List<Artist> result) {
-            }
+        ListGridField name = new ListGridField("name", 100);
+        id.setType(ListGridFieldType.TEXT);
 
-            public void onFailure(Throwable ex) {
-                ex.printStackTrace();
-            }
-        };
+        ListGridField genre = new ListGridField("genre", 100);
+        id.setType(ListGridFieldType.TEXT);
 
-        musicService.getArtists(callback);
-        SC.say("Hello SmartGWT");
+        listGrid.setFields(id, name, genre);
+
+        listGrid.setWidth100();
+        listGrid.setHeight100();
+
+        DataSource ds = new ArtistDataSource();
+        listGrid.setDataSource(ds);
+
+        listGrid.fetchData();
+        listGrid.draw();
     }
-
 }

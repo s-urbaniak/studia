@@ -20,4 +20,8 @@
         class="org.urbaniak.studia.sem2.integracja.service.MusicServiceImpl">
         <property name="musicDAO" ref="musicDAO" />
     </bean>
+
+    <bean id="artistService"
+        class="org.urbaniak.studia.sem2.integracja.service.ArtistServiceImplMock">
+    </bean>
 </beans>

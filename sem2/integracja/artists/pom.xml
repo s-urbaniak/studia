@@ -163,7 +163,7 @@
         <dependency>
             <groupId>com.smartgwt</groupId>
             <artifactId>smartgwt</artifactId>
-            <version>1.0b2-SNAPSHOT</version>
+            <version>1.0b3-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -226,7 +226,7 @@
                         Comment this when deploying on other web apps
                         (i.e. expanded jetty)
                     -->
-                    <output>${project.build.directory}/tomcat/webapps/ROOT</output>
+<!--                    <output>${project.build.directory}/tomcat/webapps/ROOT</output>-->
                 </configuration>
                 <executions>
                     <execution>
@@ -264,6 +264,7 @@
                 </artifactId>
                 <executions>
                     <execution>
+                        <phase>compile</phase>
                         <goals>
                             <goal>wsgen</goal>
                         </goals>
@@ -411,7 +412,7 @@
 
         <repository>
             <id>smartclient</id>
-            <url>http://www.smartclient.com/smartgwt/maven2</url>
+            <url>http://smartgwtsnap.rorschach.de/</url>
         </repository>
     </repositories>
 

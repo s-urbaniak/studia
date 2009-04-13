@@ -9,11 +9,16 @@
         <property name="service" ref="musicService" />
     </bean>
 
+    <bean id="artistServiceController" class="org.gwtwidgets.server.spring.GWTRPCServiceExporter">
+        <property name="service" ref="artistService" />
+    </bean>
+
     <bean
         class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <map>
                 <entry key="/music.rpc" value-ref="musicServiceController" />
+                <entry key="/artist.rpc" value-ref="artistServiceController" />
             </map>
         </property>
     </bean>

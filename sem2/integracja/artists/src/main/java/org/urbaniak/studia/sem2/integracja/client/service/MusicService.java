@@ -1,4 +1,4 @@
-package org.urbaniak.studia.sem2.integracja.client;
+package org.urbaniak.studia.sem2.integracja.client.service;
 
 import java.util.List;
 

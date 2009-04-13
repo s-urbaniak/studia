@@ -7,7 +7,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 
-import org.urbaniak.studia.sem2.integracja.client.MusicService;
+import org.urbaniak.studia.sem2.integracja.client.service.MusicService;
 import org.urbaniak.studia.sem2.integracja.dao.MusicDAO;
 import org.urbaniak.studia.sem2.integracja.entity.Artist;
 
