@@ -3,6 +3,10 @@
 \begin_document
 \begin_header
 \textclass scrreprt
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\end_preamble
 \use_default_options true
 \language polish
 \inputencoding utf8
@@ -633,6 +637,10 @@ s_{11}\end{array}\right)\left(\mathbf{I}_{6}\otimes\mathbf{E}_{2}\right)\left(\m
 Graf strukturalny
 \end_layout
 
+\begin_layout Section
+Pomocnicze matryce
+\end_layout
+
 \begin_layout Standard
 \begin_inset Formula \begin{eqnarray*}
 \mathbf{E}_{2}\otimes\mathbf{I}_{4} & =\left[\begin{array}{cc}
@@ -742,6 +750,51 @@ x_{3}-x_{7}\end{array}\right]\]
  &  & \ddots\\
  &  &  &  & 1 & 1\\
  &  &  &  & 1 & -1\end{array}\right]_{12\times12}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Rysunek
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{tikz/rac1.tikz}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Graf strukturalny
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
