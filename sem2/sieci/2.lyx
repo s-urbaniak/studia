@@ -54,29 +54,47 @@ Budynkowa siec
 \end_layout
 
 \begin_layout Standard
-Są badane dwa różne topologje sieci w budynku:
+Są badane dwa różne topologje sieci w budynku.
 \end_layout
 
 \begin_layout Itemize
-Topologja daisy chain widoczna na rysunku 
+Topologja 
+\begin_inset Quotes eld
+\end_inset
+
+daisy chain
+\begin_inset Quotes erd
+\end_inset
+
+ widoczna na rysunku 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:lab2_1"
 
 \end_inset
 
-
+.
+ Tu każda kontygnacja budynku ma własny switch.
 \end_layout
 
 \begin_layout Itemize
-Topologia Collapsed backbone widoczna na rysunku 
+Topologia 
+\begin_inset Quotes eld
+\end_inset
+
+Collapsed backbone
+\begin_inset Quotes erd
+\end_inset
+
+ widoczna na rysunku 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:lab2_2"
 
 \end_inset
 
-
+.
+ Tu istnieje jeden centralny switch dla wszystkich kodygnacji budynku.
 \end_layout
 
 \begin_layout Standard
@@ -156,6 +174,13 @@ Topologja Collapsed Backbone
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Wspólną cechą oby dwóch topologji jest wspólny serwer Oracle i i siedem
+ serwerow udostępniających usługi plikowe i mailowe.
+ Zostały badane odpowiedzi czasowe dla tych dwóch topologji.
+ Wyniki badań są widoczne na rysunkach i.
 \end_layout
 
 \begin_layout Standard
