@@ -1,0 +1,449 @@
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrartcl
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+\end_modules
+\language polish
+\inputencoding utf8
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Opis
+\end_layout
+
+\begin_layout Standard
+Celem danego sprawozdania jest sprawdzanie działania urządzeń pomiarowych
+ na prowadzone badania elektryczne.
+ Układ mierzony jest widoczny na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ideal"
+
+\end_inset
+
+.
+ Na otwartych złączach będzie podczepiany woltomierz i amperomierz.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename measurements/measure_ideal.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang ngerman
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ideal"
+
+\end_inset
+
+
+\lang polish
+Układ mierzony
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Motywacją tego układu było sprawdzania twierdzenie Thevenina gdzie opornik
+ 
+\series bold
+R1
+\series default
+ i źródło napięciowe 
+\series bold
+VSource
+\series default
+ stanowią aktywny obwód.
+ Thevenin stwierdza że dowolny aktywny obwód można zastąpić obwodem złożonym
+ z idealnego źródła napięciowego i szeregowo podłączonego opornika.
+\end_layout
+
+\begin_layout Section
+Pomiary napięcia
+\end_layout
+
+\begin_layout Standard
+Do układu zostały podłączone dwa typy mierników do pomiaru napięcia:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Typ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Oporność wewnętrzna
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Analogowy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+300k Ohm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Digitalny
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+500k Ohm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podłączony miernik odpowiada schemacie na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:voltage"
+
+\end_inset
+
+.
+ Oporność 
+\series bold
+R_measure
+\series default
+ stanowi oporność wewnętrzną.
+ Wpływ oporności wewnętrznej miernika stanowi potencjalny błąd pomiaru.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename measurements/measure_U.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang ngerman
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:voltage"
+
+\end_inset
+
+
+\lang polish
+Schemat podłączonego miernika napięcia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analogowy miernik posiada mniejszą oporność wewnętrzną a więc istnieje większy
+ spadek napięcia.
+ Digitalny miernik posiada większą oporność wewnętrzną, spadek napięcia
+ jest mniejszy a więc pomiar jest dokładniejszy.
+\end_layout
+
+\begin_layout Section
+Pomiary prądu
+\end_layout
+
+\begin_layout Standard
+Do układu został podłączony miernik prądu według schematu na rysunku
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:currentSmall"
+
+\end_inset
+
+.
+ Tutaj również widoczna jest oporność wewnętrzna miernika prądu, w tym przypadku
+ wynosząca 1,8 kOhm.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename measurements/measure_I_small.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang ngerman
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:currentSmall"
+
+\end_inset
+
+
+\lang polish
+Schemat podłączonego miernika prądu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analogowo do miernika napięcia widać że oporność wewnętrzna prowokuję błąd
+ pomiaru spowodowany przez dodatkowe zużycie prądu przez sam miernik.
+\end_layout
+
+\begin_layout Standard
+Aby rozszerzyć zakres pomiaru miernika prądu został dodatkowy opornik dołączony
+ równolegle do miernika według schematu na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:currentBig"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename measurements/measure_I_big.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang ngerman
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:currentBig"
+
+\end_inset
+
+
+\lang polish
+Schemat rozszerzający zakres miernika prądu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dodatkowy opornik wynoszący jedną dziesiątą oporności wewnętrznej miernika
+ został podłączony do układu.
+ Dzielenie prądu na złączu
+\series bold
+ R1, R4, R_measure
+\series default
+ powoduję że przez miernik płynie tylko jedna dziesiąta prądu płynącego
+ przez opornik 
+\series bold
+R1
+\series default
+.
+ Przez taki układ można mierzyć większy prąd.
+\end_layout
+
+\begin_layout Section
+Wnioski
+\end_layout
+
+\begin_layout Standard
+Można zauważyć że mierniki mogą powodować duży błąd pomiaru układy aktywnego.
+ Ponieważ posiadają własną oporność wewnętrzną zmieniają elektrycznie mierzony
+ układ.
+ Można zauważyć że do pomiarów napięcia lepsze mierniki posiadają bardzo
+ dużą oporność wewnętrzną.
+ Spadek napięcia wtedy jest mniejszy.
+\end_layout
+
+\begin_layout Standard
+Mierniki prądu wraz dają lepsze rezultaty gdy mają bardzo mała oporność
+ wewnętrzną.
+ Dodatkowe zużycie prądu wtedy jest mniejsze.
+\end_layout
+
+\end_body
+\end_document

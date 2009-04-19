@@ -6,9 +6,9 @@
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
         http://jax-ws.dev.java.net/spring/core
-        https://jax-ws.dev.java.net/spring/core.xsd
+        http://jax-ws.dev.java.net/spring/core.xsd
         http://jax-ws.dev.java.net/spring/servlet
-        https://jax-ws.dev.java.net/spring/servlet.xsd">
+        http://jax-ws.dev.java.net/spring/servlet.xsd">
 
     <wss:binding url="/music.ws">
         <wss:service>
@@ -22,6 +22,11 @@
     </bean>
 
     <bean id="artistService"
+        class="org.urbaniak.studia.sem2.integracja.service.ArtistServiceImpl">
+        <property name="musicDAO" ref="musicDAO" />
+    </bean>
+
+    <bean id="artistServiceMock"
         class="org.urbaniak.studia.sem2.integracja.service.ArtistServiceImplMock">
     </bean>
 </beans>

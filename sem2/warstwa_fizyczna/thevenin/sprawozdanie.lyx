@@ -177,7 +177,7 @@ Wydział Informatyki
 
 \family sans
 \size larger
-Projektowanie sieci i systemów
+Warstwa fizyczna
 \end_layout
 
 \begin_layout Standard
@@ -196,7 +196,7 @@ Sprawozdanie
 
 \family sans
 \size large
-Badania oprogramowania OPNET IT Guru
+Pomiary
 \end_layout
 
 \begin_layout Standard
@@ -339,23 +339,6 @@ pagenumbering{arabic}
 \begin_inset CommandInset include
 LatexCommand include
 filename "1.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "2.lyx"
 
 \end_inset
 

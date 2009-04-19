@@ -5,9 +5,15 @@
             <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x - %m%n" />
         </layout>
     </appender>
+
     <logger name="org.springframework">
-        <level value="DEBUG" />
+        <level value="INFO" />
     </logger>
+
+    <logger name="org.hibernate">
+        <level value="INFO" />
+    </logger>
+
     <root>
         <level value="debug" />
         <appender-ref ref="ConsoleAppender" />

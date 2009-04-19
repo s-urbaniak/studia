@@ -12,7 +12,7 @@ import org.urbaniak.studia.sem2.integracja.entity.Track;
  * Implementation of MusicDAO implemented by extending Spring's
  * HibernateDaoSupport
  * 
- * @author roblambert
+ * @author sur
  */
 public class MusicDAOHibernateImpl extends HibernateDaoSupport implements
         MusicDAO {
@@ -21,6 +21,7 @@ public class MusicDAOHibernateImpl extends HibernateDaoSupport implements
             .getName());
 
     public List<Artist> getArtists() {
+        
         return getHibernateTemplate().loadAll(Artist.class);
     }
 
@@ -35,10 +36,18 @@ public class MusicDAOHibernateImpl extends HibernateDaoSupport implements
         return artist;
     }
 
+    public void removeArtist(Artist artist) {
+        getHibernateTemplate().delete(artist);
+    }
+
     public Record getRecordById(Integer id) {
         Record record = (Record) getHibernateTemplate().load(Record.class, id);
         logger.fine("Got record: " + record);
         return record;
+    }
+
+    public void saveOrUpdateArtistList(List<Artist> list) {
+        getHibernateTemplate().saveOrUpdateAll(list);
     }
 
     public Record saveRecord(Record record) {

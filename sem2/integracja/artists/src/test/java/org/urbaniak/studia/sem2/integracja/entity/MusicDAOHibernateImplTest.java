@@ -23,6 +23,7 @@ import org.urbaniak.studia.sem2.integracja.service.MusicServiceImpl;
         "classpath:/org/urbaniak/studia/sem2/integracja/dao/dao-context.xml",
         "classpath:/test-context.xml" })
 public class MusicDAOHibernateImplTest {
+
     @Resource
     private MusicDAO musicDAO;
 
@@ -33,7 +34,7 @@ public class MusicDAOHibernateImplTest {
             .getLogger(MusicDAOHibernateImplTest.class.getName());
 
     /**
-     * Simple tests excersize the various methods of MusicDAO
+     * Simple tests exersize the various methods of MusicDAO
      */
     @Test
     public void testInserts() {
@@ -80,7 +81,7 @@ public class MusicDAOHibernateImplTest {
         assertEquals(record1Tracks[0], recordOne.getTracks().get(0).getTitle());
         assertEquals(record1Tracks[1], recordOne.getTracks().get(1).getTitle());
 
-        // Load back record 2
+        // Load back record 2artist
         Record recordTwo = musicDAO.getRecordById(record2.getId());
         assertEquals(record2Title, recordTwo.getTitle());
         assertEquals(artistName, recordTwo.getArtist().getName());
@@ -117,6 +118,35 @@ public class MusicDAOHibernateImplTest {
     public void testWebService() {
         Endpoint endpoint = Endpoint.create(musicService);
         endpoint.publish("http://localhost:9999/MusicService");
+    }
+
+    @Test
+    public void testDelete() {
+        String artistName = "Tenacious D";
+        Artist artist = new Artist();
+        artist.setName(artistName);
+        artist.setGenre("Comedy");
+        musicDAO.saveArtist(artist);
+        assertNotNull(artist.getId());
+
+        musicDAO.removeArtist(artist);
+    }
+
+    @Test
+    public void testBulk() {
+        int records = 1000;
+
+        List<Artist> artistList = new ArrayList<Artist>();
+        for (int i = 0; i < records; i++) {
+            Artist artist = new Artist();
+            artist.setGenre("Test" + (i % 5));
+            artist.setName("Test" + i);
+            artistList.add(artist);
+            musicDAO.saveArtist(artist);
+        }
+
+        musicDAO.saveOrUpdateArtistList(artistList);
+        assertNotNull(artistList);
     }
 
     private Record createRecord(Artist artist, String title, String[] tracks) {

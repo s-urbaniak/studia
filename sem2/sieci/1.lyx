@@ -1,0 +1,359 @@
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrartcl
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+\end_modules
+\language polish
+\inputencoding utf8
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Domowa siec
+\end_layout
+
+\begin_layout Standard
+Badana siec jest domową siecią składającą się z trzech komputerów podłączonych
+ do routera jako centralne wyjście do internetu.
+ Trzy serwery służą do udostępnienia różnych usług.
+ Schemat sieci według jest widoczny na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab1_1"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/lab1_1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang ngerman
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lab1_1"
+
+\end_inset
+
+
+\lang polish
+Domowa siec
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+W tym badaniu zostały badane różne prędkości dostępu do internetu.
+ Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Badane-prędkości"
+
+\end_inset
+
+ pokazuję badane prędkości.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="1">
+<features>
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Prędkość
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20 kbps
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+40 kbps
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+512 kbps
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Badane-prędkości"
+
+\end_inset
+
+Badane prędkości
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Następująco zostały porównane utylizacja i średni czas odpowiedzi strony
+ WWW złącza 
+\begin_inset Quotes eld
+\end_inset
+
+WAN Link
+\begin_inset Quotes erd
+\end_inset
+
+ badanych prędkości.
+ Wyniki utylizacji wejściowej jest widoczny na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab1_2"
+
+\end_inset
+
+ wraz wyniki średniego czasu odpowiedzi strony WWW na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab1_3"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/lab1_2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang ngerman
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lab1_2"
+
+\end_inset
+
+
+\lang polish
+Utylizacja wejściowa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/lab1_3.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang ngerman
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lab1_3"
+
+\end_inset
+
+
+\lang polish
+Utylizacja wyjściowa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Można zauważyć że utylizacja mocno się polepsza przy przejściu na złącze
+ 512k.
+ To samo można zaobserwować dla utylizacji wejściowej.
+ Natomiast różnica miedzy złączem 512k i T1 już jest nie wielka.
+\end_layout
+
+\end_body
+\end_document

@@ -50,8 +50,7 @@ public abstract class GwtRpcDataSource
      * format <code>DSDataFormat.CUSTOM</code>.
      */
     public GwtRpcDataSource () {
-        //setDataProtocol (DSProtocol.CLIENTCUSTOM);
-        setAttribute("dataProtocol", "clientCustom", false);
+        setDataProtocol (DSProtocol.CLIENTCUSTOM);
         setDataFormat (DSDataFormat.CUSTOM);
         setClientOnly (false);
     }

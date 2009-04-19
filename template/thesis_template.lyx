@@ -1,5 +1,5 @@
-#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 276
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
 \begin_document
 \begin_header
 \textclass scrreprt
@@ -80,6 +80,7 @@
                  \@ldtable}
 \end_preamble
 \options pointlessnumbers, abstracton, headsepline
+\use_default_options false
 \language polish
 \inputencoding utf8
 \font_roman default
@@ -90,9 +91,11 @@
 \font_osf false
 \font_sf_scale 100
 \font_tt_scale 100
+
 \graphics default
 \paperfontsize default
 \spacing single
+\use_hyperref false
 \papersize a4paper
 \use_geometry false
 \use_amsmath 1
@@ -122,7 +125,7 @@
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -140,7 +143,6 @@ titlepage
 \lang ngerman
 \begin_inset Graphics
 	filename pics/zut.jpg
-	display monochrome
 	scale 50
 
 \end_inset
@@ -178,7 +180,9 @@ Wydział Informatyki
 Prof.
  Dr.-Ing.
  Albert Einstein Jr.
-\newline
+\begin_inset Newline newline
+\end_inset
+
 
 \family default
 \size default
@@ -201,9 +205,13 @@ Praca dyplomowa
 \series default
 \size default
 
-\newline
+\begin_inset Newline newline
+\end_inset
 
-\newline
+
+\begin_inset Newline newline
+\end_inset
+
 
 \size larger
 Warum die Welt eine Scheibe ist
@@ -231,10 +239,10 @@ Warum die Welt eine Scheibe ist
 <column alignment="left" valignment="top" width="0pt">
 <column alignment="left" valignment="top" width="0pt">
 <row>
-<cell alignment="left" valignment="top" topline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
 Vorgelegt von: 
@@ -242,10 +250,10 @@ Vorgelegt von:
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
  Muster Klausmann
@@ -253,19 +261,19 @@ Vorgelegt von:
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -273,10 +281,10 @@ Vorgelegt von:
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
 geboren am:
@@ -284,10 +292,10 @@ geboren am:
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
 28.
@@ -296,10 +304,10 @@ geboren am:
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
 in: 
@@ -307,10 +315,10 @@ in:
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
 Ober-Ammergauburg
@@ -341,11 +349,15 @@ Ober-Ammergauburg
 
 \lang ngerman
 zum 
-\newline
+\begin_inset Newline newline
+\end_inset
+
 Erlangen des akademischen Grades
 \family sans
 
-\newline
+\begin_inset Newline newline
+\end_inset
+
 
 \begin_inset VSpace smallskip
 \end_inset
@@ -364,7 +376,9 @@ Erlangen des akademischen Grades
 DIPLOMINGENIEUR
 \size largest
 
-\newline
+\begin_inset Newline newline
+\end_inset
+
 
 \size default
 (Dipl.-Ing.)
@@ -388,8 +402,9 @@ Betreuer: Bruno Giordano
 \begin_layout Standard
 
 \lang ngerman
+\begin_inset Newpage newpage
+\end_inset
 
-\newpage
 
 \end_layout
 
@@ -399,13 +414,13 @@ Betreuer: Bruno Giordano
 \begin_inset Note Comment
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
 leere Seite nach dem Titelblatt
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
 dann Aufgabenstellung
@@ -422,7 +437,7 @@ dann Aufgabenstellung
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -440,14 +455,14 @@ pagestyle{scrheadings}    %Kopfzeile ein
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{center} 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -458,7 +473,7 @@ textbf{
 large Selbständigkeitserklärung}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -552,7 +567,7 @@ Unterschrift
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -567,8 +582,9 @@ selectlanguage{ngerman}
 \begin_layout Standard
 
 \lang ngerman
+\begin_inset Newpage newpage
+\end_inset
 
-\newpage
 
 \end_layout
 
@@ -578,14 +594,14 @@ selectlanguage{ngerman}
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 begin{center} 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -596,7 +612,7 @@ textbf{
 large Danksagung}}
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -625,8 +641,9 @@ Für die Fortführung des Projekts wünsche ich dem gesamten Team viel Erfolg.
 \begin_layout Standard
 
 \lang ngerman
+\begin_inset Newpage newpage
+\end_inset
 
-\newpage
 
 \end_layout
 
@@ -654,15 +671,17 @@ This is a second abstract in english.
 \begin_layout Abstract
 
 \lang english
+\begin_inset Newpage newpage
+\end_inset
 
-\newpage
 
 \end_layout
 
 \begin_layout Standard
 
 \lang ngerman
-\begin_inset LatexCommand tableofcontents
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
 
 \end_inset
 
@@ -675,14 +694,14 @@ This is a second abstract in english.
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
 pagestyle{scrheadings}    %Kopfzeile ein
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -697,7 +716,7 @@ pagestyle{scrheadings}    %Kopfzeile ein
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -732,11 +751,19 @@ Ganz früher, vor Tausenden von Jahren, stellten sich die Ägypter zum Beispiel
  Unterwelt, in der lagen die Toten, in ein mittleres Stockwerk, in dem wohnten
  die Menschen und schließlich in ein oberes Stockwerk als Ort für die Götter
  – das war der Himmel.
+\end_layout
+
+\begin_layout Standard
+
+\lang ngerman
 \begin_inset Wrap figure
+lines 0
+placement o
+overhang 0col%
 width "50col%"
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \noindent
 \align center
 
@@ -751,15 +778,16 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
 \begin_inset Caption
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
-\begin_inset LatexCommand label
+\begin_inset CommandInset label
+LatexCommand label
 name "fig:Ein-umflossenes-Bild"
 
 \end_inset
@@ -802,7 +830,8 @@ Beitrag dieser Arbeit
 \lang ngerman
 In Abb.
  
-\begin_inset LatexCommand ref
+\begin_inset CommandInset ref
+LatexCommand ref
 reference "fig:Ein-umflossenes-Bild"
 
 \end_inset
@@ -841,8 +870,9 @@ Der Kapitelname steht in der rechten oberen Ecke.
 \begin_layout Standard
 
 \lang ngerman
-\begin_inset Include \include{1.lyx}
-preview false
+\begin_inset CommandInset include
+LatexCommand include
+filename "1.lyx"
 
 \end_inset
 
@@ -875,12 +905,12 @@ wide false
 sideways false
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
 \begin_inset Caption
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
 Überschrift - Die Beschreibung für Tabellen befindet sich oberhalb
@@ -891,7 +921,7 @@ status open
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \noindent
 \align center
 
@@ -902,16 +932,16 @@ status open
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -925,10 +955,10 @@ Planet
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
 Form
@@ -938,17 +968,17 @@ Form
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
  
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -962,10 +992,10 @@ Erde
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
 Scheibe
@@ -975,10 +1005,10 @@ Scheibe
 </cell>
 </row>
 <row endhead="true">
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
 Mond
@@ -986,17 +1016,17 @@ Mond
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \lang ngerman
 Brocken 
 \begin_inset ERT
 status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1050,7 +1080,7 @@ Zusammenfassung
 \begin_inset ERT
 status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
 
 
 \backslash
@@ -1085,17 +1115,19 @@ Ein Kapitel des Anhangs
 \begin_layout Standard
 
 \lang ngerman
+\begin_inset Newpage newpage
+\end_inset
 
-\newpage
 
 \end_layout
 
 \begin_layout Standard
 
 \lang ngerman
-\begin_inset LatexCommand bibtex
-options "bibtotoc,alpha"
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
 bibfiles "bibtex/lit_verz"
+options "bibtotoc,alpha"
 
 \end_inset
 

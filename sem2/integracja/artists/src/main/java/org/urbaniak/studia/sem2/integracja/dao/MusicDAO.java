@@ -30,6 +30,16 @@ public interface MusicDAO {
     public Artist saveArtist(Artist artist);
 
     /**
+     * Save an Artist List
+     */
+    public void saveOrUpdateArtistList(List<Artist> artistList);
+
+    /**
+     * Remove an Artist Object
+     */
+    public void removeArtist(Artist artist);
+
+    /**
      * Get a Record given the id
      * 
      * @param id
