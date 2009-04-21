@@ -54,27 +54,10 @@ Budynkowa siec
 \end_layout
 
 \begin_layout Standard
-Są badane dwa różne topologje sieci w budynku.
-\end_layout
-
-\begin_layout Itemize
-Topologja 
-\begin_inset Quotes eld
-\end_inset
-
-daisy chain
-\begin_inset Quotes erd
-\end_inset
-
- widoczna na rysunku 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:lab2_1"
-
-\end_inset
-
-.
- Tu każda kontygnacja budynku ma własny switch.
+Są badane dwa różne topologie sieci w budynku.
+ Wspólną cechą oby dwóch topologij jest wspólny serwer Oracle i i siedem
+ serwerów udostępniających usługi plikowe i mailowe.
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -82,27 +65,87 @@ Topologia
 \begin_inset Quotes eld
 \end_inset
 
-Collapsed backbone
+
+\shape slanted
+Daisy Chain
+\shape default
+
 \begin_inset Quotes erd
 \end_inset
 
- widoczna na rysunku 
+: widoczna na rysunku 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:lab2_2"
+reference "fig:lab2_daisy_middle"
+
+\end_inset
+
+ i na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab2_daisy_basement"
 
 \end_inset
 
 .
- Tu istnieje jeden centralny switch dla wszystkich kodygnacji budynku.
+ Tu każda kondygnacja budynku ma własny switch.
+ W tej topologij zostały badane dwa różne warianty tej topologij:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Serwery są umieszczone na piątym piętrze (rysunek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab2_daisy_middle"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Serwery są umieszczone w piwnicy (rysunek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab2_daisy_basement"
+
+\end_inset
+
+).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Topologia 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape slanted
+Collapsed backbone
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+: widoczna na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab2_collapsed"
+
+\end_inset
+
+.
+ Tu istnieje jeden centralny switch dla wszystkich kondygnacji budynku.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -121,11 +164,11 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:lab2_1"
+name "fig:lab2_daisy_middle"
 
 \end_inset
 
-Topologja daisy chain
+Topologia daisy chain z serwerami na piątym piętrze
 \end_layout
 
 \end_inset
@@ -137,10 +180,10 @@ Topologja daisy chain
 
 
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -159,11 +202,49 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:lab2_2"
+name "fig:lab2_daisy_basement"
 
 \end_inset
 
-Topologja Collapsed Backbone
+Topologia daisy chain z serwerami w piwnicy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/lab2_3.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lab2_collapsed"
+
+\end_inset
+
+Topologia Collapsed Backbone
 \end_layout
 
 \end_inset
@@ -177,28 +258,347 @@ Topologja Collapsed Backbone
 \end_layout
 
 \begin_layout Standard
-Wspólną cechą oby dwóch topologji jest wspólny serwer Oracle i i siedem
- serwerow udostępniających usługi plikowe i mailowe.
- Zostały badane odpowiedzi czasowe dla tych dwóch topologji.
- Wyniki badań są widoczne na rysunkach 
+Zostały badane odpowiedzi czasowe dla powyżej opisanych topologij na różnych
+ kondygnacjach budynku.
+ Tablica 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:lab2_1"
+reference "tab:lab2_wyniki"
 
 \end_inset
 
- i 
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kondygnacja
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ilość użytkowników
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wykres wyników badan
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+70
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rysunek 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:lab2_2"
+reference "fig:lab2_results_floor1"
 
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rysunek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab2_results_floor5"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+95
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rysunek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab2_results_floor10"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:lab2_wyniki"
+
+\end_inset
+
+Badane odpowiedzi czasowe na kondygnacjach
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/lab2_results_floor1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lab2_results_floor1"
+
+\end_inset
+
+Porównanie czasu odpowiedzi na kondygnacji 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/lab2_results_floor5.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lab2_results_floor5"
+
+\end_inset
+
+Porównanie czasu odpowiedzi na kondygnacji 5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/lab2_results_floor10.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lab2_results_floor10"
+
+\end_inset
+
+Porównanie czasu odpowiedzi na kondygnacji 10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Można wnioskować że najbardziej skuteczną topologją jest 
+\begin_inset Quotes eld
+\end_inset
+
+Collapsed Backbone
+\begin_inset Quotes erd
 \end_inset
 
 .
-\end_layout
+ Widać na wykresach, że czas odpowiedzi jest najmnejszy na wszystkich kondygnacj
+ach budynku.
+ Jednak ma ta topologja równiesz swój koszt.
+ Do realizacji tej topologji trzeba do każdej kondygnacji ciągnąc kabel
+ od centralnego switcha.
+ Długość kabli potrzebnych zmniesza się przy użyciu topologji 
+\begin_inset Quotes eld
+\end_inset
 
-\begin_layout Standard
-Mierzona jest odpowiedz czasowa aplikacyjna w sekundach.
+Daisy Chain
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Wtedy widać że za wyjątkiem użytkowników na pierwszym piętrze wariant z
+ serwerami na piątym piętrze się najlepiej sprawdza.
 \end_layout
 
 \end_body
