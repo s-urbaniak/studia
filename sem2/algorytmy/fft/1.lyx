@@ -1,0 +1,229 @@
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrartcl
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\end_preamble
+\use_default_options true
+\language polish
+\inputencoding utf8
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Wzór
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{Y}_{8\times1}=\left(\mathbf{I}_{4}\otimes\mathbf{E}_{2}\right)\mathbf{D}_{8\times8}^{(3)}\left(\mathbf{I}_{2}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2}\right)\mathbf{D}_{8}^{(2)}\left(\mathbf{E}_{2}\otimes\mathbf{I}_{4}\right)\mathbf{X}_{8\times1}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+gdzie
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{D}_{8}^{(2)}=diag\left(1,1,1,1,1,1,w^{2},w^{2}\right)\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+i
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{D}_{8\times8}^{(3)}=diag\left(w^{0},w^{0},w^{0},w^{2},w^{0},w^{1},w^{0},w^{2}\right)\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Graf strukturalny
+\end_layout
+
+\begin_layout Subsection
+Pomocnicze matryce
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{E}_{2}\otimes\mathbf{I}_{4} & =\left[\begin{array}{cc}
+\mathbf{I}_{4} & \mathbf{I}_{4}\\
+\mathbf{I}_{4} & -\mathbf{I}_{4}\end{array}\right]= & \left[\begin{array}{cc}
+1 & 1\\
+1 & -1\end{array}\right]\otimes\left[\begin{array}{cccc}
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\end{array}\right]\\
+ & = & \left[\begin{array}{cccc|cccc}
+1 &  &  &  & 1\\
+ & 1 &  &  &  & 1\\
+ &  & 1 &  &  &  & 1\\
+ &  &  & 1 &  &  &  & 1\\
+\hline 1 &  &  &  & -1\\
+ & 1 &  &  &  & -1\\
+ &  & 1 &  &  &  & -1\\
+ &  &  & 1 &  &  &  & -1\end{array}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{I}_{2}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2} & = & \left[\begin{array}{cc}
+1\\
+ & 1\end{array}\right]\otimes\left[\begin{array}{cc}
+1 & 1\\
+1 & -1\end{array}\right]\otimes\left[\begin{array}{cc}
+1\\
+ & 1\end{array}\right]\\
+ & = & \left[\begin{array}{cccc}
+1 & 1\\
+1 & -1\\
+ &  & 1 & 1\\
+ &  & 1 & -1\end{array}\right]\otimes\left[\begin{array}{cc}
+1\\
+ & 1\end{array}\right]\\
+ & = & \left[\begin{array}{cc|cc|cc|cc}
+1 & 0 & 1 & 0 &  & \,\\
+0 & 1 & 0 & 1 &  & \,\\
+\hline 1 & 0 & -1 & 0 &  & \,\\
+0 & 1 & 0 & -1 &  & \,\\
+\hline  &  &  & \, & 1 & 0 & 1 & 0\\
+ &  &  & \, & 0 & 1 & 0 & 1\\
+\hline  &  &  & \, & 1 & 0 & -1 & 0\\
+ &  &  & \, & 0 & 1 & 0 & -1\end{array}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{I}_{4}\otimes\mathbf{E}_{2}=\left[\begin{array}{cccc}
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\end{array}\right]\otimes\left[\begin{array}{cc}
+1 & 1\\
+1 & -1\end{array}\right]=\left[\begin{array}{cccccccc}
+1 & 1\\
+1 & -1\\
+ &  & 1 & 1\\
+ &  & 1 & -1\\
+ &  &  &  & 1 & 1\\
+ &  &  &  & 1 & -1\\
+ &  &  &  &  &  & 1 & 1\\
+ &  &  &  &  &  & 1 & -1\end{array}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Rysunek
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{tikz/fft.tikz}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Graf strukturalny
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

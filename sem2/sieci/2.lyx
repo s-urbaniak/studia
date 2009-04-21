@@ -102,7 +102,7 @@ reference "fig:lab2_2"
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -140,7 +140,7 @@ Topologja daisy chain
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -180,11 +180,25 @@ Topologja Collapsed Backbone
 Wspólną cechą oby dwóch topologji jest wspólny serwer Oracle i i siedem
  serwerow udostępniających usługi plikowe i mailowe.
  Zostały badane odpowiedzi czasowe dla tych dwóch topologji.
- Wyniki badań są widoczne na rysunkach i.
+ Wyniki badań są widoczne na rysunkach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab2_1"
+
+\end_inset
+
+ i 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab2_2"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-
+Mierzona jest odpowiedz czasowa aplikacyjna w sekundach.
 \end_layout
 
 \end_body
