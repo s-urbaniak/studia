@@ -1,0 +1,339 @@
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrartcl
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+\end_modules
+\language polish
+\inputencoding utf8
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Duża siec WAN
+\end_layout
+
+\begin_layout Standard
+W tym badaniu jest sprawdzana wydajność aplikacji przez siec WAN.
+ Podłączone są 70 oddziałów firm do wspólnej sieci.
+ Ta sieciowa topologia istnieje z następujących trzech warstw:
+\end_layout
+
+\begin_layout Itemize
+Lokalne routery istnieją do podłączenia oddziałów firmowych
+\end_layout
+
+\begin_layout Itemize
+Te routery są podłączone do warstwy Frame Relay
+\end_layout
+
+\begin_layout Itemize
+Warstwa Frame Relay istnieje z systemu ATM backbone
+\end_layout
+
+\begin_layout Standard
+Właściwa topologia jest widzialna na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab4_topology"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/lab4_topology.png
+	lyxscale 40
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lab4_topology"
+
+\end_inset
+
+Topologia daisy chain z serwerami na piątym piętrze
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Widać na topologij że istnieje osiem podsieci podłączonych do centralnego
+ węzła.
+ Dodatkowo istnieje główny budynek 
+\begin_inset Quotes eld
+\end_inset
+
+Chicago Headquarters
+\begin_inset Quotes erd
+\end_inset
+
+ i centrala komputerowa 
+\begin_inset Quotes eld
+\end_inset
+
+Richmond - Processing Center
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Następujące prędkości są konfigurowane w sieci:
+\end_layout
+
+\begin_layout Itemize
+Odział - Lokalny router: 64kbs
+\end_layout
+
+\begin_layout Itemize
+Lokalny router - Frame Relay: 256kbs
+\end_layout
+
+\begin_layout Itemize
+Centrala komputerowa - Frame Relay: T1
+\end_layout
+
+\begin_layout Standard
+Następujące usługi zostały badane:
+\end_layout
+
+\begin_layout Itemize
+usługi FTP: Czas odpowiedzi w sekundach [sec]
+\end_layout
+
+\begin_layout Itemize
+usługi dzielenia plików: Czas odpowiedzi w sekundach [sec]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lab4_results_ftp"
+
+\end_inset
+
+
+\lang polish
+Odpowiedz czasowa usługi FTP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Graphics
+	filename img/lab4_results_ftp.png
+	width 45col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lab4_results_filesharing"
+
+\end_inset
+
+
+\lang polish
+Odpowiedz czasowa usługi dzielenia plików
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Graphics
+	filename img/lab4_results_filesharing.png
+	width 45col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Wyniki badań sieci LAN połączonej do usług zewnętrznych przez WAN
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wynik badania widać na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab4_results_ftp"
+
+\end_inset
+
+ (usługi FTP) i 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab4_results_filesharing"
+
+\end_inset
+
+ (usługi dzielenia plików).
+ Niebieskie punkty wykazują czas odpowiedzi przy korzystaniu domyślnej prędkośći
+ 64kbs przy złączach 
+\begin_inset Quotes eld
+\end_inset
+
+Odział - Lokalny router
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Po zwiększeniu prędkośći na 128kbs (czerwone punkty) widać że czas odpowiedzi
+ oby dwóch usług drastycznie spadł.
+ Można więc wnioskować że zwiększenie prędkośći z 64kbps na 128kbs daję
+ bardzo dobry skutek.
+\end_layout
+
+\end_body
+\end_document

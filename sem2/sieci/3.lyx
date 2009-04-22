@@ -50,7 +50,7 @@ theorems-ams
 \begin_body
 
 \begin_layout Section
-Wydajność sieci WAN
+Łączenie siec LAN do usług przez WAN
 \end_layout
 
 \begin_layout Standard
@@ -63,47 +63,6 @@ reference "fig:lab3_lan_wan"
 \end_inset
 
 .
- Serwery udostępniające usługi aplikacyjne jednak są dostępne tylko przez
- połączenie WAN o prędkości T1.
- Następujące usługi aplikacyjne są dostępne przez połączenie WAN:
-\end_layout
-
-\begin_layout Itemize
-E-Mail
-\end_layout
-
-\begin_layout Itemize
-Web Browser
-\end_layout
-
-\begin_layout Itemize
-Video Streaming
-\end_layout
-
-\begin_layout Itemize
-FTP
-\end_layout
-
-\begin_layout Standard
-Istnieją w lokalnej sieci LAN również własne serwery udostępniające następujące
- usługi aplikacyjne:
-\end_layout
-
-\begin_layout Itemize
-Intranet E-Mail
-\end_layout
-
-\begin_layout Itemize
-Drukowanie
-\end_layout
-
-\begin_layout Itemize
-Baza danych
-\end_layout
-
-\begin_layout Standard
-W następujących badaniach będzie sprawdzana szczególnie wydajność aplikacyjna
- przy użyciu usług FTP i Web Browsing.
 \end_layout
 
 \begin_layout Standard
@@ -148,9 +107,50 @@ Topologia LAN połączona z serwerami przez WAN
 \end_layout
 
 \begin_layout Standard
-Aby sprawdzić skalowalność dostęp do zdalnych serwerów przez WAN topologia
- skalowana jest za pomocą podłączenia dodatkowego segmentu w sieci LAN aby
- udostępnić dodatkowe złącze WAN.
+Serwery udostępniające usługi aplikacyjne jednak są dostępne tylko przez
+ połączenie WAN o prędkości T1.
+ Następujące usługi aplikacyjne są dostępne przez połączenie WAN:
+\end_layout
+
+\begin_layout Itemize
+E-Mail
+\end_layout
+
+\begin_layout Itemize
+Web Browser
+\end_layout
+
+\begin_layout Itemize
+Video Streaming
+\end_layout
+
+\begin_layout Itemize
+FTP
+\end_layout
+
+\begin_layout Standard
+Istnieją w lokalnej sieci LAN również własne serwery udostępniające następujące
+ usługi aplikacyjne:
+\end_layout
+
+\begin_layout Itemize
+Intranet E-Mail
+\end_layout
+
+\begin_layout Itemize
+Drukowanie
+\end_layout
+
+\begin_layout Itemize
+Baza danych
+\end_layout
+
+\begin_layout Standard
+W następujących badaniach będzie sprawdzana wydajność aplikacyjna przy użyciu
+ usług FTP i Web Browsing.
+ Aby sprawdzić skalowalność dostęp do zdalnych serwerów przez WAN topologia
+ rozszerzona została za pomocą podłączenia dodatkowego segmentu w sieci
+ LAN aby udostępnić dodatkowe złącze WAN.
  Topologia w ten sposób rozszerzona jest widoczna na rysunku 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -159,6 +159,11 @@ reference "fig:lab3_lan_wan_extended"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+W końcu zostało dodatkowo podłączone złącze WAN rozszerzonej topologij wyłączone
+ aby sprawdzić jak i czy wtedy nadal działa siec.
 \end_layout
 
 \begin_layout Standard
@@ -207,12 +212,40 @@ Badania zostały podzielone na dwa podziały:
 \end_layout
 
 \begin_layout Itemize
-Utylizacja złącza mierzona w procentach [%].
- Wykresy
+Utylizacja złącza pierwszego złącza WAN (rysunek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab3_results_wan1_utilization"
+
+\end_inset
+
+) i drugiego złącza WAN tylko dostępnego w rozszerzonej topologij (rysunek
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab3_results_wan2_utilization"
+
+\end_inset
+
+) mierzona w procentach [%]
 \end_layout
 
 \begin_layout Itemize
-Odpowiedz czasowa mierzona dla usług FTP i Web w sekundach [sec]
+Odpowiedz czasowa mierzona dla usług FTP (rysunek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab3_results_ftp"
+
+\end_inset
+
+) i Web (rysunek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab3_results_web"
+
+\end_inset
+
+) w sekundach [sec]
 \end_layout
 
 \begin_layout Standard
@@ -298,7 +331,7 @@ name "fig:lab3_results_wan2_utilization"
 
 
 \lang polish
-Średnia odpowiedz czasowa usługi Web
+Utylizacja wejściowa złącza WAN2
 \end_layout
 
 \end_inset
@@ -450,7 +483,101 @@ Wyniki badań sieci LAN połączonej do usług zewnętrznych przez WAN
 \end_layout
 
 \begin_layout Standard
+Można zauważyć że rozszerzenie topologij o dodatkowe złącze WAN ma jak najbardzi
+ej sens.
+ Utylizacja złącza zmniejsza się z ~88% (niebieski wykres na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab3_results_wan1_utilization"
 
+\end_inset
+
+) na ~51% (czerwony wykres na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab3_results_wan1_utilization"
+
+\end_inset
+
+).
+ W przypadku awarii złącza oczywiście nie można mierzyć żadnej utylizacji
+ (zielony wykres na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab3_results_wan1_utilization"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+W przypadku awarii siec rozszerzonej topologij jednak dalej działa.
+ Utylizacja poprawnego działania (niebieski wykres na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab3_results_wan2_utilization"
+
+\end_inset
+
+) zwiększa się jednak z ~38% na ~88% (czerwony wykres na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab3_results_wan2_utilization"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Ewidentne polepszenie można zauważyć przy działaniu usług FTP i Web.
+ Przy korzystaniu rozszerzonej topologij (czerwone wykresy na rysunkach
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab3_results_ftp"
+
+\end_inset
+
+ i 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab3_results_web"
+
+\end_inset
+
+) czas odpowiedzi mocno się zmniejsza.
+ W przypadku awarii (zielone wykresy na rysunkach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab3_results_ftp"
+
+\end_inset
+
+ i 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab3_results_web"
+
+\end_inset
+
+) jednak odpowiedzi czasowe się pogarszają się w porównaniu do pojedynczej
+ topologij (niebieskie wykresy na rysunkach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab3_results_ftp"
+
+\end_inset
+
+ i 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab3_results_web"
+
+\end_inset
+
+).
 \end_layout
 
 \end_body
