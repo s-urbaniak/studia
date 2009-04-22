@@ -50,27 +50,65 @@ theorems-ams
 \begin_body
 
 \begin_layout Section
-Domowa siec
+Wydajność sieci WAN
 \end_layout
 
 \begin_layout Standard
-Badana zostaje siec domową składającą się z trzech komputerów podłączonych
- do routera jako centralne wyjście do internetu.
- Trzy serwery służą do udostępnienia różnych usług.
- Schemat sieci według jest widoczny na rysunku 
+Badana jest wydajność aplikacyjna odczuwana w sieci LAN.
+ Topologia sieci jest widoczna na rysunku 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:lab1_1"
+reference "fig:lab3_lan_wan"
 
 \end_inset
 
 .
- 
+ Serwery udostępniające usługi aplikacyjne jednak są dostępne tylko przez
+ połączenie WAN o prędkości T1.
+ Następujące usługi aplikacyjne są dostępne przez połączenie WAN:
+\end_layout
+
+\begin_layout Itemize
+E-Mail
+\end_layout
+
+\begin_layout Itemize
+Web Browser
+\end_layout
+
+\begin_layout Itemize
+Video Streaming
+\end_layout
+
+\begin_layout Itemize
+FTP
+\end_layout
+
+\begin_layout Standard
+Istnieją w lokalnej sieci LAN również własne serwery udostępniające następujące
+ usługi aplikacyjne:
+\end_layout
+
+\begin_layout Itemize
+Intranet E-Mail
+\end_layout
+
+\begin_layout Itemize
+Drukowanie
+\end_layout
+
+\begin_layout Itemize
+Baza danych
+\end_layout
+
+\begin_layout Standard
+W następujących badaniach będzie sprawdzana szczególnie wydajność aplikacyjna
+ przy użyciu usług FTP i Web Browsing.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status collapsed
@@ -78,128 +116,8 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/lab1_1.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-
-\lang ngerman
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:lab1_1"
-
-\end_inset
-
-
-\lang polish
-Domowa siec
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-W tym badaniu zostały badane różne prędkości dostępu do internetu.
- Tabela 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Badane-prędkości"
-
-\end_inset
-
- pokazuję badane prędkości.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="1">
-<features>
-<column alignment="center" valignment="top" width="0">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-Prędkość
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-20 kbps
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-40 kbps
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-512 kbps
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-T1
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+	filename img/lab3_topology.png
+	width 70page%
 
 \end_inset
 
@@ -212,19 +130,15 @@ T1
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:Badane-prędkości"
+name "fig:lab3_lan_wan"
 
 \end_inset
 
-Badane prędkości
+Topologia LAN połączona z serwerami przez WAN
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -234,27 +148,13 @@ Badane prędkości
 \end_layout
 
 \begin_layout Standard
-Następująco zostały porównane utylizacja i średni czas odpowiedzi strony
- WWW złącza 
-\begin_inset Quotes eld
-\end_inset
-
-WAN Link
-\begin_inset Quotes erd
-\end_inset
-
- badanych prędkości.
- Wyniki utylizacji wejściowej jest widoczny na rysunku 
+Aby sprawdzić skalowalność dostęp do zdalnych serwerów przez WAN topologia
+ skalowana jest za pomocą podłączenia dodatkowego segmentu w sieci LAN aby
+ udostępnić dodatkowe złącze WAN.
+ Topologia w ten sposób rozszerzona jest widoczna na rysunku 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:lab1_2"
-
-\end_inset
-
- wraz wyniki średniego czasu odpowiedzi strony WWW na rysunku 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:lab1_3"
+reference "fig:lab3_lan_wan_extended"
 
 \end_inset
 
@@ -266,7 +166,61 @@ reference "fig:lab1_3"
 placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/lab3_topology_extended.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lab3_lan_wan_extended"
+
+\end_inset
+
+Topologia rozszerzona LAN połączona z serwerami przez WAN
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Badania zostały podzielone na dwa podziały:
+\end_layout
+
+\begin_layout Itemize
+Utylizacja złącza mierzona w procentach [%].
+ Wykresy
+\end_layout
+
+\begin_layout Itemize
+Odpowiedz czasowa mierzona dla usług FTP i Web w sekundach [sec]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -290,13 +244,13 @@ status open
 \lang english
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:lab1_2"
+name "fig:lab3_results_wan1_utilization"
 
 \end_inset
 
 
 \lang polish
-Utylizacja wejściowa
+Utylizacja wejściowa złącza WAN1
 \end_layout
 
 \end_inset
@@ -308,7 +262,7 @@ Utylizacja wejściowa
 
 \lang english
 \begin_inset Graphics
-	filename img/lab1_2.png
+	filename img/lab3_results_wan1_utilization.png
 	width 45col%
 
 \end_inset
@@ -338,7 +292,7 @@ status open
 \lang english
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:lab1_3"
+name "fig:lab3_results_wan2_utilization"
 
 \end_inset
 
@@ -356,7 +310,112 @@ name "fig:lab1_3"
 
 \lang english
 \begin_inset Graphics
-	filename img/lab1_3.png
+	filename img/lab3_results_wan2_utilization.png
+	width 45col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lab3_results_ftp"
+
+\end_inset
+
+
+\lang polish
+Średnia odpowiedz czasowa usługi FTP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Graphics
+	filename img/lab3_results_ftp.png
+	width 45col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lab3_results_web"
+
+\end_inset
+
+
+\lang polish
+Średnia odpowiedz czasowa usługi Web
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Graphics
+	filename img/lab3_results_web.png
 	width 45col%
 
 \end_inset
@@ -377,15 +436,11 @@ name "fig:lab1_3"
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Wyniki badań sieci domowej
+Wyniki badań sieci LAN połączonej do usług zewnętrznych przez WAN
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -395,10 +450,7 @@ Wyniki badań sieci domowej
 \end_layout
 
 \begin_layout Standard
-Można zauważyć że utylizacja mocno się polepsza przy przejściu na złącze
- 512k.
- To samo można zaobserwować dla utylizacji wejściowej.
- Natomiast różnica miedzy złączem 512k i T1 już jest nie wielka.
+
 \end_layout
 
 \end_body

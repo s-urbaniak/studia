@@ -57,7 +57,14 @@ Budynkowa siec
 Są badane dwa różne topologie sieci w budynku.
  Wspólną cechą oby dwóch topologij jest wspólny serwer Oracle i i siedem
  serwerów udostępniających usługi plikowe i mailowe.
- 
+ Następujące topologie (widoczne na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab2_topologies"
+
+\end_inset
+
+) są badane:
 \end_layout
 
 \begin_layout Itemize
@@ -73,46 +80,17 @@ Daisy Chain
 \begin_inset Quotes erd
 \end_inset
 
-: widoczna na rysunku 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:lab2_daisy_middle"
-
-\end_inset
-
- i na rysunku 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:lab2_daisy_basement"
-
-\end_inset
-
-.
- Tu każda kondygnacja budynku ma własny switch.
+: Tu każda kondygnacja budynku ma własny switch.
  W tej topologij zostały badane dwa różne warianty tej topologij:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Serwery są umieszczone na piątym piętrze (rysunek 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:lab2_daisy_middle"
-
-\end_inset
-
-).
+Serwery są umieszczone na piątym piętrze.
 \end_layout
 
 \begin_layout Itemize
-Serwery są umieszczone w piwnicy (rysunek 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:lab2_daisy_basement"
-
-\end_inset
-
-).
+Serwery są umieszczone w piwnicy.
 \end_layout
 
 \end_deeper
@@ -129,15 +107,7 @@ Collapsed backbone
 \begin_inset Quotes erd
 \end_inset
 
-: widoczna na rysunku 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:lab2_collapsed"
-
-\end_inset
-
-.
- Tu istnieje jeden centralny switch dla wszystkich kondygnacji budynku.
+: Tu istnieje jeden centralny switch dla wszystkich kondygnacji budynku.
 \end_layout
 
 \begin_layout Standard
@@ -150,8 +120,8 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/lab2_1.png
-	scale 50
+	filename img/lab2_topologies.png
+	width 70page%
 
 \end_inset
 
@@ -164,87 +134,11 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:lab2_daisy_middle"
+name "fig:lab2_topologies"
 
 \end_inset
 
 Topologia daisy chain z serwerami na piątym piętrze
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/lab2_2.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:lab2_daisy_basement"
-
-\end_inset
-
-Topologia daisy chain z serwerami w piwnicy
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/lab2_3.png
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:lab2_collapsed"
-
-\end_inset
-
-Topologia Collapsed Backbone
 \end_layout
 
 \end_inset
@@ -263,11 +157,20 @@ Zostały badane odpowiedzi czasowe dla powyżej opisanych topologij na różnych
  Tablica 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:lab2_wyniki"
+reference "tab:lab2_floors"
 
 \end_inset
 
+ daję przegląd na których kondygnacjach zostały przeprowadzone badania i
+ ile użytkowników istnieje na danej kondygnacji.
+ Wyniki badań są widoczne na wykresach w rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab2_results"
 
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -308,7 +211,7 @@ Ilość użytkowników
 \begin_inset Text
 
 \begin_layout Plain Layout
-Wykres wyników badan
+Wyniki badań
 \end_layout
 
 \end_inset
@@ -435,7 +338,7 @@ reference "fig:lab2_results_floor10"
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:lab2_wyniki"
+name "tab:lab2_floors"
 
 \end_inset
 
@@ -457,34 +360,42 @@ Badane odpowiedzi czasowe na kondygnacjach
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Float figure
 placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Float figure
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/lab2_results_floor1.png
-	scale 50
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
+\lang english
 \begin_inset Caption
 
 \begin_layout Plain Layout
+
+\lang english
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:lab2_results_floor1"
 
 \end_inset
 
-Porównanie czasu odpowiedzi na kondygnacji 1
+
+\lang polish
+Kondygnacja 1
 \end_layout
 
 \end_inset
@@ -492,37 +403,48 @@ Porównanie czasu odpowiedzi na kondygnacji 1
 
 \end_layout
 
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename img/lab2_results_floor1.png
+	width 31col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
 \end_inset
 
 
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/lab2_results_floor5.png
-	scale 50
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
+\lang english
 \begin_inset Caption
 
 \begin_layout Plain Layout
+
+\lang english
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:lab2_results_floor5"
 
 \end_inset
 
-Porównanie czasu odpowiedzi na kondygnacji 5
+
+\lang polish
+Kondygnacja 5
 \end_layout
 
 \end_inset
@@ -530,21 +452,72 @@ Porównanie czasu odpowiedzi na kondygnacji 5
 
 \end_layout
 
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename img/lab2_results_floor5.png
+	width 31col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
 \end_inset
 
 
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lab2_results_floor10"
+
+\end_inset
+
+
+\lang polish
+Kondygnacja 10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \align center
+
+\lang english
 \begin_inset Graphics
 	filename img/lab2_results_floor10.png
-	scale 50
+	width 31col%
 
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
 \end_inset
 
 
@@ -556,11 +529,11 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:lab2_results_floor10"
+name "fig:lab2_results"
 
 \end_inset
 
-Porównanie czasu odpowiedzi na kondygnacji 10
+Porównanie czasu odpowiedzi
 \end_layout
 
 \end_inset
@@ -574,7 +547,7 @@ Porównanie czasu odpowiedzi na kondygnacji 10
 \end_layout
 
 \begin_layout Standard
-Można wnioskować że najbardziej skuteczną topologją jest 
+Można wnioskować że najbardziej skuteczną topologią jest 
 \begin_inset Quotes eld
 \end_inset
 
@@ -583,12 +556,12 @@ Collapsed Backbone
 \end_inset
 
 .
- Widać na wykresach, że czas odpowiedzi jest najmnejszy na wszystkich kondygnacj
-ach budynku.
- Jednak ma ta topologja równiesz swój koszt.
- Do realizacji tej topologji trzeba do każdej kondygnacji ciągnąc kabel
+ Widać na wykresach, że czas odpowiedzi jest najmniejszy na wszystkich kondygnac
+jach budynku.
+ Jednak ma ta topologia również swój koszt.
+ Do realizacji tej topologij trzeba do każdej kondygnacji ciągnąc kabel
  od centralnego switcha.
- Długość kabli potrzebnych zmniesza się przy użyciu topologji 
+ Długość kabli potrzebnych zmniejsza się przy użyciu topologij 
 \begin_inset Quotes eld
 \end_inset
 

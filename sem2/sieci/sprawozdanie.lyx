@@ -63,10 +63,10 @@
   linkcolor=black, citecolor=black, urlcolor=blue, filecolor=blue,
   pdfpagelayout=OneColumn, pdfnewwindow=true,
   pdfstartview=XYZ, plainpages=false, pdfpagelabels,
-  pdfauthor={LyX Team}, pdftex,
-  pdftitle={LyX's Figure, Table, Floats, Notes, and Boxes manual},
-  pdfsubject={LyX-documentation about figures, tables, floats, notes, and boxes},
-  pdfkeywords={LyX, Tables, Figures, Floats, Boxes, Notes}]{hyperref}
+  pdfauthor={Sergiusz Urbaniak}, pdftex,
+  pdftitle={Sprawozdanie},
+  pdfsubject={Sprawozdanie},
+  pdfkeywords={Sprawozdanie}]{hyperref}
 
 %mehr Platz zwischen Überschrift und Tabelle
 \newcommand{\@ldtable}{}
@@ -356,6 +356,23 @@ filename "1.lyx"
 \begin_inset CommandInset include
 LatexCommand include
 filename "2.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "3.lyx"
 
 \end_inset
 
