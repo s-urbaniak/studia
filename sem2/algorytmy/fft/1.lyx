@@ -51,8 +51,20 @@ Wzór
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula \[
-\mathbf{Y}_{8\times1}=\left(\mathbf{I}_{4}\otimes\mathbf{E}_{2}\right)\mathbf{D}_{8\times8}^{(3)}\left(\mathbf{I}_{2}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2}\right)\mathbf{D}_{8}^{(2)}\left(\mathbf{E}_{2}\otimes\mathbf{I}_{4}\right)\mathbf{X}_{8\times1}\]
+Zadaniem jest narysowanie grafu strukturalnego dla algorytmu FFT.
+ Wzór jest widoczny w równaniu 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:fft"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\mathbf{Y}_{8\times1}=\left(\mathbf{I}_{4}\otimes\mathbf{E}_{2}\right)\mathbf{D}_{8\times8}^{(3)}\left(\mathbf{I}_{2}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2}\right)\mathbf{D}_{8}^{(2)}\left(\mathbf{E}_{2}\otimes\mathbf{I}_{4}\right)\mathbf{X}_{8\times1}\label{eq:fft}\end{equation}
 
 \end_inset
 
@@ -91,6 +103,11 @@ Graf strukturalny
 
 \begin_layout Subsection
 Pomocnicze matryce
+\end_layout
+
+\begin_layout Standard
+Aby ułatwic rysowanie grafu strukturalnego pomocnicze rozwiązania operacji
+ matrycowych został wykonane.
 \end_layout
 
 \begin_layout Standard
