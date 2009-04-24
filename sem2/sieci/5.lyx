@@ -65,7 +65,14 @@ reference "fig:lab5_topology"
 
 .
  Jest to przekaz danych o wielkości 25MB.
- Ten przekaz będzie badany w trzech warunkach widocznych na tablicy.
+ Ten przekaz będzie badany w trzech warunkach widocznych na tablicy 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:lab5_warianty_badan"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -73,7 +80,7 @@ reference "fig:lab5_topology"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -173,6 +180,12 @@ T1
 \begin_inset Caption
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:lab5_warianty_badan"
+
+\end_inset
+
 Warianty badania parametru TCP Window
 \end_layout
 
@@ -195,7 +208,7 @@ Warianty badania parametru TCP Window
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -222,7 +235,7 @@ name "fig:lab5_topology"
 
 
 \lang polish
-Siec WAN
+Topologia sieci przy badaniu TCP Window
 \end_layout
 
 \end_inset

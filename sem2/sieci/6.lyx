@@ -72,7 +72,7 @@ reference "fig:lab6_topology"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -100,7 +100,7 @@ name "fig:lab6_topology"
 
 
 \lang polish
-Siec WAN
+Topologia sieci Firewall
 \end_layout
 
 \end_inset
@@ -142,7 +142,7 @@ Voice
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -172,7 +172,7 @@ name "fig:lab6_results_p-p_utilization"
 
 
 \lang polish
-Utylizacja wejściowa złącza WAN1
+Utylizacja Firewall
 \end_layout
 
 \end_inset
@@ -220,7 +220,7 @@ name "fig:lab6_results_app_performance"
 
 
 \lang polish
-Utylizacja wejściowa złącza WAN2
+Czas odpowiedzi
 \end_layout
 
 \end_inset

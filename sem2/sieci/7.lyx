@@ -50,36 +50,36 @@ theorems-ams
 \begin_body
 
 \begin_layout Section
-Domowa siec
+Badanie warstw aplikacyjnych
 \end_layout
 
 \begin_layout Standard
-Badana zostaje siec domową składającą się z trzech komputerów podłączonych
- do routera jako centralne wyjście do internetu.
- Trzy serwery służą do udostępnienia różnych usług.
- Schemat sieci jest widoczny na rysunku 
+W poprzednich wydziałach zostały badane różne topologie sieciowe.
+ W tym ostatnim badaniu zostaje sprawdzona konkretna aplikacja z różnymi
+ warstwami architektonicznymi.
+ Topologia architektoniczna jest widzialna na rysunku 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:lab1_1"
+reference "fig:lab7_topology"
 
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/lab1_1.png
-	scale 50
+	filename img/lab7_topology.png
+	lyxscale 50
+	width 50page%
 
 \end_inset
 
@@ -94,21 +94,17 @@ status collapsed
 \lang ngerman
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:lab1_1"
+name "fig:lab7_topology"
 
 \end_inset
 
 
 \lang polish
-Domowa siec
+Topologja architektoniczna
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -118,88 +114,34 @@ Domowa siec
 \end_layout
 
 \begin_layout Standard
-W tym badaniu zostały badane różne prędkości dostępu do internetu.
- Tablica 
+W tej topologij komunikacja odbywa się między klientem i serwerem Oracle.
+ Istnieje opóźnienie sieciowe o wysokości 3.2ms.
+ Wiadomości przesyłane między serwerem i klientem są stosunkowo małe.
+ Widać to na wykresie wizualizującym wielkość wiadomości (rysunek 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Badane-prędkości"
+reference "fig:lab7_results_message_sizes"
 
 \end_inset
 
- pokazuję badane prędkości.
+).
+ Widać na wykresie że wiadomości mają wielkość między 1 i 500 bytów, z czego
+ wiadomości o wielkości między 1 i 100 bytów stanowią większość.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
+\begin_inset Float figure
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="1">
-<features>
-<column alignment="center" valignment="top" width="0">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-Prędkość
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-20 kbps
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-40 kbps
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-512 kbps
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-T1
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+\begin_inset Graphics
+	filename img/lab7_results_message_sizes.png
+	lyxscale 50
+	width 70page%
 
 \end_inset
 
@@ -210,21 +152,21 @@ T1
 \begin_inset Caption
 
 \begin_layout Plain Layout
+
+\lang ngerman
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:Badane-prędkości"
-
-\end_inset
-
-Badane prędkości
-\end_layout
+name "fig:lab7_results_message_sizes"
 
 \end_inset
 
 
+\lang polish
+Wielkości wiadomości przesyłanych między klientem a serwerem
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
@@ -234,27 +176,14 @@ Badane prędkości
 \end_layout
 
 \begin_layout Standard
-Następująco zostały porównane utylizacja i średni czas odpowiedzi strony
- WWW złącza 
-\begin_inset Quotes eld
-\end_inset
-
-WAN Link
-\begin_inset Quotes erd
-\end_inset
-
- badanych prędkości.
- Wyniki utylizacji wejściowej jest widoczny na rysunku 
+W dodatku można zaobserwować że bardzo dużo wiadomości w krótkim czasie
+ jest przesyłanych.
+ Nadmiar propagacji wiadomości z tego powodu dużą część opóźnienia przekazu
+ danych.
+ Widoczny jest ten efekt na rysunku 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:lab1_2"
-
-\end_inset
-
- wraz wyniki średniego czasu odpowiedzi strony WWW na rysunku 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:lab1_3"
+reference "fig:lab7_results_propagation"
 
 \end_inset
 
@@ -269,6 +198,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 
 \lang english
 \begin_inset space \hfill{}
@@ -290,13 +220,13 @@ status open
 \lang english
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:lab1_2"
+name "fig:lab7_results_propagation"
 
 \end_inset
 
 
 \lang polish
-Utylizacja wejściowa
+Nadmiar propagacji wiadomości
 \end_layout
 
 \end_inset
@@ -305,10 +235,11 @@ Utylizacja wejściowa
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 
 \lang english
 \begin_inset Graphics
-	filename img/lab1_2.png
+	filename img/lab7_results_propagation.png
 	width 45col%
 
 \end_inset
@@ -338,13 +269,13 @@ status open
 \lang english
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:lab1_3"
+name "fig:lab7_results_latency_estimation"
 
 \end_inset
 
 
 \lang polish
-Średnia odpowiedz czasowa usługi Web
+Symulacja opóźnienia sieciowego
 \end_layout
 
 \end_inset
@@ -353,10 +284,11 @@ name "fig:lab1_3"
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 
 \lang english
 \begin_inset Graphics
-	filename img/lab1_3.png
+	filename img/lab7_results_latency_estimation.png
 	width 45col%
 
 \end_inset
@@ -377,15 +309,21 @@ name "fig:lab1_3"
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Wyniki badań sieci domowej
-\end_layout
+
+\lang ngerman
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:lab7_results"
 
 \end_inset
 
 
+\lang polish
+Siec WAN
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
@@ -395,10 +333,16 @@ Wyniki badań sieci domowej
 \end_layout
 
 \begin_layout Standard
-Można zauważyć że utylizacja mocno się polepsza przy przejściu na złącze
- 512k.
- To samo można zaobserwować dla utylizacji wejściowej.
- Natomiast różnica miedzy złączem 512k i T1 już jest nie wielka.
+Można więc wnioskować że aplikacja będzie zbyt źle skalowała z przyrastającym
+ opóźnieniem czasowym sieciowym.
+ Widoczny jest ten efekt przy symulacji zwiększenia latencji w rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:lab7_results_latency_estimation"
+
+\end_inset
+
+.
 \end_layout
 
 \end_body

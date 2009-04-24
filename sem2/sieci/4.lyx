@@ -87,7 +87,7 @@ reference "fig:lab4_topology"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -111,7 +111,7 @@ name "fig:lab4_topology"
 
 \end_inset
 
-Topologia daisy chain z serwerami na piątym piętrze
+Topologia sieci WAN
 \end_layout
 
 \end_inset
@@ -179,7 +179,7 @@ usługi dzielenia plików: Czas odpowiedzi w sekundach [sec]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -290,7 +290,7 @@ Odpowiedz czasowa usługi dzielenia plików
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Wyniki badań sieci LAN połączonej do usług zewnętrznych przez WAN
+Wyniki badań sieci WAN
 \end_layout
 
 \end_inset
