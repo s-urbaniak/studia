@@ -1,0 +1,513 @@
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrartcl
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\end_preamble
+\use_default_options true
+\language polish
+\inputencoding utf8
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Wzór
+\end_layout
+
+\begin_layout Standard
+Kiedy metody racjonalizacji nie nadają się do rozwiązania procedur mnożenia
+ można zastosować ogólny wzór 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ogolny-wzor"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\mathbf{C}=\frac{1}{N}\,\mathbf{S}_{N}^{T}\left(\mathbf{D}_{N}^{(1)}\mathbf{W}_{N}^{(1)}\,\dots\,\mathbf{D}_{N}^{(m)}\mathbf{W}_{N}^{(m)}\,\mathbf{X}\right)\label{eq:ogolny-wzor}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+gdzie
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+N=r^{m}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wtedy wzór 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ogolny-wzor"
+
+\end_inset
+
+ można zapisać jako
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{C}=\frac{1}{r^{m}}\,\mathbf{S}_{r^{m}}^{T}\left(\mathbf{D}_{r^{m}}^{(1)}\mathbf{W}_{r^{m}}^{(1)}\,\dots\,\mathbf{D}_{r^{m}}^{(m)}\mathbf{W}_{r^{m}}^{(m)}\,\mathbf{X}\right)\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+gdzie
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{D}_{r^{m}}^{(i)}=\mathbf{I}_{r^{m-i}}\,\otimes\,\mathbf{D}_{r^{i}}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{D}_{r^{i}}=diag\left[\mathbf{I}_{R},w_{r^{i}}^{0},\,\dots\,,w_{r^{i}}^{(R-1)},w_{r^{i}}^{0},w_{r^{i}}^{2},\,\dots\,,w_{r^{i}}^{2(R-1)},\,\dots\,,w_{r^{i}}^{0},\,\dots\,,w_{r^{i}}^{(r-1)(R-1)}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+R=r^{i-1}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+i
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{W}_{r^{m}}^{(i)}=\mathbf{I}_{r^{m-i}}\otimes\mathbf{E}_{r}\otimes\mathbf{I}_{r^{i-1}}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Zadanie
+\end_layout
+
+\begin_layout Standard
+Należy wyliczyć przedstawianą procedurę dla
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+N=2^{4}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+wtedy
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+r=2,\,\, m=4\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{C}=\frac{1}{2^{4}}\,\mathbf{S}_{2^{4}}^{T}\left(\mathbf{D}_{2^{4}}^{(1)}\mathbf{W}_{2^{4}}^{(1)}\mathbf{D}_{2^{4}}^{(2)}\mathbf{W}_{2^{4}}^{(2)}\mathbf{D}_{2^{4}}^{(3)}\mathbf{W}_{2^{4}}^{(3)}\mathbf{D}_{2^{4}}^{(4)}\mathbf{W}_{2^{4}}^{(4)}\,\mathbf{X}\right)\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Kroki
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:krok i=4"
+
+\end_inset
+
+Krok i = 4
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+i=4\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+R=2^{4-1}=2^{3}=8\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{W}_{2^{4}}^{(4)}=\mathbf{I}_{2^{4-4}}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2^{4-1}}=\mathbf{I}_{1}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{8}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{D}_{2^{4}}^{(4)} & = & \mathbf{I}_{2^{0}}\otimes diag\left[\mathbf{I}_{8}w_{2^{4}}^{0}w_{2^{4}}^{1}w_{2^{4}}^{2}w_{2^{4}}^{3}w_{2^{4}}^{4}w_{2^{4}}^{5}w_{2^{4}}^{6}w_{2^{4}}^{7}\right]\\
+ & = & \mathbf{I}_{1}\otimes diag\left[\mathbf{I}_{8}\,1\, w_{2^{4}}^{1}w_{2^{4}}^{2}w_{2^{4}}^{3}w_{2^{4}}^{4}w_{2^{4}}^{5}w_{2^{4}}^{6}w_{2^{4}}^{7}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Krok i = 3
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+i=3\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+R=2^{3-1}=2^{2}=4\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{W}_{2^{4}}^{(3)}=\mathbf{I}_{2^{4-3}}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2^{3-1}}=\mathbf{I}_{2}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{4}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{D}_{2^{4}}^{(3)} & = & \mathbf{I}_{2^{1}}\otimes diag\left[\mathbf{I}_{4}w_{2^{3}}^{0}w_{2^{3}}^{1}w_{2^{3}}^{2}w_{2^{3}}^{3}\right]\\
+ & = & \mathbf{I}_{2}\otimes diag\left[\mathbf{I}_{4}\,1\, w_{2^{3}}^{1}w_{2^{3}}^{2}w_{2^{3}}^{3}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Krok i = 2
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+i=2\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+R=2^{2-1}=2^{1}=2\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{W}_{2^{4}}^{(2)}=\mathbf{I}_{2^{4-2}}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2^{2-1}}=\mathbf{I}_{4}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+\begin_inset Formula \[
+\mathbf{D}_{2^{4}}^{(2)}=\mathbf{I}_{2^{2}}\otimes diag\left[\mathbf{I}_{2}w_{2^{2}}^{0}w_{2^{2}}^{1}\right]\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:krok i=1"
+
+\end_inset
+
+Krok i = 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+i=1\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+R=2^{1-1}=2^{0}=1\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \[
+\mathbf{W}_{2^{4}}^{(1)}=\mathbf{I}_{2^{4-1}}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2^{1-1}}=\mathbf{I}_{8}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{1}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+\begin_inset Formula \begin{eqnarray}
+\mathbf{D}_{2^{4}}^{(1)} & = & \mathbf{I}_{2^{3}}\otimes diag\left[\mathbf{I}_{2}w_{2^{1}}^{0}\right]\nonumber \\
+ & = & \mathbf{I}_{8}\otimes\mathbf{I}_{2}=\mathbf{I}_{16}\label{eq:d1_obsolete}\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Można w wzorze 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:d1_obsolete"
+
+\end_inset
+
+ zauważyć, że 
+\begin_inset Formula $\mathbf{D}_{2^{4}}^{(1)}$
+\end_inset
+
+ stanowi macierz jednostkową 
+\begin_inset Formula $\mathbf{I}_{16}$
+\end_inset
+
+, a więc można ją w ramach mnożenia ignorować.
+\end_layout
+
+\begin_layout Subsubsection
+Rozwiązanie
+\end_layout
+
+\begin_layout Standard
+Według kroków 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:krok i=4"
+
+\end_inset
+
+ do 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:krok i=1"
+
+\end_inset
+
+ rozwiązanie jest widoczne w wzorze 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:result"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray}
+\mathbf{C} & = & \frac{1}{16}\,\mathbf{S}_{16}^{T}\left(\mathbf{W}_{2^{4}}^{(1)}\mathbf{D}_{2^{4}}^{(2)}\mathbf{W}_{2^{4}}^{(2)}\mathbf{D}_{2^{4}}^{(3)}\mathbf{W}_{2^{4}}^{(3)}\mathbf{D}_{2^{4}}^{(4)}\mathbf{W}_{2^{4}}^{(4)}\,\mathbf{X}\right)\label{eq:result}\\
+ & = & \frac{1}{16}\,\mathbf{S}_{16}^{T}\left(\left(\mathbf{I}_{8}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{1}\right)\mathbf{D}_{2^{4}}^{(2)}\left(\mathbf{I}_{4}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2}\right)\mathbf{D}_{2^{4}}^{(3)}\left(\mathbf{I}_{2}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{4}\right)\mathbf{D}_{2^{4}}^{(4)}\left(\mathbf{I}_{1}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{8}\right)\mathbf{X}\right)\nonumber \end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Graf strukturalny
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{tikz/mnozenie.tikz}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Graf strukturalny
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

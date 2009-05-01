@@ -1,0 +1,171 @@
+% Define two helper counters
+\begin{tikzpicture}[yscale=0.5, xscale=0.5, node distance=0.3cm, auto]
+
+    % % grid
+    % \def\supertiny{ \font\supertinyfont = cmr9 at 3pt \relax \supertinyfont}
+    % \newcounter{gridrows}
+    % \setcounter{gridrows}{12}
+    % \newcounter{gridcols}
+    % \setcounter{gridcols}{30}
+    % \draw [gray, very thin] (0, -\arabic{gridrows}) grid (\arabic{gridcols}, 0);
+    % \foreach \x in {0,...,\arabic{gridcols}}
+    %     \foreach \y in {0,...,\arabic{gridrows}}
+    %     {
+    %         \draw (\x+0.15, -\y-0.15) node [gray, very thin] {\supertiny{\x/\y}};
+    %     }
+
+    % styles
+    \tikzstyle{n} = [circle, fill=black, minimum size=2pt, inner sep=0pt, outer sep=0pt]
+    \tikzstyle{mul} = [shape=circle, draw, inner sep=0pt]
+    \tikzstyle{addconstant} = [rectangle, draw]
+    \tikzstyle{mulconstant} = [circle, fill=white, draw, inner sep=0pt, minimum size=0.45cm]
+    \tikzstyle{butterfly} = [shape=rectangle, minimum width=0.3cm, fill=white, draw]
+
+    % line styles
+    \tikzstyle{add} = [-]
+    \tikzstyle{subtract} = [densely dotted]
+
+    \newcounter{col}
+    \newcounter{row}
+
+    % Draw inputs
+    \setcounter{row}{0}
+    \foreach \x in {0,...,7}
+    {
+        \node (x\x)
+            [n, pin={[pin edge={latex'-, black}] left : $x_{\x}$}]
+            at (\arabic{col},-\x-\arabic{row})
+            {};
+    }
+
+    % first butterflies
+    \stepcounter{col}
+    \setcounter{row}{0}
+    \foreach \x in {0,...,3}
+    {
+        \pgfmathsetmacro{\col}{\arabic{col}}
+        \pgfmathsetmacro{\row}{\arabic{row}}
+
+        \draw
+            (\col+\x/3, 0.2-\x-\row) rectangle +(1,-4.5) [butterfly]
+            (\col+\x/3, -\x-\row) node (eUpIn\x) [n] {}
+            (\col+\x/3, -\x-\row-4) node (eDownIn\x) [n] {}
+            (\col+1+\x/3, -\x-\row) node [n] {} --
+            (\col+3, -\x-\row) node [n] (eUpOut\x) {}
+            (\col+1+\x/3, -\x-\row-4) node [n] {} --
+            (\col+3, -\x-\row-4) node [n] (eUpDown\x) {};
+
+        \path (x\x) edge[add] (eUpIn\x);
+
+        \pgfmathparse{\x+4}
+        \path (x\pgfmathresult) edge[add] (eDownIn\x);
+    }
+    \draw (\arabic{col}+1.5, -5-\arabic{row}) node [] {\tiny ${\mathbf{E}_2}$};
+
+    % D^(2)_8
+    \setcounter{col}{4}
+    \setcounter{row}{0}
+    \foreach \x in {0,...,5}
+    {
+        \pgfmathparse{\x+\arabic{row}}
+        \pgfmathsetmacro{\row}{\pgfmathresult}
+
+        \draw
+            (\arabic{col}, -\row) node (wIn\x) [n] {} --
+            (\arabic{col}+2, -\row) node (wOut\x) [n] {};
+    }
+    \setcounter{col}{4}
+    \setcounter{row}{6}
+    \foreach \x in {0,...,1}
+    {
+        \pgfmathparse{\x+\arabic{row}}
+        \pgfmathsetmacro{\row}{\pgfmathresult}
+
+        \draw
+            (\arabic{col}, -\row) node (wIn\x) [n] {} --
+            (\arabic{col}+1, -\row) node [mulconstant] {\small $w^2$} --
+            (\arabic{col}+2, -\row) node (wOut\x) [n] {};
+    }
+
+    % I2 x E2 x I2
+    \setcounter{col}{6}
+    \setcounter{row}{0}
+    \foreach \y in {0,...,1}
+    {
+        \foreach \x in {0,...,1}
+        {
+            \pgfmathparse{\x+\y*4}
+            \pgfmathsetmacro{\row}{\pgfmathresult}
+            \pgfmathsetmacro{\col}{\arabic{col}}
+
+            \draw
+                (\col+\x/2+0.5, 0.2-\row) rectangle +(1,-2.5) [fill=white]
+
+                (\col,             -\row)   node (eUpIn\x)    [n] {} --
+                (\col+\x/2+0.5,    -\row)   node              [n] {}
+                (\col+\x/2+1.5,    -\row)   node              [n] {} --
+                (\col+3,           -\row)   node (eUpOut\x)   [n] {}
+
+                (\col,             -\row-2) node (eDownIn\x)  [n] {} --
+                (\col+\x/2+0.5,    -\row-2) node              [n] {}
+                (\col+\x/2+1.5,    -\row-2) node              [n] {} --
+                (\col+3,           -\row-2) node (eDownOut\x) [n] {};
+        }
+        \draw
+            (\arabic{col}+1.5, -\arabic{row}-\y*4-2) node [] {\tiny ${\mathbf{E}_2}$};
+    }
+
+    % D^(3) = diag(w^0, ... , w^2)
+    \setcounter{col}{9}
+    \setcounter{row}{0}
+    \newcounter{x}
+    \foreach \w in {0,0,0,2,0,1,0,2}
+    {
+        \pgfmathsetmacro{\x}{\arabic{x}}
+        \pgfmathparse{\x+\arabic{row}}
+        \pgfmathsetmacro{\row}{\pgfmathresult}
+
+        \draw
+            (\arabic{col}, -\row) node (wIn\x) [n] {} --
+            (\arabic{col}+1, -\row) node [mulconstant] {\small $w^\w$} --
+            (\arabic{col}+2, -\row) node (wOut\x) [n] {};
+
+        \stepcounter{x}
+    }
+
+    % I_4 x E_2
+    \setcounter{col}{11}
+    \setcounter{row}{0}
+    \foreach \x in {0,...,3}
+    {
+        \pgfmathparse{\x*2}
+        \pgfmathsetmacro{\row}{\pgfmathresult}
+        \pgfmathsetmacro{\col}{\arabic{col}}
+
+        \draw
+            (\col+0.5, 0.2-\row) rectangle +(1,-1.5) [fill=white]
+
+            (\col,     -\row) node (eUpIn\x) [n] {} --
+            (\col+0.5, -\row) node           [n] {}
+            (\col+1.5, -\row) node           [n] {} --
+            (\col+2,   -\row) node (eUpOut\x) [n] {}
+
+            (\col,     -\row-1) node (eDownIn\x)  [n] {} --
+            (\col+0.5, -\row-1) node              [n] {}
+            (\col+1.5, -\row-1) node              [n] {} --
+            (\col+2,   -\row -1)node (eDownOut\x) [n] {}
+
+            (\col+1, -\row-0.5) node [] {\tiny ${\mathbf{E}_2}$};
+    }
+
+    % Draw outputs
+    \setcounter{col}{13}
+    \setcounter{row}{0}
+    \foreach \x in {0,...,7}
+    {
+        \node (y\x)
+            [n, pin={[pin edge={-latex', black}] right : $y_{\x}$}]
+            at (\arabic{col},-\x-\arabic{row})
+            {};
+    }
+\end{tikzpicture}

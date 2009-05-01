@@ -26,7 +26,9 @@
             <props>
                 <prop key="hibernate.hbm2ddl.auto">create</prop>
                 <prop key="hibernate.connection.pool_size">1</prop>
-                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.jdbc.batch_size">20</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.generate_statistics">true</prop>
                 <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect
                 </prop>
                 <prop key="hibernate.connection.autocommit">true</prop>
@@ -40,7 +42,9 @@
 
     <bean id="musicDaoTarget"
         class="org.urbaniak.studia.sem2.integracja.dao.MusicDAOHibernateImpl"
-        autowire="byName" />
+        autowire="byName">
+        <property name="batchSize" value="20" />
+    </bean>
 
     <bean id="musicDAO" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="proxyInterfaces">

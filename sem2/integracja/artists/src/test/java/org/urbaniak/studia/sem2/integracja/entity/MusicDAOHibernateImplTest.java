@@ -134,7 +134,7 @@ public class MusicDAOHibernateImplTest {
 
     @Test
     public void testBulk() {
-        int records = 1000;
+        int records = 103;
 
         List<Artist> artistList = new ArrayList<Artist>();
         for (int i = 0; i < records; i++) {

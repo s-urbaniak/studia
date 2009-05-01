@@ -10,14 +10,13 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.rpc.ServiceDefTarget;
+import com.smartgwt.client.core.DataClass;
 import com.smartgwt.client.data.DSRequest;
 import com.smartgwt.client.data.DSResponse;
 import com.smartgwt.client.data.DataSourceField;
 import com.smartgwt.client.data.fields.DataSourceIntegerField;
 import com.smartgwt.client.data.fields.DataSourceTextField;
 import com.smartgwt.client.rpc.RPCResponse;
-import com.smartgwt.client.widgets.Canvas;
-import com.smartgwt.client.widgets.grid.ListGrid;
 import com.smartgwt.client.widgets.grid.ListGridRecord;
 
 public class ArtistDataSource extends GwtRpcDataSource {
@@ -99,19 +98,15 @@ public class ArtistDataSource extends GwtRpcDataSource {
     protected void executeUpdate(final String requestId,
             final DSRequest request, final DSResponse response) {
         // Retrieve record which should be updated.
-        JavaScriptObject data = request.getData();
-        ListGridRecord rec = new ListGridRecord(data);
-        // Find grid
-        ListGrid grid = (ListGrid) Canvas.getById(request.getComponentId());
-        // Get record with old and new values combined
-        int index = grid.getRecordIndex(rec);
-        rec = (ListGridRecord) grid.getEditedRecord(index);
-        Artist testRec = new Artist();
-        copyValues(rec, testRec);
+        JavaScriptObject jsData = request.getData();
+        DataClass data = new DataClass(jsData);
+
+        Artist artist = new Artist();
+        copyValues(data, artist);
 
         ArtistServiceAsync service = getService();
+        service.update(artist, new AsyncCallback<Artist>() {
 
-        service.update(testRec, new AsyncCallback<Artist>() {
             public void onFailure(Throwable caught) {
                 response.setStatus(RPCResponse.STATUS_FAILURE);
                 processResponse(requestId, response);
@@ -125,15 +120,17 @@ public class ArtistDataSource extends GwtRpcDataSource {
                 response.setData(list);
                 processResponse(requestId, response);
             }
+
         });
     }
 
     @Override
     protected void executeRemove(final String requestId,
             final DSRequest request, final DSResponse response) {
-        // Retrieve record which should be removed.
+
         JavaScriptObject data = request.getData();
         final ListGridRecord rec = new ListGridRecord(data);
+
         Artist testRec = new Artist();
         copyValues(rec, testRec);
 
@@ -167,13 +164,13 @@ public class ArtistDataSource extends GwtRpcDataSource {
         return service;
     }
 
-    private static void copyValues(ListGridRecord from, Artist to) {
+    private static void copyValues(DataClass from, Artist to) {
         to.setId(from.getAttributeAsInt("id"));
         to.setName(from.getAttributeAsString("name"));
         to.setGenre(from.getAttributeAsString("genre"));
     }
 
-    private static void copyValues(Artist from, ListGridRecord to) {
+    private static void copyValues(Artist from, DataClass to) {
         to.setAttribute("id", from.getId());
         to.setAttribute("name", from.getName());
         to.setAttribute("genre", from.getGenre());
