@@ -227,7 +227,7 @@ R=2^{4-1}=2^{3}=8\]
 
 \begin_layout Standard
 \begin_inset Formula \[
-\mathbf{W}_{2^{4}}^{(4)}=\mathbf{I}_{2^{4-4}}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2^{4-1}}=\mathbf{I}_{1}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{8}\]
+\mathbf{W}_{2^{4}}^{(4)}=\mathbf{I}_{2^{4-4}}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2^{4-1}}=\mathbf{I}_{1}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{8}=\mathbf{E}_{2}\otimes\mathbf{I}_{8}\]
 
 \end_inset
 
@@ -247,7 +247,7 @@ R=2^{4-1}=2^{3}=8\]
 \lang english
 \begin_inset Formula \begin{eqnarray*}
 \mathbf{D}_{2^{4}}^{(4)} & = & \mathbf{I}_{2^{0}}\otimes diag\left[\mathbf{I}_{8}w_{2^{4}}^{0}w_{2^{4}}^{1}w_{2^{4}}^{2}w_{2^{4}}^{3}w_{2^{4}}^{4}w_{2^{4}}^{5}w_{2^{4}}^{6}w_{2^{4}}^{7}\right]\\
- & = & \mathbf{I}_{1}\otimes diag\left[\mathbf{I}_{8}\,1\, w_{2^{4}}^{1}w_{2^{4}}^{2}w_{2^{4}}^{3}w_{2^{4}}^{4}w_{2^{4}}^{5}w_{2^{4}}^{6}w_{2^{4}}^{7}\right]\end{eqnarray*}
+ & = & diag\left[\mathbf{I}_{8}\,1\, w_{2^{4}}^{1}w_{2^{4}}^{2}w_{2^{4}}^{3}w_{2^{4}}^{4}w_{2^{4}}^{5}w_{2^{4}}^{6}w_{2^{4}}^{7}\right]\end{eqnarray*}
 
 \end_inset
 
@@ -347,8 +347,9 @@ R=2^{2-1}=2^{1}=2\]
 \noun off
 \color none
 \lang english
-\begin_inset Formula \[
-\mathbf{D}_{2^{4}}^{(2)}=\mathbf{I}_{2^{2}}\otimes diag\left[\mathbf{I}_{2}w_{2^{2}}^{0}w_{2^{2}}^{1}\right]\]
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{D}_{2^{4}}^{(2)} & = & \mathbf{I}_{2^{2}}\otimes diag\left[\mathbf{I}_{2}w_{2^{2}}^{0}w_{2^{2}}^{1}\right]\\
+ & = & \mathbf{I}_{4}\otimes diag\left[\mathbf{I}_{2}\,1\, w_{2^{2}}^{1}\right]\end{eqnarray*}
 
 \end_inset
 
@@ -385,7 +386,7 @@ R=2^{1-1}=2^{0}=1\]
 
 \begin_layout Standard
 \begin_inset Formula \[
-\mathbf{W}_{2^{4}}^{(1)}=\mathbf{I}_{2^{4-1}}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2^{1-1}}=\mathbf{I}_{8}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{1}\]
+\mathbf{W}_{2^{4}}^{(1)}=\mathbf{I}_{2^{4-1}}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2^{1-1}}=\mathbf{I}_{8}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{1}=\mathbf{I}_{8}\otimes\mathbf{E}_{2}\]
 
 \end_inset
 
@@ -463,7 +464,7 @@ reference "eq:result"
 \begin_layout Standard
 \begin_inset Formula \begin{eqnarray}
 \mathbf{C} & = & \frac{1}{16}\,\mathbf{S}_{16}^{T}\left(\mathbf{W}_{2^{4}}^{(1)}\mathbf{D}_{2^{4}}^{(2)}\mathbf{W}_{2^{4}}^{(2)}\mathbf{D}_{2^{4}}^{(3)}\mathbf{W}_{2^{4}}^{(3)}\mathbf{D}_{2^{4}}^{(4)}\mathbf{W}_{2^{4}}^{(4)}\,\mathbf{X}\right)\label{eq:result}\\
- & = & \frac{1}{16}\,\mathbf{S}_{16}^{T}\left(\left(\mathbf{I}_{8}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{1}\right)\mathbf{D}_{2^{4}}^{(2)}\left(\mathbf{I}_{4}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2}\right)\mathbf{D}_{2^{4}}^{(3)}\left(\mathbf{I}_{2}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{4}\right)\mathbf{D}_{2^{4}}^{(4)}\left(\mathbf{I}_{1}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{8}\right)\mathbf{X}\right)\nonumber \end{eqnarray}
+ & = & \frac{1}{16}\,\mathbf{S}_{16}^{T}\left(\left(\mathbf{I}_{8}\otimes\mathbf{E}_{2}\right)\mathbf{D}_{2^{4}}^{(2)}\left(\mathbf{I}_{4}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2}\right)\mathbf{D}_{2^{4}}^{(3)}\left(\mathbf{I}_{2}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{4}\right)\mathbf{D}_{2^{4}}^{(4)}\left(\mathbf{E}_{2}\otimes\mathbf{I}_{8}\right)\mathbf{X}\right)\nonumber \end{eqnarray}
 
 \end_inset
 
@@ -543,8 +544,196 @@ Następnie macierz inwersji jest budowana:
 Graf strukturalny
 \end_layout
 
+\begin_layout Subsection
+Pomocnicze macierze
+\end_layout
+
 \begin_layout Standard
-Graf strukturalny według rozwiązania w odziale 
+\begin_inset Formula \[
+\mathbf{E}_{2}\otimes\mathbf{I}_{8}=\left[\begin{array}{cc}
+1 & 1\\
+1 & -1\end{array}\right]\otimes\left[\begin{array}{cccccccc}
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\\
+ &  &  &  & 1\\
+ &  &  &  &  & 1\\
+ &  &  &  &  &  & 1\\
+ &  &  &  &  &  &  & 1\end{array}\right]=\left[\begin{array}{ccccccc}
+ & ^{\mathtt{0}} & ^{\mathtt{\dots}} & ^{\mathtt{7}} & ^{\mathtt{8}} & ^{\mathtt{\dots}} & ^{\mathtt{15}}\\
+^{\mathtt{0}} & 1 &  &  & 1\\
+^{\mathtt{\vdots}} &  & \ddots &  &  & \ddots\\
+^{\mathtt{7}} &  &  & 1 &  &  & 1\\
+^{\mathtt{8}} & 1 &  &  & -1\\
+^{\mathtt{\vdots}} &  & \ddots &  &  & \ddots\\
+^{\mathtt{15}} &  &  & 1 &  &  & -1\end{array}\right]_{16}\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{D}_{2^{4}}^{(4)} & = & diag\left[\mathbf{I}_{8}\,1\, w_{2^{4}}^{1}w_{2^{4}}^{2}w_{2^{4}}^{3}w_{2^{4}}^{4}w_{2^{4}}^{5}w_{2^{4}}^{6}w_{2^{4}}^{7}\right]\\
+ & = & \left[\begin{array}{ccccccccccc}
+ & ^{\mathtt{0}} & ^{\mathtt{\dots}} & ^{\mathtt{8}} & ^{\mathtt{9}} & ^{\mathtt{10}} & ^{\mathtt{11}} & ^{\mathtt{12}} & ^{\mathtt{13}} & ^{\mathtt{14}} & ^{\mathtt{15}}\\
+^{\mathtt{0}} & 1\\
+^{\mathtt{\vdots}} &  & \ddots\\
+^{\mathtt{8}} &  &  & 1\\
+^{\mathtt{9}} &  &  &  & w_{2^{4}}^{1}\\
+^{\mathtt{10}} &  &  &  &  & w_{2^{4}}^{2}\\
+^{\mathtt{11}} &  &  &  &  &  & w_{2^{4}}^{3}\\
+^{\mathtt{12}} &  &  &  &  &  &  & w_{2^{4}}^{4}\\
+^{\mathtt{13}} &  &  &  &  &  &  &  & w_{2^{4}}^{5}\\
+^{\mathtt{14}} &  &  &  &  &  &  &  &  & w_{2^{4}}^{6}\\
+^{\mathtt{15}} &  &  &  &  &  &  &  &  &  & w_{2^{4}}^{7}\end{array}\right]_{16}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{I}_{2}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{4} & = & \left[\begin{array}{cc}
+1\\
+ & 1\end{array}\right]\otimes\left[\begin{array}{cc}
+1 & 1\\
+1 & -1\end{array}\right]\otimes\left[\begin{array}{cccc}
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\end{array}\right]\\
+ & = & \left[\begin{array}{cc}
+1\\
+ & 1\end{array}\right]\otimes\left[\begin{array}{cccccccc}
+1 &  &  &  & 1\\
+ & 1 &  &  &  & 1\\
+ &  & 1 &  &  &  & 1\\
+ &  &  & 1 &  &  &  & 1\\
+1 &  &  &  & -1\\
+ & 1 &  &  &  & -1\\
+ &  & 1 &  &  &  & -1\\
+ &  &  & 1 &  &  &  & -1\end{array}\right]\\
+ & = & \left[\begin{array}{ccccc|cccc|cccc|cccc}
+ & ^{\mathtt{0}} & ^{\mathtt{1}} & ^{\mathtt{2}} & ^{\mathtt{3}} & ^{\mathtt{4}} & ^{\mathtt{5}} & ^{\mathtt{6}} & ^{\mathtt{7}} & ^{\mathtt{8}} & ^{\mathtt{9}} & ^{\mathtt{10}} & ^{\mathtt{11}} & ^{\mathtt{12}} & ^{\mathtt{13}} & ^{\mathtt{14}} & ^{\mathtt{15}}\\
+^{\mathtt{0}} & 1 &  &  &  & 1 &  &  & \, &  &  &  & \,\\
+^{\mathtt{1}} &  & 1 &  &  &  & 1 &  & \, &  &  &  & \,\\
+^{\mathtt{2}} &  &  & 1 &  &  &  & 1 & \, &  &  &  & \,\\
+^{\mathtt{3}} &  &  &  & 1 &  &  &  & 1 &  &  &  & \,\\
+\hline ^{\mathtt{4}} & 1 &  &  &  & -1 &  &  & \, &  &  &  & \,\\
+^{\mathtt{5}} &  & 1 &  &  &  & -1 &  & \, &  &  &  & \,\\
+^{\mathtt{6}} &  &  & 1 &  &  &  & -1 & \, &  &  &  & \,\\
+^{\mathtt{7}} &  &  &  & 1 &  &  &  & -1 &  &  &  & \,\\
+\hline ^{\mathtt{8}} &  &  &  &  &  &  &  &  & 1 &  &  &  & 1\\
+^{\mathtt{9}} &  &  &  &  &  &  &  &  &  & 1 &  &  &  & 1\\
+^{\mathtt{10}} &  &  &  &  &  &  &  &  &  &  & 1 &  &  &  & 1\\
+^{\mathtt{11}} &  &  &  &  &  &  &  &  &  &  &  & 1 &  &  &  & 1\\
+\hline ^{\mathtt{12}} &  &  &  &  &  &  &  &  & 1 &  &  &  & -1\\
+^{\mathtt{13}} &  &  &  &  &  &  &  &  &  & 1 &  &  &  & -1\\
+^{\mathtt{14}} &  &  &  &  &  &  &  &  &  &  & 1 &  &  &  & -1\\
+^{\mathtt{15}} &  &  &  &  &  &  &  &  &  &  &  & 1 &  &  &  & -1\end{array}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\lang english
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{D}_{2^{4}}^{(3)} & = & \mathbf{I}_{2}\otimes diag\left[\mathbf{I}_{4}\,1\, w_{2^{3}}^{1}w_{2^{3}}^{2}w_{2^{3}}^{3}\right]\\
+ & = & \mathbf{I}_{2}\otimes\left[\begin{array}{ccccccc}
+ & ^{\mathtt{0}} & ^{\mathtt{\dots}} & ^{\mathtt{4}} & ^{\mathtt{5}} & ^{\mathtt{6}} & ^{\mathtt{7}}\\
+^{\mathtt{0}} & 1\\
+^{\mathtt{\vdots}} &  & \ddots\\
+^{\mathtt{4}} &  &  & 1\\
+^{\mathtt{5}} &  &  &  & w_{2^{3}}^{1}\\
+^{\mathtt{6}} &  &  &  &  & w_{2^{3}}^{2}\\
+^{\mathtt{7}} &  &  &  &  &  & w_{2^{3}}^{3}\end{array}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{I}_{4}\otimes\mathbf{E}_{2}\otimes\mathbf{I}_{2} & = & \left[\begin{array}{cccc}
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\end{array}\right]\otimes\left[\begin{array}{cc}
+1 & 1\\
+1 & -1\end{array}\right]\otimes\left[\begin{array}{cc}
+1\\
+ & 1\end{array}\right]\\
+ & = & \left[\begin{array}{cccc}
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\end{array}\right]\otimes\left[\begin{array}{cccc}
+1 &  & 1\\
+ & 1 &  & 1\\
+1 &  & -1\\
+ & 1 &  & -1\end{array}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula \begin{eqnarray*}
+\mathbf{D}_{2^{4}}^{(2)} & = & \mathbf{I}_{4}\otimes diag\left[\mathbf{I}_{2}\,1\, w_{2^{2}}^{1}\right]\\
+ & = & \left[\begin{array}{cccc}
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & 1\end{array}\right]\otimes\left[\begin{array}{cccc}
+1\\
+ & 1\\
+ &  & 1\\
+ &  &  & w_{2^{2}}^{1}\end{array}\right]\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Rysunek
+\end_layout
+
+\begin_layout Standard
+Graf strukturalny według rozwiązania w oddziale 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Zadanie"
@@ -565,13 +754,13 @@ reference "fig:Graf-strukturalny"
 \begin_inset Float figure
 placement h
 wide false
-sideways false
+sideways true
 status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
