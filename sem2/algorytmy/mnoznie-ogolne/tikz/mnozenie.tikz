@@ -18,7 +18,7 @@
     \tikzstyle{n} = [circle, fill=black, minimum size=2pt, inner sep=0pt, outer sep=0pt]
     \tikzstyle{mul} = [shape=circle, draw, inner sep=0pt]
     \tikzstyle{addconstant} = [rectangle, draw]
-    \tikzstyle{mulconstant} = [circle, fill=white, draw, inner sep=0pt, minimum size=0.45cm]
+    \tikzstyle{mulconstant} = [circle, fill=white, draw, inner sep=0pt, minimum size=0.65cm]
     \tikzstyle{butterfly} = [shape=rectangle, minimum width=0.3cm, fill=white, draw]
 
     % line styles
@@ -220,22 +220,24 @@
             (\col,        -\row-1) node (eDownIn\y)    [n] {} --
             (\col+0.5,    -\row-1) node                [n] {}
             (\col+1.5,    -\row-1) node                [n] {} --
-            (\col+2,      -\row-1) node (e\arabic{x})   [n] {};
+            (\col+2,      -\row-1) node (e\arabic{x})  [n] {};
         \stepcounter{x}
 
         \draw
             (\arabic{col}+1, -\arabic{row}-\y*2-0.5) node [] {\tiny ${\mathbf{E}_2}$};
     }
 
-    % y0..y15
+    % 1/16
     \setcounter{col}{22}
-    \setcounter{row}{0}
-    \foreach \x in {0,...,15}
+    \foreach \y in {0,...,15}
     {
-        \node (y\x)
-            [n, pin={[pin edge={-latex', black}] right : $y_{\x}$}]
-            at (\arabic{col},-\x-\arabic{row})
-            {};
+        \pgfmathparse{\y}
+        \setcounter{row}{\pgfmathresult}
+
+        \draw
+            (\arabic{col},   -\arabic{row}) node  (y\y) [n]           {} --
+            (\arabic{col}+1, -\arabic{row}) node        [mulconstant] {\small $\frac{1}{16}$} --
+            (\arabic{col}+2, -\arabic{row}) node        [n]           {};
     }
 
     % S^T_16
@@ -257,4 +259,16 @@
         (e14) edge [add] (y7)
         (e15) edge [add] (y15)
     ;
+
+    % y0..y15
+    \setcounter{col}{24}
+    \setcounter{row}{0}
+    \foreach \x in {0,...,15}
+    {
+        \node (y\x)
+            [n, pin={[pin edge={-latex', black}] right : $y_{\x}$}]
+            at (\arabic{col},-\x-\arabic{row})
+            {};
+    }
+
 \end{tikzpicture}
