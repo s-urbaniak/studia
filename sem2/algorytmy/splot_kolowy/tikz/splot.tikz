@@ -210,14 +210,17 @@
 
     \setcounter{col}{15}
     \setcounter{row}{2}
-    \foreach \x in {0,...,7}
+    \foreach \x in {-2,...,7}
     {
         \pgfmathsetmacro{\col}{\arabic{col}}
         \pgfmathparse{-\x-\arabic{row}}
         \pgfmathsetmacro{\row}{\pgfmathresult}
 
         \draw
-            (\col, \row) node [n] (x\x) {};
+            (\col,   \row) node [n] (x\x) {} --
+            (\col+1, \row) node [mulconstant] {\small $\frac{1}{2}$} --
+            (\col+2, \row) node [n] (z\x) {}
+        ;
     }
 
     \path
@@ -235,7 +238,7 @@
     ;
 
     % E2 x I2
-    \setcounter{col}{15}
+    \setcounter{col}{17}
     \setcounter{row}{0}
     \foreach \x in {0,...,1}
     {
@@ -257,7 +260,7 @@
     }
     \draw (\arabic{col}+1.85, -2-\arabic{row}) node [] {\tiny ${\mathbf{E}_2}$};
 
-    \setcounter{col}{18}
+    \setcounter{col}{20}
     \setcounter{row}{4}
     \foreach \x in {0,...,3}
     {
@@ -270,21 +273,21 @@
     }
 
     \path
-        (x4) edge [add] (y0)
-        (x6) edge [add] (y0)
+        (z4) edge [add] (y0)
+        (z6) edge [add] (y0)
 
-        (x5) edge [add] (y1)
-        (x7) edge [add] (y1)
+        (z5) edge [add] (y1)
+        (z7) edge [add] (y1)
 
-        (x2) edge [add] (y2)
-        (x6) edge [add] (y2)
+        (z2) edge [add] (y2)
+        (z6) edge [add] (y2)
 
-        (x3) edge [add] (y3)
-        (x7) edge [add] (y3)
+        (z3) edge [add] (y3)
+        (z7) edge [add] (y3)
     ;
 
     % E2 x I4
-    \setcounter{col}{18}
+    \setcounter{col}{20}
     \setcounter{row}{0}
     \foreach \x in {0,...,3}
     {
@@ -307,7 +310,7 @@
     \draw (\arabic{col}+2.5, -5-\arabic{row}) node [] {\tiny ${\mathbf{E}_2}$};
 
     % Draw outputs
-    \setcounter{col}{22}
+    \setcounter{col}{24}
     \setcounter{row}{0}
     \foreach \x in {0,...,7}
     {

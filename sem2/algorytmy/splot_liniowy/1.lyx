@@ -273,7 +273,7 @@ Y_{11\times1}^{(1)}=\left[\begin{array}{ccccccccccc}
 4\\
 10\\
 20\\
-25\\
+30\\
 40\\
 50\\
 60\\
@@ -381,7 +381,7 @@ Y_{11\times1}^{(3)}=\left[\begin{array}{ccccccccccc}
 4\cdot5+3\cdot6+2\cdot1+1\cdot2\\
 \hline 4\cdot6+3\cdot1+2\cdot2\\
 4\cdot1+3\cdot2\\
-4\cdot3\end{array}\right]=\left[\begin{array}{c}
+4\cdot2\end{array}\right]=\left[\begin{array}{c}
 7\\
 14\\
 24\\
@@ -392,7 +392,7 @@ Y_{11\times1}^{(3)}=\left[\begin{array}{ccccccccccc}
 42\\
 \hline 29\\
 10\\
-12\end{array}\right]\]
+8\end{array}\right]\]
 
 \end_inset
 
@@ -471,7 +471,8 @@ Wektor wyjściowy składa się z wektorów
 \begin_inset Formula $Y_{11\times1}^{(1)},\dots,Y_{11\times1}^{(4)}$
 \end_inset
 
- gdzie ostatnie trzy miejsca są obcięte:
+ gdzie ostatnie trzy miejsca są obcięte i dodawane są ostatnie trzy wartośći
+ wektora:
 \end_layout
 
 \begin_layout Standard
@@ -486,10 +487,10 @@ Wektor wyjściowy składa się z wektorów
 \color none
 \lang english
 \begin_inset Formula \begin{eqnarray*}
-\mathbf{Y}_{32\times1} & = & \left[1,4,10,20,25,40,50,60\right.\\
- &  & 0,2,8,20,40,51,53,46,\\
- &  & 7,14,24,38,22,40,44,42,\\
- &  & \left.8,22,37,55,37,26,40,50\right]^{T}\end{eqnarray*}
+\mathbf{Y}_{32\times1} & = & \left[1,4,10,20,30,40,50,60\right.\\
+ &  & 61,54,40,20,40,51,53,46,\\
+ &  & 30,41,44,38,22,40,44,42,\\
+ &  & \left.39,32,45,55,37,26,40,50\right]^{T}\end{eqnarray*}
 
 \end_inset
 
