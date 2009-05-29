@@ -114,7 +114,7 @@ Schemat wzmacniacza dyferencjalnego
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -387,6 +387,7 @@ reference "fig:Wynik-badania-wzmacniacza"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -441,6 +442,76 @@ Dalej można zauważyć że wysokość sygnałów wyjściowych jest o połowę m
 \end_inset
 
  w fazie przesunięty w stosunku do sygnału wejściowego.
+ W dodatku pojędyncze sygnały 
+\begin_inset Formula $V_{OUT+}$
+\end_inset
+
+ i 
+\begin_inset Formula $V_{OUT-}$
+\end_inset
+
+ mają o połowe mniejsze napięcia od sygnału wejśćowego.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename simulation/result2.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Wynik-badania-wzmacniacza-1"
+
+\end_inset
+
+Wynik badania wzmacniacza dyferencjalnego
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na wykresie w rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Wynik-badania-wzmacniacza-1"
+
+\end_inset
+
+ można zauważyć efekt, jeżeli napięcie referencyjne 
+\begin_inset Formula $V_{OCM}$
+\end_inset
+
+ jest zwiększone na 
+\begin_inset Formula $2,5V$
+\end_inset
+
+.
+ Można zauważyc że sygnały wyjśćowe teraz oscylują wokoł napięcia referncyjnego.
 \end_layout
 
 \end_body
