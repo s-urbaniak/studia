@@ -1,0 +1,209 @@
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrartcl
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+\end_modules
+\language polish
+\inputencoding utf8
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Badany jest prosty mostek składający się z jednego dzielnika napięciowego.
+ Układ jest widoczny na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Prosty-mostek"
+
+\end_inset
+
+.
+ Symulowana jest zmiana rezystancji 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ z wartościami między 
+\begin_inset Formula $65k\Omega$
+\end_inset
+
+ i 
+\begin_inset Formula $100k\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename simulation/mostek_circuit.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Prosty-mostek"
+
+\end_inset
+
+Prosty mostek
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Rezultat badania widać na wykresie w rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Rezultat-badania-mostka"
+
+\end_inset
+
+.
+ Wykres na osi 
+\begin_inset Formula $x$
+\end_inset
+
+ pokazuję zmianę rezystancji 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ a na osi 
+\begin_inset Formula $y$
+\end_inset
+
+ widać badane napięcie między rezystorami 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ i 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename simulation/mostek_result.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Rezultat-badania-mostka"
+
+\end_inset
+
+Rezultat badania mostka
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+W ten sposób można mierzyć małe zmiany napięciowe z miernikiem o małym zakresie.
+ Należy jednak ustawić napięcie wyjściowe pomiędzy 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ i 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
