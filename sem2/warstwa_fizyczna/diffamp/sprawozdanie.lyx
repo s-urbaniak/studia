@@ -64,9 +64,9 @@
   pdfpagelayout=OneColumn, pdfnewwindow=true,
   pdfstartview=XYZ, plainpages=false, pdfpagelabels,
   pdfauthor={Sergiusz Urbaniak}, pdftex,
-  pdftitle={Visualizing mesh networks using NS-3},
-  pdfsubject={},
-  pdfkeywords={}]{hyperref}
+  pdftitle={Sprawozdanie},
+  pdfsubject={Sprawozdanie},
+  pdfkeywords={Sprawozdanie}]{hyperref}
 
 %mehr Platz zwischen Überschrift und Tabelle
 \newcommand{\@ldtable}{}
@@ -84,7 +84,10 @@
 \end_preamble
 \options pointlessnumbers, abstracton, headsepline
 \use_default_options false
-\language english
+\begin_modules
+theorems-ams
+\end_modules
+\language polish
 \inputencoding utf8
 \font_roman default
 \font_sans default
@@ -100,14 +103,12 @@
 \spacing single
 \use_hyperref false
 \papersize a4paper
-\use_geometry true
+\use_geometry false
 \use_amsmath 1
 \use_esint 1
 \cite_engine basic
 \use_bibtopic false
 \paperorientation portrait
-\topmargin 3.5cm
-\bottommargin 3.5cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
@@ -176,7 +177,7 @@ Wydział Informatyki
 
 \family sans
 \size larger
-Projektowanie sieci i systemów
+Warstwa fizyczna
 \end_layout
 
 \begin_layout Standard
@@ -186,14 +187,7 @@ Projektowanie sieci i systemów
 \family sans
 \series bold
 \size larger
-\begin_inset Quotes eld
-\end_inset
-
-Mesh Network Visualization using NS-3
-\begin_inset Quotes erd
-\end_inset
-
-
+Badania wzmacniacza dyferencjalnego
 \end_layout
 
 \begin_layout Standard
@@ -335,12 +329,6 @@ pagenumbering{arabic}
 \end_inset
 
 
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
-
-\end_inset
-
-
 \begin_inset Newpage newpage
 \end_inset
 
@@ -350,90 +338,7 @@ LatexCommand tableofcontents
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "section1.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "section2.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "section3.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "section4.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "olpc-website"
-
-\end_inset
-
-The OLPC website:
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Flex URL
-status collapsed
-
-\begin_layout Plain Layout
-
-http://www.olpc.org
-\end_layout
+filename "1.lyx"
 
 \end_inset
 

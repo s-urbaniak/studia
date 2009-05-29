@@ -1,0 +1,629 @@
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrartcl
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+\end_modules
+\language polish
+\inputencoding utf8
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Wzmacniacz inwertujący
+\end_layout
+
+\begin_layout Standard
+Badany jest układ komparatora bazujący na wzmacniaczu operacyjnym.
+ W badaniach najpierw był budowany wzmacniacz inwertujący.
+ Schemat początkowy jest widoczny na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schemat-wzmacniacza-inwerującego"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename simulation/initial_circuit.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schemat-wzmacniacza-inwerującego"
+
+\end_inset
+
+Schemat wzmacniacza inwertującego
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wartości schematu są widoczne w tabeli 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Wartości-wzmacniacza-inwertującego"
+
+\end_inset
+
+.
+ Według tych wartości można obliczyć wzmocnienie za pomocą wzoru 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ninv_gain"
+
+\end_inset
+
+.
+ W tym przypadku wynosi 
+\begin_inset Formula $G=\frac{68k}{6k8}=10$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+G=\frac{R_{2}}{R_{1}}\label{eq:ninv_gain}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Element
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wartość
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6k8
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+68k
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $+V$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10V
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-V$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-10V
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Wartości-wzmacniacza-inwertującego"
+
+\end_inset
+
+Wartości wzmacniacza inwertującego z schematu 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schemat-wzmacniacza-inwerującego"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ten wzmacniacz został podłączony do generatora sygnałowego.
+ W tym przypadku generator został ustawiony na sygnał sinusoidalny o wysokości
+ 
+\begin_inset Formula $V_{in}=500mV$
+\end_inset
+
+ z częstotliwością 
+\begin_inset Formula $f_{in}=1kHz$
+\end_inset
+
+.
+ Wynik badania sygnału wejściowego i wyjściowego widać na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Wynik-badania-wzmacniacza"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Widać na wykresie niebieskim sygnał wejściowym i w fazie o 
+\begin_inset Formula $180°$
+\end_inset
+
+ przesunięty i dziesięciokrotnie wzmocniony zielony sygnał wyjściowy.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename simulation/initial_result.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Wynik-badania-wzmacniacza"
+
+\end_inset
+
+Wynik badania wzmacniacza inwertującego według schematu na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schemat-wzmacniacza-inwerującego"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Komparator
+\end_layout
+
+\begin_layout Standard
+Schemat z rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schemat-wzmacniacza-inwerującego"
+
+\end_inset
+
+ został w taki sposób zmieniony, że rezystor 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+ został wyjęty z układu.
+ Efekt tego działania widać na wykresie w rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Wynik-badania-po"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename simulation/result.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Wynik-badania-po"
+
+\end_inset
+
+Wynik badania po wyjęciu rezystora 
+\begin_inset Formula $R_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Wnioski
+\end_layout
+
+\begin_layout Standard
+Można zauważyć że prosty wzmacniacz inwertujący można łatwo przekształcić
+ w komparator.
+ Komparator w tym przypadku zachowuję się tak, że na wyjściu negatywnym
+ wzmacniacza operacyjnego mierzony jest sygnał wejściowy.
+ Na wejściu negatywnym jest mierzone napięcie referencyjne 
+\begin_inset Formula $V_{ref}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Jeżeli sygnał zmieni wartość napięcia referencyjnego, komparator pokaże
+ na wyjściu inwertowany kierunek sygnału wejściowego.
+ W przypadku układu na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schemat-wzmacniacza-inwerującego"
+
+\end_inset
+
+ 
+\begin_inset Formula $V_{ref}$
+\end_inset
+
+ jest podłączony do masy, a więc posiada wartość 
+\begin_inset Formula $0V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Efekt ten można zauważyć lepiej, jeżeli wejście referencyjne jest podłączone
+ do źródła napięciowego.
+ W symulatorze LTSpice ten przypadek został badany.
+ Na schemacie w rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schemat-komparatora-z"
+
+\end_inset
+
+ można zobaczyć podłączone źródło napięciowe które generuje 
+\begin_inset Formula $V_{ref}$
+\end_inset
+
+ o wysokości 
+\begin_inset Formula $400mV$
+\end_inset
+
+.
+ W wykresie z rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Wynik-badania-komparatora"
+
+\end_inset
+
+ można zauważyć że komparator teraz tylko reaguję na zmianę napięcia wejściowego
+ jeżeli zmieni się wokół wartości 
+\begin_inset Formula $400mV$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename simulation/komparator_circuit.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schemat-komparatora-z"
+
+\end_inset
+
+Schemat komparatora z napięciem referencyjnym 
+\begin_inset Formula $V_{ref}=400mV$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename simulation/komparator_result.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Wynik-badania-komparatora"
+
+\end_inset
+
+Wynik badania komparatora z napięciem referencyjnym 
+\begin_inset Formula $V_{ref}=400mV$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

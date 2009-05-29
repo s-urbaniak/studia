@@ -5,13 +5,14 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 import javax.annotation.Resource;
 import javax.xml.ws.Endpoint;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.urbaniak.studia.sem2.integracja.dao.MusicDAO;
@@ -21,7 +22,7 @@ import org.urbaniak.studia.sem2.integracja.service.MusicServiceImpl;
 @ContextConfiguration(locations = {
         "classpath:/org/urbaniak/studia/sem2/integracja/service/service-context.xml",
         "classpath:/org/urbaniak/studia/sem2/integracja/dao/dao-context.xml",
-        "classpath:/test-context.xml" })
+        "classpath:/test-db-context.xml" })
 public class MusicDAOHibernateImplTest {
 
     @Resource
@@ -30,8 +31,8 @@ public class MusicDAOHibernateImplTest {
     @Resource
     private MusicServiceImpl musicService;
 
-    private static Logger logger = Logger
-            .getLogger(MusicDAOHibernateImplTest.class.getName());
+    private static Logger logger = LoggerFactory
+            .getLogger(MusicDAOHibernateImplTest.class);
 
     /**
      * Simple tests exersize the various methods of MusicDAO
@@ -134,6 +135,7 @@ public class MusicDAOHibernateImplTest {
 
     @Test
     public void testBulk() {
+        logger.info("testBulk()");
         int records = 103;
 
         List<Artist> artistList = new ArrayList<Artist>();
@@ -142,7 +144,6 @@ public class MusicDAOHibernateImplTest {
             artist.setGenre("Test" + (i % 5));
             artist.setName("Test" + i);
             artistList.add(artist);
-            musicDAO.saveArtist(artist);
         }
 
         musicDAO.saveOrUpdateArtistList(artistList);

@@ -50,7 +50,66 @@ Topology description
 Mesh
 \end_layout
 
+\begin_layout Standard
+The goal of this project was to simulate a simple mesh network.
+ The assumption for all following simulations is as follows:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n$
+\end_inset
+
+ Nodes are directly connected physically together and form a simple network.
+ The connection types being simulated are:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\shape italic
+Point-To-Point
+\shape default
+: This connection type was choosen because of its simplicity.
+ It suited well first experiments for setting up the simulated network.
+ Another consideration was the fact that when more than two nodes are connected,
+ then the left-most and right-most nodes are not physically connected (see
+ figure 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO !!!
+\end_layout
+
+\end_inset
+
+) which allowed to experiment with the routing capabilities of NS-3.
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Wifi Adhoc
+\shape default
+: This connection type was choosen for the final simulation and for the
+ envisioned visualization.
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
+Protocol stack
+\end_layout
+
+\begin_layout Subsubsection
+TCP/IP
+\end_layout
+
+\begin_layout Standard
+The protocol stack being used in all following simulations is standard TCP/IPv4.
+ Because the foc
+\end_layout
+
+\begin_layout Subsubsection
 OLSR
 \end_layout
 

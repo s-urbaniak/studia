@@ -1,0 +1,619 @@
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrartcl
+\begin_preamble
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+\end_modules
+\language polish
+\inputencoding utf8
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Opis
+\end_layout
+
+\begin_layout Standard
+Badany jest tranzystor 2N2222.
+ Celem badania jest sprawdzanie właściwości wzmocnienia prądowego tranzystora.
+ Ogólny wzór 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:current_gain"
+
+\end_inset
+
+ wyznacza wskaźnik wzmocnienia prądowego 
+\begin_inset Formula $h_{FE}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+h_{FE}=\frac{I_{C}}{I_{B}}\label{eq:current_gain}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $I_{C}$
+\end_inset
+
+ oznacza prąd wchodzący do kolektora, a 
+\begin_inset Formula $I_{B}$
+\end_inset
+
+ prąd wchodzący do bazy tranzystora.
+ Na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:schemat"
+
+\end_inset
+
+ jest widoczny schemat używanego w badaniu.
+ Rezystory 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+ i 
+\begin_inset Formula $R_{5}$
+\end_inset
+
+ tworzą potencjometr którym można regulować prąd bazy 
+\begin_inset Formula $I_{B}$
+\end_inset
+
+.
+ Rezystor 
+\begin_inset Formula $R_{1}$
+\end_inset
+
+ służy do mierzenia spadku napięcia na kolektorze tranzystora aby wyliczyć
+ prąd kolektora za pomocą wzoru 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:base_current"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray*}
+V1 & =15V=U_{CC}= & U_{CE}+I_{C}\cdot R_{1}\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+wtedy
+\begin_inset Formula \begin{equation}
+I_{C}=\frac{\left(U_{CC}-U_{CE}\right)}{R_{1}}=\frac{\left(15-U_{CE}\right)}{220}\label{eq:base_current}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename simulation/schemat.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang ngerman
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:schemat"
+
+\end_inset
+
+
+\lang polish
+Schemat wzmacniacza inwertującego
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Badania
+\end_layout
+
+\begin_layout Standard
+W ramach badania zostały badane wartości 
+\begin_inset Formula $I_{B}$
+\end_inset
+
+ i spadek napięcia 
+\begin_inset Formula $U_{CE}$
+\end_inset
+
+ miedzy kolektorem a emiterem tranzystora.
+ Mierzone wartości można zobaczyć w tabeli 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Badane-wartośći"
+
+\end_inset
+
+.
+ Wyliczając prąd kolektora za pomocą wzoru 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:base_current"
+
+\end_inset
+
+ tabelę tą można uzupełnić wartością 
+\begin_inset Formula $I_{C}$
+\end_inset
+
+.
+ W Końcu za pomocą wzoru 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:current_gain"
+
+\end_inset
+
+ można wyliczyć wartość 
+\begin_inset Formula $h_{FE}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $I_{B}\left[\mu A\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $U_{CE}\left[V\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $I_{C}\left[mA\right]$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $h_{FE}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4,5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+227
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12,5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11,4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+227
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+70
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+18,18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+260
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9,5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+250
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Badane-wartośći"
+
+\end_inset
+
+Badane wartości
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Można zauważyć że wzmocnienie prądowe jest bardzo duże, w danym badaniu
+ wacha się 
+\begin_inset Formula $h_{FE}$
+\end_inset
+
+ między 227 i 260.
+ W rzeczywistych układach takie duże wzmocnienia nie są potrzebne.
+ Za pomocą dodatkowego rezystora na emiterze tranzystora można zredukować
+ i ustabilizować wzmocnienie prądowe.
+\end_layout
+
+\begin_layout Section
+Symulacja
+\end_layout
+
+\begin_layout Standard
+Aby lepiej zrozumieć działanie tranzystora została przeprowadzona symulacja
+ w programie LTSpice.
+ Wynik jest widoczny w rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:wynik_symulacji"
+
+\end_inset
+
+.
+ Na osi 
+\begin_inset Formula $x$
+\end_inset
+
+ różne wartości 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+ od 800 do 900 Ohm.
+ Na osi 
+\begin_inset Formula $y$
+\end_inset
+
+ jest pokazany na źielono prąd bazy tranzystora 
+\begin_inset Formula $Ib(Q1)$
+\end_inset
+
+ zależny od wartości 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+ i na niebiesko spadek napięcia 
+\begin_inset Formula $V(c)$
+\end_inset
+
+ na kolektorze tranzystora.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename simulation/wynik.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\lang ngerman
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:wynik_symulacji"
+
+\end_inset
+
+
+\lang polish
+Symulacja układu z rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:schemat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Można zauważyć że nim większa rezystancja 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+, tym mniejszy prąd 
+\begin_inset Formula $Ib(Q1)$
+\end_inset
+
+ płynie przez bazę tranzystora.
+ Z tego powodu spadek napięcia na kolektorze 
+\begin_inset Formula $V(c)$
+\end_inset
+
+ jest coraz większy i zbliżony do napięcia zasilającego, a więc coraz mniej
+ prądu płynie przez kolektor przy malającej rezystancji 
+\begin_inset Formula $R_{4}$
+\end_inset
+
+.
+ Przy wartościach 830 Ohm i mniej spadek napięcia jest prawie 0V.
+ Do tej wartości tranzystor działa jak przełącznik.
+\end_layout
+
+\end_body
+\end_document
