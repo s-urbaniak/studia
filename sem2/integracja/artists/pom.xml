@@ -295,7 +295,7 @@
                         <goals>
                             <goal>mergewebxml</goal>
                             <!--<goal>i18n</goal>-->
-<!--                            <goal>compile</goal>-->
+                            <!--                            <goal>compile</goal>-->
                             <!-- <goal>test</goal>-->
                         </goals>
                     </execution>
@@ -324,19 +324,21 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxws-maven-plugin
                 </artifactId>
+                <configuration>
+                    <sei>
+                        org.urbaniak.studia.sem2.integracja.service.MusicWebServiceImpl
+                            </sei>
+                    <wsdlDirectory>${basedir}/target/jaxws/wsgen/wsdl/</wsdlDirectory>
+                    <sourceDestDir>${basedir}/src/main/java</sourceDestDir>
+                    <genWsdl>true</genWsdl>
+                    <keep>false</keep>
+                </configuration>
                 <executions>
                     <execution>
                         <phase>compile</phase>
                         <goals>
                             <goal>wsgen</goal>
                         </goals>
-                        <configuration>
-                            <sei>
-                                org.urbaniak.studia.sem2.integracja.service.MusicServiceImpl
-                            </sei>
-                            <genWsdl>false</genWsdl>
-                            <keep>false</keep>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>

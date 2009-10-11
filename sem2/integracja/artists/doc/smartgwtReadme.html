@@ -1,0 +1,151 @@
+<h2>SmartGWT Intro</h2>
+<P>
+SmartGWT has extensive JavaDoc-based documentation, but broader overview and conceptual
+guides for SmartGWT are still in the process of being created.  In the meantime, much of the
+overview and conceptual information from the underlying SmartClient (JavaScript-based) RIA
+system can be used.
+<P>
+<h3>Most Relevant SmartClient docs</h3>
+<P>
+The following is a list of the most relevant documentation from SmartClient.  See
+<i>Translating SmartClient Docs to SmartGWT</i> below for help with converting inline examples
+and references to properties to their SmartGWT equivalents.
+<P>
+<h4><a
+href="http://www.smartclient.com/docs/6.5.1/docs/SmartClient_Quick_Start_Guide.pdf"
+>SmartClient QuickStart Guide</a></h4>
+<P>
+The following chapters are <i>HIGHLY RECOMMENDED</i>.
+<P>
+<b>Chapter 6, Data Binding</b><br>
+<b>Chapter 7, Layout</b><br>
+<b>Chapter 8, Data Integration</b><br>
+<P>
+Note that path (1) in the diagram at the beginning of this chapter is available only with
+SmartGWT Enterprise Edition.
+<P>
+<b>Chapter 9, Extending SmartClient</b>
+<P>
+Customized themes: to change to a different default skin, change your GWT module file instead.
+Creating a custom skin also involves packaging it as a GWT module.
+<P>
+Customized components: method calls shown do not apply to SmartGWT.  To do the equivalent of
+the addProperties() calls shown, create a normal Java subclass and call setters from it's
+constructor.
+<P>
+New components: method calls shown do not apply to SmartGWT, however, the 3 strategies for
+custom component creation do apply.  The 3rd strategy (Create a Layout subclass that generates
+and manages a set of other components) is the most common.
+<P>
+New Form Controls: the strategy of adding an icon to an existing FormItem type as a simple way
+to make a customized FormItem class makes sense in SmartGWT, but is accomplished via the
+FormItemIcon class and FormItem.setIcons() setter, which should be called from the constructor
+of a FormItem subclass.
+<P>
+<h4>SmartClient Reference</h4>
+<P>
+The following chapters of the SmartClient Reference are highly recommended.
+<P>
+<a href="http://www.smartclient.com/docs/6.5.1/a/b/c/go.html#group..clientServerIntegration"
+>Client-Server Integration</a> (Overview of server integration approaches)<br>
+&nbsp;&nbsp;<a href="http://www.smartclient.com/docs/6.5.1/a/b/c/go.html#group..clientDataIntegration"
+>Client-side Data Integration</a> (approaches for SmartGWT) <br>
+&nbsp;&nbsp;<a href="http://www.smartclient.com/docs/6.5.1/a/b/c/go.html#group..serverDataIntegration"
+>Server DataSource Integration</a> (approaches for SmartGWT EE) <br>
+<P>
+<a href="http://www.smartclient.com/docs/6.5.1/a/b/c/go.html#group..treeDataBinding"
+>Tree DataBinding Overview</a><br> 
+<a href="http://www.smartclient.com/docs/6.5.1/a/b/c/go.html#group..formLayout"
+>Form Layout Overview</a><br> 
+<a href="http://www.smartclient.com/docs/6.5.1/a/b/c/go.html#group..editing"
+>Grid Inline Editing Overview</a><br> 
+<P>
+<a href="http://www.smartclient.com/docs/6.5.1/a/b/c/go.html#group..debugging"
+>Debugging</a> (SmartClient Diagnostic Tools)<br>
+<P>
+<a href="http://www.smartclient.com/docs/6.5.1/a/b/c/go.html#group..i18n"
+>Internationalization</a> (ResourceBundle approaches for SmartGWT coming soon)<br>
+<a href="http://www.smartclient.com/docs/6.5.1/a/b/c/go.html#group..skinning"
+>Skinning Guide</a><br> 
+<P>
+<h3>Translating SmartClient overview docs to SmartGWT</h3>
+<P>
+The following table will help in reading any SmartClient documentation or examples and
+understanding how those concepts apply to SmartGWT.
+<P>
+<table border=1>
+<tr><td><b>SmartClient</b></td><td><b>SmartGWT</b></td></tr>
+
+<tr>
+<td>
+Reference in documentation to a property <i>ClassName</i>.<i>propertyName</i>
+</td>
+<td>
+A Java class <i>ClassName</i> with a setter method <i>setPropertyName</i> and a getter method
+<i>getPropertyName</i>
+</td>
+</tr>
+
+<tr>
+<td>
+Creation of visual components, DataSources and other objects.
+<pre>
+isc.<i>ClassName</i>.create({
+    <i>firstProperty</i> : <i>firstValue</i>,
+    <i>secondProperty</i> : <i>secondValue</i>,
+    ...
+})
+</pre>
+</td>
+<td>
+<pre>
+<i>ClassName</i> obj = new <i>ClassName</i>();
+obj.set<i>FirstProperty</i>(<i>firstValue</i>);
+obj.set<i>SecondProperty</i>(<i>secondValue</i>);
+...
+</pre>
+</td>
+</tr>
+
+<tr>
+<td>
+Creation of ListGrids, DataSources, DynamicForms and other objects which are configured with
+a list of fields.
+<pre>
+isc.ListGrid.create({
+    fields : [
+       { name : "projectName", title:"Team Name", type:"text" },
+       { name : "stateDate", title:"Start Date", type:"date" },
+       ...
+    ]
+})
+</pre>
+</td>
+<td>
+<pre>
+ListGrid grid = new ListGrid();
+
+ListGridField projectNameField = new ListGridField();
+projectNameField.setName("projectName");
+projectNameField.setTitle("Project Name");
+projectNameField.setType(ListGridFieldType.TEXT);
+
+ListGridField startDateField = new ListGridField();
+projectNameField.setName("startDate");
+projectNameField.setTitle("Start Date");
+projectNameField.setType(ListGridFieldType.DATE);
+
+...
+
+grid.setFields(projectNamefield, startDateField);
+</pre>
+
+Note that ListGridField actually has shortcut constructors that simplify this, eg, 
+<pre>
+new ListGridField("startDate", "Start Date");
+</pre>
+</td>
+</tr>
+</table>
+
+

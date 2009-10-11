@@ -1,0 +1,2265 @@
+Build finished successfully (00:00:00)
+Installing WiFi and Internet stack.
+YansWifiPhy:YansWifiPhy(0x9340238)
+YansWifiPhy:SetEdThreshold(0x9340238, -140)
+YansWifiPhy:SetCcaMode1Threshold(0x9340238, -140)
+YansWifiPhy:SetTxGain(0x9340238, 1)
+YansWifiPhy:SetRxGain(0x9340238, 1)
+YansWifiPhy:SetTxPowerEnd(0x9340238, 16.0206)
+YansWifiPhy:SetTxPowerStart(0x9340238, 16.0206)
+YansWifiPhy:SetRxNoise(0x9340238, 7)
+YansWifiPhy:SetStandard(0x9340238, 0)
+YansWifiPhy:Configure80211a(0x9340238)
+YansWifiPhy:YansWifiPhy(0x9340e78)
+YansWifiPhy:SetEdThreshold(0x9340e78, -140)
+YansWifiPhy:SetCcaMode1Threshold(0x9340e78, -140)
+YansWifiPhy:SetTxGain(0x9340e78, 1)
+YansWifiPhy:SetRxGain(0x9340e78, 1)
+YansWifiPhy:SetTxPowerEnd(0x9340e78, 16.0206)
+YansWifiPhy:SetTxPowerStart(0x9340e78, 16.0206)
+YansWifiPhy:SetRxNoise(0x9340e78, 7)
+YansWifiPhy:SetStandard(0x9340e78, 0)
+YansWifiPhy:Configure80211a(0x9340e78)
+YansWifiPhy:YansWifiPhy(0x9341af0)
+YansWifiPhy:SetEdThreshold(0x9341af0, -140)
+YansWifiPhy:SetCcaMode1Threshold(0x9341af0, -140)
+YansWifiPhy:SetTxGain(0x9341af0, 1)
+YansWifiPhy:SetRxGain(0x9341af0, 1)
+YansWifiPhy:SetTxPowerEnd(0x9341af0, 16.0206)
+YansWifiPhy:SetTxPowerStart(0x9341af0, 16.0206)
+YansWifiPhy:SetRxNoise(0x9341af0, 7)
+YansWifiPhy:SetStandard(0x9341af0, 0)
+YansWifiPhy:Configure80211a(0x9341af0)
+ip of node 0: 192.168.0.1
+ip of node 1: 192.168.0.2
+ip of node 2: 192.168.0.3
+olsr installed
+WifiTraceApps:Sender()
+WifiTraceApps:Receiver()
+packet-listener:PacketListener()
+Run Simulation.
+YansWifiPhy:SendPacket(0x9340238, 0x9333da0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9333fd8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9334070, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9333fd8, 0x9333d48)
+mode=6000000, snr=3.39538, per=1.66267e-11, size=84
+YansWifiPhy:EndSync(0x9341af0, 0x9334070, 0x9334278)
+mode=6000000, snr=0.424423, per=1, size=84
+YansWifiPhy:SendPacket(0x9340e78, 0x9334010, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93350e0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9334598, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93350e0, 0x93343d0)
+mode=6000000, snr=3.39538, per=1.66267e-11, size=84
+YansWifiPhy:EndSync(0x9341af0, 0x9334598, 0x9334720)
+mode=6000000, snr=3.39538, per=1.66267e-11, size=84
+YansWifiPhy:SendPacket(0x9341af0, 0x93349d0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9334b50, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9334ae0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9334b50, 0x9334278)
+mode=6000000, snr=3.39538, per=1.66267e-11, size=84
+YansWifiPhy:EndSync(0x9340238, 0x9334ae0, 0x9333d48)
+mode=6000000, snr=0.424423, per=1, size=84
+YansWifiPhy:SendPacket(0x9340e78, 0x9333f00, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9334e68, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93519f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9334e68, 0x93348e8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x93519f0, 0x9333d48)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x93519b8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9333630, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9333f00, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9333630, 0x9334720)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9333f00, 0x9334278)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x93519f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93344c0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9333f90, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93344c0, 0x9333f38)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9333f90, 0x9333d48)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x93343d0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9334920, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9334408, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9334920, 0x9334720)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9334408, 0x9333f38)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x93348e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9334a20, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9351b50, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9334a20, 0x9333d48)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9351b50, 0x9334720)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9333f00, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9351b18, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9351a50, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9351b18, 0x9351c00)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9351a50, 0x9333f38)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9351de0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9351fb0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9351ec8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9351fb0, 0x9351e70)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9351ec8, 0x9333d48)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9334a20, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9334a58, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9351bb0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9334a58, 0x9334468)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9351bb0, 0x9351e70)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9351b78, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9351a30, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9351de8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9351a30, 0x9352048)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9351de8, 0x9333d48)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9334a20, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9351f60, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9351e48, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9351f60, 0x9351b78)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9351e48, 0x9334468)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9351f28, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9351db0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352180, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9351db0, 0x9351e80)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352180, 0x9334468)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9351a30, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9351b00, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9351a30, 0x9352048)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9351b00, 0x9351b78)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9351e10, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x933c0c0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9334a58, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x933c0c0, 0x9334448)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9334a58, 0x9352048)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9351b00, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9351a30, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9351e10, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9351a30, 0x93521a8)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:EndSync(0x9341af0, 0x9351e10, 0x93382b8)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:SendPacket(0x9341af0, 0x9352260, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9340dd8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9333f68, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9340dd8, 0x9340cd0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9333f68, 0x933fce8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x933fd40, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352228, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9341888, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352228, 0x93521a8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9341888, 0x9340cd0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93418c0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93520c8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x933fda0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93520c8, 0x93382b8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x933fda0, 0x9340d28)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9351db0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9341a20, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352128, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9341a20, 0x9340cd0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352128, 0x93521a8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9351db0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93345f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93418c0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93345f0, 0x93382b8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93418c0, 0x9340cd0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x93520c8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9334c08, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9351db0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9334c08, 0x933fce8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9351db0, 0x93382b8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352128, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9341888, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93521a8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9341888, 0x9340d28)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x93521a8, 0x93382b8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340e78, 0x93345f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9340dc8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93419a8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9340dc8, 0x9352228)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93419a8, 0x93520c8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x93521a8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9351db0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93418e0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9351db0, 0x9341888)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93418e0, 0x933fce8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x933e600, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93419f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9351bd0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93419f0, 0x9341998)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9351bd0, 0x9341888)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93521a8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9340dc8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x933e600, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9340dc8, 0x9352228)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x933e600, 0x9341888)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9334c08, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x933fde8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93521a8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x933fde8, 0x933fd90)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x93521a8, 0x9334470)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9351bd0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9340dc8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9334c08, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9340dc8, 0x9352228)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9334c08, 0x9334470)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x9351db0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9351bd0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93528a8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9351bd0, 0x9341888)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93528a8, 0x933fd90)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9334c08, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x933e600, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x933fde8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x933e600, 0x9334470)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x933fde8, 0x9341888)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93345f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93521a8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352148, 0x93520c8)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:EndSync(0x9341af0, 0x93521a8, 0x9341888)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:SendPacket(0x9340238, 0x93528a8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9351db0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93345f0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9351db0, 0x933fd90)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93345f0, 0x9334470)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9334c08, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93521a8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93528a8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93521a8, 0x9352228)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x93528a8, 0x93520c8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9351bd0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x933fde8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x933e600, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x933fde8, 0x9341888)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x933e600, 0x933fd90)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x93521a8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9351bd0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352148, 0x9334470)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9351bd0, 0x9341888)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93345f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93521a8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9333f28, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93521a8, 0x93520c8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9333f28, 0x933fd90)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9351bd0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93345f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x933fde8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93345f0, 0x9352228)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x933fde8, 0x9334470)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x93521a8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9351db0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352148, 0x93520c8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9351db0, 0x9352228)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93345f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9334c08, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9333f28, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9334c08, 0x933fd90)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9333f28, 0x9334470)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9352990, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9351db0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9351bd0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9351db0, 0x9352228)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9351bd0, 0x93520c8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93345f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352990, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352148, 0x9334470)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352990, 0x93521a8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x933e600, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9340dc8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9333f28, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9340dc8, 0x93520c8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9333f28, 0x9352228)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93345f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9351db0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9351bd0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9351db0, 0x9334470)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9351bd0, 0x9352228)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9352990, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9334c08, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352148, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9334c08, 0x9352368)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352148, 0x93520c8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9351db0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9340dc8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352990, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9340dc8, 0x9351c30)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352990, 0x9352368)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9351bd0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9334c08, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9351db0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9334c08, 0x93521a8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9351db0, 0x9351c30)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9340dc8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x933e600, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352228, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x933e600, 0x9351e70)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:EndSync(0x9341af0, 0x9352228, 0x9334470)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:SendPacket(0x9341af0, 0x93345f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9351bd0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352990, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9351bd0, 0x9352368)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352990, 0x93521a8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x933e600, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9351db0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9334c08, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9351db0, 0x9351e70)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9334c08, 0x9352368)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9352990, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9351bd0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x933e600, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9351bd0, 0x93521a8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x933e600, 0x9352610)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9351db0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93345f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352990, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93345f0, 0x9334470)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352990, 0x93520c8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9340dc8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352228, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352148, 0x9351e70)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352228, 0x93521a8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9351db0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9351bd0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x933e600, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9351bd0, 0x9334470)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x933e600, 0x93521a8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x9352990, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93345f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9334c08, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93345f0, 0x93520c8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9334c08, 0x9351e70)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352228, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352990, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352228, 0x9352368)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352990, 0x9334470)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9340dc8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9334c08, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x933e600, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9334c08, 0x9352fb0)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x933e600, 0x9352368)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x9352990, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9351bd0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9351db0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9351bd0, 0x9352610)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9351db0, 0x9353030)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x93345f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352990, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352228, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352990, 0x9352520)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352228, 0x93520c8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x933e600, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93345f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9351c88, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93345f0, 0x9352610)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9351c88, 0x93526b8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9352990, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352fb0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9340dc8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352fb0, 0x9353030)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9340dc8, 0x9352610)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352228, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93345f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352990, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93345f0, 0x93520c8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352990, 0x9352610)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9340dc8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352368, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9334e90, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352368, 0x93530b0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9334e90, 0x9353030)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9352228, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9340dc8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93520c8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9340dc8, 0x9334470)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93520c8, 0x93527f0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93345f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352228, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9334e10, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352228, 0x93523e8)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:EndSync(0x9341af0, 0x9334e10, 0x9353030)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:SendPacket(0x9341af0, 0x9352520, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93526f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352fb0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93526f0, 0x93520c8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352fb0, 0x93530b0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9352228, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9340dc8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9334470, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9340dc8, 0x9352520)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9334470, 0x93520c8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9353030, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93523e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93526b8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93523e8, 0x9334e10)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x93526b8, 0x93530b0)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x9352228, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352420, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93524a8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352420, 0x9353030)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93524a8, 0x9352520)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9352fb0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9353130, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352228, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9353130, 0x93530b0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352228, 0x9353030)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9340dc8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352fb0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93526b8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352fb0, 0x9352610)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x93526b8, 0x9352778)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340e78, 0x9340dc8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352410, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93524a8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352410, 0x93520c8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93524a8, 0x9353030)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9334e10, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352228, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9334e10, 0x9352610)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352228, 0x93530b0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9340dc8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9353130, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352860, 0x9352368)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9353130, 0x93530b0)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x9340dc8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9351bd0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93532a0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9351bd0, 0x9352778)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93532a0, 0x9353030)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9352fb0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9340dc8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352410, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9340dc8, 0x9352610)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352410, 0x9352778)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9334e10, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352fb0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9334e10, 0x9352520)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352fb0, 0x9352778)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352228, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93532a0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352228, 0x9353030)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93532a0, 0x9352610)
+mode=6000000, snr=0.424423, per=1, size=92
+WifiTraceApps:StartApplication()
+YansWifiPhy:SendPacket(0x9340e78, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9340dc8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93535a0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9340dc8, 0x9353130)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:EndSync(0x9341af0, 0x93535a0, 0x9352520)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:SendPacket(0x9341af0, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352610, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352610, 0x93520c8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x9353030)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9352228, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9334e10, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352860, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9334e10, 0x9352fb0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352860, 0x93520c8)
+mode=6000000, snr=0.424423, per=1, size=92
+WifiTraceApps:StartApplication()
+Sending packet 169 at 51000000000ns to 192.168.0.3
+YansWifiPhy:SendPacket(0x9340238, 0x9352410, wifia-6mbs, 0, 0)
+packet-listener:add packet 169 got node 0 (1 total nodes)
+packet-listener:TxCallback node=0, packetUid=169
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9340dc8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9353130, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9340dc8, 0x93534d0)
+mode=6000000, snr=3.39538, per=1.33014e-11, size=64
+YansWifiPhy:EndSync(0x9341af0, 0x9353130, 0x9352fb0)
+mode=6000000, snr=0.424423, per=1, size=64
+YansWifiPhy:SendPacket(0x9340e78, 0x93526b8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352610, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352228, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352610, 0x9352f18)
+mode=6000000, snr=3.39538, per=1.33014e-11, size=64
+YansWifiPhy:EndSync(0x9341af0, 0x9352228, 0x9353030)
+mode=6000000, snr=3.39538, per=1.33014e-11, size=64
+YansWifiPhy:SendPacket(0x9340238, 0x9352410, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9334e10, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93526b8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9334e10, 0x93537c8)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9341af0, 0x93526b8, 0x9353848)
+mode=6000000, snr=0.424423, per=0.998986, size=14
+YansWifiPhy:SendPacket(0x9340238, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352778, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93536e8, 0x9354170)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=1, packetUid=169 nodes=2, generating link between 0 and 1
+creating link for 192.168.0.2
+YansWifiPhy:EndSync(0x9341af0, 0x9352778, 0x93541c8)
+mode=6000000, snr=0.424423, per=1, size=128
+YansWifiPhy:SendPacket(0x9340e78, 0x9352228, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9334e10, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352410, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9334e10, 0x9354548)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9341af0, 0x9352410, 0x93545c8)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x9333630, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352610, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x93546a0)
+mode=6000000, snr=3.39538, per=1.33014e-11, size=64
+YansWifiPhy:EndSync(0x9341af0, 0x9352610, 0x93546f8)
+mode=6000000, snr=3.39538, per=1.33014e-11, size=64
+YansWifiPhy:SendPacket(0x9341af0, 0x9352228, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93526b8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352860, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93526b8, 0x9354860)
+mode=6000000, snr=3.39538, per=1.33014e-11, size=64
+YansWifiPhy:EndSync(0x9340238, 0x9352860, 0x93548b8)
+mode=6000000, snr=0.424423, per=1, size=64
+YansWifiPhy:SendPacket(0x9340e78, 0x9334e10, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x93540d8)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9341af0, 0x93536e8, 0x93549c0)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x9352410, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352228, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9333630, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352228, 0x9352578)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+YansWifiPhy:EndSync(0x9341af0, 0x9333630, 0x9354a18)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=2, packetUid=169 nodes=3, generating link between 1 and 2
+creating link for 192.168.0.3
+Received packet 169 at 51001389998ns (tx=51000000000ns) from 192.168.0.1
+YansWifiPhy:SendPacket(0x9341af0, 0x9352610, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352860, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352778, 0x9354b20)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9340238, 0x9352860, 0x93547b0)
+mode=6000000, snr=0.424423, per=0.998986, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x9352410, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93526b8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93527f8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93526b8, 0x9354bc0)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x93527f8, 0x9334e10)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9352410, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93536e8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352008, 0x9354548)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x93536e8, 0x9352f18)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x93526b8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352228, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352410, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352228, 0x9352fb0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352410, 0x93534d0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x93526b8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93541e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9354a38, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93541e8, 0x93540d8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9354a38, 0x9352578)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9340cf8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x9352fb0)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9340cf8, 0x9353030)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x93536e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93527f8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352860, 0x93534d0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93527f8, 0x9352578)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352410, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93536e8, 0x93540d8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352008, 0x93537c8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x93541e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9354a38, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352778, 0x9352fb0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9354a38, 0x93534d0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352228, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352008, 0x93537c8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352228, 0x9352f18)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93536e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352410, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93527f8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352410, 0x9353030)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x93527f8, 0x93540d8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+Sending packet 198 at 58000000000ns to 192.168.0.3
+YansWifiPhy:SendPacket(0x9340238, 0x9352860, wifia-6mbs, 0, 0)
+packet-listener:add packet 198 got node 0 (1 total nodes)
+packet-listener:TxCallback node=0, packetUid=198
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93524a8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93536e8, 0x93534d0)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=1, packetUid=198 nodes=2, generating link between 0 and 1
+creating link for 192.168.0.2
+YansWifiPhy:EndSync(0x9341af0, 0x93524a8, 0x93537c8)
+mode=6000000, snr=0.424423, per=1, size=128
+YansWifiPhy:SendPacket(0x9340e78, 0x9352228, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352f18, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x9354570)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9341af0, 0x9352f18, 0x93545f0)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93526b8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352410, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93526b8, 0x9354688)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+YansWifiPhy:EndSync(0x9341af0, 0x9352410, 0x9352578)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=2, packetUid=198 nodes=3, generating link between 1 and 2
+creating link for 192.168.0.3
+Received packet 198 at 58000486666ns (tx=0ns) from 192.168.0.1
+YansWifiPhy:SendPacket(0x9341af0, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352228, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352778, 0x9354970)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9340238, 0x9352228, 0x93549f0)
+mode=6000000, snr=0.424423, per=0.998986, size=14
+YansWifiPhy:SendPacket(0x9340238, 0x93526b8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352860, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352148, 0x9353748)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352860, 0x93534d0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x93536e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93526b8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9340dc8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93526b8, 0x9354970)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9340dc8, 0x9352fb0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93526f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352228, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352228, 0x9354570)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x93536e8, 0x93537c8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x9352778, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352f18, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9340dc8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352f18, 0x93549f0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9340dc8, 0x9354970)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93526f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352148, 0x93527d0)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:EndSync(0x9341af0, 0x9352778, 0x9354570)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:SendPacket(0x9341af0, 0x93536e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93526f0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352008, 0x9354970)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x93526f0, 0x93549f0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352f18, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352860, 0x9352fb0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352f18, 0x9354970)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93526b8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352008, 0x93549f0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93526b8, 0x9352fb0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93526f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352228, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352860, 0x93541c8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352228, 0x9352578)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9352778, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93536e8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93545f0, 0x9352fb0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x93536e8, 0x93549f0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9352f18, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93541e8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352148, 0x93537c8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93541e8, 0x9352fb0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352f18, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352f18, 0x9354570)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352008, 0x93549f0)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+Sending packet 226 at 65000000000ns to 192.168.0.3
+YansWifiPhy:SendPacket(0x9340238, 0x9352778, wifia-6mbs, 0, 0)
+packet-listener:add packet 226 got node 0 (1 total nodes)
+packet-listener:TxCallback node=0, packetUid=226
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9354970, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352860, 0x93545f0)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=1, packetUid=226 nodes=2, generating link between 0 and 1
+creating link for 192.168.0.2
+YansWifiPhy:EndSync(0x9341af0, 0x9354970, 0x93537c8)
+mode=6000000, snr=0.424423, per=1, size=128
+YansWifiPhy:SendPacket(0x9340e78, 0x9352228, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352148, 0x93546a0)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9341af0, 0x9352778, 0x9354570)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x93541e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93527d0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93527d0, 0x9354b20)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+YansWifiPhy:EndSync(0x9341af0, 0x93536e8, 0x9354b78)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=2, packetUid=226 nodes=3, generating link between 1 and 2
+creating link for 192.168.0.3
+Received packet 226 at 65000486666ns (tx=0ns) from 192.168.0.1
+YansWifiPhy:SendPacket(0x9341af0, 0x9354970, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352f18, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352148, 0x9354bd0)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9340238, 0x9352f18, 0x9353a48)
+mode=6000000, snr=0.424423, per=0.998986, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x93527d0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93541e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9354970, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93541e8, 0x93540d8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9354970, 0x93546a0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9352228, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352778, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93536e8, 0x9354570)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352778, 0x93545f0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9352f18, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352860, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352008, 0x93534a8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352860, 0x9354570)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352228, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352f18, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93536e8, 0x93540d8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352f18, 0x9354570)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x93541e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352228, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93545f0, 0x9353a48)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352228, 0x93534a8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352778, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93536e8, 0x93540d8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352778, 0x9353a48)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93541e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352e48, 0x9352fb0)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352008, 0x93534a8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352f18, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352148, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352f18, 0x9354c40)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352148, 0x93540d8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x93541e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352228, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352860, 0x93534a8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352228, 0x9354c40)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352e48, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93536e8, 0x93545f0)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:EndSync(0x9341af0, 0x9352008, 0x9353bf0)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+Sending packet 250 at 72000000000ns to 192.168.0.3
+YansWifiPhy:SendPacket(0x9340238, 0x9352f18, wifia-6mbs, 0, 0)
+packet-listener:add packet 250 got node 0 (1 total nodes)
+packet-listener:TxCallback node=0, packetUid=250
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93541e8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352778, 0x9353ac8)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=1, packetUid=250 nodes=2, generating link between 0 and 1
+creating link for 192.168.0.2
+YansWifiPhy:EndSync(0x9341af0, 0x93541e8, 0x93534a8)
+mode=6000000, snr=0.424423, per=1, size=128
+YansWifiPhy:SendPacket(0x9340e78, 0x9352e48, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352f18, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352860, 0x93549f0)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9341af0, 0x9352f18, 0x9352fb0)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93541e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93541e8, 0x9353b48)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+YansWifiPhy:EndSync(0x9341af0, 0x93536e8, 0x9354b88)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=2, packetUid=250 nodes=3, generating link between 1 and 2
+creating link for 192.168.0.3
+Received packet 250 at 72000486666ns (tx=0ns) from 192.168.0.1
+YansWifiPhy:SendPacket(0x9341af0, 0x9352228, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352e48, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352860, 0x9354be0)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9340238, 0x9352e48, 0x9354c60)
+mode=6000000, snr=0.424423, per=0.998986, size=14
+YansWifiPhy:SendPacket(0x9340238, 0x9354188, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93541e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352778, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93541e8, 0x9354ac8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352778, 0x9354970)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352228, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9354188, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352860, 0x9354c08)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9354188, 0x9352fb0)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9352f18, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93536e8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352e48, 0x9354970)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x93536e8, 0x93545f0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352f18, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352148, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352f18, 0x93549f0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352148, 0x9354ac8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352778, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93541e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93541e8, 0x93545f0)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352860, 0x9354ac8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x9352228, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352148, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93536e8, 0x93534a8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352148, 0x93549f0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352778, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352228, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352e48, 0x9354ac8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352228, 0x93545f0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93541e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9354188, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9354188, 0x9353b48)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352778, 0x9354ac8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x9352f18, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352008, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352148, 0x9354970)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352008, 0x93534a8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x93536e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352f18, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352e48, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352f18, 0x9352fb0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352e48, 0x9354970)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352860, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93536e8, 0x93549f0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352860, 0x9352fb0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9352778, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352228, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352e48, 0x9354188)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352228, 0x93549f0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x9353ac8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352008, 0x9352fb0)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+Sending packet 279 at 79000000000ns to 192.168.0.3
+YansWifiPhy:SendPacket(0x9340238, 0x9352f18, wifia-6mbs, 0, 0)
+packet-listener:add packet 279 got node 0 (1 total nodes)
+packet-listener:TxCallback node=0, packetUid=279
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9334540, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352148, 0x9354ac8)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=1, packetUid=279 nodes=2, generating link between 0 and 1
+creating link for 192.168.0.2
+YansWifiPhy:EndSync(0x9341af0, 0x9334540, 0x9353b48)
+mode=6000000, snr=0.424423, per=1, size=128
+YansWifiPhy:SendPacket(0x9340e78, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352f18, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352e48, 0x9353bf0)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9341af0, 0x9352f18, 0x9353ac8)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x9352228, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93536e8, 0x9354c30)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+YansWifiPhy:EndSync(0x9341af0, 0x9352860, 0x9354d28)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=2, packetUid=279 nodes=3, generating link between 1 and 2
+creating link for 192.168.0.3
+Received packet 279 at 79000486666ns (tx=0ns) from 192.168.0.1
+YansWifiPhy:SendPacket(0x9341af0, 0x9352778, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9353a48, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352e48, 0x9354d80)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9340238, 0x9353a48, 0x9354e00)
+mode=6000000, snr=0.424423, per=0.998986, size=14
+YansWifiPhy:SendPacket(0x9340238, 0x93536e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352228, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352778, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352228, 0x9354b88)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352778, 0x9354188)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352e48, 0x9353c80)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:EndSync(0x9341af0, 0x93536e8, 0x9354ac8)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:SendPacket(0x9341af0, 0x9352f18, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9353df8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352008, 0x9354e00)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9353df8, 0x9354188)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9352e48, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9353a68, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352148, 0x9352f18)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9353a68, 0x9352fb0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93536e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9354618, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352860, 0x9353b48)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9354618, 0x9354b88)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9352e48, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352008, 0x93534a8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x9352f18)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352148, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352e48, 0x9353c80)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352148, 0x93534a8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352778, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93536e8, 0x9354188)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352008, 0x93534a8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x9352fb0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9354618, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352778, 0x9354d80)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9354618, 0x9353b48)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352fb0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352fb0, 0x9353c80)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352008, 0x9354188)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+Sending packet 303 at 86000000000ns to 192.168.0.3
+YansWifiPhy:SendPacket(0x9340238, 0x9354d28, wifia-6mbs, 0, 0)
+packet-listener:add packet 303 got node 0 (1 total nodes)
+packet-listener:TxCallback node=0, packetUid=303
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9354c78, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352860, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9354c78, 0x9353bc8)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=1, packetUid=303 nodes=2, generating link between 0 and 1
+creating link for 192.168.0.2
+YansWifiPhy:EndSync(0x9341af0, 0x9352860, 0x9352f18)
+mode=6000000, snr=0.424423, per=1, size=128
+YansWifiPhy:SendPacket(0x9340e78, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9354d28, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x9353d28)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9341af0, 0x9354d28, 0x9353c80)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x93536e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9354188, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9354188, 0x9354d60)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+YansWifiPhy:EndSync(0x9341af0, 0x9352e48, 0x9353d80)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=2, packetUid=303 nodes=3, generating link between 1 and 2
+creating link for 192.168.0.3
+Received packet 303 at 86000486666ns (tx=0ns) from 192.168.0.1
+YansWifiPhy:SendPacket(0x9341af0, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352fb0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352778, 0x9355080)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9340238, 0x9352fb0, 0x93550d8)
+mode=6000000, snr=0.424423, per=0.998986, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x9354d28, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352860, 0x9355130)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352008, 0x9354970)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9355388, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9354da0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93536e8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9354da0, 0x9352f18)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x93536e8, 0x9353bc8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352148, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352e48, 0x9353c80)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352148, 0x9352f18)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9352778, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352fb0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352008, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352fb0, 0x9354188)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352008, 0x9353c80)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9354da0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9354da0, 0x9353b48)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352778, 0x9353bc8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x93536e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9353d98, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352148, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9353d98, 0x9354e00)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352148, 0x9354188)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9352e48, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9354da0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9355388, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9354da0, 0x9353b48)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9355388, 0x9354e00)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352008, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352860, 0x93545f0)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:EndSync(0x9341af0, 0x9352008, 0x9354e00)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:SendPacket(0x9340238, 0x9352e48, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9355388, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93536e8, 0x9354c28)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9355388, 0x9353b48)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9354e00, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352e48, 0x9353d80)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9354e00, 0x9352fb0)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x9352778, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352008, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352148, 0x9354188)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352008, 0x9354d28)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x93536e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9353bf0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9353bf0, 0x9352fb0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x9354188)
+mode=6000000, snr=0.424423, per=1, size=92
+Sending packet 331 at 93000000000ns to 192.168.0.3
+YansWifiPhy:SendPacket(0x9340238, 0x9352e48, wifia-6mbs, 0, 0)
+packet-listener:add packet 331 got node 0 (1 total nodes)
+packet-listener:TxCallback node=0, packetUid=331
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9354e00, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352148, 0x9353d80)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=1, packetUid=331 nodes=2, generating link between 0 and 1
+creating link for 192.168.0.2
+YansWifiPhy:EndSync(0x9341af0, 0x9354e00, 0x9352fb0)
+mode=6000000, snr=0.424423, per=1, size=128
+YansWifiPhy:SendPacket(0x9340e78, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9353bf0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9353bf0, 0x93550a8)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9341af0, 0x9352e48, 0x9354188)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x9353a68, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9353d28, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9353d28, 0x9355128)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+YansWifiPhy:EndSync(0x9341af0, 0x93545f0, 0x93539f0)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=2, packetUid=331 nodes=3, generating link between 1 and 2
+creating link for 192.168.0.3
+Received packet 331 at 93000486666ns (tx=0ns) from 192.168.0.1
+YansWifiPhy:SendPacket(0x9341af0, 0x9354e00, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9353bf0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9353bf0, 0x93553b0)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x9355430)
+mode=6000000, snr=0.424423, per=0.998986, size=14
+YansWifiPhy:SendPacket(0x9341af0, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9353d28, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9354e00, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9353d28, 0x9353a48)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9354e00, 0x9354d28)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9353bf0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93536e8, 0x93553b0)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352860, 0x9355430)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x93545f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9354bd8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9353bf0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9354bd8, 0x9354188)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9353bf0, 0x93550a8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9354e00, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9354e00, 0x9353a48)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93545f0, 0x9354d28)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9353bf0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352860, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352778, 0x93550a8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352860, 0x9354188)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x93545f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9353bf0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352e48, 0x9354d28)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9353bf0, 0x9353a48)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x93536e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9354e00, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9354bd8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9354e00, 0x9354188)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9354bd8, 0x93550a8)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9352e48, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352148, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93536e8, 0x93539f0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352148, 0x9354188)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x93550a8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352e48, 0x9354188)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x9353bf0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352860, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93545f0, 0x9353a48)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352860, 0x93539f0)
+mode=6000000, snr=0.424423, per=1, size=92
+Sending packet 354 at 100000000000ns to 192.168.0.3
+YansWifiPhy:SendPacket(0x9340238, 0x9352e48, wifia-6mbs, 0, 0)
+packet-listener:add packet 354 got node 0 (1 total nodes)
+packet-listener:TxCallback node=0, packetUid=354
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9354828, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93536e8, 0x9354c38)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=1, packetUid=354 nodes=2, generating link between 0 and 1
+creating link for 192.168.0.2
+YansWifiPhy:EndSync(0x9341af0, 0x9354828, 0x9355150)
+mode=6000000, snr=0.424423, per=1, size=128
+YansWifiPhy:SendPacket(0x9340e78, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9354e00, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9354bd8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9354e00, 0x9355228)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9341af0, 0x9354bd8, 0x93550a8)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x9352148, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352e48, 0x93551a8)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+YansWifiPhy:EndSync(0x9341af0, 0x93545f0, 0x93552a8)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=2, packetUid=354 nodes=3, generating link between 1 and 2
+creating link for 192.168.0.3
+Received packet 354 at 100000486666ns (tx=0ns) from 192.168.0.1
+YansWifiPhy:SendPacket(0x9341af0, 0x9354828, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9354e00, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9354e00, 0x9355300)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x9355780)
+mode=6000000, snr=0.424423, per=0.998986, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x9352e48, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352148, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9354828, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352148, 0x93539f0)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:EndSync(0x9341af0, 0x9354828, 0x9355228)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:SendPacket(0x9340238, 0x93545f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9353bf0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352e48, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9353bf0, 0x9354188)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352e48, 0x9354c38)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x93536e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9354828, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352778, 0x9353e58)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9354828, 0x9354188)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9354bd8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9354bd8, 0x9353d28)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x93536e8, 0x9354188)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x9352e48, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352860, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93545f0, 0x9354c38)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352860, 0x9353e58)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9352778, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9354828, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352e48, 0x9355228)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9354828, 0x93547b0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9354bd8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93536e8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93545f0, 0x9354188)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93536e8, 0x9355228)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352e48, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9354bd8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9353e58, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9354bd8, 0x93550a8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9353e58, 0x93547b0)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9353bf0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352860, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352778, 0x9355328)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352860, 0x9354188)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9354bd8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93545f0, 0x93550a8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93536e8, 0x9354188)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9353bf0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9353e58, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352e48, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9353e58, 0x9355228)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9352e48, 0x9354d50)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9354bd8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9354828, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x93552a8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9354828, 0x93550a8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9352e48, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93536e8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352860, 0x9353d28)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x93536e8, 0x9355228)
+mode=6000000, snr=0.424423, per=1, size=92
+Sending packet 384 at 107000000000ns to 192.168.0.3
+YansWifiPhy:SendPacket(0x9340238, 0x9352778, wifia-6mbs, 0, 0)
+packet-listener:add packet 384 got node 0 (1 total nodes)
+packet-listener:TxCallback node=0, packetUid=384
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9353e58, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9353bf0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9353e58, 0x9354d50)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=1, packetUid=384 nodes=2, generating link between 0 and 1
+creating link for 192.168.0.2
+YansWifiPhy:EndSync(0x9341af0, 0x9353bf0, 0x9353d28)
+mode=6000000, snr=0.424423, per=1, size=128
+YansWifiPhy:SendPacket(0x9340e78, 0x9354828, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9353a00, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93545f0, 0x9352fb0)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9341af0, 0x9353a00, 0x9355228)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x9354bd8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x93537f0)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+YansWifiPhy:EndSync(0x9341af0, 0x9352860, 0x9355150)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=2, packetUid=384 nodes=3, generating link between 1 and 2
+creating link for 192.168.0.3
+Received packet 384 at 107000486666ns (tx=0ns) from 192.168.0.1
+YansWifiPhy:SendPacket(0x9341af0, 0x9353bf0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93536e8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93545f0, 0x9353930)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9340238, 0x93536e8, 0x9354e80)
+mode=6000000, snr=0.424423, per=0.998986, size=14
+YansWifiPhy:SendPacket(0x9340238, 0x9352778, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9354bd8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9353bf0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9354bd8, 0x9354f18)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x9353bf0, 0x9354d50)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9353a00, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93545f0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9353a00, 0x9355228)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x93545f0, 0x9353d28)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352e48, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9354bd8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9354828, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9354bd8, 0x93537f0)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9354828, 0x9353930)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x93536e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93341a0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352e48, 0x9334e10)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93341a0, 0x9353e58)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9353a00, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93545f0, 0x9352fb0)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:EndSync(0x9341af0, 0x93536e8, 0x93537f0)
+mode=6000000, snr=3.39538, per=2.43858e-11, size=124
+YansWifiPhy:SendPacket(0x9341af0, 0x9354bd8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9354ed8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9353a00, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9354ed8, 0x9352860)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9353a00, 0x9334e10)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x93545f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352e48, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352778, 0x9352fb0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352e48, 0x9352860)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9353bf0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93551c8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93545f0, 0x9334e10)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93551c8, 0x93538b0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9354828, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9353bf0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9355020, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9353bf0, 0x9355228)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9355020, 0x9353d28)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+Sending packet 406 at 114000000000ns to 192.168.0.3
+YansWifiPhy:SendPacket(0x9340238, 0x93536e8, wifia-6mbs, 0, 0)
+packet-listener:add packet 406 got node 0 (1 total nodes)
+packet-listener:TxCallback node=0, packetUid=406
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9354bd8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352e48, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9354bd8, 0x93538b0)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=1, packetUid=406 nodes=2, generating link between 0 and 1
+creating link for 192.168.0.2
+YansWifiPhy:EndSync(0x9341af0, 0x9352e48, 0x9353908)
+mode=6000000, snr=0.424423, per=1, size=128
+YansWifiPhy:SendPacket(0x9340e78, 0x93545f0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x9354f80)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9341af0, 0x9352860, 0x9355228)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x93551c8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9355150, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9355150, 0x9354d50)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+YansWifiPhy:EndSync(0x9341af0, 0x93536e8, 0x9355988)
+mode=6000000, snr=3.39538, per=2.49401e-11, size=128
+packet-listener:RxCallback node=2, packetUid=406 nodes=3, generating link between 1 and 2
+creating link for 192.168.0.3
+Received packet 406 at 114000486666ns (tx=0ns) from 192.168.0.1
+YansWifiPhy:SendPacket(0x9341af0, 0x9352e48, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9353bf0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352778, 0x93559e0)
+mode=6000000, snr=3.39538, per=3.87956e-12, size=14
+YansWifiPhy:EndSync(0x9340238, 0x9353bf0, 0x9355a60)
+mode=6000000, snr=0.424423, per=0.998986, size=14
+YansWifiPhy:SendPacket(0x9340e78, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9354bd8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9354bd8, 0x9354188)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x93545f0, 0x9354f80)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9352e48, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93341a0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352860, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93341a0, 0x93552a8)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352860, 0x9355a60)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9354bd8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352778, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93536e8, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352778, 0x93559e0)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93536e8, 0x9355228)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9353bf0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9354bd8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9354bd8, 0x9354f80)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93545f0, 0x9354188)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9352860, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9353bf0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x9352e48, 0x9355228)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9353bf0, 0x9354f80)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9340238, 0x93536e8, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93341a0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352860, 0x9353908)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93341a0, 0x93559e0)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9341af0, 0x9353bf0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x93545f0, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x9352778, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x93545f0, 0x9354188)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x9352778, 0x9353908)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340238, 0x9352e48, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9352860, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x93546f0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9352860, 0x9354f80)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9341af0, 0x93546f0, 0x9354188)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:SendPacket(0x9340e78, 0x9353bf0, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93536e8, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9341af0, 0x9352e48, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:EndSync(0x9340238, 0x93536e8, 0x93552a8)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:EndSync(0x9341af0, 0x9352e48, 0x9355150)
+mode=6000000, snr=3.39538, per=1.9952e-11, size=100
+YansWifiPhy:SendPacket(0x9341af0, 0x9355248, wifia-6mbs, 0, 0)
+YansWifiPhy:StartReceivePacket(0x9340e78, 0x9354828, -89.6571, wifia-6mbs, 0)
+sync (power=1.36235e-12W)
+YansWifiPhy:StartReceivePacket(0x9340238, 0x93546f0, -98.688, wifia-6mbs, 0)
+sync (power=1.70294e-13W)
+YansWifiPhy:EndSync(0x9340e78, 0x9354828, 0x9354188)
+mode=6000000, snr=3.39538, per=1.82894e-11, size=92
+YansWifiPhy:EndSync(0x9340238, 0x93546f0, 0x9354f80)
+mode=6000000, snr=0.424423, per=1, size=92
+YansWifiPhy:DoDispose(0x9340238)
+WifiTraceApps:DoDispose()
+YansWifiPhy:DoDispose(0x9340e78)
+YansWifiPhy:DoDispose(0x9341af0)
+YansWifiPhy:~YansWifiPhy(0x9340238)
+YansWifiPhy:~YansWifiPhy(0x9340e78)
+YansWifiPhy:~YansWifiPhy(0x9341af0)
+WifiTraceApps:DoDispose()
+WifiTraceApps:~Receiver()
+WifiTraceApps:~Sender()

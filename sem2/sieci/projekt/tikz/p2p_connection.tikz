@@ -1,0 +1,29 @@
+% Define two helper counters
+\begin{tikzpicture}[auto]
+
+   % % grid
+   % \def\supertiny{ \font\supertinyfont = cmr9 at 3pt \relax \supertinyfont}
+   % \newcounter{gridrows}
+   % \setcounter{gridrows}{12}
+   % \newcounter{gridcols}
+   % \setcounter{gridcols}{30}
+   % \draw [gray, very thin] (0, -\arabic{gridrows}) grid (\arabic{gridcols}, 0);
+   % \foreach \x in {0,...,\arabic{gridcols}}
+   %     \foreach \y in {0,...,\arabic{gridrows}}
+   %     {
+   %         \draw (\x+0.15, -\y-0.15) node [gray, very thin] {\supertiny{\x/\y}};
+   %     }
+
+    % styles
+    \tikzstyle{netnode} = [shape=rectangle, draw, rounded corners=2pt, fill=black!20, minimum height=10mm, minimum width=30mm];
+    \tikzstyle{darrow} = [latex-latex];
+
+    \draw 
+        node[netnode] (node1) {Node 1}
+        node[netnode, right=of node1, xshift=2cm] (node2) {Node 2}
+        node[netnode, right=of node2, xshift=2cm] (node3) {Node 3};
+
+    \path
+        (node1) edge[darrow] node{Point-To-Point} (node2)
+        (node2) edge[darrow] node{Point-To-Point} (node3);
+\end{tikzpicture}

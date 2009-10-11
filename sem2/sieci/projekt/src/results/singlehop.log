@@ -1,0 +1,9 @@
+DEBUG - main(<module>):15 - network simulator says hello :-)
+DEBUG - experiment(logDevices):14 - 2 devices installed
+DEBUG - experiment(logDevices):16 - device(0).address = 02-06-00:00:00:00:00:01
+DEBUG - experiment(logDevices):16 - device(1).address = 02-06-00:00:00:00:00:02
+DEBUG - experiment(assignAddr):24 - 2 addresses assigned
+DEBUG - experiment(assignAddr):26 - interface(0).address = 10.0.0.1
+DEBUG - experiment(assignAddr):26 - interface(1).address = 10.0.0.2
+DEBUG - experiment(installTxApp):38 - rxInetSocketAddress.ipv4 = 10.0.0.2
+DEBUG - experiment(installTxApp):39 - rxInetSocketAddress.port = 9

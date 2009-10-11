@@ -1,0 +1,47 @@
+No.     Time        Source                Destination           Protocol Info
+      1 0.000000    10.0.1.1              10.0.1.255            UDP      OLSR (IPv4) Packet,  Length: 20 Bytes
+
+Frame 1 (50 bytes on wire, 50 bytes captured)
+Point-to-Point Protocol
+Internet Protocol, Src: 10.0.1.1 (10.0.1.1), Dst: 10.0.1.255 (10.0.1.255)
+User Datagram Protocol, Src Port: olsr (698), Dst Port: olsr (698)
+Optimized Link State Routing Protocol
+    Packet Length: 20 bytes
+    Packet Sequence Number: 0
+    Message Type: HELLO (1)
+    Validity Time: 6.000 (in seconds)
+    Message Size: 16 bytes
+    Originator Address: 10.0.1.1 (10.0.1.1)
+    Time to Live: 1
+    Hop Count: 0
+    Message Sequence Number: 0
+    Hello Emission Interval: 6.000 (in seconds)
+    Willingness: Default
+
+No.     Time        Source                Destination           Protocol Info
+      2 0.006509    10.0.1.2              10.0.1.255            UDP      OLSR (IPv4) Packet,  Length: 36 Bytes
+
+Frame 2 (66 bytes on wire, 66 bytes captured)
+Point-to-Point Protocol
+Internet Protocol, Src: 10.0.1.2 (10.0.1.2), Dst: 10.0.1.255 (10.0.1.255)
+User Datagram Protocol, Src Port: olsr (698), Dst Port: olsr (698)
+Optimized Link State Routing Protocol
+    Packet Length: 36 bytes
+    Packet Sequence Number: 0
+    Message Type: HELLO (1)
+    Validity Time: 6.000 (in seconds)
+    Message Size: 16 bytes
+    Originator Address: 10.0.1.2 (10.0.1.2)
+    Time to Live: 1
+    Hop Count: 0
+    Message Sequence Number: 0
+    Hello Emission Interval: 6.000 (in seconds)
+    Willingness: Default
+    Message Type: MID (3)
+    Validity Time: 15.000 (in seconds)
+    Message Size: 16 bytes
+    Originator Address: 10.0.1.2 (10.0.1.2)
+    Time to Live: 255
+    Hop Count: 0
+    Message Sequence Number: 1
+    Interface Address: 10.0.2.1 (10.0.2.1)

@@ -38,10 +38,6 @@ class AppFactory:
         logging.debug('rxInetSocketAddress.ipv4 = ' + str(rxInetSocketAddress.GetIpv4()))
         logging.debug('rxInetSocketAddress.port = ' + str(rxInetSocketAddress.GetPort()))
         
-        # install tx app
-        # ns3.Config.SetDefault("ns3::OnOffApplication::PacketSize", ns3.UintegerValue(2000));
-        # ns3.Config.SetDefault("ns3::OnOffApplication::DataRate", ns3.StringValue("60Mb/s"));
-        
         txHelper = ns3.OnOffHelper("ns3::UdpSocketFactory",
                                    rxInetSocketAddress)
         

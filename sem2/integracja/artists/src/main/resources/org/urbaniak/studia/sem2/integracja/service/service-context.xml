@@ -11,21 +11,15 @@
         http://jax-ws.dev.java.net/spring/servlet http://jax-ws.dev.java.net/spring/servlet.xsd
         ">
 
+    <context:annotation-config />
+
+    <tx:annotation-driven transaction-manager="txManager" />
+
     <wss:binding url="/music.ws">
         <wss:service>
             <ws:service bean="#musicService" />
         </wss:service>
     </wss:binding>
-
-    <wss:binding url="/artist.ws">
-        <wss:service>
-            <ws:service bean="#artistService" />
-        </wss:service>
-    </wss:binding>
-
-    <context:annotation-config />
-
-    <tx:annotation-driven transaction-manager="txManager" />
 
     <bean id="txManager"
         class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -33,8 +27,8 @@
     </bean>
 
     <bean id="musicService"
-        class="org.urbaniak.studia.sem2.integracja.service.MusicServiceImpl">
-        <property name="musicDAO" ref="musicDAO" />
+        class="org.urbaniak.studia.sem2.integracja.service.MusicWebServiceImpl">
+        <property name="artistService" ref="artistService" />
     </bean>
 
     <bean id="artistService"

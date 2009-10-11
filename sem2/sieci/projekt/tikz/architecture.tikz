@@ -1,0 +1,45 @@
+% Define two helper counters
+\begin{tikzpicture}[auto]
+
+   % % grid
+   % \def\supertiny{ \font\supertinyfont = cmr9 at 3pt \relax \supertinyfont}
+   % \newcounter{gridrows}
+   % \setcounter{gridrows}{12}
+   % \newcounter{gridcols}
+   % \setcounter{gridcols}{30}
+   % \draw [gray, very thin] (0, -\arabic{gridrows}) grid (\arabic{gridcols}, 0);
+   % \foreach \x in {0,...,\arabic{gridcols}}
+   %     \foreach \y in {0,...,\arabic{gridrows}}
+   %     {
+   %         \draw (\x+0.15, -\y-0.15) node [gray, very thin] {\supertiny{\x/\y}};
+   %     }
+
+    % styles
+    \tikzstyle{archlayer} = [
+        shape=rectangle, 
+        draw, 
+        rounded corners=2pt, 
+        inner sep=0mm, 
+        minimum width=30mm, 
+        minimum height=10mm,
+        fill=blue!20
+    ];
+
+    \tikzstyle{darrow} = [latex-latex];
+
+    \node[archlayer] (app) {Application};
+    \node[archlayer, fill=yellow!20, below=of app] (stack) {Protocol stack};
+    \path (app) edge[darrow] (stack);
+    \node[archlayer, fill=green!20, below=of stack] (netdevice) {NetDevice};
+    \path (stack) edge[darrow] (netdevice);
+
+    \node[archlayer, fill=red!20, right=of netdevice] (channel) {Channel};
+    \path (netdevice) edge[darrow] (channel);
+
+    \node[archlayer, fill=green!20, right=of channel] (netdevice) {NetDevice};
+    \path (channel) edge[darrow] (netdevice);
+    \node[archlayer, fill=yellow!20, above=of netdevice] (stack) {Protocol stack};
+    \path (netdevice) edge[darrow] (stack);
+    \node[archlayer, above=of stack] (app) {Application};
+    \path (app) edge[darrow] (stack);
+\end{tikzpicture}

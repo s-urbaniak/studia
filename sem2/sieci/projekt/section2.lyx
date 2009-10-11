@@ -52,34 +52,27 @@ Mesh
 
 \begin_layout Standard
 The goal of this project was to simulate a simple mesh network.
- The assumption for all following simulations is as follows:
-\end_layout
-
-\begin_layout Itemize
+ The assumption for all following simulations is as follows: 
 \begin_inset Formula $n$
 \end_inset
 
  Nodes are directly connected physically together and form a simple network.
- The connection types being simulated are:
+ The physical connection types being simulated are:
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 
 \shape italic
 Point-To-Point
 \shape default
-: This connection type was choosen because of its simplicity.
+: This connection type was chosen because of its simplicity.
  It suited well first experiments for setting up the simulated network.
  Another consideration was the fact that when more than two nodes are connected,
  then the left-most and right-most nodes are not physically connected (see
  figure 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-TODO !!!
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Point-To-Point-connection-between"
 
 \end_inset
 
@@ -92,10 +85,55 @@ TODO !!!
 Wifi Adhoc
 \shape default
 : This connection type was choosen for the final simulation and for the
- envisioned visualization.
+ visioned visualization.
 \end_layout
 
-\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{tikz/p2p_connection.tikz}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Point-To-Point-connection-between"
+
+\end_inset
+
+Point-To-Point connection between three nodes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Protocol stack
 \end_layout
@@ -106,11 +144,47 @@ TCP/IP
 
 \begin_layout Standard
 The protocol stack being used in all following simulations is standard TCP/IPv4.
- Because the foc
+ Actually it is currently the only protocol stack being supported by NS-3
+ at least for the higher OSI levels.
 \end_layout
 
 \begin_layout Subsubsection
+Routing
+\end_layout
+
+\begin_layout Standard
+Because the current project emphasizes on the visualization of packets traveling
+ through a real network, the routing of the packets needs special attention.
+ In NS-3 currently two rouing models are being supported:
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Global Routing
+\shape default
+: A static routing table being available at each node of the network.
+ This table is filled by the NS-3 during the startup of the target simulation.
+ Obviously this routing method is only applicable for static, non-moving
+ nodes.
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
 OLSR
+\shape default
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc3626"
+
+\end_inset
+
+: The Optimized Link State Routing Protocol is an IP rouing protocol for
+ Adhoc mobile network.
+ This protocol is being used at the OLPC project and is one of currently
+ available routing protocols.
 \end_layout
 
 \end_body

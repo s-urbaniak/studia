@@ -43,19 +43,708 @@
 \begin_body
 
 \begin_layout Section
-Program structure
+The Point-To-Point mesh
 \end_layout
 
 \begin_layout Subsection
-Main program
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Architecture"
+
+\end_inset
+
+Architecture
+\end_layout
+
+\begin_layout Standard
+The NS-3 simulator is heavily based on object-oriented design.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:singlehop"
+
+\end_inset
+
+ shows a simplified view on a typical NS-3 simulation architecture, regardless
+ whether programmed in Python or C++.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{tikz/architecture.tikz}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Typical NS-3 simulation architecture
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The following architectual layers can be identified:
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Application
+\shape default
+: This layer contains the application logic.
+ In NS-3 one can implement socket-based applications using the internal
+ NS-3 socket APIs.
+ NS-3 actually also provides operating system dependent socket implementations
+ (as far as I know the Linux socket API and the BSD API is supported in
+ NS-3).
+ Finally UDP based applications are supported and also various helper classes
+ are provided by NS-3 for easy initialization of the application objects.
+ The current project focuses only on UDP based applications.
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Protocol stack
+\shape default
+: This architectual layer provides objects for initializing a concrete protocol
+ stack.
+ Since NS-3 currently only supports IPv4 only this is the stack the current
+ project relies on.
+ Furthermore on this layer one specifies the different routing mechanisms
+ being used by NS-3.
+ The current project uses both supported routing protocols (static routing
+ and OLSR).
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+NetDevice
+\shape default
+: This layer provides objects for defining the actual physical layout of
+ the network.
+ In the current project physically Point-To-Point connections are being
+ examined as well as Wifi connections.
+ Furthermore this layer provides objects for specifying the actual positions
+ and movements for the nodes of interest.
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Channel
+\shape default
+: This layer provides objects the physical communication channel between
+ nodes.
+ This layer is pretty much hidden from the developer but hooks and callback
+ methods exists for further analysis and statistics.
 \end_layout
 
 \begin_layout Subsection
-UDP sender and receiver application
+Single Hop simulation
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{tikz/singlehop.tikz}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:singlehop"
+
+\end_inset
+
+Point-To-Point connection between two nodes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The first simulation analyzes two nodes being connected together via a Point
+ to Point connection.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:singlehop"
+
+\end_inset
+
+ represents the very simple network being simulated in this case.
+ Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:singlehop"
+
+\end_inset
+
+ shows the relevant Python based program code for this simulation.
+\family typewriter
+\size small
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/sieci/src/experiment.py"
+lstparams "breaklines=true,caption={experiment.py (singleHop simulation)},extendedchars=true,firstline=60,label={lst:singlehop},language={Python},lastline=92,numbers=right"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First a NodeContainer object is being created which instantiates all simulated
+ nodes of the target network.
+ Afterwards follows a DeviceFactory which was implemented individually for
+ this project.
+ It initializes and creates the actual physical devices.
+ Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:devfactory"
+
+\end_inset
+
+ shows the relevant initalization code.
+ One can see that a Point-To-Point connection between the nodes having a
+ speed of 500kbs and a delay of 2ms is being initialized.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/sieci/src/experiment.py"
+lstparams "breaklines=true,caption={experiment.py (DeviceFactory initialization)},extendedchars=true,firstline=5,label={lst:devfactory},language={Python},lastline=11,numbers=right"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Afterwards the internet protocol stack is being initialized using internal
+ NS-3 helper objects.
+ The most important part here is the assignment of IP addresses to the simulated
+ nodes which is also being handled by a helper object.
+ Only a base address (here 
+\begin_inset Quotes eld
+\end_inset
+
+10.0.0.0
+\begin_inset Quotes erd
+\end_inset
+
+) has to be specified and NS-3 will chronologically assign IP addresses
+ automatically to all simulated nodes.
+ Here we have two nodes, therefore the adresses 
+\begin_inset Quotes eld
+\end_inset
+
+10.0.0.1
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+10.0.0.2
+\begin_inset Quotes erd
+\end_inset
+
+ will be assigned to the nodes.
+\end_layout
+
+\begin_layout Standard
+At last the actual applications are being initialized using an application
+ factory developed individually for of this project.
+ The initialization in Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:appfactory"
+
+\end_inset
+
+ install two applications, the sender application (tx) and the receiver
+ application (rx).
+ Using NS-3 helper objects an UDP based application is instanciated, which
+ is sending packets starting at OnTtheime and stopping at OffTime.
+ Here the application starts sending packets after 1 second of the application
+ start and never stops sending (OffTime is 0 seconds).
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/sieci/src/experiment.py"
+lstparams "breaklines=true,caption={experiment.py (ApplicationFactory initialization)},extendedchars=true,firstline=34,label={lst:appfactory},language={Python},lastline=58,numbers=right"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since this network consists of only two nodes, it is not necessary to initialize
+ any routing tables.
+ The two nodes see each other directly.
+ Python based logging statements were built into the singlehop simulation
+ and the output can be seen in Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:singlehoplog"
+
+\end_inset
+
+.
+ The log shows the assigned MAC addresses as well as the dynamically assigned
+ IP addresses of both nodes.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/results/singlehop.log"
+lstparams "breaklines=true,caption={singlehop.log (SingleHop simulation log output)},extendedchars=true,label={lst:singlehoplog}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In line 82 and line 84 of lising 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:singlehop"
+
+\end_inset
+
+ one can see that the receiver application starts listening for UDP packets
+ 15 seconds after the beginning of the simulation.
+ The sender application starts sending UDP packets 5 seconds earlier at
+ the 10th second after the simulation start.
+ What happens then can be seen best from the actual packet traces generated
+ by NS-3.
+ It is capable of generating standard pcap based output files.
+ The pcap trace file can then be analyzed using existing tools available
+ (i.e.
+ tcpump, wireshark, tcptrace, etc.).
+ The tcpdump of the generated pcap files can be seen in listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:singlehoptcpdump"
+
+\end_inset
+
+.
+ It can be seen that as long as the receiver application is not listening
+ for any packets, an ICMP message is being answered from the receiver node,
+ stating that the application port is unreachable.
+ Starting from the 15th second the receiver application then silently accepts
+ the incoming UDP packets.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/results/singlehop.tcpdump"
+lstparams "breaklines=true,caption={singlehop.tcpdump (SingleHop tcpdump output)},extendedchars=true,label={lst:singlehoptcpdump}"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Packet Listener
+Dual Hop simulation using OLSR
+\end_layout
+
+\begin_layout Standard
+Using the same code basis from the single hop simulation a further simulation
+ was developed to examine NS-3's routing table capabilities.
+ Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:dualhop_"
+
+\end_inset
+
+ shows the relevant code fragments.
+ The simulated network consists of three nodes as represented in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Point-To-Point-connection-between"
+
+\end_inset
+
+.
+ The nodes are connected together using a Point-To-Point connection.
+ One can see, that Node1 and Node3 do not see each other physically.
+ Instead Node2 is initialized to have two net devices, one connecting to
+ Node1 and the other connecting to Node3.
+ Thus Node1 and Node3 are transiently connected via Node2.
+ A routing protocol is needed to successfully propagate any packets from
+ Node1 to Node3.
+ Lines 140-141 of listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:dualhop_"
+
+\end_inset
+
+ show the correspondent OLSR initialization code under NS-3.
+\end_layout
+
+\begin_layout Standard
+Because OLSR needs some time to initialize the start of the sender application
+ and the receiver application were delayed to the 70th second (sender) and
+ the 80th second (receiver).
+ If the sender starts too early, the routing tables would not be initialized
+ yet causing unroutable packets.
+ That is actually one drawback of dynamic routing protocols.
+ They need time to build and need time to update themself by a certain delay.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size small
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/sieci/src/experiment.py"
+lstparams "breaklines=true,caption={experiment.py (dualHop simulation)},extendedchars=true,firstline=94,label={lst:dualhop_},language={Python},lastline=150,numbers=right"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the analysis of the dual hop simulation wireshark has been used because
+ of its very detailed information depth.
+ NS-3 generates a pcap file for each net device so for the dual hop simulation
+ the following pcap files exist:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Node
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pcap files
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Node 1
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+dualHopOlsr-0-0.pcap
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Node 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+dualHopOlsr-1-0.pcap
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+dualHopOlsr-1-1.pcap
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Node 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+dualHopOlsr-2-0.pcap
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+One can see that Node 2 has two pcap files, one for each of the two assigned
+ net devices forming a Point-To-Point connection with Node 1 on one side
+ and Node 2 an the other.
+ Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:dualhop_wireshark"
+
+\end_inset
+
+ shows the first two packets from the dualHopOlsr-1-0.pcap file, which represents
+ the channel between Node 1 (10.0.1.1) and Node 2 (10.0.1.2).
+ The shown two packets are so called HELLO packets.
+ This message type is defined in the OLSR RFC 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rfc3626"
+
+\end_inset
+
+ as the message type to propagate the information that a node is actually
+ existent in the network.
+ All receiving nodes (at least those who are capable of receiving these
+ HELLO messages) will then know of the existence of the neighbour nodes
+ and can build a routing table based on this information.
+ Another interesting fact is the usage of the MID (Multiple Interface Declaratio
+n) message type in the second packet.
+ This message type is used, when a node has multiple interfaces, which is
+ the case for Node 2.
+ 
+\family typewriter
+\size small
+
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "src/results/dualHopOlsr-1-0.log"
+lstparams "breaklines=true,caption={dualHopOlsr-1-0.log (dualHop wireshark dump)},extendedchars=true,label={lst:dualhop_wireshark}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:IO-Graph-statistics"
+
+\end_inset
+
+ shows the IO graph of the dual hop simualation, generated using wireshark.
+ Line 132 and line 133 in Listing 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lst:dualhop_"
+
+\end_inset
+
+ specify that the sender application is supposed to start transmitting UDP
+ packets from the 80th second up to the 90th second after the simulation
+ start.
+ This peak of packet activity can be nicely observed in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:IO-Graph-statistics"
+
+\end_inset
+
+.
+ A further observation is that when the application is not sending data,
+ there is still packet traffic existent.
+ It is visible as small spikes in the IO graph.
+ When observing the wireshark trace then it can be concluded that this is
+ traffic generated by the OLSR protocol.
+ So one can say that OLSR is a proactive routing protocol which constantly
+ updates himself.
+ There is no need for an external 
+\begin_inset Quotes eld
+\end_inset
+
+trigger
+\begin_inset Quotes erd
+\end_inset
+
+ which initializes the routing update.
+ Therefore this routing protocol is also suitable for moving nodes, where
+ neighbour nodes change constantly and thus also the routing information.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename src/results/dualHopOlsr.png
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:IO-Graph-statistics"
+
+\end_inset
+
+IO Graph statistics of the dual hop simulation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

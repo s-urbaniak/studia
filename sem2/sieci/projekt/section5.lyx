@@ -1,0 +1,63 @@
+#LyX 1.6.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrartcl
+\use_default_options true
+\language english
+\inputencoding utf8
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Conclusions
+\end_layout
+
+\begin_layout Standard
+All envisioned goals were successfully realized in this project.
+ Nevertheless NS-3 is still in development and implies a steep learning
+ curve.
+ The Decorator API used for this project is not in the main tree of the
+ NS-3 project yet.
+ Furthermore the Python bindings were not available for the Decorator API
+ and the biggest drawback is that the current Python binding does not support
+ callbacks yet.
+ Therefore a switch from Python to C++ actually was necessary to successfully
+ complete the project.
+\end_layout
+
+\end_body
+\end_document

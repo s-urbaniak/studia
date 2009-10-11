@@ -69,9 +69,4 @@
         <servlet-name>jaxws-servlet</servlet-name>
         <url-pattern>/music.ws</url-pattern>
     </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>jaxws-servlet</servlet-name>
-        <url-pattern>/artist.ws</url-pattern>
-    </servlet-mapping>
 </web-app>

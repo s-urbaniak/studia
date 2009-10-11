@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.urbaniak.studia.sem2.integracja.dao.MusicDAO;
-import org.urbaniak.studia.sem2.integracja.service.MusicServiceImpl;
+import org.urbaniak.studia.sem2.integracja.service.MusicWebServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
@@ -29,7 +29,7 @@ public class MusicDAOHibernateImplTest {
     private MusicDAO musicDAO;
 
     @Resource
-    private MusicServiceImpl musicService;
+    private MusicWebServiceImpl musicService;
 
     private static Logger logger = LoggerFactory
             .getLogger(MusicDAOHibernateImplTest.class);
@@ -111,7 +111,7 @@ public class MusicDAOHibernateImplTest {
 
     @Test
     public void testMusicService() {
-        List<Artist> artists = musicService.getArtists();
+        List<Artist> artists = musicService.fetch();
         assertNotNull(artists);
     }
 

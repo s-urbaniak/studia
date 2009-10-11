@@ -21,7 +21,7 @@
 
 % use tikz library
 \usepackage{tikz}
-\usetikzlibrary{arrows}
+\usetikzlibrary{arrows,positioning}
 
 %Kurzfassung und Abstract (englisch) auf eine Seite
 \renewenvironment{abstract}{
@@ -186,14 +186,7 @@ Projektowanie sieci i systemów
 \family sans
 \series bold
 \size larger
-\begin_inset Quotes eld
-\end_inset
-
 Mesh Network Visualization using NS-3
-\begin_inset Quotes erd
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -415,6 +408,38 @@ filename "section4.lyx"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "section5.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
@@ -433,6 +458,31 @@ status collapsed
 \begin_layout Plain Layout
 
 http://www.olpc.org
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "rfc3626"
+
+\end_inset
+
+RFC 3626
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.ietf.org/rfc/rfc3626.txt
 \end_layout
 
 \end_inset
