@@ -1,0 +1,59 @@
+
+\section{Topology description}
+
+
+\subsection{Mesh}
+
+The goal of this project was to simulate a simple mesh network. The
+assumption for all following simulations is as follows: $n$ Nodes
+are directly connected physically together and form a simple network.
+The physical connection types being simulated are:
+\begin{itemize}
+\item \textit{Point-To-Point}: This connection type was chosen because of
+its simplicity. It suited well first experiments for setting up the
+simulated network. Another consideration was the fact that when more
+than two nodes are connected, then the left-most and right-most nodes
+are not physically connected (see figure \ref{fig:Point-To-Point-connection-between})
+which allowed to experiment with the routing capabilities of NS-3.
+\item \textit{Wifi Adhoc}: This connection type was choosen for the final
+simulation and for the visioned visualization.
+\end{itemize}
+%
+\begin{figure}
+\begin{centering}
+\input{tikz/p2p_connection.tikz}
+\par\end{centering}
+
+\caption{\label{fig:Point-To-Point-connection-between}Point-To-Point connection
+between three nodes}
+
+\end{figure}
+
+
+
+\subsection{Protocol stack}
+
+
+\subsubsection{TCP/IP}
+
+The protocol stack being used in all following simulations is standard
+TCP/IPv4. Actually it is currently the only protocol stack being supported
+by NS-3 at least for the higher OSI levels.
+
+
+\subsubsection{Routing}
+
+Because the current project emphasizes on the visualization of packets
+traveling through a real network, the routing of the packets needs
+special attention. In NS-3 currently two rouing models are being supported:
+\begin{itemize}
+\item \textit{Global Routing}: A static routing table being available at
+each node of the network. This table is filled by the NS-3 during
+the startup of the target simulation. Obviously this routing method
+is only applicable for static, non-moving nodes.
+\item \textit{OLSR}\cite{rfc3626}: The Optimized Link State Routing Protocol
+is an IP rouing protocol for Adhoc mobile network. This protocol is
+being used at the OLPC project and is one of currently available routing
+protocols.
+\end{itemize}
+

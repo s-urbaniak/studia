@@ -1,0 +1,181 @@
+%% LyX 1.6.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english,pointlessnumbers, abstracton, headsepline]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=3.5cm,bmargin=3.5cm}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{url}
+\usepackage{graphicx}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% verschieden Symbole, Zeichen wie (c), €
+\usepackage{textcomp}
+
+\usepackage{ %a4wide,
+            ellipsis, fixltx2e, mparhack,   %Fehlerkorrektur für Marginalien
+            booktabs, longtable             %schönere Tabellen
+}  
+
+\usepackage[automark]{scrpage2}
+%\automark[chapter]{chapter}
+\clearscrheadfoot
+\ohead{\\\headmark}
+\ihead{\includegraphics[scale=0.2]{img/zut2.jpg}}%\pagemark}
+\ofoot[\pagemark]{\pagemark}
+
+% use tikz library
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning}
+
+%Kurzfassung und Abstract (englisch) auf eine Seite
+\renewenvironment{abstract}{
+    \@beginparpenalty\@lowpenalty
+      \begin{center}
+        \normalfont\sectfont\nobreak\abstractname
+        \@endparpenalty\@M
+      \end{center}
+}{
+    \par
+}
+
+% schönerer Blocksatz!!
+\usepackage{microtype}
+
+\usepackage{ifpdf} % part of the hyperref bundle
+\ifpdf % if pdflatex is used
+
+%set fonts for nicer pdf view
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}
+  {\usepackage[scaled=0.92]{helvet}
+    \usepackage{mathptmx}
+    \usepackage{courier} }
+\fi
+
+% the pages of the TOC are numbered roman
+% and a pdf-bookmark for the TOC is added
+\pagenumbering{roman}
+\let\myTOC\tableofcontents
+\renewcommand\tableofcontents{
+%\pdfbookmark[1]{Contents}{}
+\myTOC
+\clearpage
+\pagenumbering{arabic}}
+
+% Alle Querverweise und URLs als Link darstellen
+% In der PDF-Ausgabe
+ \usepackage[colorlinks=true, bookmarks, bookmarksnumbered, bookmarksopen, bookmarksopenlevel=1,
+  linkcolor=black, citecolor=black, urlcolor=blue, filecolor=blue,
+  pdfpagelayout=OneColumn, pdfnewwindow=true,
+  pdfstartview=XYZ, plainpages=false, pdfpagelabels,
+  pdfauthor={Sergiusz Urbaniak}, pdftex,
+  pdftitle={Visualizing mesh networks using NS-3},
+  pdfsubject={},
+  pdfkeywords={}]{hyperref}
+
+%mehr Platz zwischen Überschrift und Tabelle
+\newcommand{\@ldtable}{}
+\let\@ldtable\table
+\renewcommand{\table}{ %
+                 \setlength{\@tempdima}{\abovecaptionskip} %
+                 \setlength{\abovecaptionskip}{\belowcaptionskip} %
+                 \setlength{\belowcaptionskip}{\@tempdima} %
+                 \@ldtable}
+
+\newcommand{\sqbullet}{\vrule height .9ex width .8ex depth -.1ex }
+\newcommand{\hcat}{\, \sqbullet \vert \sqbullet \,}
+\newcommand{\vcat}{\, \frac{\:\sqbullet\:}{\:\sqbullet\:} \,}
+\DeclareMathSizes{12}{10}{7}{5}
+
+\@ifundefined{showcaptionsetup}{}{%
+ \PassOptionsToPackage{caption=false}{subfig}}
+\usepackage{subfig}
+\makeatother
+
+\usepackage{babel}
+
+\begin{document}
+\begin{titlepage}
+
+\begin{center}
+\includegraphics[scale=0.5]{img/zut}
+\par\end{center}
+
+\noindent \begin{center}
+\textsf{\textbf{\LARGE Wydział Informatyki}}
+\par\end{center}{\LARGE \par}
+
+\noindent \begin{center}
+\vspace{1.5cm}
+
+\par\end{center}
+
+\noindent \begin{center}
+\textsf{\Large Pracowania dyplomowa}
+\par\end{center}{\Large \par}
+
+\noindent \begin{center}
+\textsf{\textbf{\Large Prototype Mesh Network Implementation}}
+\par\end{center}{\Large \par}
+
+\noindent \begin{center}
+\textsf{\large Wprowadzenie}
+\par\end{center}{\large \par}
+
+\vspace{3.5cm}
+
+
+\noindent \begin{center}
+{\huge }\begin{tabular}{ll}
+Autor:  &  Sergiusz Urbaniak\tabularnewline
+Grupa: & IUz-12\tabularnewline
+Data: & \today\tabularnewline
+\end{tabular}
+\par\end{center}{\huge \par}
+
+\end{titlepage}
+\pagestyle{scrheadings}
+\pagenumbering{arabic}\tableofcontents{}\newpage{}
+
+\include{section1}
+
+\newpage{}
+
+\include{section2}
+
+\newpage{}
+
+\include{section3}
+
+\newpage{}
+
+\include{section4}
+
+\newpage{}
+
+\include{section5}
+
+\newpage{}
+
+\listoffigures
+
+
+\newpage{}
+\begin{thebibliography}{2}
+\bibitem{olpc-website}The OLPC website:\\
+\url{http://www.olpc.org}
+
+\bibitem{rfc3626}RFC 3626\\
+\url{http://www.ietf.org/rfc/rfc3626.txt}
+\end{thebibliography}
+
+\end{document}
