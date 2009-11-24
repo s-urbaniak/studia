@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/jl1.0.1.jar" sourcepath="/media/2f27f98a-65dc-444e-8ff8-925de7132339/home/sur/java/JLayer1.0.1/src"/>
+	<classpathentry kind="var" path="ECLIPSE_HOME/plugins/org.eclipse.swt.gtk.linux.x86_64_3.5.0.v3550b.jar" sourcepath="/ECLIPSE_HOME/plugins/org.eclipse.swt.gtk.linux.x86_64.source_3.5.0.v3550b.jar"/>
+	<classpathentry kind="var" path="ECLIPSE_HOME/plugins/org.eclipse.jface_3.5.0.I20090525-2000.jar" sourcepath="/ECLIPSE_HOME/plugins/org.eclipse.jface.source_3.5.0.I20090525-2000.jar"/>
+	<classpathentry kind="var" path="ECLIPSE_HOME/plugins/org.eclipse.equinox.common_3.5.0.v20090520-1800.jar"/>
+	<classpathentry kind="var" path="ECLIPSE_HOME/plugins/org.eclipse.core.commands_3.5.0.I20090525-2000.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
