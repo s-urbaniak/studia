@@ -63,6 +63,7 @@ public class PlayerThread implements Runnable {
                     rtpMp3Stream);
 
             this.rtspSource.start();
+            rtpSource.setRtspSession(this.rtspSource.getSession());
 
             this.mediator.startStatistics(queue);
             this.mp3Player = new Player(audioStream);

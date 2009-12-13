@@ -1,30 +1,25 @@
 package org.urbanet.rtp.protocol;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.StringReader;
 import java.net.Socket;
 import java.util.Vector;
-import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.urbanet.rtp.protocol.beans.RtspPacket;
+import org.urbanet.rtp.protocol.beans.RtspSession;
 
 public class RtspSource {
 
     private final static Logger log = Logger.getLogger(RtspSource.class
             .getName());
-
-    // the address of the media file as an rtsp://... String
-    private String host;
-
-    private int port;
-
-    private String address;
-
-    private String stream;
 
     // the inputstream to receive response from the server
     private InputStream socketInputStream;
@@ -36,16 +31,10 @@ public class RtspSource {
     // sent by the client
     private static int CSeq = 1;
 
-    // the session id sent by the server after an initial setup
-    private String sessionId;
-
-    // the number of tracks in a media file
-    private Vector tracks = new Vector(2);
-
     // flags to indicate the status of a session
     private boolean options, described, setup, playing;
 
-    private int udpPort;
+    private RtspSession session;
 
     private boolean stopped = false;
 
@@ -57,17 +46,22 @@ public class RtspSource {
     private static final String TRANSPORT_DATA = "TRANSPORT: RTP/AVP;unicast;client_port=";
     private static final String RTSP_OK = VERSION + " 200 OK";
 
-    // base constructor, takes the media address, input and output streams
     public RtspSource(String host, int port, String stream, int udpPort) {
-        this.host = host;
-        this.port = port;
-        this.udpPort = udpPort;
-        this.stream = stream;
-        this.address = "rtsp://" + host + ":" + port + stream;
+        this.session = new RtspSession();
+
+        this.session.setHost(host);
+        this.session.setPort(port);
+        this.session.setClientUdpPort(udpPort);
+        this.session.setStream(stream);
+    }
+
+    public RtspSession getSession() {
+        return session;
     }
 
     protected Socket connect() throws IOException {
-        Socket rtspSocket = new Socket(host, port);
+        Socket rtspSocket = new Socket(this.session.getHost(), this.session
+                .getPort());
         socketInputStream = rtspSocket.getInputStream();
         socketOutputStream = rtspSocket.getOutputStream();
         return rtspSocket;
@@ -91,7 +85,8 @@ public class RtspSource {
         if (options)
             return;
         // create the base command
-        String baseCommand = getBaseCommand("OPTIONS " + address);
+        String baseCommand = getBaseCommand("OPTIONS "
+                + this.session.getSessionUrl());
 
         // execute it and read the response
         doCommand(baseCommand);
@@ -108,13 +103,45 @@ public class RtspSource {
             return;
 
         // create the base command
-        String baseCommand = getBaseCommand("DESCRIBE " + address);
+        String baseCommand = getBaseCommand("DESCRIBE "
+                + this.session.getSessionUrl());
 
         // execute it and read the response
         RtspPacket response = doCommand(baseCommand);
 
-        // the response will contain track information, amongst other things
-        parseTrackInformation(response.getContent());
+        String[] lines = response.getContent().split("\n");
+        Pattern rtpmapPattern = Pattern.compile(
+                "^a=rtpmap:(\\d+) (\\w+)/(\\d+)(.*)", Pattern.CASE_INSENSITIVE);
+
+        Pattern controlPattern = Pattern.compile("^a=control:(.*)",
+                Pattern.CASE_INSENSITIVE);
+
+        boolean done = false;
+        int i = 0;
+
+        while (!done) {
+            Matcher m = controlPattern.matcher(lines[i]);
+            if (m.find())
+                this.session.setSessionUrl(m.group(1));
+
+            m = rtpmapPattern.matcher(lines[i]);
+            if (m.find()) {
+                int clockrate = Integer.parseInt(m.group(3));
+                this.session.setClockrate(clockrate);
+
+                int payloadType = Integer.parseInt(m.group(1));
+                this.session.setPayloadType(payloadType);
+
+                m = controlPattern.matcher(lines[i + 1]);
+                if (!m.find())
+                    throw new IOException(
+                            "No control attribute after rtmap present. RTSP description content is: "
+                                    + response.getContent());
+                this.session.setControlUrl(m.group(1));
+                done = true;
+            }
+            i++;
+        }
 
         // set flag
         described = true;
@@ -128,31 +155,22 @@ public class RtspSource {
             throw new IOException("Not Described!");
 
         // create the base command for the first SETUP track
-        String baseCommand = getBaseCommand("SETUP " + address + "/trackID="
-                + tracks.elementAt(0));
+        String baseCommand = getBaseCommand("SETUP "
+                + this.session.getControlUrl());
 
         // add the static transport data
-        baseCommand += CRLF + TRANSPORT_DATA + this.udpPort + "-"
-                + this.udpPort;
+        baseCommand += CRLF + TRANSPORT_DATA + this.session.getClientUdpPort()
+                + "-" + this.session.getClientUdpPort();
 
         // read response
         RtspPacket response = doCommand(baseCommand);
 
         // parse it for session information
-        this.sessionId = response.get(SESSION);
+        this.session.setSessionId(response.get(SESSION));
 
         // if session information cannot be parsed, it is an error
-        if (sessionId == null)
+        if (this.session.getSessionId() == null)
             throw new IOException("Could not find session info");
-
-        // now, send SETUP commands for each of the tracks
-        int cntOfTracks = tracks.size();
-        for (int i = 1; i < cntOfTracks; i++) {
-            baseCommand = getBaseCommand("SETUP " + address + "/trackID="
-                    + tracks.elementAt(i));
-            baseCommand += CRLF + SESSION + sessionId + CRLF + TRANSPORT_DATA;
-            doCommand(baseCommand);
-        }
 
         // this is now setup
         setup = true;
@@ -166,10 +184,11 @@ public class RtspSource {
             throw new IOException("Not Setup!");
 
         // create base command
-        String baseCommand = getBaseCommand("PLAY " + address);
+        String baseCommand = getBaseCommand("PLAY "
+                + this.session.getControlUrl());
 
         // add session information
-        baseCommand += CRLF + SESSION + ": " + sessionId;
+        baseCommand += CRLF + SESSION + ": " + this.session.getSessionId();
 
         // execute it
         doCommand(baseCommand);
@@ -187,10 +206,11 @@ public class RtspSource {
             return;
 
         // create base command
-        String baseCommand = getBaseCommand("PAUSE " + address);
+        String baseCommand = getBaseCommand("PAUSE "
+                + this.session.getSessionUrl());
 
         // add session information
-        baseCommand += CRLF + SESSION + ": " + sessionId;
+        baseCommand += CRLF + SESSION + ": " + this.session.getSessionId();
 
         // execute it
         doCommand(baseCommand);
@@ -209,10 +229,11 @@ public class RtspSource {
             return;
 
         // create base command
-        String baseCommand = getBaseCommand("TEARDOWN " + address);
+        String baseCommand = getBaseCommand("TEARDOWN "
+                + this.session.getControlUrl());
 
         // add session information
-        baseCommand += CRLF + SESSION + ": " + sessionId;
+        baseCommand += CRLF + SESSION + ": " + this.session.getSessionId();
 
         // execute it
         doCommand(baseCommand);
@@ -225,14 +246,14 @@ public class RtspSource {
     }
 
     // this method is a convenience method to put a RTSP command together
-    private String getBaseCommand(String command) {
+    protected String getBaseCommand(String command) {
         return (command + " " + VERSION + // version
                 CRLF + "cseq: " + (CSeq++) // incrementing sequence
         );
     }
 
     // executes a command and receives response from server
-    private RtspPacket doCommand(String fullCommand) throws IOException {
+    protected RtspPacket doCommand(String fullCommand) throws IOException {
 
         // to read the response from the server
         byte[] buffer = new byte[2048];
@@ -298,26 +319,5 @@ public class RtspSource {
         String value = line.substring(startIndex + 1, line.length()).trim();
 
         packet.put(key, value);
-    }
-
-    // convenience method to parse a server response to DESCRIBE command
-    // for track information
-    private void parseTrackInformation(String response) throws IOException {
-
-        String localRef = response;
-        String trackId = "";
-
-        // iterate through the response to find all instances of the
-        // TRACK_LINE, which indicates all the tracks. Add all the
-        // track id's to the tracks vector
-        int index = localRef.indexOf(TRACK_LINE);
-        while (index != -1) {
-            int baseIdx = index + TRACK_LINE.length();
-            trackId = localRef.substring(baseIdx, baseIdx + 1);
-            localRef = localRef.substring(baseIdx + 1, localRef.length());
-            index = localRef.indexOf(TRACK_LINE);
-            tracks.addElement(trackId);
-        }
-
     }
 }

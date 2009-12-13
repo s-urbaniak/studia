@@ -5,8 +5,10 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
 import org.urbanet.rtp.protocol.beans.RtpPacket;
+import org.urbanet.rtp.protocol.beans.RtspSession;
 
 public class RtpSource {
+    private RtspSession rtspSession;
 
     private DatagramSocket socket;
 
@@ -15,9 +17,12 @@ public class RtpSource {
         socket.setSoTimeout(10000);
     }
 
-    public RtpSource(int localUdpPort) throws IOException {
-        socket = new DatagramSocket(localUdpPort);
-        socket.setSoTimeout(10000);
+    public RtspSession getRtspSession() {
+        return rtspSession;
+    }
+
+    public void setRtspSession(RtspSession rtspSession) {
+        this.rtspSession = rtspSession;
     }
 
     public int getLocalUdpPort() {
@@ -87,7 +92,8 @@ public class RtpSource {
 
         // the timestamp
         rtpPkt.setTimeStamp(timeStamp);
-        rtpPkt.setArrivalTimeStamp(arrival * 90);
+        rtpPkt.setArrivalTimeStamp(arrival * this.rtspSession.getClockrate()
+                / 1000);
 
         // the SSRC
         rtpPkt.setSSRC(SSRC);

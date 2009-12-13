@@ -1,15 +1,37 @@
 package org.urbanet.rtp.protocol.beans;
 
 public class RtpStatistics {
-    private long prevTransit;
+    private long previousTransit;
 
     private double jitter;
 
     private boolean firstPacketArrived = false;
 
-    private long lastSequenceNumber;
+    private long previousSequenceNumber;
+
+    private long previousArrivalTimeStamp;
 
     private long packetsLost;
+
+    private RtpPacket currentPacket;
+
+    private double throughput;
+
+    public long getPreviousArrivalTimeStamp() {
+        return previousArrivalTimeStamp;
+    }
+
+    public void setPreviousArrivalTimeStamp(long previousArrivalTimeStamp) {
+        this.previousArrivalTimeStamp = previousArrivalTimeStamp;
+    }
+
+    public RtpPacket getCurrentPacket() {
+        return currentPacket;
+    }
+
+    public void setCurrentPacket(RtpPacket currentPacket) {
+        this.currentPacket = currentPacket;
+    }
 
     public double getThroughput() {
         return throughput;
@@ -19,14 +41,12 @@ public class RtpStatistics {
         this.throughput = throughput;
     }
 
-    private double throughput;
-
-    public long getPrevTransit() {
-        return prevTransit;
+    public long getPreviousTransit() {
+        return previousTransit;
     }
 
-    public void setPrevTransit(long prevTransit) {
-        this.prevTransit = prevTransit;
+    public void setPreviousTransit(long prevTransit) {
+        this.previousTransit = prevTransit;
     }
 
     public double getJitter() {
@@ -45,12 +65,12 @@ public class RtpStatistics {
         this.firstPacketArrived = firstPacketArrived;
     }
 
-    public long getLastSequenceNumber() {
-        return lastSequenceNumber;
+    public long getPreviousSequenceNumber() {
+        return previousSequenceNumber;
     }
 
-    public void setLastSequenceNumber(long lastSequenceNumber) {
-        this.lastSequenceNumber = lastSequenceNumber;
+    public void setPreviousSequenceNumber(long lastSequenceNumber) {
+        this.previousSequenceNumber = lastSequenceNumber;
     }
 
     public long getPacketsLost() {
@@ -65,9 +85,8 @@ public class RtpStatistics {
     public String toString() {
         return "RtpStatistics [firstPacketArrived=" + firstPacketArrived
                 + ", jitter=" + jitter + ", lastSequenceNumber="
-                + lastSequenceNumber + ", packetsLost=" + packetsLost
-                + ", prevTransit=" + prevTransit + ", throughput=" + throughput
-                + "]";
+                + previousSequenceNumber + ", packetsLost=" + packetsLost
+                + ", prevTransit=" + previousTransit + ", throughput="
+                + throughput + "]";
     }
-
 }
