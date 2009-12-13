@@ -1,0 +1,16 @@
+v=0
+o=- 14902150596771653348 14902150596771653348 IN IP4 sur-ckc
+s=Unnamed
+i=N/A
+c=IN IP4 0.0.0.0
+t=0 0
+a=tool:vlc 1.0.2
+a=recvonly
+a=type:broadcast
+a=charset:UTF-8
+a=control:rtsp://127.0.0.1:8080/stream.sdp
+m=audio 0 RTP/AVP 14
+b=AS:96
+b=RR:0
+a=rtpmap:14 MPA/90000/2
+a=control:rtsp://127.0.0.1:8080/stream.sdp/trackID=0
