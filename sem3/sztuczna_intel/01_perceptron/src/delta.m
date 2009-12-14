@@ -1,4 +1,4 @@
-function [learned,weights]=delta(in,out,epochs)
+function [learned,weights,epochs_learned,success]=delta(in,out,epochs)
     % debug input parameters
     % in
     % out
@@ -61,9 +61,11 @@ function [learned,weights]=delta(in,out,epochs)
         end
     end
 
+    epochs_learned = current_epoch;
+
     if (learned == out)
-        printf("---\nlearning SUCCESS after %d epochs\n", current_epoch)
+        success = true
     else
-        printf("---\nlearning FAILURE !\n");
+        success = false
     end
 end
