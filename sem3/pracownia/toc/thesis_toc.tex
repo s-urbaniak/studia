@@ -1,0 +1,151 @@
+\documentclass[pointlessnumbers, abstracton, headsepline, a4paper]{scrartcl}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{textcomp}
+\usepackage{ellipsis, fixltx2e, mparhack, booktabs, longtable}
+\usepackage[automark]{scrpage2}
+\usepackage{multicol}
+\usepackage{microtype}
+\usepackage{listings}
+\usepackage[a4paper]{geometry}
+\usepackage[english]{babel}
+\usepackage{subfigure}
+
+\usepackage{courier}
+\lstset{
+         basicstyle=\footnotesize\ttfamily, % Standardschrift
+         %numbers=left,               % Ort der Zeilennummern
+         numberstyle=\tiny,          % Stil der Zeilennummern
+         %stepnumber=2,               % Abstand zwischen den Zeilennummern
+         numbersep=5pt,              % Abstand der Nummern zum Text
+         tabsize=2,                  % Groesse von Tabs
+         extendedchars=true,         %
+         breaklines=true,            % Zeilen werden Umgebrochen
+         keywordstyle=\color{red},
+         stringstyle=\color{white}\ttfamily, % Farbe der String
+         showspaces=false,           % Leerzeichen anzeigen ?
+         showtabs=false,             % Tabs anzeigen ?
+         showstringspaces=false      % Leerzeichen in Strings anzeigen ?        
+}
+
+% part of the hyperref bundle
+\usepackage{ifpdf}
+
+\geometry{verbose,tmargin=3.5cm,bmargin=3.5cm}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+
+\clearscrheadfoot
+\ohead{\\\headmark}
+\ihead{\includegraphics[scale=0.2]{img/zut2.jpg}}
+\ofoot[\pagemark]{\pagemark}
+
+% if pdflatex is used
+\ifpdf
+
+%set fonts for nicer pdf view
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}
+  {\usepackage[scaled=0.92]{helvet}
+    \usepackage{mathptmx}
+    \usepackage{courier} }
+\fi
+
+% the pages of the TOC are numbered roman
+% and a pdf-bookmark for the TOC is added
+\pagenumbering{arabic}
+\let\myTOC\tableofcontents
+\renewcommand\tableofcontents{\myTOC\clearpage\pagenumbering{arabic}}
+
+\begin{document}
+\begin{titlepage}
+
+\begin{center}
+\includegraphics[scale=0.5]{logos/zut.jpg}
+\par
+\end{center}
+
+\begin{center}
+\textsf{\textbf{\LARGE Wydział Informatyki}}
+\end{center}{\LARGE}
+
+\vspace{3.5cm}
+
+\begin{center}
+\textsf{\Large Communication algorithms and principles for a wireless mesh network prototype}
+\end{center}
+
+\begin{center}
+\textsf{\textbf{\Large Master Thesis}}
+\end{center}
+
+\begin{center}
+\textsf{\large Sergiusz Urbaniak}
+\end{center}
+
+\vspace{5.5cm}
+
+\begin{center}
+\begin{tabular}{ll}
+Date: & \today\tabularnewline
+\end{tabular}
+\end{center}
+
+\end{titlepage}
+
+\tableofcontents
+
+\section{Introduction}
+\subsection{Personal motivation}
+\subsection{Research overview}
+
+\section{Algorithms and protocols in Mesh networks}
+\subsection{Standards}
+\subsubsection{The obligatory OSI}
+\subsubsection{IEEE 802.11s}
+
+\subsection{Protocols and Algorithms}
+\subsubsection{OLSR}
+\subsubsection{b.a.t.m.a.n}
+\subsubsection{HWMP}
+
+\section{Evaluation}
+\subsection{Analysis of target assumptions}
+\subsubsection{Hardware constraints}
+\subsection{Development of a target model}
+\subsubsection{Routing model}
+
+\section{Protoype architecture}
+\subsection{Algorithms}
+\subsubsection{Routing design}
+\subsubsection{Protocol design}
+
+\subsection{Implementation}
+\subsubsection{Prototype Hardware}
+\subsubsection{Implemented Software}
+
+\clearpage
+\section{Research}
+
+\subsection{Methodology}
+\subsubsection{Prototype setups}
+\subsubsection{Topology setups}
+
+\subsection{Results}
+
+\section{Conclusion}
+
+\clearpage
+\appendix
+\section{Appendix}
+
+\subsection{List of figures}
+
+\subsection{List of tables}
+
+\section{Bibliography}
+
+\end{document}
+
