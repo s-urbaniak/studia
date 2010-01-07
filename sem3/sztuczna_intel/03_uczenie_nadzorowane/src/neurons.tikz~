@@ -1,0 +1,25 @@
+\def\layersep{2.5cm}
+
+% Define two helper counters
+\begin{tikzpicture}[shorten >=1pt,->,draw=black, node distance=\layersep]
+    \tikzstyle{every pin}=[pin distance=\layersep]
+    \tikzstyle{every pin edge}=[pin edge={->}, shorten <=1pt]
+    \tikzstyle{neuron}=[circle,fill=black!25,minimum size=20pt,inner sep=0pt]
+    \tikzstyle{annot} = [text width=4em, text centered]
+
+    % Draw the input layer nodes
+    \foreach \name / \x in {1,...,2}
+        \node (I-\name) at (0,-\x*2-1) {$x_\x$};
+
+    \foreach \name / \y in {1,...,3}
+        \path
+            node [neuron, pin={right:$y_\y$}, label={above:
+$W_\y=\left(\begin{array}{c}w_{1,\y} \\ w_{2,\y} \end{array}\right)$
+		}] (H-\name) at (\layersep*1.5,-\y*2 cm) {$\Sigma$};
+
+    % Connect every node in the input layer with every node in the
+    % hidden layer.
+    \foreach \source in {1,...,2}
+        \foreach \dest in {1,...,3}
+            \path (I-\source) edge (H-\dest);
+\end{tikzpicture}
