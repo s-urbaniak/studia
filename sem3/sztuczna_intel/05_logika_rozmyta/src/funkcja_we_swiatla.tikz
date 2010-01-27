@@ -1,0 +1,36 @@
+\begin{tikzpicture}[scale=0.02]
+	\draw
+		[->] (0,0) -- (0,140) node [anchor=south] {$\mu(x)$};
+
+	\draw
+		[<->] (-370,0) -- (370,0);
+
+	\node at (0, -30) [anchor=north] {$\textrm{Wychylenie kierownicy [°]}$};
+
+	\foreach \x in {-360,-270,-180,-90,0,90,180,270,360}
+		\draw 
+			(\x, 5) -- (\x, -5)
+			node [anchor=north] {$\x$};
+
+	\draw
+		(-360, 100) -- node [anchor=south] {$LD$} (-270, 100) -- (-225, 0);
+
+	\draw
+		(-270, 0) -- (-225, 100) -- node [anchor=south] {$LSR$} (-180, 100) -- (-135, 0);
+
+	\draw
+		(-180, 0) -- (-135, 100) -- node [anchor=south] {$LM$} (-90, 100) -- (-45, 0);
+
+	\draw
+		(-90, 0) -- (-45, 100) -- node [anchor=south] {$OZ$} (45, 100) -- (90, 0);
+
+	\draw
+		(45, 0) -- (90, 100) -- node [anchor=south] {$PM$} (135, 100) -- (180, 0);
+
+	\draw
+		(135, 0) -- (180, 100) -- node [anchor=south] {$PSR$} (225, 100) -- (270, 0);
+
+	\draw
+		(225, 0) -- (270, 100) -- node [anchor=south] {$PD$} (360, 100);
+
+\end{tikzpicture}

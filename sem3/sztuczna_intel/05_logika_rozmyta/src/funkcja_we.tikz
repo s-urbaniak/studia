@@ -1,0 +1,56 @@
+\begin{tikzpicture}[scale=2]
+	\draw
+		[->] (0,0) -- (0,1.1) node [anchor=south] {$\mu(x)$};
+
+	\draw
+		[->] (0,0) -- (7.1,0) node [anchor=west] {$wiek [lata]$};
+
+	\foreach \x in {0,...,7}
+		\pgfmathparse{\x*10}
+		\pgfmathsetmacro{\age}{\pgfmathresult}
+		\draw 
+			(\x, 1pt) -- (\x, -1pt)
+			node [anchor=north] {$\age$};
+
+	\draw
+		(0, 1) -- node [anchor=south] {$MA$} (1.8, 1) -- (2.1, 0);
+
+	\draw [dashed]
+		(1.8, 0) -- (1.8, 1);
+
+	\draw
+		(1.8, 0) -- (2.1, 1) -- node [anchor=south] {$KS$} (2.5, 1) -- (3.0, 0);
+
+	\draw [dashed]
+		(2.1, 0) -- (2.1, 1);
+
+	\draw [dashed]
+		(2.5, 0) -- (2.5, 1);
+
+	\draw
+		(2.5, 0) -- (3.0, 1) -- node [anchor=south] {$MY$} (4.0, 1) -- (4.5, 0);
+
+	\draw [dashed]
+		(3.0, 0) -- (3.0, 1);
+
+	\draw [dashed]
+		(2.5, 0) -- (2.5, 1);
+
+	\draw [dashed]
+		(4.0, 0) -- (4.0, 1);
+
+	\draw
+		(4.0, 0) -- (4.5, 1) -- node [anchor=south] {$SR$} (5.5, 1) -- (6.0, 0);
+
+	\draw [dashed]
+		(4.5, 0) -- (4.5, 1);
+
+	\draw [dashed]
+		(5.5, 0) -- (5.5, 1);
+
+	\draw
+		(5.5, 0) -- (6.0, 1) -- node [anchor=south] {$ST$} (7.0, 1) node [anchor=west] {$\ldots$};
+
+	\draw [dashed]
+		(6.0, 0) -- (6.0, 1);
+\end{tikzpicture}

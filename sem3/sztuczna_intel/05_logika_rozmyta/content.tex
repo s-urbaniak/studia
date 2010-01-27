@@ -1,0 +1,177 @@
+\section{Wiarygodność klienta}
+Zaprojektowany model rozmyty określa wiarygodność klienta banku w zależności od jego wieku. Następujące dane zostały zaprojektowane:
+
+\begin{equation}
+\begin{array}{rl}
+x \in [0,150] & \textrm{wiek klienta w latach} \\
+y \in [0,100] & \textrm{wiarygodność klienta w prozentach} \\
+\end{array}
+\end{equation}
+\begin{center}Obszary rozwiązań na wejściu i wyjściu\end{center}
+
+\begin{table}[h]
+\centering
+\begin{tabular}[t]{c|c}
+Klucz & Pojęcie \\
+\hline
+MA & Małolat \\
+KS & Kształcący \\
+MY & Młody \\
+SR & Średni wiek \\
+ST & Stary wiek \\
+\end{tabular}
+\caption{\label{tab:xor}Słownik pojęć wieku (wejście)}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}[t]{c|c}
+Klucz & Pojęcie \\
+\hline
+OZ & Około zera \\
+M & Mała \\
+S & Średnia \\
+D & Duża \\
+\end{tabular}
+\caption{\label{tab:xor}Słownik pojęć wiarygodności (wyjście)}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}[t]{c|c}
+wiek [lata] & wiarygodność [\%] \\
+\hline
+MA & OZ \\
+KS & M \\
+MY & S \\
+SR & D \\
+ST & OZ \\
+\end{tabular}
+\caption{\label{tab:xor}Tabela reguł}
+\end{table}
+
+\begin{figure}[!h]
+\centering
+\input{src/funkcja_we.tikz}
+\caption{\label{fig:funkcja_we}Funkcja przynależności wieku (wejścia)}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\input{src/funkcja_wy.tikz}
+\caption{\label{fig:funkcja_wy}Funkcja przynależności wiarygodności (wyjścia)}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=1.0]{src/char_wiarygodnosc.pdf}\caption{\label{fig:dane1}Charakterystyka systemu}
+\end{figure}
+
+\clearpage
+\section{Nowoczesne sterowanie świateł pomocniczych}
+W następującym przykładzie został zaprojektowany system z jednym wyjściem i dwoma wyjściami. W nowoczesnych samochodach można zauważyć "inteligentne światła pomocnicze". Te światła są montowane poniżej regularnymi światłami przednimi samochodu spełniające jednocześnie funkcje świateł przeciwmgielnych jak i świateł pomocniczych.
+
+Światła pomocnicze włączają się automatycznie kiedy kierowca skręca kierownicą w lewo lub w prawo. Dzieje się tak kiedy kierowca chce skręcić w danym kierunku a światła pomocnicze mają wspomagać widoczność na lewej lub prawej stronie.
+
+Wychylenie kierownicy jest mierzone w stopniach od pozycji jazdy prosto (0°). Wychylenie w lewo jest mierzone ujemnym kątem a wychylenie w prawo odpowiednio pozytywnym kątem. Światła pomocnicze są sterowane silnikiem elektrycznym i są w stanie wychylić się o maks. 30° w lewo lub prawo.
+
+Aby nie oślepić kierowców z drugiego kierunku wychylenie w lewo świateł pomocniczych nie może wynosić więcej niż 10°. Kiedy kierowca chcę skręcić w prawo maksymalne wychylenie może wynosić 30°.
+
+Kiedy kierowca jeździ prosto lub tylko lekko w lewo lub prawo, światła pomocnicze mają być wyłączone. Kiedy kierownica jest wychylona więcej niż 45° w prawo lub lewo światła mają się automatycznie włączyć.
+
+Według powyżej podanych wymagań można zaprojektować system według następujących danych.
+
+\begin{equation}
+\begin{array}{ll}
+x \in [-360, 360] & \textrm{We.: Wychylenie kierownicy w stopniach [°]} \\
+y1 \in [-10,30] & \textrm{Wy.1: Wychylenie świateł pomocniczych w stopniach [°]} \\
+y2 \in [0,100] & \textrm{Wy.2: Jasność świateł pomocniczych w procentach [\%]} \\
+\end{array}
+\end{equation}
+\begin{center}Obszary rozwiązań na wejściu i wyjściu\end{center}
+
+\begin{table}[h]
+\centering
+\begin{tabular}[t]{c|c}
+Klucz & Pojęcie \\
+\hline
+LD & Lewo dużo \\
+LSR & Lewo średnio \\
+LM & Lewo mało \\
+OZ & Około zera \\
+PM & Prawo mało \\
+PSR & Prawo średnio \\
+PD & Prawo dużo \\
+\end{tabular}
+\caption{Słownik Wychylenia kierownicy (wejście)}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}[t]{c|c}
+Klucz & Pojęcie \\
+\hline
+LM & Lewo mało \\
+OZ & Około zera \\
+PM & Prawo mało \\
+PS & Prawo średnio \\
+PD & Prawo dużo \\
+\end{tabular}
+\caption{Słownik świateł pomocniczych (wyjście 1)}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}[t]{c|c}
+Klucz & Pojęcie \\
+\hline
+WY & Wyłączone \\
+WL & Włączone \\
+\end{tabular}
+\caption{Jasność świateł pomocniczych (wyjście 2)}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}[t]{c|c|c}
+Wychylenie kierownicy & Wychylenie świateł & Jasność swiateł \\
+\hline
+LD & LM & WL \\
+LSR & LM & WL \\
+LM & LM & WL \\
+OZ & OZ & WY \\
+PM & PM & WL \\
+PSR & PS & WL \\
+PD & PD & WL \\
+\end{tabular}
+\caption{\label{tab:xor}Tabela reguł}
+\end{table}
+
+\begin{figure}[!h]
+\centering
+\input{src/funkcja_we_swiatla.tikz}
+\caption{\label{fig:funkcja_we}Funkcja przynależności wieku (wejścia)}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\input{src/funkcja_wy1_swiatla.tikz}
+\caption{Funkcja przynależności wieku (wejścia)}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\input{src/funkcja_wy2_swiatla.tikz}
+\caption{Funkcja przynależności wieku (wejścia)}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=1.0]{src/char_swiatla.pdf}\caption{\label{fig:dane1}Charakterystyka systemu}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=1.0]{src/char_swiatla_intensywnosc.pdf}\caption{\label{fig:dane1}Charakterystyka systemu}
+\end{figure}
+

@@ -1,0 +1,29 @@
+\begin{tikzpicture}[scale=0.2]
+	\draw
+		[->] (0,0) -- (0,13) node [anchor=south] {$\mu(x)$};
+
+	\draw
+		[<->] (-31,0) -- (31,0);
+
+	\node at (0, -3) [anchor=north] {$\textrm{Wychylenie kierownicy [°]}$};
+
+	\foreach \x in {-30,-20,-10,0,10,20,30}
+		\draw 
+			(\x, 0.5) -- (\x, -0.5)
+			node [anchor=north] {$\x$};
+
+	\draw
+		(-10, 0) -- (-10, 10) node [anchor=south] {$LM$} -- (0, 0);
+
+	\draw
+		(-10, 0) -- (0, 10) node [anchor=south] {$OZ$} -- (10, 0);
+
+	\draw
+		(0, 0) -- (10, 10) node [anchor=south] {$PM$} -- (20, 0);
+
+	\draw
+		(10, 0) -- (20, 10) node [anchor=south] {$PS$} -- (30, 0);
+
+	\draw
+		(20, 0) -- (30, 10) node [anchor=south] {$PD$} -- (30, 0);
+\end{tikzpicture}

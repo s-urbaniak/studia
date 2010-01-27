@@ -1,0 +1,37 @@
+\begin{tikzpicture}[scale=1.5]
+	\draw
+		[->] (0,0) -- node [anchor=east] {$\mu(y)$} (0,1.6);
+
+	\draw
+		[->] (0,0) -- (10.1,0);
+
+	\node at (5, -0.3) [anchor=north] {$wiarygodność [\%]$};
+
+	\foreach \x in {0,...,10}
+		\pgfmathparse{\x*10}
+		\pgfmathsetmacro{\percent}{\pgfmathresult}
+		\draw 
+			(\x, 1pt) -- (\x, -1pt)
+			node [anchor=north] {$\percent$};
+
+	\draw
+		(0.5, 0) -- (0.5, 1.5) node [anchor=south] {$OZ$} -- (1.5, 0);
+
+	\draw
+		(0.5, 0) -- (1.5, 1.5) node [anchor=south] {$M$} -- (6.6, 0);
+
+	\draw [dashed]
+		(1.5, 0) -- (1.5, 1.5);
+
+	\draw
+		(1.5, 0) -- (6.6, 1.5) node [anchor=south] {$S$} -- (10, 0);
+
+	\draw [dashed]
+		(6.6, 0) -- (6.6, 1.5);
+
+	\draw
+		(6.6, 0) -- (10, 1.5) node [anchor=south] {$D$} -- (10, 0);
+
+	\draw [dashed]
+		(6.6, 0) -- (6.6, 1.5);
+\end{tikzpicture}

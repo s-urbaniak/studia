@@ -1,0 +1,20 @@
+\begin{tikzpicture}[scale=0.2]
+	\draw
+		[->] (0,0) -- (0,13) node [anchor=south] {$\mu(x)$};
+
+	\draw
+		[->] (0,0) -- (11,0) node [anchor=west] {$\textrm{Jasność swiateł [\%]}$};
+
+	\foreach \x in {0,10}
+		\pgfmathparse{\x*10}
+		\pgfmathsetmacro{\percent}{\pgfmathresult}
+		\draw 
+			(\x, 0.5) -- (\x, -0.5)
+			node [anchor=north] {$\percent$};
+
+	\draw
+		(0, 0) -- (0, 10) node [anchor=south] {$WY$} -- (10, 0);
+
+	\draw
+		(0, 0) -- (10, 10) node [anchor=south] {$WL$} -- (10, 0);
+\end{tikzpicture}
