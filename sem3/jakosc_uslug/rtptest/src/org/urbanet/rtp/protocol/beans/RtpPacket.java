@@ -19,8 +19,18 @@ public class RtpPacket {
     // the type of the media data, or the payload type
     private long payloadType;
 
+    private int clockrate;
+
     // the actual media data, also called the payload
     private byte data[];
+
+    public int getClockrate() {
+        return clockrate;
+    }
+
+    public void setClockrate(int clockrate) {
+        this.clockrate = clockrate;
+    }
 
     public long getArrivalTimeStamp() {
         return arrivalTimeStamp;

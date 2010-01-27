@@ -1,18 +1,18 @@
 package org.urbanet.rtp.gui;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 
 import org.eclipse.jface.window.ApplicationWindow;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
-import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
@@ -33,13 +33,70 @@ public class MainWindow extends ApplicationWindow {
 
     private Label packetsLostLabel;
 
+    DecimalFormat format;
+
     public MainWindow(Shell parentShell) {
         super(parentShell);
     }
 
+    private final class DisposeWindowListener implements DisposeListener {
+        @Override
+        public void widgetDisposed(DisposeEvent e) {
+            try {
+                mediator.shutdown();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+    }
+
+    private final class StopListener implements SelectionListener {
+        @Override
+        public void widgetSelected(SelectionEvent e) {
+            try {
+                mediator.stop();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+
+        @Override
+        public void widgetDefaultSelected(SelectionEvent e) {
+            this.widgetSelected(e);
+        }
+    }
+
+    private final class StartListener implements SelectionListener {
+        private final Text portText;
+        private final Text streamText;
+        private final Text hostText;
+
+        private StartListener(Text portText, Text streamText, Text hostText) {
+            this.portText = portText;
+            this.streamText = streamText;
+            this.hostText = hostText;
+        }
+
+        @Override
+        public void widgetSelected(SelectionEvent e) {
+            try {
+                mediator.start(hostText.getText(), Integer.parseInt(portText
+                        .getText()), streamText.getText());
+            } catch (NumberFormatException ex) {
+                mediator.exception(ex);
+            }
+        }
+
+        @Override
+        public void widgetDefaultSelected(SelectionEvent e) {
+            this.widgetSelected(e);
+        }
+    }
+
     public void updateStatistics(final RtpStatistics stats) {
         if (!jitterLabel.isDisposed())
-            jitterLabel.setText(JITTER_PREFIX + stats.getJitter());
+            jitterLabel.setText(JITTER_PREFIX
+                    + format.format(stats.getJitter()));
 
         if (!packetsLostLabel.isDisposed())
             packetsLostLabel.setText(LOST_PACKETS_PREFIX
@@ -47,97 +104,74 @@ public class MainWindow extends ApplicationWindow {
     }
 
     protected Control createContents(Composite parent) {
-        parent.setLayout(new RowLayout(SWT.VERTICAL));
+        parent.addDisposeListener(new DisposeWindowListener());
+        Canvas composite = new Canvas(parent, SWT.NONE);
 
-        parent.addDisposeListener(new DisposeListener() {
-            @Override
-            public void widgetDisposed(DisposeEvent e) {
-                try {
-                    mediator.shutdown();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
-            }
-        });
+        GridLayout parentLayout = new GridLayout(2, false);
+        composite.setLayout(parentLayout);
 
-        Composite entryFields = new Composite(parent, SWT.NONE);
-        entryFields.setLayout(new GridLayout(2, true));
-
-        Label hostLabel = new Label(entryFields, SWT.LEFT);
+        Label hostLabel = new Label(composite, SWT.NONE);
         hostLabel.setText("Host:");
-
-        final Text hostText = new Text(entryFields, SWT.SINGLE);
+        final Text hostText = new Text(composite, SWT.BORDER);
+        GridData layoutData = new GridData();
+        layoutData.horizontalAlignment = SWT.BEGINNING;
+        layoutData.grabExcessHorizontalSpace = true;
+        layoutData.minimumWidth = 150;
         hostText.setText("localhost");
-        hostText.setTextLimit(100);
+        hostText.setLayoutData(layoutData);
 
-        Label portLabel = new Label(entryFields, SWT.LEFT);
+        Label portLabel = new Label(composite, SWT.NONE);
         portLabel.setText("Port:");
-
-        final Text portText = new Text(entryFields, SWT.SINGLE);
+        layoutData = new GridData();
+        layoutData.horizontalAlignment = SWT.BEGINNING;
+        layoutData.grabExcessHorizontalSpace = true;
+        layoutData.minimumWidth = 75;
+        final Text portText = new Text(composite, SWT.BORDER);
+        portText.setLayoutData(layoutData);
         portText.setText("8080");
 
-        Label streamLabel = new Label(entryFields, SWT.LEFT);
+        Label streamLabel = new Label(composite, SWT.NONE);
         streamLabel.setText("Stream:");
-
-        final Text streamText = new Text(entryFields, SWT.SINGLE);
+        final Text streamText = new Text(composite, SWT.BORDER);
+        layoutData = new GridData();
+        layoutData.horizontalAlignment = SWT.BEGINNING;
+        layoutData.grabExcessHorizontalSpace = true;
+        layoutData.minimumWidth = 150;
+        streamText.setLayoutData(layoutData);
         streamText.setText("/stream.sdp");
 
-        Composite buttons = new Composite(parent, SWT.NONE);
-        buttons.setLayout(new RowLayout(SWT.HORIZONTAL));
-
-        startButton = new Button(buttons, SWT.PUSH);
+        startButton = new Button(composite, SWT.PUSH);
         startButton.setText("Start");
-        startButton.addSelectionListener(new SelectionListener() {
-            @Override
-            public void widgetSelected(SelectionEvent e) {
-                try {
-                    mediator
-                            .start(hostText.getText(), Integer
-                                    .parseInt(portText.getText()), streamText
-                                    .getText());
-                } catch (NumberFormatException ex) {
-                    mediator.exception(ex);
-                }
-            }
+        startButton.addSelectionListener(new StartListener(portText,
+                streamText, hostText));
+        layoutData = new GridData(GridData.FILL, GridData.FILL, true, true);
+        layoutData.horizontalSpan = 3;
+        startButton.setLayoutData(layoutData);
 
-            @Override
-            public void widgetDefaultSelected(SelectionEvent e) {
-                this.widgetSelected(e);
-            }
-        });
-
-        stopButton = new Button(buttons, SWT.PUSH);
+        stopButton = new Button(composite, SWT.PUSH);
         stopButton.setText("Stop");
-        stopButton.addSelectionListener(new SelectionListener() {
-            @Override
-            public void widgetSelected(SelectionEvent e) {
-                try {
-                    mediator.stop();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
-            }
+        stopButton.addSelectionListener(new StopListener());
+        layoutData = new GridData(GridData.FILL, GridData.FILL, true, true);
+        layoutData.horizontalSpan = 3;
+        stopButton.setLayoutData(layoutData);
 
-            @Override
-            public void widgetDefaultSelected(SelectionEvent e) {
-                this.widgetSelected(e);
-            }
-        });
-
-        Composite labels = new Composite(parent, SWT.NONE);
-        labels.setLayout(new RowLayout(SWT.VERTICAL));
-
-        jitterLabel = new Label(labels, SWT.LEFT);
+        jitterLabel = new Label(composite, SWT.NONE);
         jitterLabel.setText(JITTER_PREFIX);
+        layoutData = new GridData(GridData.FILL, GridData.FILL, true, true);
+        layoutData.horizontalSpan = 3;
+        jitterLabel.setLayoutData(layoutData);
 
-        packetsLostLabel = new Label(labels, SWT.LEFT);
+        format = new DecimalFormat("0.000");
+
+        packetsLostLabel = new Label(composite, SWT.NONE);
         packetsLostLabel.setText(LOST_PACKETS_PREFIX);
-        labels.pack();
+        layoutData = new GridData(GridData.FILL, GridData.FILL, true, true);
+        layoutData.horizontalSpan = 3;
+        packetsLostLabel.setLayoutData(layoutData);
 
         mediator = new ThreadMediator();
         mediator.setWindow(this);
 
-        parent.pack();
-        return parent;
+        return composite;
     }
 }

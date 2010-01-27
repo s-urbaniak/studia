@@ -92,8 +92,12 @@ public class RtpSource {
 
         // the timestamp
         rtpPkt.setTimeStamp(timeStamp);
+
+        // the arrival in clockrate dependend units
         rtpPkt.setArrivalTimeStamp(arrival * this.rtspSession.getClockrate()
                 / 1000);
+
+        rtpPkt.setClockrate(this.rtspSession.getClockrate());
 
         // the SSRC
         rtpPkt.setSSRC(SSRC);

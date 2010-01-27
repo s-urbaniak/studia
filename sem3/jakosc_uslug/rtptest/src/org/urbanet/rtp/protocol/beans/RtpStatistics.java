@@ -11,11 +11,21 @@ public class RtpStatistics {
 
     private long previousArrivalTimeStamp;
 
+    private long previousUpdateTimeStamp;
+
     private long packetsLost;
 
     private RtpPacket currentPacket;
 
     private double throughput;
+
+    public long getPreviousUpdateTimeStamp() {
+        return previousUpdateTimeStamp;
+    }
+
+    public void setPreviousUpdateTimeStamp(long previousUpdateTimeStamp) {
+        this.previousUpdateTimeStamp = previousUpdateTimeStamp;
+    }
 
     public long getPreviousArrivalTimeStamp() {
         return previousArrivalTimeStamp;

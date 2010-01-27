@@ -1,5 +1,8 @@
 package org.urbanet.rtp.thread;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
@@ -41,6 +44,10 @@ public class StatisticsThread implements Runnable {
     private final static Logger log = Logger.getLogger(StatisticsThread.class
             .getName());
 
+    private BufferedWriter fileWriter;
+
+    private boolean persistStats = true;
+
     /**
      * Call this method when the statistics thread is supposed to stop after the
      * next packet arrival.
@@ -66,19 +73,20 @@ public class StatisticsThread implements Runnable {
     @Override
     public void run() {
         this.stop = false;
-        RtpStatistics stats = new RtpStatistics();
-        initStatistics(stats);
+        try {
+            RtpStatistics stats = new RtpStatistics();
+            initStatistics(stats);
 
-        while (!stop) {
-            try {
+            while (!stop) {
                 RtpPacket packet = queue.poll(RECEIVE_TIMEOUT_MSEC,
                         TimeUnit.MILLISECONDS);
 
                 stats.setCurrentPacket(packet);
 
                 if (packet == null) {
-                    if (stop)
+                    if (stop) {
                         return;
+                    }
                 } else {
                     // only calculate jitter if at least one packet arrived
                     if (stats.isFirstPacketArrived()) {
@@ -95,9 +103,16 @@ public class StatisticsThread implements Runnable {
                     stats.setPreviousArrivalTimeStamp(packet
                             .getArrivalTimeStamp());
                 }
-            } catch (Exception e) {
-                mediator.exception(e);
             }
+        } catch (Exception e) {
+            mediator.exception(e);
+        } finally {
+            if (persistStats)
+                try {
+                    fileWriter.close();
+                } catch (IOException e) {
+                    mediator.exception(e);
+                }
         }
     }
 
@@ -108,16 +123,31 @@ public class StatisticsThread implements Runnable {
      * @param stats
      *            The statistics bean.
      * @return
+     * @throws IOException
      */
-    private void updateStats(RtpStatistics stats) {
-        long timeDiff = stats.getCurrentPacket().getArrivalTimeStamp()
-                - stats.getPreviousArrivalTimeStamp();
+    private void updateStats(RtpStatistics stats) throws IOException {
+        long now = System.currentTimeMillis();
+
+        long timeDiff = now - stats.getPreviousUpdateTimeStamp();
 
         // communicate stats every 200msec
         if (timeDiff > UPDATE_INTERVAL_MSEC) {
             mediator.updateStatistics(stats);
+            stats.setPreviousUpdateTimeStamp(now);
+            writeToFile(stats);
             log.fine(stats.toString());
         }
+    }
+
+    private void writeToFile(RtpStatistics stats) throws IOException {
+        if (!persistStats)
+            return;
+
+        this.fileWriter.write(stats.getCurrentPacket().getArrivalTimeStamp()
+                + " " + stats.getJitter() + " " + stats.getPacketsLost() + " "
+                + stats.getThroughput() + "\n");
+
+        this.fileWriter.flush();
     }
 
     /**
@@ -133,8 +163,12 @@ public class StatisticsThread implements Runnable {
      */
     private void calculateThroughput(RtpStatistics stats) {
         int len = stats.getCurrentPacket().getData().length;
-        long timeDiff = stats.getCurrentPacket().getArrivalTimeStamp()
-                - stats.getPreviousArrivalTimeStamp();
+
+        long clockrateInMsec = stats.getCurrentPacket().getClockrate() / 1000;
+
+        long timeDiff = (stats.getCurrentPacket().getArrivalTimeStamp() - stats
+                .getPreviousArrivalTimeStamp())
+                / clockrateInMsec;
 
         double lenBits = (double) len * 8 / 1000;
         double timeDiffSecs = (double) timeDiff / 1000;
@@ -149,11 +183,14 @@ public class StatisticsThread implements Runnable {
      *            Initializes
      *            {@link RtpStatistics#setFirstPacketArrived(boolean)} and
      *            {@link RtpStatistics#setJitter(double)}
+     * @throws IOException
      */
-    private void initStatistics(RtpStatistics stats) {
+    private void initStatistics(RtpStatistics stats) throws IOException {
         stats.setFirstPacketArrived(false);
         stats.setJitter(0);
         stats.setPacketsLost(0);
+        if (persistStats)
+            fileWriter = new BufferedWriter(new FileWriter("rtpstats.txt"));
     }
 
     /**
@@ -190,8 +227,12 @@ public class StatisticsThread implements Runnable {
         long arrival = packet.getArrivalTimeStamp();
         long transit = arrival - timestamp;
 
-        double d = Math.abs(transit - stats.getPreviousTransit());
-        stats.setJitter(stats.getJitter() + (d - stats.getJitter()) / 16.0d);
+        if (stats.getPreviousTransit() > 0) {
+            double d = Math.abs(transit - stats.getPreviousTransit());
+            stats
+                    .setJitter(stats.getJitter() + (d - stats.getJitter())
+                            / 16.0d);
+        }
 
         stats.setPreviousTransit(transit);
     }
